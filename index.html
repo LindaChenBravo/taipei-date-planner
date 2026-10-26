@@ -146,12 +146,12 @@
     body.view-routes #routeSection{display:block!important;margin-top:8px}
     .hero,.type-picker,.panel,#recommendation,#routeSection,main>section[aria-labelledby="spotTitle"]{width:calc(100% - 28px);max-width:1080px;align-self:center}
     .cloud{animation:cloudDrift 4.6s ease-in-out infinite alternate}
-    .train{animation:trainBob 2.4s ease-in-out infinite}
+    .gondola{transform-origin:76px 46px;animation:gondolaBob 2.8s ease-in-out infinite}
     .spark{transform-origin:center;animation:sparkle 2s ease-in-out infinite}
     .spot-illustration svg{animation:floaty 3s ease-in-out infinite}
     .type-tag.pop,.map-type-tag.pop{animation:pop .34s ease-out}
     @keyframes cloudDrift{to{transform:translateX(10px)}}
-    @keyframes trainBob{50%{transform:translateY(-4px) rotate(-1deg)}}
+    @keyframes gondolaBob{50%{transform:translateY(-3px) rotate(-1deg)}}
     @keyframes sparkle{50%{transform:scale(1.2) rotate(8deg)}}
     @keyframes floaty{50%{transform:translateY(-4px) rotate(1deg)}}
     @keyframes pop{50%{transform:scale(1.13)}100%{transform:scale(1)}}
@@ -186,28 +186,31 @@
         <svg viewBox="0 0 390 250" role="img">
           <g fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="318" cy="49" r="30" fill="#F2A497"/>
-            <g class="cloud" fill="#FFFCF6">
-              <path d="M26 68c2-14 20-18 28-7 9-15 33-7 31 10 15-1 20 20 3 24H28c-19-2-18-25-2-27Z"/>
-              <path d="M276 104c2-11 17-15 24-6 7-12 27-6 26 8 12-1 17 16 3 19h-50c-15-2-15-20-3-21Z"/>
-            </g>
+            <g class="cloud" fill="#FFFCF6"><path d="M276 104c2-11 17-15 24-6 7-12 27-6 26 8 12-1 17 16 3 19h-50c-15-2-15-20-3-21Z"/></g>
+            <path d="M-4 27c55 3 110 12 166 28"/>
             <path d="M18 205c40-48 78-44 112 0 42-65 90-70 135 0 34-39 68-36 107 0v28H18Z" fill="#B9DAA5"/>
-            <g transform="translate(162 35)">
-              <path d="m35 0 8 26h-16Z" fill="#A8D3E6"/>
-              <path d="M25 26h20l-3 17H28Z" fill="#A8D3E6"/>
-              <path d="M21 43h28l-3 20H24Z" fill="#A8D3E6"/>
-              <path d="M17 63h36l-4 23H21Z" fill="#A8D3E6"/>
-              <path d="M13 86h44l-5 29H18Z" fill="#A8D3E6"/>
-              <path d="M8 115h54v90H8Z" fill="#A8D3E6"/>
-              <path d="M18 136h34M18 156h34M18 176h34"/>
+            <g class="gondola">
+              <path d="M76 43v23M65 41h22"/>
+              <circle cx="76" cy="42" r="4" fill="#3E3A39"/>
+              <path d="M42 65h68c9 0 14 7 14 16v23c0 10-6 15-16 15H44c-10 0-16-5-16-15V81c0-9 5-16 14-16Z" fill="#F2A497"/>
+              <path d="M40 77h28v20H40Zm44 0h28v20H84Z" fill="#A8D3E6"/>
+              <path d="M76 66v52M35 105h82"/>
             </g>
-            <g class="train" transform="translate(37 171)">
-              <rect width="91" height="46" rx="15" fill="#F2A497"/>
-              <path d="M13 14h25v15H13Zm40 0h25v15H53Z" fill="#FFFCF6"/>
-              <circle cx="23" cy="46" r="6" fill="#3E3A39"/><circle cx="70" cy="46" r="6" fill="#3E3A39"/>
+            <g transform="translate(162 35)">
+              <path d="M35 0v30"/>
+              <path d="M29 30h12l3 15H26Z" fill="#A8D3E6"/>
+              <path d="M25 45h20l4 18H21Z" fill="#A8D3E6"/>
+              <path d="M21 63h28l4 20H17Z" fill="#A8D3E6"/>
+              <path d="M17 83h36l4 20H13Z" fill="#A8D3E6"/>
+              <path d="M13 103h44l4 21H9Z" fill="#A8D3E6"/>
+              <path d="M9 124h52l4 21H5Z" fill="#A8D3E6"/>
+              <path d="M5 145h60v60H5Z" fill="#A8D3E6"/>
+              <path d="M31 37h8M27 54h16M23 72h24M20 92h30M17 113h36M13 135h44M16 158h38M16 172h38M16 186h38" stroke-width="2"/>
+              <path d="M28 151v47M42 151v47" stroke-width="2"/>
             </g>
             <path d="M15 232h360"/>
             <g class="spark" fill="#F6D27A">
-              <path d="m114 44 5 10 10 5-10 5-5 10-5-10-10-5 10-5Z"/>
+              <path d="m144 112 5 10 10 5-10 5-5 10-5-10-10-5 10-5Z"/>
               <path d="m341 139 4 8 8 4-8 4-4 8-4-8-8-4 8-4Z"/>
             </g>
           </g>
