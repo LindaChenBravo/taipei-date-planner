@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="依區域、類型與時間篩選台北約會景點，並直接查看 Google Maps 地圖與路線。" />
+  <title>台北約會行程選擇器｜四模式地圖版</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" />
+  <style>
+    :root{
+      --paper:#FFFCF6; --ink:#3E3A39; --muted:#716b68;
+      --coral:#F2A497; --yellow:#F6D27A; --blue:#A8D3E6; --green:#B9DAA5;
+      --white:#fff; --line:3px solid var(--ink);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Huninn","Noto Sans TC",sans-serif;background:var(--paper);color:var(--ink)}
+    button,select,a{font:inherit}
+    button,a,select{-webkit-tap-highlight-color:transparent}
+    button:focus-visible,select:focus-visible,a:focus-visible{outline:4px solid var(--blue);outline-offset:3px}
+    .wrap{max-width:none;margin:0;padding:0 0 44px;display:flex;flex-direction:column}
+    .hero{display:grid;gap:14px;align-items:center;background:var(--yellow);border:var(--line);border-radius:32px;padding:22px 20px;margin-bottom:18px;overflow:hidden}
+    .hero-copy{position:relative;z-index:1}
+    .eyebrow{display:inline-block;background:var(--paper);border:var(--line);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:12px}
+    h1{font-size:clamp(32px,9vw,54px);line-height:1.13;margin:0 0 10px;letter-spacing:.02em}
+    h2{font-size:23px;margin:0;letter-spacing:.03em}
+    .sub{color:var(--ink);margin:0;line-height:1.75;max-width:650px}
+    .hero-art{min-height:190px;display:grid;place-items:center}
+    .hero-art svg{width:min(100%,390px);height:auto;overflow:visible}
+    .panel,.card,.route,.callout,.map-panel,.type-picker{background:var(--white);border:var(--line);border-radius:26px}
+    .panel,.type-picker{padding:16px;margin-bottom:14px}
+    .controls{display:grid;grid-template-columns:1fr;gap:12px}
+    label{font-size:14px;font-weight:700}
+    select{width:100%;margin-top:7px;padding:12px 14px;border:var(--line);border-radius:16px;background:var(--paper);color:var(--ink)}
+    .buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+    .type-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .type-tag{padding:8px 13px;border-radius:999px;background:#fff;font-size:14px;font-weight:700}
+    .type-tag.active{background:#fff;outline:3px solid var(--coral);outline-offset:2px}
+    .type-picker{background:transparent;border:0;border-radius:0;padding:0;margin-bottom:14px}
+    button,.button-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:16px;border:var(--line);background:var(--paper);color:var(--ink);cursor:pointer;text-decoration:none;font-weight:700;transition:transform .18s ease}
+    button:hover,.button-link:hover{transform:translateY(-2px)}
+    button.primary{background:var(--coral)}
+    button.primary:hover{background:var(--coral)}
+    .section-title{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:28px 0 12px}
+    .section-copy{color:var(--muted);font-size:14px;margin:4px 0 0}
+    .badge,.chip{display:inline-flex;align-items:center;border-radius:999px;font-size:13px}
+    .badge{background:var(--yellow);border:var(--line);padding:6px 10px;white-space:nowrap;font-weight:700}
+    .chip{border:2px solid var(--ink);padding:4px 9px;margin:2px 4px 0 0;background:var(--paper)}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .card,.route{padding:18px}
+    .card{display:flex;flex-direction:column;min-height:235px;position:relative;overflow:hidden}
+    .card:nth-child(4n+1){background:#FFF5F1}
+    .card:nth-child(4n+2){background:#FFF9E9}
+    .card:nth-child(4n+3){background:#F2FAFD}
+    .card:nth-child(4n+4){background:#F4FAF0}
+    .card-head{display:flex;align-items:center;gap:14px;margin-bottom:9px}
+    .spot-illustration{width:74px;height:74px;flex:0 0 74px;display:grid;place-items:center}
+    .spot-illustration svg{width:72px;height:72px;overflow:visible}
+    .card h3,.route h3{margin:0 0 6px;font-size:19px}
+    .meta,.note{font-size:14px}
+    .meta{font-weight:700}
+    .note{color:var(--muted);line-height:1.65}
+    .card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:14px}
+    .card-actions button,.card-actions a{padding:8px 10px;font-size:13px}
+    .callout{padding:18px;margin-top:16px;background:var(--green)}
+    .callout ol{margin-bottom:8px}
+    .inline-map-link{color:var(--ink);font-weight:700;text-underline-offset:3px}
+    #mapSection{order:-1;min-height:100svh;position:relative;margin:0 0 28px}
+    #mapSection>.section-title{display:none}
+    .map-panel{overflow:hidden;border:0;border-radius:0}
+    .map-layout{display:grid;grid-template-columns:1fr}
+    .map-frame-wrap{display:flex;flex-direction:column;min-width:0;background:var(--blue);position:relative}
+    .map-frame-toolbar{position:absolute;top:14px;left:14px;right:14px;z-index:650;padding:0;background:transparent;border:0;border-radius:0;overflow:visible}
+    .map-type-tags{display:flex;gap:8px;overflow-x:auto;padding:5px 5px 9px;scrollbar-width:thin;scroll-snap-type:x proximity}
+    .map-type-tag{flex:0 0 auto;padding:8px 13px;border-radius:999px;border:2px solid var(--ink);background:#fff;font-size:14px;font-weight:700;scroll-snap-align:start}
+    .map-type-tag.active{outline:3px solid var(--coral);outline-offset:2px;background:#fff}
+    .tag-icon{font-size:16px;line-height:1;filter:saturate(.8)}
+    #mapTitle{display:none;font-size:17px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    #mapTitle::before{content:'●';display:inline-block;color:var(--coral);font-size:20px;line-height:0;margin-right:8px;vertical-align:-1px;-webkit-text-stroke:1px var(--ink)}
+    #mapExternalLink{display:none!important}
+    .map-stage{position:relative;height:100svh;background:#e8eee8}
+    .map-canvas{width:100%;height:100%;z-index:1;font-family:"Huninn","Noto Sans TC",sans-serif;background:#e8eee8}
+    .maplibregl-canvas{cursor:grab}
+    .maplibregl-canvas:active{cursor:grabbing}
+    .maplibregl-ctrl-group{border:2px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:none}
+    .maplibregl-ctrl-group button{background-color:var(--paper);border:0;border-radius:0;padding:0;transform:none}
+    .maplibregl-ctrl-attrib{font-family:"Huninn","Noto Sans TC",sans-serif}
+    .map-marker{width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;overflow:visible}
+    .spot-pin{display:grid;place-items:center;width:38px;height:38px;border:3px solid var(--ink);border-radius:50% 50% 50% 12px;background:var(--coral);color:var(--ink);font-weight:800;transform:rotate(-45deg);transition:transform .18s ease,background .18s ease;pointer-events:auto;cursor:pointer}
+    .spot-pin span{transform:rotate(45deg)}
+    .spot-pin.is-active{background:var(--yellow);transform:rotate(-45deg) scale(1.18)}
+    .map-spot-card{position:absolute;left:14px;bottom:86px;z-index:500;width:min(430px,calc(100% - 28px));background:var(--paper);border:var(--line);border-radius:24px;padding:16px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:13px;align-items:start;box-shadow:5px 6px 0 rgba(62,58,57,.16)}
+    .map-spot-card .spot-illustration{width:70px;height:70px}
+    .map-spot-card .spot-illustration svg{width:68px;height:68px}
+    .map-spot-card h3{margin:0 0 4px;font-size:20px}
+    .map-spot-card p{margin:8px 0 10px;font-size:14px;line-height:1.55;color:var(--muted)}
+    .map-spot-card .spot-tags{margin:7px 0 2px}
+    .map-spot-actions{display:flex;flex-wrap:wrap;gap:7px}
+    .map-spot-actions button,.map-spot-actions a{font-size:12px;padding:7px 9px;border-width:2px;border-radius:12px}
+    .card.map-target{outline:5px solid var(--coral);outline-offset:5px;animation:cardPop .48s ease-out}
+    .route{background:#FFF9E9}
+    .route-icon{width:88px;float:right;margin:-8px -5px 6px 12px}
+    .route ol{padding-left:22px;line-height:1.9}
+    .route li a{color:var(--ink);text-underline-offset:3px}
+    .hidden{display:none!important}
+    .empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .site-tabs{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:900;width:min(640px,calc(100% - 28px));padding:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:rgba(255,252,246,.94);border:var(--line);border-radius:22px;box-shadow:0 8px 24px rgba(62,58,57,.18);backdrop-filter:blur(10px)}
+    .site-tab{border:0;border-radius:14px;padding:11px 5px;background:transparent;white-space:nowrap;font-size:13px}
+    .site-tab.active{background:var(--yellow);box-shadow:inset 0 0 0 2px var(--ink)}
+    body.view-map .hero,body.view-map .type-picker,body.view-map .panel,body.view-map #recommendation,body.view-map #routeSection,body.view-map #listSection{display:none!important}
+    body.view-map .wrap{padding-bottom:0}
+    body.view-map #mapSection{margin:0;min-height:100svh}
+    body.view-list #mapSection,body.view-list #routeSection{display:none!important}
+    body.view-list .wrap,body.view-routes .wrap{padding:14px 14px 100px}
+    body.view-routes .hero,body.view-routes .type-picker,body.view-routes .panel,body.view-routes #recommendation,body.view-routes #mapSection,body.view-routes #listSection{display:none!important}
+    body.view-routes #routeSection{display:block!important;margin-top:8px}
+    body.view-add .hero,body.view-add .type-picker,body.view-add .panel,body.view-add #recommendation,body.view-add #mapSection,body.view-add #listSection,body.view-add #routeSection{display:none!important}
+    body.view-add .wrap{padding:14px 14px 100px}
+    body:not(.view-add) #addPlaceSection{display:none!important}
+    .add-place-card{padding:22px;background:#F2FAFD}
+    .add-place-card h3{margin:0 0 10px;font-size:22px}
+    .add-place-card p{margin:0 0 14px;color:var(--muted);line-height:1.7}
+    .add-place-steps{margin:0 0 18px;padding-left:22px;line-height:1.9}
+    .add-place-note{font-size:13px;color:var(--muted);margin-top:10px}
+    .hero,.type-picker,.panel,#recommendation,#routeSection,#addPlaceSection,main>section[aria-labelledby="spotTitle"]{width:calc(100% - 28px);max-width:1080px;align-self:center}
+    .cloud{animation:cloudDrift 4.6s ease-in-out infinite alternate}
+    .train{animation:trainBob 2.4s ease-in-out infinite}
+    .spark{transform-origin:center;animation:sparkle 2s ease-in-out infinite}
+    .spot-illustration svg{animation:floaty 3s ease-in-out infinite}
+    .type-tag.pop,.map-type-tag.pop{animation:pop .34s ease-out}
+    @keyframes cloudDrift{to{transform:translateX(10px)}}
+    @keyframes trainBob{50%{transform:translateY(-4px) rotate(-1deg)}}
+    @keyframes sparkle{50%{transform:scale(1.2) rotate(8deg)}}
+    @keyframes floaty{50%{transform:translateY(-4px) rotate(1deg)}}
+    @keyframes pop{50%{transform:scale(1.13)}100%{transform:scale(1)}}
+    @keyframes cardPop{50%{transform:scale(1.025)}100%{transform:scale(1)}}
+    @media(min-width:720px){
+      .hero{grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);padding:30px 34px}
+      .controls{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .map-frame-toolbar{left:22px;right:22px;padding:0}
+      .site-tab{font-size:15px;padding:11px 10px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+    }
+  </style>
+</head>
+<body class="view-map">
+  <main class="wrap">
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Taipei Date Planner · Four Views</div>
+        <h1>台北約會<br>行程選擇器</h1>
+        <p class="sub">依區域、類型與時間，挑一個剛剛好的台北約會。選好景點後，可直接預覽位置或開啟 Google Maps 導航。</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 390 250" role="img">
+          <g fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="318" cy="49" r="30" fill="#F2A497"/>
+            <g class="cloud" fill="#FFFCF6">
+              <path d="M26 68c2-14 20-18 28-7 9-15 33-7 31 10 15-1 20 20 3 24H28c-19-2-18-25-2-27Z"/>
+              <path d="M276 104c2-11 17-15 24-6 7-12 27-6 26 8 12-1 17 16 3 19h-50c-15-2-15-20-3-21Z"/>
+            </g>
+            <path d="M18 205c40-48 78-44 112 0 42-65 90-70 135 0 34-39 68-36 107 0v28H18Z" fill="#B9DAA5"/>
+            <g transform="translate(162 35)">
+              <path d="m35 0 8 26h-16Z" fill="#A8D3E6"/>
+              <path d="M25 26h20l-3 17H28Z" fill="#A8D3E6"/>
+              <path d="M21 43h28l-3 20H24Z" fill="#A8D3E6"/>
+              <path d="M17 63h36l-4 23H21Z" fill="#A8D3E6"/>
+              <path d="M13 86h44l-5 29H18Z" fill="#A8D3E6"/>
+              <path d="M8 115h54v90H8Z" fill="#A8D3E6"/>
+              <path d="M18 136h34M18 156h34M18 176h34"/>
+            </g>
+            <g class="train" transform="translate(37 171)">
+              <rect width="91" height="46" rx="15" fill="#F2A497"/>
+              <path d="M13 14h25v15H13Zm40 0h25v15H53Z" fill="#FFFCF6"/>
+              <circle cx="23" cy="46" r="6" fill="#3E3A39"/><circle cx="70" cy="46" r="6" fill="#3E3A39"/>
+            </g>
+            <path d="M15 232h360"/>
+            <g class="spark" fill="#F6D27A">
+              <path d="m114 44 5 10 10 5-10 5-5 10-5-10-10-5 10-5Z"/>
+              <path d="m341 139 4 8 8 4-8 4-4 8-4-8-8-4 8-4Z"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </header>
+
+    <section class="type-picker" aria-label="依類型篩選">
+      <div id="typeTags" class="type-tags" role="group" aria-label="選擇約會類型">
+        <button type="button" class="type-tag active" data-type="all" aria-pressed="true">全部</button>
+        <button type="button" class="type-tag" data-type="文創" aria-pressed="false">文創</button>
+        <button type="button" class="type-tag" data-type="咖啡" aria-pressed="false">咖啡</button>
+        <button type="button" class="type-tag" data-type="展覽" aria-pressed="false">展覽</button>
+        <button type="button" class="type-tag" data-type="戶外" aria-pressed="false">戶外</button>
+        <button type="button" class="type-tag" data-type="手作" aria-pressed="false">手作</button>
+        <button type="button" class="type-tag" data-type="美食" aria-pressed="false">美食</button>
+        <button type="button" class="type-tag" data-type="夜市" aria-pressed="false">夜市</button>
+        <button type="button" class="type-tag" data-type="拍照" aria-pressed="false">拍照</button>
+        <button type="button" class="type-tag" data-type="泡湯" aria-pressed="false">泡湯</button>
+        <button type="button" class="type-tag" data-type="書店" aria-pressed="false">書店</button>
+        <button type="button" class="type-tag" data-type="酒吧" aria-pressed="false">酒吧</button>
+        <button type="button" class="type-tag" data-type="音樂" aria-pressed="false">音樂</button>
+        <button type="button" class="type-tag" data-type="自然" aria-pressed="false">自然</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="filterTitle">
+      <h2 id="filterTitle" class="sr-only">篩選條件</h2>
+      <div class="controls">
+        <label for="area">想去哪一區？
+          <select id="area">
+            <option value="all">全部區域</option>
+            <option>中山／赤峰街</option><option>永康街／東門</option><option>華山／忠孝新生</option>
+            <option>圓山</option><option>松山</option><option>信義</option><option>東區／大安</option>
+            <option>台電大樓</option><option>大稻埕</option><option>北投</option><option>北投／關渡</option>
+            <option>永和</option><option>東北角</option>
+          </select>
+        </label>
+        <label for="duration">可用時間
+          <select id="duration">
+            <option value="all">不限</option>
+            <option value="2">約 2 小時</option><option value="4">半日</option><option value="8">一日</option>
+          </select>
+        </label>
+      </div>
+      <div class="buttons">
+        <button class="primary" id="filterBtn" type="button">套用篩選</button>
+        <button id="randomBtn" type="button">幫我排約會</button>
+        <button id="mapBtn" type="button">前往地圖總覽</button>
+        <button id="resetBtn" type="button">重設</button>
+      </div>
+    </section>
+
+    <section id="recommendation" class="callout hidden" aria-live="polite"></section>
+
+    <section id="routeSection" class="hidden" aria-labelledby="routeTitle">
+      <div class="section-title">
+        <div><h2 id="routeTitle">精選約會路線</h2><p class="section-copy">每一站都可直接開啟 Google Maps。</p></div>
+        <span class="badge">4 條</span>
+      </div>
+      <div id="routes" class="grid"></div>
+    </section>
+
+    <section id="mapSection" aria-labelledby="mapSectionTitle">
+      <div class="section-title">
+        <div><h2 id="mapSectionTitle">地圖總覽</h2><p class="section-copy">地點會跟著篩選結果更新，可直接在下方預覽。</p></div>
+        <span id="mapCount" class="badge"></span>
+      </div>
+      <div class="map-panel">
+        <div class="map-layout">
+          <div class="map-frame-wrap">
+            <div class="map-frame-toolbar">
+              <div id="mapTypeTags" class="map-type-tags" role="group" aria-label="依類型篩選地圖景點">
+                <button type="button" class="map-type-tag active" data-type="all" aria-pressed="true"><span class="tag-icon" aria-hidden="true">✦</span>全部</button>
+                <button type="button" class="map-type-tag" data-type="文創" aria-pressed="false"><span class="tag-icon" aria-hidden="true">✂️</span>文創</button>
+                <button type="button" class="map-type-tag" data-type="咖啡" aria-pressed="false"><span class="tag-icon" aria-hidden="true">☕</span>咖啡</button>
+                <button type="button" class="map-type-tag" data-type="展覽" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🖼️</span>展覽</button>
+                <button type="button" class="map-type-tag" data-type="戶外" aria-pressed="false"><span class="tag-icon" aria-hidden="true">☀️</span>戶外</button>
+                <button type="button" class="map-type-tag" data-type="手作" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🧵</span>手作</button>
+                <button type="button" class="map-type-tag" data-type="美食" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍜</span>美食</button>
+                <button type="button" class="map-type-tag" data-type="夜市" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🏮</span>夜市</button>
+                <button type="button" class="map-type-tag" data-type="拍照" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📷</span>拍照</button>
+                <button type="button" class="map-type-tag" data-type="泡湯" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♨️</span>泡湯</button>
+                <button type="button" class="map-type-tag" data-type="書店" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📚</span>書店</button>
+                <button type="button" class="map-type-tag" data-type="酒吧" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍸</span>酒吧</button>
+                <button type="button" class="map-type-tag" data-type="音樂" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♫</span>音樂</button>
+                <button type="button" class="map-type-tag" data-type="自然" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🌿</span>自然</button>
+              </div>
+              <span id="mapTitle">請選擇一個地點</span>
+              <a id="mapExternalLink" class="hidden" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+            </div>
+            <div class="map-stage">
+              <div id="mapCanvas" class="map-canvas" aria-label="可拖曳與縮放的台北景點地圖"></div>
+              <article id="mapSpotCard" class="map-spot-card hidden" aria-live="polite"></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="listSection" aria-labelledby="spotTitle">
+      <div class="section-title"><h2 id="spotTitle">景點清單</h2><span id="count" class="badge" aria-live="polite"></span></div>
+      <div id="cards" class="grid"></div>
+    </section>
+
+    <section id="addPlaceSection" aria-labelledby="addPlaceTitle">
+      <div class="section-title">
+        <div><h2 id="addPlaceTitle">新增地點</h2><p class="section-copy">把喜歡的店家或景點交給對話整理，再加入這份地圖。</p></div>
+        <span class="badge">投稿入口</span>
+      </div>
+      <article class="card add-place-card">
+        <h3>推薦一個新的約會地點</h3>
+        <p>前往 Claude 對話後，貼上地點名稱、Google Maps 連結，以及你想補充的資訊。</p>
+        <ol class="add-place-steps">
+          <li>整理 Google Maps 精選評論重點</li>
+          <li>判斷適合的區域與約會類別</li>
+          <li>整理成網站圖卡內容並更新地圖</li>
+        </ol>
+        <div><a id="claudeConversationLink" class="button-link" href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">前往 Claude 新增地點 ↗</a></div>
+        <div class="add-place-note">目前暫時連至 Claude 新對話；設定固定對話網址後，會直接回到指定對話。</div>
+      </article>
+    </section>
+  </main>
+
+  <nav class="site-tabs" aria-label="瀏覽方式">
+    <button type="button" class="site-tab active" data-view="map" aria-pressed="true"><span aria-hidden="true">🗺️</span> 地圖探索</button>
+    <button type="button" class="site-tab" data-view="list" aria-pressed="false"><span aria-hidden="true">🔎</span> 條件搜尋</button>
+    <button type="button" class="site-tab" data-view="routes" aria-pressed="false"><span aria-hidden="true">🚋</span> 精選路線</button>
+    <button type="button" class="site-tab" data-view="add" aria-pressed="false"><span aria-hidden="true">＋</span> 新增地點</button>
+  </nav>
+
+<script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
+<script>
+const spots = [
+  {name:'Neco Coffee',area:'中山／赤峰街',type:['咖啡'],hours:2,note:'貓咪咖啡廳，適合悠閒待一個下午。'},
+  {name:'Snappp 拍貼',area:'中山／赤峰街',type:['拍照'],hours:1,note:'適合朋友或約會留下紀念。'},
+  {name:'赤峰街散步',area:'中山／赤峰街',type:['文創','拍照'],hours:2,note:'底片相機店、選物店與巷弄小店集中。'},
+  {name:'濕地 Venue',area:'中山／赤峰街',type:['展覽','文創'],hours:2,note:'不定期舉辦展覽與市集，出發前建議查看近期活動。'},
+  {name:'珈琲寶山',area:'中山／赤峰街',type:['咖啡'],hours:1,note:'可搭配台北當代藝術館。'},
+  {name:'台北當代藝術館',area:'中山／赤峰街',type:['展覽'],hours:2,note:'適合文藝路線與雨天約會。'},
+  {name:'築夢 JUMENG',area:'永康街／東門',type:['文創'],hours:1,note:'可愛文創與選物。'},
+  {name:'榕錦時光生活園區',area:'永康街／東門',type:['文創','拍照','戶外'],hours:2,note:'老屋園區，適合散步與拍照。'},
+  {name:'悄悄好食',area:'永康街／東門',type:['咖啡','美食'],hours:1,note:'適合永康街行程中的下午茶。'},
+  {name:'華山1914文創園區',area:'華山／忠孝新生',type:['文創','展覽','戶外'],hours:3,note:'展覽、文創商店與戶外草地一次滿足。'},
+  {name:'台北市立美術館',area:'圓山',type:['展覽'],hours:3,note:'適合雨天或安靜看展。'},
+  {name:'圓山花博公園',area:'圓山',type:['戶外','拍照'],hours:3,note:'草地、市集與戶外空間豐富。'},
+  {name:'饒河夜市',area:'松山',type:['夜市','美食'],hours:2,note:'適合安排晚餐與小吃。'},
+  {name:'彩虹橋',area:'松山',type:['戶外','拍照'],hours:2,note:'看夕陽後再去饒河夜市很順。'},
+  {name:'四四南村',area:'信義',type:['戶外','拍照','文創'],hours:2,note:'可拍到台北101，假日偶有市集。'},
+  {name:'象山步道',area:'信義',type:['戶外','自然'],hours:3,note:'適合傍晚登山看夜景。'},
+  {name:'大安森林公園',area:'東區／大安',type:['戶外','拍照'],hours:3,note:'野餐、散步與放空都很適合。'},
+  {name:'未央咖啡店',area:'東區／大安',type:['咖啡','書店'],hours:3,note:'適合看書、聊天或安排長時間約會。'},
+  {name:'C-LAB 臺灣當代文化實驗場',area:'東區／大安',type:['文創','展覽','戶外'],hours:3,note:'文化展演空間，出發前可查看近期活動。'},
+  {name:'小白兔唱片行',area:'台電大樓',type:['音樂','文創'],hours:1,note:'可逛唱片、音樂周邊與獨立出版品。'},
+  {name:'台北藍調',area:'台電大樓',type:['酒吧','音樂'],hours:3,note:'老牌爵士空間，適合喜歡現場音樂的人。'},
+  {name:'慈聖宮小吃',area:'大稻埕',type:['美食'],hours:2,note:'適合安排早餐或午餐。'},
+  {name:'大稻埕散步',area:'大稻埕',type:['戶外','文創','拍照'],hours:3,note:'老街、選物、市集與河岸夕陽。'},
+  {name:'幻猻家珈琲',area:'大稻埕',type:['咖啡','美食','書店'],hours:2,note:'咖啡、咖哩與閱讀氛圍兼具。'},
+  {name:'北投市場',area:'北投',type:['美食'],hours:2,note:'適合早上吃小吃與喝紅茶。'},
+  {name:'山峸二手書店',area:'北投',type:['書店','文創'],hours:2,note:'二手書與藝文活動空間。'},
+  {name:'拾米屋',area:'北投',type:['咖啡','美食'],hours:2,note:'適合舒適地喝咖啡與吃點心。'},
+  {name:'川湯溫泉',area:'北投',type:['泡湯','美食'],hours:3,note:'冬季與假日人潮較多。'},
+  {name:'皇池溫泉',area:'北投',type:['泡湯','美食'],hours:3,note:'可安排泡湯與用餐。'},
+  {name:'臺北藝術大學',area:'北投／關渡',type:['展覽','戶外','拍照'],hours:4,note:'校園景觀、咖啡與展演空間兼具。'},
+  {name:'台北市立天文館',area:'北投／關渡',type:['展覽'],hours:3,note:'適合喜歡宇宙與互動體驗的約會。'},
+  {name:'福和觀光市集',area:'永和',type:['文創','美食'],hours:2,note:'跳蚤市場與老物挖寶，適合早上前往。'},
+  {name:'小小書房',area:'永和',type:['書店','咖啡'],hours:2,note:'獨立書店與藝文活動空間。'},
+  {name:'龍洞',area:'東北角',type:['自然','戶外','拍照'],hours:5,note:'可玩水、走步道與欣賞海岸地形。'},
+  {name:'劍龍稜',area:'東北角',type:['自然','戶外'],hours:7,note:'需要戶外經驗、適當裝備並留意天候。'}
+];
+
+const routes = [
+  {name:'大稻埕夕陽路線',stops:['迪化街','大稻埕碼頭','大稻埕遊船碼頭','延三夜市','寧夏夜市'],note:'適合不太炎熱、天氣晴朗的下午。'},
+  {name:'圓山文藝路線',stops:['台北市立美術館','花博公園','大同大學','雙城街夜市','台北圓山電影'],note:'適合看展、拍照與晚餐一次完成。'},
+  {name:'大安療癒路線',stops:['建國假日花市','大安森林公園','榕錦時光生活園區','永康街晚餐'],note:'假日逛花市後一路散步。'},
+  {name:'中山懶人路線',stops:['捷運中山站','赤峰街','中山拍貼機','中山站咖啡廳','中山站晚餐'],note:'適合睡到中午才出門，而且不想一直搭捷運。'}
+];
+
+const els = {
+  area:document.getElementById('area'), duration:document.getElementById('duration'), typeTags:document.getElementById('typeTags'),
+  filterBtn:document.getElementById('filterBtn'), randomBtn:document.getElementById('randomBtn'),
+  mapBtn:document.getElementById('mapBtn'), resetBtn:document.getElementById('resetBtn'),
+  cards:document.getElementById('cards'), count:document.getElementById('count'), recommendation:document.getElementById('recommendation'),
+  routeSection:document.getElementById('routeSection'), routes:document.getElementById('routes'), mapSection:document.getElementById('mapSection'),
+  mapTypeTags:document.getElementById('mapTypeTags'), mapCanvas:document.getElementById('mapCanvas'), mapSpotCard:document.getElementById('mapSpotCard'), mapTitle:document.getElementById('mapTitle'),
+  mapExternalLink:document.getElementById('mapExternalLink'), mapCount:document.getElementById('mapCount'),
+  siteTabs:[...document.querySelectorAll('.site-tab')]
+};
+
+let selectedType='all';
+let currentMapSpot=null;
+let vectorMap=null;
+const markerByName=new Map();
+const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍜',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📚',酒吧:'🍸',音樂:'♫',自然:'🌿'};
+
+document.querySelectorAll('button[data-type]').forEach(button=>{
+  if(button.querySelector('.tag-icon'))return;
+  button.insertAdjacentHTML('afterbegin',`<span class="tag-icon" aria-hidden="true">${typeIcons[button.dataset.type]||'•'}</span>`);
+});
+
+const mapQuery = (name,area='') => `${name} ${area} 台灣`;
+const mapLink = (name,area='') => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(name,area))}`;
+const spotCoordinates={
+  'Neco Coffee':[25.0567,121.5202],'Snappp 拍貼':[25.0549,121.5215],'赤峰街散步':[25.0558,121.5198],
+  '濕地 Venue':[25.0544,121.5191],'珈琲寶山':[25.0560,121.5184],'台北當代藝術館':[25.0505,121.5189],
+  '築夢 JUMENG':[25.0338,121.5305],'榕錦時光生活園區':[25.0325,121.5288],'悄悄好食':[25.0328,121.5297],
+  '華山1914文創園區':[25.0441,121.5294],'台北市立美術館':[25.0720,121.5247],'圓山花博公園':[25.0702,121.5218],
+  '饒河夜市':[25.0507,121.5760],'彩虹橋':[25.0515,121.5770],'四四南村':[25.0315,121.5620],
+  '象山步道':[25.0274,121.5708],'大安森林公園':[25.0297,121.5358],'未央咖啡店':[25.0418,121.5486],
+  'C-LAB 臺灣當代文化實驗場':[25.0410,121.5402],'小白兔唱片行':[25.0180,121.5313],'台北藍調':[25.0210,121.5282],
+  '慈聖宮小吃':[25.0593,121.5114],'大稻埕散步':[25.0567,121.5073],'幻猻家珈琲':[25.0558,121.5112],
+  '北投市場':[25.1322,121.5039],'山峸二手書店':[25.1367,121.5030],'拾米屋':[25.1361,121.4990],
+  '川湯溫泉':[25.1386,121.5296],'皇池溫泉':[25.1397,121.5290],'臺北藝術大學':[25.1328,121.4693],
+  '台北市立天文館':[25.0958,121.5182],'福和觀光市集':[25.0055,121.5291],'小小書房':[25.0163,121.5109],
+  '龍洞':[25.1110,121.9170],'劍龍稜':[25.1107,121.8620]
+};
+
+function spotIllustration(spot){
+  const common='fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"';
+  if(spot.type.includes('泡湯'))return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M15 40c6 5 12 5 18 0s12-5 18 0 10 5 13 2v17H9V42c2 1 4 0 6-2Z" fill="#A8D3E6"/><path d="M22 32c-7-7 7-10 0-19M39 32c-7-7 7-10 0-19M55 32c-7-7 7-10 0-19"/></g></svg>`;
+  if(spot.type.includes('咖啡')||spot.type.includes('美食')||spot.type.includes('夜市'))return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M14 25h41v21c0 10-8 17-18 17h-5c-10 0-18-7-18-17Z" fill="#F6D27A"/><path d="M55 30h4c12 0 11 17 0 17h-4M23 16c-5-6 5-8 0-13M39 16c-5-6 5-8 0-13"/><path d="M12 64h48"/></g></svg>`;
+  if(spot.type.includes('自然')||spot.type.includes('戶外')||spot.type.includes('拍照'))return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><circle cx="54" cy="17" r="10" fill="#F6D27A"/><path d="m7 59 20-35 13 20 8-11 17 26Z" fill="#B9DAA5"/><path d="m21 34 6-10 7 11-7-4Z" fill="#FFFCF6"/><path d="M7 59h58"/></g></svg>`;
+  if(spot.type.includes('音樂')||spot.type.includes('書店'))return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M12 17c11-4 20-2 24 4v40c-5-6-13-8-24-4Zm48 0c-11-4-20-2-24 4v40c5-6 13-8 24-4Z" fill="#A8D3E6"/><path d="M36 21v40M20 29h9M20 38h9M43 29h9M43 38h9"/></g></svg>`;
+  return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><rect x="10" y="16" width="52" height="44" rx="7" fill="#F2A497"/><path d="M18 16V9h36v7M18 28h36M24 60V42h10v18M43 38h10v11H43Z" fill="#FFFCF6"/><circle cx="49" cy="23" r="2" fill="#3E3A39"/></g></svg>`;
+}
+
+const routeIllustration=()=>`<svg class="route-icon" viewBox="0 0 92 66" aria-hidden="true"><g fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 52c15-28 32-28 47-4 8 13 19 10 29-3" stroke-dasharray="5 7"/><circle cx="9" cy="51" r="7" fill="#F2A497"/><path d="m84 34 7 12-13 1Z" fill="#B9DAA5"/><rect x="30" y="8" width="35" height="25" rx="9" fill="#A8D3E6"/><path d="M38 15h8v8h-8Zm12 0h8v8h-8Z" fill="#FFFCF6"/><circle cx="39" cy="34" r="4" fill="#3E3A39"/><circle cx="56" cy="34" r="4" fill="#3E3A39"/></g></svg>`;
+
+function initVectorMap(){
+  if(!window.maplibregl){
+    els.mapCanvas.innerHTML='<p class="empty">互動地圖載入失敗，請檢查網路連線後重新整理。</p>';
+    return;
+  }
+  vectorMap=new maplibregl.Map({
+    container:els.mapCanvas,
+    style:'https://tiles.openfreemap.org/styles/positron',
+    center:[121.545,25.052],
+    zoom:11,
+    attributionControl:true,
+    localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
+  });
+  vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+}
+
+function updateMarkerSelection(){
+  markerByName.forEach((entry,name)=>{
+    entry.element.querySelector('.spot-pin')?.classList.toggle('is-active',currentMapSpot?.name===name);
+  });
+}
+
+function updateMapSpotCard(spot){
+  const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
+  els.mapSpotCard.innerHTML=`<div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${mapLink(spot.name,spot.area)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a></div></div>`;
+  els.mapSpotCard.classList.remove('hidden');
+}
+
+function setView(view){
+  const isMap=view==='map';
+  const isList=view==='list';
+  const isRoutes=view==='routes';
+  const isAdd=view==='add';
+  document.body.classList.toggle('view-map',isMap);
+  document.body.classList.toggle('view-list',isList);
+  document.body.classList.toggle('view-routes',isRoutes);
+  document.body.classList.toggle('view-add',isAdd);
+  els.routeSection.classList.toggle('hidden',!isRoutes);
+  els.siteTabs.forEach(tab=>{
+    const active=tab.dataset.view===view;
+    tab.classList.toggle('active',active);
+    tab.setAttribute('aria-pressed',String(active));
+  });
+  window.scrollTo({top:0,behavior:scrollBehavior()});
+  if(isMap&&vectorMap)window.setTimeout(()=>vectorMap.resize(),0);
+}
+
+function openInMap(spot,scroll=true,pan=true){
+  if(scroll)setView('map');
+  currentMapSpot=spot;
+  els.mapTitle.textContent=spot.name;
+  els.mapExternalLink.href=mapLink(spot.name,spot.area);
+  els.mapExternalLink.classList.remove('hidden');
+  updateMapSpotCard(spot);
+  updateMarkerSelection();
+  const position=spotCoordinates[spot.name];
+  if(vectorMap&&position&&pan){
+    vectorMap.easeTo({center:[position[1],position[0]],zoom:Math.max(vectorMap.getZoom(),14),duration:scrollBehavior()==='smooth'?650:0});
+  }
+  if(scroll) els.mapSection.scrollIntoView({behavior:scrollBehavior(),block:'start'});
+}
+
+function scrollToSpotCard(){
+  if(!currentMapSpot)return;
+  const index=spots.indexOf(currentMapSpot);
+  const card=document.getElementById(`spot-card-${index}`);
+  if(!card)return;
+  document.querySelectorAll('.card.map-target').forEach(item=>item.classList.remove('map-target'));
+  card.scrollIntoView({behavior:scrollBehavior(),block:'center'});
+  card.classList.add('map-target');
+  card.focus({preventScroll:true});
+  window.setTimeout(()=>card.classList.remove('map-target'),1300);
+}
+
+function renderMapList(list){
+  markerByName.forEach(entry=>entry.marker.remove());
+  markerByName.clear();
+  els.mapCount.textContent=`${list.length} 個地點`;
+  currentMapSpot=null;
+  els.mapSpotCard.classList.add('hidden');
+  els.mapTitle.textContent='選擇一個景點';
+  els.mapExternalLink.classList.add('hidden');
+  list.forEach((spot,index)=>{
+    const position=spotCoordinates[spot.name];
+    if(vectorMap&&position){
+      const element=document.createElement('button');
+      element.type='button'; element.className='map-marker'; element.title=spot.name; element.setAttribute('aria-label',spot.name);
+      element.innerHTML=`<span class="spot-pin" data-spot-name="${spot.name}"><span>${index+1}</span></span>`;
+      element.addEventListener('click',()=>openInMap(spot,false,true));
+      const marker=new maplibregl.Marker({element,anchor:'bottom'}).setLngLat([position[1],position[0]]).addTo(vectorMap);
+      markerByName.set(spot.name,{marker,element,number:index+1});
+    }
+  });
+  if(!list.length){
+    els.mapTitle.textContent='沒有可顯示的地點';
+    els.mapSpotCard.classList.add('hidden');
+    els.mapExternalLink.href='https://www.google.com/maps';
+    if(vectorMap)vectorMap.jumpTo({center:[121.545,25.052],zoom:11});
+  }else{
+    if(vectorMap){
+      const bounds=list.map(spot=>spotCoordinates[spot.name]).filter(Boolean);
+      if(bounds.length===1)vectorMap.jumpTo({center:[bounds[0][1],bounds[0][0]],zoom:14});
+      else if(bounds.length>1){
+        const mapBounds=bounds.reduce((acc,point)=>acc.extend([point[1],point[0]]),new maplibregl.LngLatBounds());
+        vectorMap.fitBounds(mapBounds,{padding:60,maxZoom:13,duration:scrollBehavior()==='smooth'?650:0});
+      }
+      window.setTimeout(()=>vectorMap.resize(),0);
+    }
+  }
+}
+
+function render(list){
+  els.cards.replaceChildren();
+  els.count.textContent=`${list.length} 個地點`;
+  if(!list.length){els.cards.innerHTML='<div class="card empty">目前沒有符合條件的地點，試著放寬時間或類型。</div>';renderMapList(list);return;}
+  list.forEach(spot=>{
+    const card=document.createElement('article'); card.className='card';
+    card.id=`spot-card-${spots.indexOf(spot)}`; card.tabIndex=-1;
+    const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
+    card.innerHTML=`<div class="card-head"><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div></div></div><p class="note">${spot.note}</p><div>${chips}</div>`;
+    const actions=document.createElement('div'); actions.className='card-actions';
+    const preview=document.createElement('button'); preview.type='button'; preview.textContent='地圖預覽';
+    preview.addEventListener('click',()=>openInMap(spot));
+    const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
+    external.href=mapLink(spot.name,spot.area); external.target='_blank'; external.rel='noopener noreferrer';
+    actions.append(preview,external); card.appendChild(actions); els.cards.appendChild(card);
+  });
+  renderMapList(list);
+}
+
+function renderRoutes(){
+  els.routes.replaceChildren();
+  routes.forEach(route=>{
+    const card=document.createElement('article'); card.className='route';
+    const stops=route.stops.map(stop=>`<li><a href="${mapLink(stop)}" target="_blank" rel="noopener noreferrer">${stop} ↗</a></li>`).join('');
+    card.innerHTML=`${routeIllustration()}<h3>${route.name}</h3><ol>${stops}</ol><p class="note">${route.note}</p>`;
+    els.routes.appendChild(card);
+  });
+}
+
+function filtered(){
+  const area=els.area.value,type=selectedType,duration=els.duration.value;
+  return spots.filter(spot=>(area==='all'||spot.area===area)&&(type==='all'||spot.type.includes(type))&&(duration==='all'||spot.hours<=Number(duration)));
+}
+
+function clearHighlights(){els.recommendation.classList.add('hidden');els.routeSection.classList.add('hidden')}
+
+function selectType(type,button){
+  selectedType=type;
+  button.classList.remove('pop'); void button.offsetWidth; button.classList.add('pop');
+  window.setTimeout(()=>button.classList.remove('pop'),360);
+  document.querySelectorAll('[data-type]').forEach(tag=>{
+    const active=tag.dataset.type===type; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
+  });
+  clearHighlights(); render(filtered());
+}
+
+els.filterBtn.addEventListener('click',()=>{clearHighlights();render(filtered())});
+els.typeTags.addEventListener('click',event=>{
+  const button=event.target.closest('.type-tag');
+  if(!button)return;
+  selectType(button.dataset.type,button);
+});
+els.mapTypeTags.addEventListener('click',event=>{
+  const button=event.target.closest('.map-type-tag');
+  if(!button)return;
+  selectType(button.dataset.type,button);
+});
+els.resetBtn.addEventListener('click',()=>{
+  els.area.value=els.duration.value='all'; selectedType='all';
+  document.querySelectorAll('[data-type]').forEach(tag=>{
+    const active=tag.dataset.type==='all'; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
+  });
+  clearHighlights(); render(spots);
+});
+els.mapBtn.addEventListener('click',()=>setView('map'));
+els.siteTabs.forEach(tab=>tab.addEventListener('click',()=>setView(tab.dataset.view)));
+els.randomBtn.addEventListener('click',()=>{
+  const pool=filtered();
+  if(!pool.length){els.recommendation.textContent='目前沒有符合條件的地點。';els.recommendation.classList.remove('hidden');return;}
+  const grouped={}; pool.forEach(spot=>(grouped[spot.area]??=[]).push(spot));
+  const areas=Object.keys(grouped),chosen=areas[Math.floor(Math.random()*areas.length)];
+  const picks=[...grouped[chosen]].sort(()=>Math.random()-.5).slice(0,3);
+  const items=picks.map(spot=>`<li><a class="inline-map-link" href="${mapLink(spot.name,spot.area)}" target="_blank" rel="noopener noreferrer">${spot.name} ↗</a></li>`).join('');
+  els.recommendation.innerHTML=`<strong>今日推薦：${chosen}</strong><ol>${items}</ol><div class="note">市集、展覽與營業資訊可能變動，出發前請再確認。</div>`;
+  els.recommendation.classList.remove('hidden'); render(grouped[chosen]);
+});
+
+renderRoutes();
+initVectorMap();
+render(spots);
+</script>
+</body>
+</html>
