@@ -77,6 +77,9 @@
     .map-type-tags{display:flex;gap:8px;overflow-x:auto;padding:5px 5px 9px;scrollbar-width:thin;scroll-snap-type:x proximity}
     .map-type-tag{flex:0 0 auto;padding:8px 13px;border-radius:999px;border:2px solid var(--ink);background:#fff;font-size:14px;font-weight:700;scroll-snap-align:start}
     .map-type-tag.active{outline:3px solid var(--coral);outline-offset:2px;background:#fff}
+    .map-locate-tag[aria-pressed="true"]{outline:3px solid var(--blue);outline-offset:2px}
+    .map-locate-tag:disabled{opacity:.7;cursor:wait}
+    .map-location-status{display:table;max-width:min(420px,100%);margin:4px 5px 0;padding:8px 12px;border:2px solid var(--ink);border-radius:14px;background:var(--paper);font-size:13px;font-weight:700}
     .tag-icon{font-size:16px;line-height:1;filter:saturate(.8)}
     #mapTitle{display:none;font-size:17px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     #mapTitle::before{content:'●';display:inline-block;color:var(--coral);font-size:20px;line-height:0;margin-right:8px;vertical-align:-1px;-webkit-text-stroke:1px var(--ink)}
@@ -92,6 +95,7 @@
     .spot-pin{display:grid;place-items:center;width:38px;height:38px;border:3px solid var(--ink);border-radius:50% 50% 50% 12px;background:var(--coral);color:var(--ink);transform:rotate(-45deg);transition:transform .18s ease,background .18s ease;pointer-events:auto;cursor:pointer}
     .spot-pin span{font-size:20px;line-height:1;transform:rotate(45deg)}
     .spot-pin.is-active{background:var(--yellow);transform:rotate(-45deg) scale(1.18)}
+    .user-location-dot{width:20px;height:20px;border:4px solid white;border-radius:50%;background:#327ac2;box-shadow:0 0 0 3px var(--ink),0 2px 8px rgba(62,58,57,.3)}
     .map-spot-card{position:absolute;left:14px;bottom:86px;z-index:500;width:min(430px,calc(100% - 28px));max-height:calc(100svh - 170px);overflow-y:auto;background:var(--paper);border:var(--line);border-radius:24px;padding:16px 52px 16px 16px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:13px;align-items:start;box-shadow:5px 6px 0 rgba(62,58,57,.16)}
     .map-card-close{position:absolute;top:11px;right:11px;width:34px;height:34px;padding:0;border:2px solid var(--ink);border-radius:50%;background:var(--white);font-size:22px;line-height:1}
     .map-spot-card .spot-illustration{width:70px;height:70px}
@@ -259,6 +263,7 @@
           <div class="map-frame-wrap">
             <div class="map-frame-toolbar">
               <div id="mapTypeTags" class="map-type-tags" role="group" aria-label="依類型篩選地圖景點">
+                <button id="locateBtn" type="button" class="map-type-tag map-locate-tag" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📍</span> <span id="locateLabel">我附近的店</span></button>
                 <button type="button" class="map-type-tag active" data-type="all" aria-pressed="true"><span class="tag-icon" aria-hidden="true">✦</span>全部（<span data-total-count></span>）</button>
                 <button type="button" class="map-type-tag" data-type="文創" aria-pressed="false"><span class="tag-icon" aria-hidden="true">✂️</span>文創</button>
                 <button type="button" class="map-type-tag" data-type="咖啡" aria-pressed="false"><span class="tag-icon" aria-hidden="true">☕</span>咖啡</button>
@@ -277,6 +282,7 @@
                 <button type="button" class="map-type-tag" data-type="音樂" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♫</span>音樂</button>
                 <button type="button" class="map-type-tag" data-type="自然" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🌿</span>自然</button>
               </div>
+              <p id="locationStatus" class="map-location-status hidden" role="status" aria-live="polite"></p>
               <span id="mapTitle">請選擇一個地點</span>
               <a id="mapExternalLink" class="hidden" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
             </div>
@@ -658,6 +664,7 @@ const els = {
   cards:document.getElementById('cards'), count:document.getElementById('count'), recommendation:document.getElementById('recommendation'),
   routeSection:document.getElementById('routeSection'), routes:document.getElementById('routes'), mapSection:document.getElementById('mapSection'),
   mapTypeTags:document.getElementById('mapTypeTags'), mapCanvas:document.getElementById('mapCanvas'), mapSpotCard:document.getElementById('mapSpotCard'), mapTitle:document.getElementById('mapTitle'),
+  locateBtn:document.getElementById('locateBtn'), locateLabel:document.getElementById('locateLabel'), locationStatus:document.getElementById('locationStatus'),
   mapExternalLink:document.getElementById('mapExternalLink'), mapCount:document.getElementById('mapCount'),
   siteTabs:[...document.querySelectorAll('.site-tab[data-view]')]
 };
@@ -665,6 +672,10 @@ const els = {
 let selectedType='all';
 let currentMapSpot=null;
 let vectorMap=null;
+let userLocation=null;
+let userMarker=null;
+let locationRequestId=0;
+const nearbyRadiusKm=5;
 const markerByName=new Map();
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
 const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點飲料:'🍽️',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',酒吧:'🍸',音樂:'♫',自然:'🌿'};
@@ -753,7 +764,7 @@ function updateMarkerSelection(){
 function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
   const sourceLink=spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
-  els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${sourceLink}</div></div>`;
+  els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${sourceLink}</div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
 
@@ -837,6 +848,11 @@ function renderMapList(list){
       markerByName.set(spot.name,{marker,element});
     }
   });
+  if(userLocation&&vectorMap){
+    vectorMap.easeTo({center:[userLocation.lng,userLocation.lat],zoom:13,duration:scrollBehavior()==='smooth'?650:0});
+    window.setTimeout(()=>vectorMap.resize(),0);
+    return;
+  }
   if(!list.length){
     els.mapTitle.textContent='沒有可顯示的地點';
     els.mapSpotCard.classList.add('hidden');
@@ -863,7 +879,7 @@ function render(list){
     const card=document.createElement('article'); card.className='card';
     card.id=`spot-card-${spots.indexOf(spot)}`; card.tabIndex=-1;
     const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
-    card.innerHTML=`<div class="card-head"><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div></div></div><p class="note">${spot.note}</p><div>${chips}</div>`;
+    card.innerHTML=`<div class="card-head"><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div></div></div><p class="note">${spot.note}</p><div>${chips}</div>`;
     const actions=document.createElement('div'); actions.className='card-actions';
     const preview=document.createElement('button'); preview.type='button'; preview.textContent='地圖預覽';
     preview.addEventListener('click',()=>openInMap(spot));
@@ -888,9 +904,47 @@ function renderRoutes(){
   });
 }
 
+function distanceKm(spot){
+  const position=spot.coords||spotCoordinates[spot.name];
+  if(!userLocation||!position)return Infinity;
+  const radians=Math.PI/180;
+  const deltaLat=(position[0]-userLocation.lat)*radians;
+  const deltaLng=(position[1]-userLocation.lng)*radians;
+  const a=Math.sin(deltaLat/2)**2+Math.cos(userLocation.lat*radians)*Math.cos(position[0]*radians)*Math.sin(deltaLng/2)**2;
+  return 6371*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+function spotMeta(spot){
+  const distance=userLocation?distanceKm(spot):Infinity;
+  return `${spot.area}・約 ${spot.hours} 小時${Number.isFinite(distance)?`・距離 ${distance.toFixed(1)} 公里`:''}`;
+}
+
 function filtered(){
   const area=els.area.value,type=selectedType,duration=els.duration.value;
-  return spots.filter(spot=>(area==='all'||spot.area===area)&&(type==='all'||spot.type.includes(type))&&(duration==='all'||spot.hours<=Number(duration)));
+  const matches=spots.filter(spot=>(userLocation||area==='all'||spot.area===area)&&(type==='all'||spot.type.includes(type))&&(userLocation||duration==='all'||spot.hours<=Number(duration)));
+  return userLocation?matches.filter(spot=>distanceKm(spot)<=nearbyRadiusKm).sort((a,b)=>distanceKm(a)-distanceKm(b)):matches;
+}
+
+function setLocationStatus(message){
+  els.locationStatus.textContent=message;
+  els.locationStatus.classList.toggle('hidden',!message);
+}
+
+function clearLocation(){
+  locationRequestId++;
+  userLocation=null;
+  userMarker?.remove();
+  userMarker=null;
+  els.locateBtn.disabled=false;
+  els.locateBtn.setAttribute('aria-pressed','false');
+  els.locateLabel.textContent='我附近的店';
+  setLocationStatus('');
+}
+
+function updateNearbyStatus(){
+  if(!userLocation)return;
+  const count=filtered().length;
+  setLocationStatus(count?`已顯示 5 公里內 ${count} 個地點，按「取消定位」可回到完整地圖。`:'5 公里內沒有符合類型的地點，可以試試「全部」或取消定位。');
 }
 
 function clearHighlights(){els.recommendation.classList.add('hidden');els.routeSection.classList.add('hidden')}
@@ -902,7 +956,7 @@ function selectType(type,button){
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type===type; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
   });
-  clearHighlights(); render(filtered());
+  clearHighlights(); render(filtered()); updateNearbyStatus();
 }
 
 els.filterBtn.addEventListener('click',()=>{clearHighlights();render(filtered())});
@@ -912,11 +966,55 @@ els.typeTags.addEventListener('click',event=>{
   selectType(button.dataset.type,button);
 });
 els.mapTypeTags.addEventListener('click',event=>{
-  const button=event.target.closest('.map-type-tag');
+  const button=event.target.closest('.map-type-tag[data-type]');
   if(!button)return;
   selectType(button.dataset.type,button);
 });
+els.locateBtn.addEventListener('click',()=>{
+  if(userLocation){
+    clearLocation();
+    render(filtered());
+    return;
+  }
+  if(!navigator.geolocation){
+    setLocationStatus('這個瀏覽器不支援定位，請使用裝置上的瀏覽器開啟網站。');
+    return;
+  }
+  const requestId=++locationRequestId;
+  els.locateBtn.disabled=true;
+  els.locateLabel.textContent='定位中…';
+  setLocationStatus('正在取得你的位置…');
+  navigator.geolocation.getCurrentPosition(position=>{
+    if(requestId!==locationRequestId)return;
+    const {latitude:lat,longitude:lng}=position.coords;
+    if(!Number.isFinite(lat)||!Number.isFinite(lng)){
+      els.locateBtn.disabled=false;
+      els.locateLabel.textContent='我附近的店';
+      setLocationStatus('無法讀取位置，請再試一次。');
+      return;
+    }
+    userLocation={lat,lng};
+    els.locateBtn.disabled=false;
+    els.locateBtn.setAttribute('aria-pressed','true');
+    els.locateLabel.textContent='取消定位';
+    if(vectorMap){
+      const dot=document.createElement('div');
+      dot.className='user-location-dot';
+      dot.title='你的位置';
+      dot.setAttribute('aria-label','你的位置');
+      userMarker=new maplibregl.Marker({element:dot,anchor:'center'}).setLngLat([lng,lat]).addTo(vectorMap);
+    }
+    render(filtered());
+    updateNearbyStatus();
+  },error=>{
+    if(requestId!==locationRequestId)return;
+    els.locateBtn.disabled=false;
+    els.locateLabel.textContent='我附近的店';
+    setLocationStatus(error.code===1?'無法取得位置，請在瀏覽器允許此網站使用定位後再試。':'定位失敗，請確認裝置定位已開啟後重試。');
+  },{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
+});
 els.resetBtn.addEventListener('click',()=>{
+  clearLocation();
   els.area.value=els.duration.value='all'; selectedType='all';
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type==='all'; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
