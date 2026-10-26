@@ -1320,9 +1320,6 @@ function initListFilters(){
     return rank(a)-rank(b);
   });
   tags.forEach((tag,index)=>{
-    const source=[...els.mapTypeTags.querySelectorAll('.map-type-tag[data-type]')].find(item=>item.dataset.type===tag.dataset.type);
-    const icon=source?.querySelector('.tag-icon')?.cloneNode(true);
-    if(icon)tag.prepend(icon);
     tag.classList.toggle('extra',index>=preferred.length);
     els.typeTags.append(tag);
   });
