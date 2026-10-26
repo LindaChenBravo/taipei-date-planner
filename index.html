@@ -857,6 +857,17 @@ spots.push(...readingPlaces.map(([name,area,category,hours,note,address,lat,lng,
   mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`
 })));
 
+// REEDS 官網確認分店地址；Google 地圖確認標記位置與店名。
+const reedsPlaces = [
+  ['REEDS PIZZERIA & COFFEE 榮富店','新莊','咖啡,美食',2,'明亮的玻璃屋空間，能喝咖啡、吃現烤麵包與披薩；也有書牆可翻閱。','中和街155巷24弄63號',25.0514358,121.4463955,'691c1c41cca133e1'],
+  ['REEDS PIZZERIA & BOOKSTORE 民權店','中山／行天宮','咖啡,美食,書店',2,'行天宮對面的披薩餐廳，提供炸雞、咖啡與烘焙點心；地下層還能逛書店。','民權東路二段107號',25.0627248,121.5329386,'4ad3b6f9e3466c27']
+];
+spots.push(...reedsPlaces.map(([name,area,types,hours,note,address,lat,lng,cid])=>({
+  name,area,type:types.split(','),hours,note,address,coords:[lat,lng],
+  mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`,
+  sourceUrl:'https://www.hess.com.tw/reedsrestaurant/'
+})));
+
 document.querySelectorAll('[data-total-count]').forEach(label=>{label.textContent=spots.length;});
 
 const routes = [
