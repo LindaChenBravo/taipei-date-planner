@@ -516,7 +516,13 @@ const routes = [
   {name:'中山懶人路線',stops:['捷運中山站','赤峰街','中山拍貼機','中山站咖啡廳','中山站晚餐'],note:'適合睡到中午才出門，而且不想一直搭捷運。'},
   {name:'基隆河右岸跑步路線',stops:['彩虹橋','迎風河濱公園','大直橋'],note:'圖片路線從彩虹橋往大直橋，單趟約 7 公里；河岸視野開闊，跑完可順遊饒河夜市。'},
   {name:'四獸山縱走路線',stops:['象山站 2 號出口','象山步道','獅山','豹山','虎山親山步道','後山埤站'],note:'圖片路線約 5 公里，串連四座郊山；山徑有上下坡，出發前請確認天候與體力。'},
-  {name:'富陽生態公園－福州山',stops:['富陽自然生態公園','福州山公園'],note:'圖片路線一圈約 2.5 公里，可走森林步道並登高欣賞臺北 101。'}
+  {name:'富陽生態公園－福州山',stops:['富陽自然生態公園','福州山公園'],note:'圖片路線一圈約 2.5 公里，可走森林步道並登高欣賞臺北 101。'},
+  // 來源：使用者提供的臺北文化路徑圖片，依圖示順序列出各站。
+  {name:'北投文化路徑',area:'北投',stops:['捷運北投站','光明路與溫泉路','瀧乃湯浴室','地熱谷','北投溫泉博物館','新北投車站','捷運新北投站'],note:'溫泉產業與自然地景。'},
+  {name:'士林文化路徑',area:'士林',stops:['捷運士林站','士林舊街','士林神農宮','士林官邸公園','士林慈誠宮','臺北表演藝術中心','捷運劍潭站'],note:'漳泉開墾與街肆演變。'},
+  {name:'大同文化路徑',area:'大同',stops:['捷運北門站','甘谷街','永樂市場','臺北霞海城隍廟','郭怡美書店','迪化街十連棟','捷運大橋頭站'],note:'歷史建築與地方人文巡禮。'},
+  {name:'中正文化路徑',area:'中正',stops:['捷運西門站','中山堂','總統府','菊元百貨','國立臺灣博物館','台大醫院','捷運台大醫院站'],note:'臺北現代化的起點。'},
+  {name:'萬華文化路徑',area:'萬華',stops:['捷運龍山寺站','龍山寺','艋舺青山宮','台北第一街','艋舺清水巖祖師廟','西本願寺','西門紅樓','捷運西門站'],note:'從艋舺的信仰與街道，走到西門的歷史地標。'}
 ];
 
 const els = {
@@ -708,7 +714,7 @@ function renderRoutes(){
   els.routes.replaceChildren();
   routes.forEach(route=>{
     const card=document.createElement('article'); card.className='route';
-    const stops=route.stops.map(stop=>`<li><a href="${mapLink(stop)}" target="_blank" rel="noopener noreferrer">${stop} ↗</a></li>`).join('');
+    const stops=route.stops.map(stop=>`<li><a href="${mapLink(stop,route.area||'')}" target="_blank" rel="noopener noreferrer">${stop} ↗</a></li>`).join('');
     card.innerHTML=`${routeIllustration()}<h3>${route.name}</h3><ol>${stops}</ol><p class="note">${route.note}</p>`;
     els.routes.appendChild(card);
   });
