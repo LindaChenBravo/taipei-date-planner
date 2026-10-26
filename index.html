@@ -193,6 +193,10 @@
         <button type="button" class="type-tag" data-type="戶外" aria-pressed="false">戶外</button>
         <button type="button" class="type-tag" data-type="手作" aria-pressed="false">手作</button>
         <button type="button" class="type-tag" data-type="美食" aria-pressed="false">美食</button>
+        <button type="button" class="type-tag" data-type="早餐" aria-pressed="false">早餐</button>
+        <button type="button" class="type-tag" data-type="中晚餐" aria-pressed="false">中晚餐</button>
+        <button type="button" class="type-tag" data-type="宵夜" aria-pressed="false">宵夜</button>
+        <button type="button" class="type-tag" data-type="甜點飲料" aria-pressed="false">甜點飲料</button>
         <button type="button" class="type-tag" data-type="夜市" aria-pressed="false">夜市</button>
         <button type="button" class="type-tag" data-type="拍照" aria-pressed="false">拍照</button>
         <button type="button" class="type-tag" data-type="泡湯" aria-pressed="false">泡湯</button>
@@ -257,6 +261,10 @@
                 <button type="button" class="map-type-tag" data-type="戶外" aria-pressed="false"><span class="tag-icon" aria-hidden="true">☀️</span>戶外</button>
                 <button type="button" class="map-type-tag" data-type="手作" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🧵</span>手作</button>
                 <button type="button" class="map-type-tag" data-type="美食" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍜</span>美食</button>
+                <button type="button" class="map-type-tag" data-type="早餐" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🥪</span>早餐</button>
+                <button type="button" class="map-type-tag" data-type="中晚餐" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍚</span>中晚餐</button>
+                <button type="button" class="map-type-tag" data-type="宵夜" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍢</span>宵夜</button>
+                <button type="button" class="map-type-tag" data-type="甜點飲料" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍰</span>甜點飲料</button>
                 <button type="button" class="map-type-tag" data-type="夜市" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🏮</span>夜市</button>
                 <button type="button" class="map-type-tag" data-type="拍照" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📷</span>拍照</button>
                 <button type="button" class="map-type-tag" data-type="泡湯" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♨️</span>泡湯</button>
@@ -529,6 +537,84 @@ spots.push({
   mapUrl:'https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%85%AB%E6%8B%90%E5%9C%B3%E6%AD%A5%E9%81%93%20%E5%8C%97%E6%8A%95'
 });
 
+// 汐止美食由使用者推薦；座標依 Google Maps 店家頁面核對。沒有獨立商家頁面的攤位會註明定位依據。
+const xizhiPlaces = [
+  // 早餐與早午餐
+  ['早餐店阿姨','早餐','樟樹二路的早餐店。',25.0707172,121.640886],
+  ['元氣早餐吧','早餐','樟樹二路的早餐選擇。',25.070437,121.64169],
+  ['呷胖汐止（樟樹店）','早餐','樟樹二路 106 巷的分店。',25.0643372,121.6401739,'呷胖汐止 樟樹店 樟樹二路106巷14號'],
+  ['呷胖汐止（中興店）','早餐','中興路 35 號的分店。',25.0619109,121.63469,'呷胖汐止 中興店 中興路35號'],
+  ['左撇子日常 Lefty Daily','早餐,咖啡','明峰街的早午餐店。',25.0712285,121.6331405],
+  ['巨林美而美（汐止湖前店）','早餐','推薦脆皮蘿蔔糕；脆皮蛋餅特別值得點。',25.0703309,121.631705],
+  ['早安大飯糰（連興街）','早餐','Google 地圖列於連興街 114 號。',25.06351,121.6555407,'https://www.google.com/maps/place/%E6%97%A9%E5%AE%89%E5%A4%A7%E9%A3%AF%E7%B3%B0/data=!4m7!3m6!1s0x345d53699cb07819:0xc5331b685de3e71!8m2!3d25.06351!4d121.6555407!16s%2Fg%2F11h0s9sjm'],
+  ['早安大飯糰（民族六街）','早餐','Google 地圖列於民族六街。',25.0705796,121.629219,'https://www.google.com/maps/place/%E6%97%A9%E5%AE%89%E5%A4%A7%E9%A3%AF%E7%B3%B0/data=!4m7!3m6!1s0x345d534b46e893cb:0x23a81d81c20eb297!8m2!3d25.0705796!4d121.629219!16s%2Fg%2F11f25w24r2'],
+  ['早安大飯糰（福德二路）','早餐','福德二路 118 號的飯糰店。',25.0656972,121.6317174,'https://www.google.com/maps/place/%E6%97%A9%E5%AE%89%E5%A4%A7%E9%A3%AF%E7%B3%B0-%E7%A6%8F%E5%BE%B7%E4%BA%8C%E8%B7%AF/data=!4m7!3m6!1s0x345d534dae59f339:0xb6189da2562f2f5c!8m2!3d25.0656972!4d121.6317174!16s%2Fg%2F11cm01h9dm'],
+  ["Ho & lin's store",'早餐,咖啡','推薦比司吉。',25.0666784,121.6303514],
+  ['早午 J&M BRUNCH','早餐,咖啡','推薦酪梨燻鮭魚開放式三明治。',25.0659642,121.6649419],
+
+  // 正餐與小吃
+  ['手工赤肉羹、古早味滷肉飯','中晚餐','樟樹二路的赤肉羹與滷肉飯。',25.070313,121.641659],
+  ['成大器烤肉飯','中晚餐','樟樹二路 136 巷的烤肉飯。',25.06549,121.640547],
+  ['豪家牛排館','中晚餐','樟樹一路的牛排館。',25.063617,121.641806],
+  ['武牛牛排館','中晚餐','連興街的牛排館。',25.0634099,121.6557558],
+  ['家กินข้าว 泰料理','中晚餐','明峰街的泰式料理。',25.0711796,121.6310773],
+  ['楓玥日本料理','中晚餐','湖前街的日本料理。',25.0697456,121.631614],
+  ['阿財鍋貼','中晚餐','中興路的鍋貼店。',25.0644539,121.632809],
+  ['麵麵屋','中晚餐','汐止的麵食選擇。',25.0630863,121.6605728],
+  ['吉美蒸籠包','早餐,中晚餐','明峰街的蒸籠包。',25.0703376,121.6289152],
+  ['楊家意麵・油飯・扁食','中晚餐','明峰街的意麵、油飯與扁食。',25.0691124,121.6271274],
+  ['黃金三角臭豆腐','中晚餐,宵夜','中興路的臭豆腐。',25.0692823,121.6287289],
+  ['阿基手工臭豆腐','中晚餐,宵夜','康寧街的手工臭豆腐；Google 地圖另列大腸蚵仔麵線。',25.0686002,121.6327496,'阿基 手工臭豆腐 大腸蚵仔麵線'],
+  ['華姐麵店（樟樹店）','中晚餐','推薦鴨肉飯；Google 地圖店名為「華姐麵店」。',25.0685059,121.6411561],
+  ['韋安鍋貼專賣店','中晚餐','樟樹一路的鍋貼店。',25.065028,121.642207],
+  ['沈家涼麵店','中晚餐','福德一路的涼麵店，多次獲推薦。',25.0667635,121.6364318],
+  ['老家餡餅（汐止店）','中晚餐','推薦會噴汁的餡餅。',25.0701222,121.6289086],
+  ['三媽臭臭鍋（汐止忠孝店）','中晚餐','忠孝東路 256 號的三媽臭臭鍋。',25.0674907,121.6631057],
+  ['無名麵店排骨湯','中晚餐','在忠孝東路三媽對面；推薦金針排骨麵。',25.0674772,121.6628867,'無名麵店排骨湯 忠孝東路245號'],
+  ['大汐止排骨酥麵','中晚餐','推薦排骨酥麵與口味偏甜的滷肉飯。',25.0703447,121.66575],
+  ['廣州燒臘美食專家','中晚餐','忠孝東路的燒臘店；推薦鴨腿飯。',25.0728619,121.6662376],
+  ['龍安飯包','中晚餐','推薦糖醋排骨與炸雞腿。',25.0640332,121.6553084],
+  ['青朝麻（汐止店）','中晚餐,宵夜','青麻椒臭豆腐與鴨血，位於福德一路。',25.0676071,121.63705,'青朝麻 青麻椒臭豆腐鴨血 汐止店'],
+  ['郭呷萬潤餅捲店','中晚餐','水源路一段的潤餅捲店。',25.0618936,121.6544787],
+  ['河南鍋貼店','中晚餐','仁愛路的鍋貼店。',25.0631247,121.6596176],
+  ['來發牛排','中晚餐','推薦大塊原肉牛排。',25.0654753,121.6400786],
+  ['越南美食（茄苳路）','中晚餐','茄苳路 15 號的越南料理；推薦炒飯與乾炒牛肉河粉。',25.070992,121.665,'越南美食 茄苳路15號 汐止'],
+
+  // 晚餐、宵夜與夜市
+  ['龍鹽酥雞（汐止店）','宵夜','福德一路的鹽酥雞。',25.0682181,121.6380138],
+  ['吮指王（汐止樟樹店）','宵夜','樟樹二路的炸物。',25.0682498,121.6407152],
+  ['噴射雞鹹水雞','宵夜','莊敬街的鹹水雞。',25.0614155,121.6562278],
+  ['老師傅點心攤','宵夜','中興路 110 巷的小吃攤。',25.0642087,121.6333243],
+  ['香聚麻辣燙','中晚餐,宵夜','福德二路的麻辣燙與個人鍋。',25.0678409,121.634605],
+  ['瑞芳臭豆腐','宵夜,夜市','⭐ 首選：汐止觀光夜市的臭豆腐。',25.0655353,121.6568929],
+  ['好先生美食（汐止觀光夜市）','宵夜,夜市','汐止觀光夜市 90 號攤位。',25.0658284,121.6577597],
+  ['燃燒漢堡 BURN BURGER','宵夜,夜市','汐止觀光夜市 35 號攤位。',25.0660714,121.65807],
+  ['燒燙燙烤蜀黍','宵夜,夜市','推薦烤玉米。',25.0661138,121.6581606],
+  ['古早味高雄黑輪','宵夜','福德二路的黑輪小吃。',25.0659509,121.6319603],
+  ['大汐止百貨大腸包小腸','宵夜,夜市','中興路 168 號；推薦綜合加辣。',25.065268,121.6320717],
+  ['中興路夜市炸雞（大腸包小腸隔壁）','宵夜,夜市','據推薦位於大腸包小腸隔壁；標記是中興路 168 號附近，請現場確認攤位。',25.0653,121.63209,'中興路168號 大腸包小腸 汐止'],
+  ['包不滿蔥油餅','宵夜,夜市','中興路 168 號附近的蔥油餅。',25.0655689,121.6317807],
+  ['忠哥鹹酥雞','宵夜','湖前街的鹹酥雞，推薦炸物。',25.070402,121.631668],
+  ['蔥之香蔥仔餅','中晚餐,宵夜','推薦蔥油餅；開店時間不固定。Google 地圖列復興路 31 號，出發前請先確認。',25.0632991,121.6565401],
+  ['烤霸串燒','宵夜','忠孝東路的串燒店。',25.065951,121.6615365],
+  ['饗味鹹酥雞（汐止中興店）','宵夜','福德二路 91 巷的鹹酥雞。',25.0659046,121.6328333],
+
+  // 飲料、甜品與咖啡
+  ['紅茶巴士 Black Tea Bus（汐止樟樹站）','甜點飲料','樟樹二路的飲料店。',25.065503,121.640474],
+  ['黑白ㄍㄚ豆花','甜點飲料','水源路一段的豆花。',25.0657063,121.6571786],
+  ['佳樂蛋糕森林','甜點飲料','青山路的蛋糕店。',25.0618828,121.6563198],
+  ['汐止富利西餅蛋糕','甜點飲料','宜興街的西餅蛋糕店，推薦麵包。',25.041418,121.6214299],
+  ['如果有一天咖啡館 If one day cafe','甜點飲料,咖啡','推薦蛋糕與奶油。',25.0708998,121.6653637],
+  ['姊妹豆花','甜點飲料','大汐止排骨酥麵對面；推薦黑糖碎冰、綠豆蒜、粉圓與花生仁。',25.070606,121.665482],
+  ['牧童咖啡（連興店）','咖啡,甜點飲料','推薦餐點與環境。',25.0635167,121.6550063],
+  ['牧童咖啡（夢想店）','咖啡,甜點飲料','推薦餐點與環境。',25.0707631,121.6330337],
+  ['牧童咖啡（福德店）','咖啡,甜點飲料','推薦餐點與環境。',25.0682707,121.6372759]
+];
+spots.push(...xizhiPlaces.map(([name,categories,note,lat,lng,search])=>({
+  name,area:'汐止',type:['美食',...categories.split(',')],hours:1,note,coords:[lat,lng],
+  ...(search?{mapUrl:search.startsWith('https://')?search:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${search} 新北市汐止區`)}`}:{})
+})));
+
 const areaSelect=document.getElementById('area');
 const existingAreas=new Set([...areaSelect.options].map(option=>option.value));
 for(const area of new Set(spots.map(spot=>spot.area))){
@@ -569,7 +655,7 @@ let currentMapSpot=null;
 let vectorMap=null;
 const markerByName=new Map();
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
-const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍜',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📚',酒吧:'🍸',音樂:'♫',自然:'🌿'};
+const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍜',早餐:'🥪',中晚餐:'🍚',宵夜:'🍢',甜點飲料:'🍰',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📚',酒吧:'🍸',音樂:'♫',自然:'🌿'};
 
 document.querySelectorAll('button[data-type]').forEach(button=>{
   if(button.querySelector('.tag-icon'))return;
