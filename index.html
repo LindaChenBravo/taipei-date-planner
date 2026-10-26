@@ -667,20 +667,19 @@ spots.push(...xizhiPlaces.map(([name,categories,note,lat,lng,search])=>({
 
 // 烏弄官網「門市據點」列出的九間台北市門市；座標與 Google Maps 店家標點核對。
 const unochaTaipeiStores = [
-  ['台北西湖店','內湖','台北市內湖路一段285巷27弄2號1樓',25.0834094,121.5669961,'290e474c0b5857ba'],
-  ['信義松山店','信義','台北市信義區松山路514號',25.0381222,121.5779969,'2e22bf1457ec2c9'],
-  ['信義吳興店','信義','台北市信義區吳興街35號',25.0314155,121.5599428,'b84705748df8d56'],
-  ['內湖港墘店','內湖','台北市內湖區內湖路一段737巷69號',25.0813523,121.5792807,'488e097471a4ee6d'],
-  ['台北公館店','公館','台北市中正區羅斯福路4段90巷2之1號',25.013848,121.534696,'6b9f2967361a5d21'],
-  ['中山晴光店','中山／晴光','台北市中山區雙城街17巷2-1號',25.0644314,121.5245969,'6a6f871dc6ad793'],
-  ['台北遼寧店','中山／遼寧街','台北市中山區遼寧街41號',25.048691,121.5422744,'b3580aa36757a522'],
-  ['台北圓山店','圓山','台北市大同區酒泉街26號',25.0706076,121.5194773,'5cc543e054fe4aac'],
-  ['士林芝山店','士林','台北市士林區福華路164巷11號',25.1043919,121.5229641,'3df71ae24b89d763']
+  ['台北西湖店','內湖','台北市內湖路一段285巷27弄2號1樓',25.0834094,121.5669961,'290e474c0b5857ba','Google Maps 評論推薦手採阿里山金萱加珍珠，茶香清甜、珍珠 Q 嫩；喜歡奶香也可試鮮奶茶。'],
+  ['信義松山店','信義','台北市信義區松山路514號',25.0381222,121.5779969,'2e22bf1457ec2c9','Google Maps 評論點名蕎麥冬露，蕎麥香明顯；另有茶友選台茶 18 號紅玉無糖微冰。'],
+  ['信義吳興店','信義','台北市信義區吳興街35號',25.0314155,121.5599428,'b84705748df8d56','評論推薦杏仁凍冬片仔，無糖也不苦澀、還能做溫飲；金萱烏龍也獲好評。','https://footinder.app/places/6428582f4452c39081075ee4'],
+  ['內湖港墘店','內湖','台北市內湖區內湖路一段737巷69號',25.0813523,121.5792807,'488e097471a4ee6d','實喝心得推薦名間鄉冬片仔，茶香有餘韻；紅茶拿鐵則是茶味較重、奶味剛好。','https://chenslife.com/johnteacompany-unocha-neihu'],
+  ['台北公館店','公館','台北市中正區羅斯福路4段90巷2之1號',25.013848,121.534696,'6b9f2967361a5d21','食記推薦玉霞紅茶拿鐵與桂花凍紅玉；偏愛純茶可試名間鄉冬片仔，清爽回甘。','https://fooday.app/zh-TW/spots/n9bJtkG8QN38KQiDqP8As8'],
+  ['中山晴光店','中山／晴光','台北市中山區雙城街17巷2-1號',25.0644314,121.5245969,'6a6f871dc6ad793','晴光店實喝推薦名間鄉冬片仔與冬露冬片仔：前者清香，後者帶冬瓜的清甜。','https://blake.com.tw/blog/post/unocha'],
+  ['台北遼寧店','中山／遼寧街','台北市中山區遼寧街41號',25.048691,121.5422744,'b3580aa36757a522','實喝心得推薦珍珠紅茶拿鐵：茶味較濃、鮮奶比例適中，珍珠帶蜂蜜香。','https://www.poponote.com/note/6173846812936081c1ec4226'],
+  ['台北圓山店','圓山','台北市大同區酒泉街26號',25.0706076,121.5194773,'5cc543e054fe4aac','外送顧客常點手採阿里山金萱；玉霞紅茶拿鐵也獲得高比例好評，喜歡奶茶可試。','https://www.ubereats.com/tw/store/%E7%83%8F%E5%BC%84-%E5%9C%93%E5%B1%B1%E5%BA%97/aWITBW0-V5mmtztHDfvYdQ'],
+  ['士林芝山店','士林','台北市士林區福華路164巷11號',25.1043919,121.5229641,'3df71ae24b89d763','外送顧客常點檸檬冬片仔、名間鄉冬片仔；想喝奶茶可試金萱烏龍拿鐵。','https://www.ubereats.com/tw/store/%E7%83%8F%E5%BC%84-%E5%A3%AB%E6%9E%97%E8%8A%9D%E5%B1%B1%E5%BA%97/dK5AXv4dT5OEIW829I92eg']
 ];
-spots.push(...unochaTaipeiStores.map(([branch,area,address,lat,lng,cid])=>({
+spots.push(...unochaTaipeiStores.map(([branch,area,address,lat,lng,cid,note,reviewUrl])=>({
   name:`烏弄原茶 ${branch}`,area,type:['飲品'],hours:1,
-  note:`烏弄台北門市，地址：${address}。以台灣原茶為主，出發前可查看門市最新營業資訊。`,
-  coords:[lat,lng],mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`
+  note,coords:[lat,lng],mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`,reviewUrl
 })));
 
 const areaSelect=document.getElementById('area');
@@ -867,7 +866,7 @@ function updateMarkerSelection(){
 
 function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
-  const sourceLink=spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
+  const sourceLink=spot.reviewUrl?`<a class="button-link" href="${spot.reviewUrl}" target="_blank" rel="noopener noreferrer">推薦依據 ↗</a>`:spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
   els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${sourceLink}</div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
@@ -994,9 +993,9 @@ function render(list){
     const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
     external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
     actions.append(preview,external); card.appendChild(actions); els.cards.appendChild(card);
-    if(spot.sourceUrl){
-      const source=document.createElement('a');source.className='button-link';source.textContent='推薦貼文 ↗';
-      source.href=spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
+    if(spot.reviewUrl||spot.sourceUrl){
+      const source=document.createElement('a');source.className='button-link';source.textContent=spot.reviewUrl?'推薦依據 ↗':'推薦貼文 ↗';
+      source.href=spot.reviewUrl||spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
     }
   });
   renderMapList(list);
