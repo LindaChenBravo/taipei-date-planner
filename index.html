@@ -209,10 +209,10 @@
         <label for="area">想去哪一區？
           <select id="area">
             <option value="all">全部區域</option>
-            <option>中山／赤峰街</option><option>永康街／東門</option><option>華山／忠孝新生</option>
+            <option>中山／赤峰街</option><option>中山／松江南京</option><option>永康街／東門</option><option>華山／忠孝新生</option>
             <option>圓山</option><option>松山</option><option>信義</option><option>東區／大安</option>
             <option>台電大樓</option><option>大稻埕</option><option>北投</option><option>北投／關渡</option>
-            <option>永和</option><option>東北角</option>
+            <option>三重</option><option>南港</option><option>板橋</option><option>永和</option><option>東北角</option>
           </select>
         </label>
         <label for="duration">可用時間
@@ -294,6 +294,16 @@
 <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
 <script>
 const spots = [
+  {name:'樂天羊肉（三重店）',area:'三重',type:['美食'],hours:1,note:'Google Maps 評論重點：羊肉湯可續湯，滷肉飯與親切服務也常獲好評。',mapUrl:'https://www.google.com.tw/maps/place/%E6%A8%82%E5%A4%A9%E7%BE%8A%E8%82%89%EF%BC%88%E4%B8%89%E9%87%8D%E5%BA%97%EF%BC%89/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442a95cf5bd297b:0xd07dd6d10fd92e3d!8m2!3d25.066655!4d121.494813!16s%2Fg%2F11mdckgg6w'},
+  {name:'蕨食堂',area:'信義',type:['美食'],hours:2,note:'Google Maps 評論重點：定食與早午餐選擇多，份量受到肯定；配菜評價略有分歧。',mapUrl:'https://www.google.com.tw/maps/place/%E8%95%A8%E9%A3%9F%E5%A0%82/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442aba392ce0d2b:0xd2a05e346be29288!8m2!3d25.040289!4d121.5752571!16s%2Fg%2F11cn5pxvhz'},
+  {name:'老麵店',area:'大稻埕',type:['美食'],hours:1,note:'Google Maps 評論重點：四醬麵、乾麵與滷菜受推薦，也有小菜偏鹹的意見。',mapUrl:'https://www.google.com.tw/maps/place/%E8%80%81%E9%BA%B5%E5%BA%97/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442a938296ed9e1:0xe418d4d5ff9483de!8m2!3d25.0703643!4d121.5116522!16s%2Fg%2F11c3k6dnm5'},
+  {name:'宵夜牛肉麵大王 大安店 / NIGHT BEEF NOODLES KING DAAN',area:'東區／大安',type:['美食'],hours:1,note:'Google Maps 評論重點：紅燒牛肉麵、牛筋與湯頭有人推薦，出餐品質評價不一。',mapUrl:'https://www.google.com.tw/maps/place/%E5%AE%B5%E5%A4%9C%E7%89%9B%E8%82%89%E9%BA%B5%E5%A4%A7%E7%8E%8B+%E5%A4%A7%E5%AE%89%E5%BA%97+%2F+NIGHT+BEEF+NOODLES+KING+DAAN/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442ab45a6e57e1f:0x9d401b34f14f8e74!8m2!3d25.0431937!4d121.5457812!16s%2Fg%2F11y_qy2cf3'},
+  {name:'Hui Fu Teas 薈福村茶',area:'南港',type:['咖啡','美食'],hours:2,note:'Google Maps 評論重點：茶、甜點和音樂氛圍受好評，店內也有茶道具與禮盒。',mapUrl:'https://www.google.com.tw/maps/place/Hui+Fu+Teas+%E8%96%88%E7%A6%8F%E6%9D%91%E8%8C%B6/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442ab5c60a0c093:0xc5022bdf0d0f5c04!8m2!3d25.0514899!4d121.6001491!16s%2Fg%2F11ss52bz8_'},
+  {name:'旅徒咖啡',area:'中山／松江南京',type:['咖啡'],hours:2,note:'Google Maps 評論重點：公寓式空間有居家感，烘茶拿鐵受喜愛；服務與價格評價不一。',mapUrl:'https://www.google.com.tw/maps/place/%E6%97%85%E5%BE%92%E5%92%96%E5%95%A1/@25.040289,119.2681282,8z/data=!3m1!5s0x3442a960ae6dfff5:0xfeb0725ab7fb7826!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442a9a40ded4d2b:0xa6a5434e4bc125ff!8m2!3d25.0547169!4d121.5317199!16s%2Fg%2F11f66r9z5r'},
+  {name:'小皮蛋食堂/早午餐/烏龍麵炒泡麵專賣店',area:'中山／松江南京',type:['美食'],hours:1,note:'Google Maps 評論重點：早午餐價格實在，餐點與自製醬料受推薦，店內座位較少。',mapUrl:'https://www.google.com.tw/maps/place/%E5%B0%8F%E7%9A%AE%E8%9B%8B%E9%A3%9F%E5%A0%82%2F%E6%97%A9%E5%8D%88%E9%A4%90%2F%E7%83%8F%E9%BE%8D%E9%BA%B5%E7%82%92%E6%B3%A1%E9%BA%B5%E5%B0%88%E8%B3%A3%E5%BA%97/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442a97aed9c8e83:0x8884edd4aff9e6b5!8m2!3d25.0543412!4d121.5314433!16s%2Fg%2F11wqnvhc_w'},
+  {name:'豬跳舞小餐館',area:'東區／大安',type:['美食'],hours:2,note:'Google Maps 評論重點：義大利麵、燉飯與雙人套餐受歡迎，餐館空間小巧。',mapUrl:'https://www.google.com.tw/maps/place/%E8%B1%AC%E8%B7%B3%E8%88%9E%E5%B0%8F%E9%A4%90%E9%A4%A8/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442abc623acff89:0xa46a7068b0d013f3!8m2!3d25.0395031!4d121.5557327!16s%2Fg%2F1wk7nkw5'},
+  {name:'仙菓園',area:'板橋',type:['美食'],hours:1,note:'Google Maps 評論重點：水果訂購與售後服務獲得肯定，適合挑選水果帶回家分享。',mapUrl:'https://www.google.com.tw/maps/place/%E4%BB%99%E8%8F%93%E5%9C%92/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442a9551ad6fab3:0x920fdb0a30fcde9e!8m2!3d25.0088436!4d121.4719443!16s%2Fg%2F11pf96jpp4'},
+  {name:'Panino Garage 歐式佛卡夏三明治',area:'東區／大安',type:['美食'],hours:1,note:'Google Maps 評論重點：佛卡夏與酸種麵包的食材搭配、清爽口味受好評。',mapUrl:'https://www.google.com.tw/maps/place/Panino+Garage+%E6%AD%90%E5%BC%8F%E4%BD%9B%E5%8D%A1%E5%A4%8F%E4%B8%89%E6%98%8E%E6%B2%BB/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442abe41166cfd7:0x4b8184d5361b6e1e!8m2!3d25.0435221!4d121.5471254!16s%2Fg%2F11xz2b5n2g'},
   {name:'Neco Coffee',area:'中山／赤峰街',type:['咖啡'],hours:2,note:'貓咪咖啡廳，適合悠閒待一個下午。'},
   {name:'Snappp 拍貼',area:'中山／赤峰街',type:['拍照'],hours:1,note:'適合朋友或約會留下紀念。'},
   {name:'赤峰街散步',area:'中山／赤峰街',type:['文創','拍照'],hours:2,note:'底片相機店、選物店與巷弄小店集中。'},
@@ -363,7 +373,13 @@ document.querySelectorAll('button[data-type]').forEach(button=>{
 
 const mapQuery = (name,area='') => `${name} ${area} 台灣`;
 const mapLink = (name,area='') => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(name,area))}`;
+const spotMapLink = spot => spot.mapUrl || mapLink(spot.name,spot.area);
 const spotCoordinates={
+  '樂天羊肉（三重店）':[25.066655,121.494813],'蕨食堂':[25.040289,121.5752571],
+  '老麵店':[25.0703643,121.5116522],'宵夜牛肉麵大王 大安店 / NIGHT BEEF NOODLES KING DAAN':[25.0431937,121.5457812],
+  'Hui Fu Teas 薈福村茶':[25.0514899,121.6001491],'旅徒咖啡':[25.0547169,121.5317199],
+  '小皮蛋食堂/早午餐/烏龍麵炒泡麵專賣店':[25.0543412,121.5314433],'豬跳舞小餐館':[25.0395031,121.5557327],
+  '仙菓園':[25.0088436,121.4719443],'Panino Garage 歐式佛卡夏三明治':[25.0435221,121.5471254],
   'Neco Coffee':[25.0567,121.5202],'Snappp 拍貼':[25.0549,121.5215],'赤峰街散步':[25.0558,121.5198],
   '濕地 Venue':[25.0544,121.5191],'珈琲寶山':[25.0560,121.5184],'台北當代藝術館':[25.0505,121.5189],
   '築夢 JUMENG':[25.0338,121.5305],'榕錦時光生活園區':[25.0325,121.5288],'悄悄好食':[25.0328,121.5297],
@@ -413,7 +429,7 @@ function updateMarkerSelection(){
 
 function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
-  els.mapSpotCard.innerHTML=`<div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${mapLink(spot.name,spot.area)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a></div></div>`;
+  els.mapSpotCard.innerHTML=`<div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a></div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
 
@@ -438,7 +454,7 @@ function openInMap(spot,scroll=true,pan=true){
   if(scroll)setView('map');
   currentMapSpot=spot;
   els.mapTitle.textContent=spot.name;
-  els.mapExternalLink.href=mapLink(spot.name,spot.area);
+  els.mapExternalLink.href=spotMapLink(spot);
   els.mapExternalLink.classList.remove('hidden');
   updateMapSpotCard(spot);
   updateMarkerSelection();
@@ -511,7 +527,7 @@ function render(list){
     const preview=document.createElement('button'); preview.type='button'; preview.textContent='地圖預覽';
     preview.addEventListener('click',()=>openInMap(spot));
     const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
-    external.href=mapLink(spot.name,spot.area); external.target='_blank'; external.rel='noopener noreferrer';
+    external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
     actions.append(preview,external); card.appendChild(actions); els.cards.appendChild(card);
   });
   renderMapList(list);
@@ -570,7 +586,7 @@ els.randomBtn.addEventListener('click',()=>{
   const grouped={}; pool.forEach(spot=>(grouped[spot.area]??=[]).push(spot));
   const areas=Object.keys(grouped),chosen=areas[Math.floor(Math.random()*areas.length)];
   const picks=[...grouped[chosen]].sort(()=>Math.random()-.5).slice(0,3);
-  const items=picks.map(spot=>`<li><a class="inline-map-link" href="${mapLink(spot.name,spot.area)}" target="_blank" rel="noopener noreferrer">${spot.name} ↗</a></li>`).join('');
+  const items=picks.map(spot=>`<li><a class="inline-map-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">${spot.name} ↗</a></li>`).join('');
   els.recommendation.innerHTML=`<strong>今日推薦：${chosen}</strong><ol>${items}</ol><div class="note">市集、展覽與營業資訊可能變動，出發前請再確認。</div>`;
   els.recommendation.classList.remove('hidden'); render(grouped[chosen]);
 });
