@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="依區域、類型與時間篩選台北約會景點，並直接查看 Google Maps 地圖與路線。" />
-  <title>台北約會行程選擇器｜四模式地圖版</title>
+  <meta name="description" content="依區域、類型與時間探索台北玩樂地點，並直接查看地圖與精選路線。" />
+  <title>台北玩樂地圖</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
@@ -147,9 +147,9 @@
   <main class="wrap">
     <header class="hero">
       <div class="hero-copy">
-        <div class="eyebrow">Taipei Date Planner · Four Views</div>
-        <h1>台北約會<br>行程選擇器</h1>
-        <p class="sub">依區域、類型與時間，挑一個剛剛好的台北約會。選好景點後，可直接預覽位置或開啟 Google Maps 導航。</p>
+        <div class="eyebrow">Taipei Fun Map · Four Ways</div>
+        <h1>台北玩樂<br>地圖</h1>
+        <p class="sub">依區域、類型與時間，探索台北好玩的地點。選好景點後，可直接預覽位置或開啟 Google Maps 導航。</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <svg viewBox="0 0 390 250" role="img">
@@ -185,7 +185,7 @@
     </header>
 
     <section class="type-picker" aria-label="依類型篩選">
-      <div id="typeTags" class="type-tags" role="group" aria-label="選擇約會類型">
+      <div id="typeTags" class="type-tags" role="group" aria-label="選擇玩樂類型">
         <button type="button" class="type-tag active" data-type="all" aria-pressed="true">全部（<span data-total-count></span>）</button>
         <button type="button" class="type-tag" data-type="文創" aria-pressed="false">文創</button>
         <button type="button" class="type-tag" data-type="咖啡" aria-pressed="false">咖啡</button>
@@ -224,7 +224,7 @@
       </div>
       <div class="buttons">
         <button class="primary" id="filterBtn" type="button">套用篩選</button>
-        <button id="randomBtn" type="button">幫我排約會</button>
+        <button id="randomBtn" type="button">幫我找玩法</button>
         <button id="mapBtn" type="button">前往地圖總覽</button>
         <button id="resetBtn" type="button">重設</button>
       </div>
@@ -234,7 +234,7 @@
 
     <section id="routeSection" class="hidden" aria-labelledby="routeTitle">
       <div class="section-title">
-        <div><h2 id="routeTitle">精選約會路線</h2><p class="section-copy">每一站都可直接開啟 Google Maps。</p></div>
+        <div><h2 id="routeTitle">精選玩樂路線</h2><p class="section-copy">每一站都可直接開啟 Google Maps。</p></div>
         <span class="badge">4 條</span>
       </div>
       <div id="routes" class="grid"></div>
@@ -305,11 +305,11 @@ const spots = [
   {name:'仙菓園',area:'板橋',type:['美食'],hours:1,note:'Google Maps 評論重點：水果訂購與售後服務獲得肯定，適合挑選水果帶回家分享。',mapUrl:'https://www.google.com.tw/maps/place/%E4%BB%99%E8%8F%93%E5%9C%92/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442a9551ad6fab3:0x920fdb0a30fcde9e!8m2!3d25.0088436!4d121.4719443!16s%2Fg%2F11pf96jpp4'},
   {name:'Panino Garage 歐式佛卡夏三明治',area:'東區／大安',type:['美食'],hours:1,note:'Google Maps 評論重點：佛卡夏與酸種麵包的食材搭配、清爽口味受好評。',mapUrl:'https://www.google.com.tw/maps/place/Panino+Garage+%E6%AD%90%E5%BC%8F%E4%BD%9B%E5%8D%A1%E5%A4%8F%E4%B8%89%E6%98%8E%E6%B2%BB/@25.040289,119.2681282,8z/data=!4m10!1m3!11m2!2sMjNcEJTHQ7GgWsWN0alYGQ!3e3!3m5!1s0x3442abe41166cfd7:0x4b8184d5361b6e1e!8m2!3d25.0435221!4d121.5471254!16s%2Fg%2F11xz2b5n2g'},
   {name:'Neco Coffee',area:'中山／赤峰街',type:['咖啡'],hours:2,note:'貓咪咖啡廳，適合悠閒待一個下午。'},
-  {name:'Snappp 拍貼',area:'中山／赤峰街',type:['拍照'],hours:1,note:'適合朋友或約會留下紀念。'},
+  {name:'Snappp 拍貼',area:'中山／赤峰街',type:['拍照'],hours:1,note:'適合和朋友留下紀念。'},
   {name:'赤峰街散步',area:'中山／赤峰街',type:['文創','拍照'],hours:2,note:'底片相機店、選物店與巷弄小店集中。'},
   {name:'濕地 Venue',area:'中山／赤峰街',type:['展覽','文創'],hours:2,note:'不定期舉辦展覽與市集，出發前建議查看近期活動。'},
   {name:'珈琲寶山',area:'中山／赤峰街',type:['咖啡'],hours:1,note:'可搭配台北當代藝術館。'},
-  {name:'台北當代藝術館',area:'中山／赤峰街',type:['展覽'],hours:2,note:'適合文藝路線與雨天約會。'},
+  {name:'台北當代藝術館',area:'中山／赤峰街',type:['展覽'],hours:2,note:'適合文藝路線與雨天行程。'},
   {name:'築夢 JUMENG',area:'永康街／東門',type:['文創'],hours:1,note:'可愛文創與選物。'},
   {name:'榕錦時光生活園區',area:'永康街／東門',type:['文創','拍照','戶外'],hours:2,note:'老屋園區，適合散步與拍照。'},
   {name:'悄悄好食',area:'永康街／東門',type:['咖啡','美食'],hours:1,note:'適合永康街行程中的下午茶。'},
@@ -321,7 +321,7 @@ const spots = [
   {name:'四四南村',area:'信義',type:['戶外','拍照','文創'],hours:2,note:'可拍到台北101，假日偶有市集。'},
   {name:'象山步道',area:'信義',type:['戶外','自然','拍照'],hours:3,note:'可從象山站 2 號出口前往登山口，欣賞臺北 101；四獸山縱走也可由此起步。'},
   {name:'大安森林公園',area:'東區／大安',type:['戶外','拍照'],hours:3,note:'野餐、散步與放空都很適合。'},
-  {name:'未央咖啡店',area:'東區／大安',type:['咖啡','書店'],hours:3,note:'適合看書、聊天或安排長時間約會。'},
+  {name:'未央咖啡店',area:'東區／大安',type:['咖啡','書店'],hours:3,note:'適合看書、聊天或悠閒待上一段時間。'},
   {name:'C-LAB 臺灣當代文化實驗場',area:'東區／大安',type:['文創','展覽','戶外'],hours:3,note:'文化展演空間，出發前可查看近期活動。'},
   {name:'小白兔唱片行',area:'台電大樓',type:['音樂','文創'],hours:1,note:'可逛唱片、音樂周邊與獨立出版品。'},
   {name:'台北藍調',area:'台電大樓',type:['酒吧','音樂'],hours:3,note:'老牌爵士空間，適合喜歡現場音樂的人。'},
@@ -334,7 +334,7 @@ const spots = [
   {name:'川湯溫泉',area:'北投',type:['泡湯','美食'],hours:3,note:'冬季與假日人潮較多。'},
   {name:'皇池溫泉',area:'北投',type:['泡湯','美食'],hours:3,note:'可安排泡湯與用餐。'},
   {name:'臺北藝術大學',area:'北投／關渡',type:['展覽','戶外','拍照'],hours:4,note:'校園景觀、咖啡與展演空間兼具。'},
-  {name:'台北市立天文館',area:'北投／關渡',type:['展覽'],hours:3,note:'適合喜歡宇宙與互動體驗的約會。'},
+  {name:'台北市立天文館',area:'北投／關渡',type:['展覽'],hours:3,note:'適合喜歡宇宙與互動體驗的人。'},
   {name:'福和觀光市集',area:'永和',type:['文創','美食'],hours:2,note:'跳蚤市場與老物挖寶，適合早上前往。'},
   {name:'小小書房',area:'永和',type:['書店','咖啡'],hours:2,note:'獨立書店與藝文活動空間。'},
   {name:'龍洞',area:'東北角',type:['自然','戶外','拍照'],hours:5,note:'可玩水、走步道與欣賞海岸地形。'},
