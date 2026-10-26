@@ -234,6 +234,7 @@
         <button type="button" class="type-tag" data-type="早餐" aria-pressed="false">早餐</button>
         <button type="button" class="type-tag" data-type="甜點" aria-pressed="false">甜點</button>
         <button type="button" class="type-tag" data-type="夜市" aria-pressed="false">夜市</button>
+        <button type="button" class="type-tag" data-type="市集" aria-pressed="false">市集</button>
         <button type="button" class="type-tag" data-type="拍照" aria-pressed="false">拍照</button>
         <button type="button" class="type-tag" data-type="泡湯" aria-pressed="false">泡湯</button>
         <button type="button" class="type-tag" data-type="書店" aria-pressed="false">書店</button>
@@ -315,6 +316,7 @@
                 <button type="button" class="map-type-tag" data-type="早餐" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍽️</span>早餐</button>
                 <button type="button" class="map-type-tag" data-type="甜點" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍰</span>甜點</button>
                 <button type="button" class="map-type-tag" data-type="夜市" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🏮</span>夜市</button>
+                <button type="button" class="map-type-tag" data-type="市集" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🧺</span>市集</button>
                 <button type="button" class="map-type-tag" data-type="拍照" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📷</span>拍照</button>
                 <button type="button" class="map-type-tag" data-type="泡湯" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♨️</span>泡湯</button>
                 <button type="button" class="map-type-tag" data-type="書店" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📖</span>書店</button>
@@ -780,7 +782,16 @@ const goodEyePlaces = [
   ['東區粉圓','東區／大安','甜點',1,'仙草粉圓冰是經典，可自己搭配喜歡的配料。',25.039513,121.5528417,'3O3','忠孝東路四段216巷38號'],
   ['雙連圓仔湯','中山／赤峰街','甜點',1,'雙連市場旁的湯圓老店，烤麻糬也值得點。',25.0573247,121.5189585,'3O4','民生西路136號'],
   ['永康街芋頭大王','永康街／東門','甜點',1,'芋頭甜湯口感綿密，也能試試芋頭冰品。',25.0324589,121.529811,'3O5','永康街15之4號'],
-  ['春一枝商行','信義','甜點',1,'以天然水果製成冰棒，店內可自助挑選不同口味。',25.0388541,121.5738185,'3O6','忠孝東路五段372巷28弄3號']
+  ['春一枝商行','信義','甜點',1,'以天然水果製成冰棒，店內可自助挑選不同口味。',25.0388541,121.5738185,'3O6','忠孝東路五段372巷28弄3號'],
+  ['北投市場','北投','市集',1,'溫泉鄉的傳統市場，二樓聚集不少在地小吃。',25.132458,121.502904,'3Q1','新市街30號'],
+  ['東門市場','永康街／東門','市集',1,'老市場的攤位延伸進巷弄，適合邊走邊找傳統小吃。',25.0345389,121.5267073,'3Q2','信義路二段81號'],
+  ['光復市場','信義','市集',1,'藏在東區巷弄裡的小型傳統市場，可逛生鮮與熟食攤。',25.0363471,121.5604776,'3Q3','光復南路419巷146號'],
+  ['上引水產','中山／晴光','市集',2,'結合魚市與餐飲空間，可選購海鮮並吃生魚片。',25.0667079,121.5370059,'3Q4','民族東路410巷2弄18號'],
+  ['內湖花市','內湖','市集',1,'成排花卉與植栽攤位，適合挑一束花帶回家。',25.0631665,121.5741724,'3Q5','新湖三路28號'],
+  ['248簡單市集','信義','市集',2,'四四南村的週日生活市集，有農產與手作；出發前確認當週場次。',25.0313421,121.5619356,'3Q6','松勤街50號'],
+  ['寧夏夜市','大稻埕','夜市',2,'小吃攤集中，適合一路品嚐蚵仔煎、芋丸與潤餅。',25.0569697,121.5155911,'3R1','寧夏路'],
+  ['師大夜市','台電大樓','夜市',2,'師大路周邊的巷弄夜市，可找生煎包與滷味。',25.0246244,121.5293362,'3R3','師大路'],
+  ['南機場夜市','南機場／中正','夜市',2,'以在地小吃聞名，可從蚵嗲、黑輪與炸雞開始逛。',25.0291603,121.5059145,'3R2','中華路二段307巷']
 ];
 for(const [name,area,category,hours,note,lat,lng,guideId,address] of goodEyePlaces){
   const spot=spots.find(item=>item.name===name);
@@ -789,6 +800,7 @@ for(const [name,area,category,hours,note,lat,lng,guideId,address] of goodEyePlac
     if(!spot.type.includes(category))spot.type.unshift(category);
     if(!spot.type.includes('Good Eye'))spot.type.push('Good Eye');
     spot.note=note;spot.guideUrl=guideUrl;
+    if(guideId==='3Q1')spot.coords=[lat,lng];
   }else{
     spots.push({name,area,type:[category,'Good Eye'],hours,note,coords:[lat,lng],
       mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${address} 台北`)}`,guideUrl});
@@ -896,7 +908,7 @@ const nearbyRadiusKm=5;
 const markerByName=new Map();
 const routeMarkers=[];
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
-const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',圖書館:'📚','Good Eye':'👁️',酒吧:'🍸',音樂:'♫',自然:'🌿'};
+const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',市集:'🧺',拍照:'📷',泡湯:'♨️',書店:'📖',圖書館:'📚','Good Eye':'👁️',酒吧:'🍸',音樂:'♫',自然:'🌿'};
 
 document.querySelectorAll('button[data-type]').forEach(button=>{
   if(button.querySelector('.tag-icon'))return;
@@ -936,6 +948,7 @@ function spotVisualType(spot){
   if(spot.type.includes('書店'))return '書店';
   if(spot.type.includes('泡湯'))return '泡湯';
   if(spot.type.includes('夜市')&&/夜市|市場|市集/.test(spot.name))return '夜市';
+  if(spot.type.includes('市集'))return '市集';
   if(foodTypes.some(type=>spot.type.includes(type)))return '美食';
   return ['咖啡','音樂','自然','戶外','拍照','展覽','手作','文創','酒吧','夜市'].find(type=>spot.type.includes(type))||'文創';
 }
@@ -947,6 +960,7 @@ function spotIllustration(spot){
   if(visual==='書店'||visual==='圖書館')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M12 17c11-4 20-2 24 4v40c-5-6-13-8-24-4Zm48 0c-11-4-20-2-24 4v40c5-6 13-8 24-4Z" fill="#A8D3E6"/><path d="M36 21v40M20 29h9M20 38h9M43 29h9M43 38h9"/></g></svg>`;
   if(visual==='泡湯')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M15 40c6 5 12 5 18 0s12-5 18 0 10 5 13 2v17H9V42c2 1 4 0 6-2Z" fill="#A8D3E6"/><path d="M22 32c-7-7 7-10 0-19M39 32c-7-7 7-10 0-19M55 32c-7-7 7-10 0-19"/></g></svg>`;
   if(visual==='甜點')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M11 55h50L50 28H21Z" fill="#F6D27A"/><path d="M16 42h39l6 13H11Z" fill="#F2A497"/><path d="M21 28c3-7 9-9 15-4 6-5 12-3 14 4M36 22v-8"/><circle cx="36" cy="12" r="4" fill="#F2A497"/><path d="M9 61h54"/></g></svg>`;
+  if(visual==='市集')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M10 27h52l-6-16H16Z" fill="#F2A497"/><path d="M16 27v33h40V27M11 27c0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0" fill="#F6D27A"/><path d="M26 60V42h20v18M9 60h54"/></g></svg>`;
   if(visual==='美食')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><circle cx="36" cy="36" r="20" fill="#F6D27A"/><circle cx="36" cy="36" r="12" fill="#FFFCF6"/><path d="M8 12v48M4 12v14c0 5 8 5 8 0V12M64 12v48M60 12c-5 7-5 16 4 19"/></g></svg>`;
   if(visual==='咖啡')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M14 25h41v21c0 10-8 17-18 17h-5c-10 0-18-7-18-17Z" fill="#F6D27A"/><path d="M55 30h4c12 0 11 17 0 17h-4M23 16c-5-6 5-8 0-13M39 16c-5-6 5-8 0-13"/><path d="M12 64h48"/></g></svg>`;
   if(['自然','戶外','拍照'].includes(visual))return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><circle cx="54" cy="17" r="10" fill="#F6D27A"/><path d="m7 59 20-35 13 20 8-11 17 26Z" fill="#B9DAA5"/><path d="m21 34 6-10 7 11-7-4Z" fill="#FFFCF6"/><path d="M7 59h58"/></g></svg>`;
