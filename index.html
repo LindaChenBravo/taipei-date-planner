@@ -106,10 +106,31 @@
     .map-spot-actions{display:flex;flex-wrap:wrap;gap:7px}
     .map-spot-actions button,.map-spot-actions a{font-size:12px;padding:7px 9px;border-width:2px;border-radius:12px}
     .card.map-target{outline:5px solid var(--coral);outline-offset:5px;animation:cardPop .48s ease-out}
-    .route{background:#FFF9E9}
-    .route-icon{width:88px;float:right;margin:-8px -5px 6px 12px}
-    .route ol{padding-left:22px;line-height:1.9}
-    .route li a{color:var(--ink);text-underline-offset:3px}
+    .route-picker{margin:12px 0 10px}
+    .route-picker select{margin-top:0;background:var(--white);font-size:17px;font-weight:700}
+    .route-meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}
+    .route-meta span{border:2px solid var(--ink);border-radius:999px;background:var(--white);padding:5px 10px;font-size:13px;font-weight:700}
+    .route-map-wrap{position:relative;overflow:hidden;border:var(--line);border-radius:24px;background:#e8eee8}
+    .route-map{height:clamp(310px,51svh,540px);background:#e8eee8}
+    .route-map-note{position:absolute;left:10px;bottom:10px;z-index:5;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:5px 8px;font-size:12px}
+    .route-pin{position:relative;display:grid;place-items:center;width:42px;height:42px;padding:0;border:3px solid var(--ink);border-radius:50%;background:var(--coral);font-size:20px;line-height:1;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
+    .route-pin .order{position:absolute;top:-9px;right:-9px;display:grid;place-items:center;min-width:21px;height:21px;padding:0 3px;border:2px solid var(--ink);border-radius:50%;background:var(--yellow);font-size:11px;font-weight:800}
+    .route-pin.is-active{background:var(--yellow);box-shadow:0 0 0 4px var(--paper),0 0 0 7px var(--ink)}
+    .route-steps{margin:14px 0 12px}
+    .route-steps-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+    .route-steps-heading h3{margin:0;font-size:19px}
+    .route-steps-heading span{font-size:12px;color:var(--muted)}
+    .route-step-row{display:flex;align-items:center;border-bottom:1px solid #ded9cf}
+    .route-step{display:flex;align-items:center;gap:10px;flex:1;min-width:0;padding:10px 3px;border:0;border-radius:0;background:transparent;text-align:left;transform:none}
+    .route-step:hover{transform:none;background:#fff9e9}
+    .route-step .order{display:grid;place-items:center;flex:0 0 29px;width:29px;height:29px;border:2px solid var(--ink);border-radius:50%;background:var(--yellow);font-size:13px}
+    .route-step .name{flex:1;min-width:0;font-size:15px}
+    .route-step .hint{display:block;color:var(--muted);font-size:12px;font-weight:400}
+    .route-step.is-active .name{color:#9a4b40}
+    .route-step-link{flex:0 0 38px;display:grid;place-items:center;width:38px;height:38px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink);font-size:18px;text-decoration:none}
+    .route-directions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+    .route-directions .button-link{background:var(--green)}
+    .route-directions-note{width:100%;margin:0;color:var(--muted);font-size:12px}
     .hidden{display:none!important}
     .empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -247,10 +268,21 @@
 
     <section id="routeSection" class="hidden" aria-labelledby="routeTitle">
       <div class="section-title">
-        <div><h2 id="routeTitle">精選玩樂路線</h2><p class="section-copy">每一站都可直接開啟 Google Maps。</p></div>
-        <span class="badge">4 條</span>
+        <div><h2 id="routeTitle">精選玩樂路線</h2><p class="section-copy">選一條路線，看看每站的相對位置與走訪順序。</p></div>
+        <span id="routeCount" class="badge"></span>
       </div>
-      <div id="routes" class="grid"></div>
+      <label class="route-picker" for="routeSelect"><span class="sr-only">選擇精選路線</span><select id="routeSelect"></select></label>
+      <div id="routeMeta" class="route-meta" aria-live="polite"></div>
+      <div class="route-map-wrap">
+        <div id="routeMapCanvas" class="route-map" aria-label="所選路線的站點位置地圖"></div>
+        <div class="route-map-note">虛線為走訪順序，非實際道路</div>
+      </div>
+      <div class="route-steps">
+        <div class="route-steps-heading"><h3>依序走訪</h3><span>點站點可在地圖定位</span></div>
+        <div id="routeStops"></div>
+      </div>
+      <div id="routeDirections" class="route-directions"></div>
+      <p id="routeNote" class="note"></p>
     </section>
 
     <section id="mapSection" aria-labelledby="mapSectionTitle">
@@ -657,12 +689,64 @@ const routes = [
   {name:'萬華文化路徑',area:'萬華',stops:['捷運龍山寺站','龍山寺','艋舺青山宮','台北第一街','艋舺清水巖祖師廟','西本願寺','西門紅樓','捷運西門站'],note:'從艋舺的信仰與街道，走到西門的歷史地標。'}
 ];
 
+// 各站位置用於路線總覽；街區與活動的參考點另在 routeStopDetails 標示。
+const routeLocations={
+  '迪化街':[25.0551019,121.509983], '大稻埕碼頭':[25.0563948,121.5076131],
+  '大稻埕遊船碼頭':[25.0568645,121.5076171], '延三夜市':[25.0633642,121.5111796],
+  '寧夏夜市':[25.0566808,121.5153641], '台北市立美術館':[25.072,121.5247],
+  '花博公園':[25.0716662,121.5221637], '大同大學':[25.0671976,121.5217972],
+  '雙城街夜市':[25.0644857,121.524335], '台北圓山電影':[25.0703841,121.520541],
+  '建國假日花市':[25.0377558,121.5377578], '大安森林公園':[25.0297,121.5358],
+  '榕錦時光生活園區':[25.0325,121.5288], '永康街晚餐':[25.0322,121.529],
+  '捷運中山站':[25.0527591,121.5204663], '赤峰街':[25.0553262,121.519628],
+  '中山拍貼機':[25.0549,121.5215], '中山站咖啡廳':[25.0567,121.5202],
+  '中山站晚餐':[25.0535,121.5206], '彩虹橋':[25.0515,121.577],
+  '迎風河濱公園':[25.0753414,121.5470783], '大直橋':[25.0760885,121.5444498],
+  '象山站 2 號出口':[25.03222,121.56974], '象山步道':[25.0274,121.5708],
+  '獅山':[25.0265488,121.5806405], '豹山':[25.0293597,121.5826185],
+  '虎山親山步道':[25.0320167,121.5874881], '後山埤站':[25.04505,121.58252],
+  '富陽自然生態公園':[25.0167202,121.5574983], '福州山公園':[25.0160102,121.55484],
+  '捷運北投站':[25.131841,121.498633], '光明路與溫泉路':[25.1338974,121.5022616],
+  '瀧乃湯浴室':[25.1364651,121.5079803], '地熱谷':[25.1379192,121.5118813],
+  '北投溫泉博物館':[25.1365857,121.5071437], '新北投車站':[25.1366463,121.5034598],
+  '捷運新北投站':[25.1369406,121.5022901], '捷運士林站':[25.0934656,121.5262244],
+  '士林舊街':[25.0977,121.5262], '士林神農宮':[25.0978491,121.5262805],
+  '士林官邸公園':[25.0945759,121.5304359], '士林慈誠宮':[25.0894903,121.5246627],
+  '臺北表演藝術中心':[25.0851242,121.5243691], '捷運劍潭站':[25.0842798,121.5249762],
+  '捷運北門站':[25.049285,121.510278], '甘谷街':[25.0528199,121.5109208],
+  '永樂市場':[25.05484,121.510216], '臺北霞海城隍廟':[25.0555941,121.5102169],
+  '郭怡美書店':[25.0576446,121.5098448], '迪化街十連棟':[25.0627607,121.5091932],
+  '捷運大橋頭站':[25.0630769,121.5135995], '捷運西門站':[25.0415168,121.5077921],
+  '中山堂':[25.04319,121.5096789], '總統府':[25.0399991,121.5119507],
+  '菊元百貨':[25.0423619,121.5113831], '國立臺灣博物館':[25.0427872,121.5151192],
+  '台大醫院':[25.0417784,121.5173255], '捷運台大醫院站':[25.0417995,121.5162833],
+  '捷運龍山寺站':[25.0353716,121.5016932], '龍山寺':[25.0373106,121.4998654],
+  '艋舺青山宮':[25.0399142,121.4995485], '台北第一街':[25.0401473,121.500599],
+  '艋舺清水巖祖師廟':[25.0402174,121.5025954], '西本願寺':[25.0402702,121.5066577],
+  '西門紅樓':[25.0420139,121.5068592]
+};
+const routeStopDetails={
+  '大稻埕遊船碼頭':{hint:'以河岸登船點示意',query:'大稻埕碼頭 遊船登船點'},
+  '花博公園':{hint:'以圓山園區示意',query:'花博公園圓山園區'},
+  '台北圓山電影':{hint:'活動地點依當期公告；以花博圓山園區示意',query:'花博公園圓山園區'},
+  '永康街晚餐':{hint:'區域參考點，店家可自行選擇',query:'永康街晚餐 台北'},
+  '中山拍貼機':{hint:'以 Snappp 拍貼示意',query:'Snappp 拍貼 中山'},
+  '中山站咖啡廳':{hint:'區域參考點，店家可自行選擇',query:'中山站咖啡廳'},
+  '中山站晚餐':{hint:'區域參考點，店家可自行選擇',query:'中山站晚餐'},
+  '光明路與溫泉路':{hint:'路口位置示意',query:'光明路 溫泉路 北投'},
+  '士林舊街':{hint:'舊街區域示意',query:'士林舊街'},
+  '台大醫院':{hint:'以西址示意',query:'台大醫院 西址'},
+  '台北第一街':{hint:'以艋舺老街（蕃薯市街）示意',query:'艋舺老街 蕃薯市街'}
+};
+
 const els = {
   area:document.getElementById('area'), duration:document.getElementById('duration'), typeTags:document.getElementById('typeTags'),
   filterBtn:document.getElementById('filterBtn'), randomBtn:document.getElementById('randomBtn'),
   mapBtn:document.getElementById('mapBtn'), resetBtn:document.getElementById('resetBtn'),
   cards:document.getElementById('cards'), count:document.getElementById('count'), recommendation:document.getElementById('recommendation'),
-  routeSection:document.getElementById('routeSection'), routes:document.getElementById('routes'), mapSection:document.getElementById('mapSection'),
+  routeSection:document.getElementById('routeSection'), routeCount:document.getElementById('routeCount'), routeSelect:document.getElementById('routeSelect'),
+  routeMeta:document.getElementById('routeMeta'), routeMapCanvas:document.getElementById('routeMapCanvas'), routeStops:document.getElementById('routeStops'),
+  routeDirections:document.getElementById('routeDirections'), routeNote:document.getElementById('routeNote'), mapSection:document.getElementById('mapSection'),
   mapTypeTags:document.getElementById('mapTypeTags'), mapCanvas:document.getElementById('mapCanvas'), mapSpotCard:document.getElementById('mapSpotCard'), mapTitle:document.getElementById('mapTitle'),
   locateBtn:document.getElementById('locateBtn'), locateLabel:document.getElementById('locateLabel'), locationStatus:document.getElementById('locationStatus'),
   mapExternalLink:document.getElementById('mapExternalLink'), mapCount:document.getElementById('mapCount'),
@@ -672,11 +756,15 @@ const els = {
 let selectedType='all';
 let currentMapSpot=null;
 let vectorMap=null;
+let routeMap=null;
+let selectedRouteIndex=0;
+let selectedRouteStop=-1;
 let userLocation=null;
 let userMarker=null;
 let locationRequestId=0;
 const nearbyRadiusKm=5;
 const markerByName=new Map();
+const routeMarkers=[];
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
 const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點飲料:'🍽️',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',酒吧:'🍸',音樂:'♫',自然:'🌿'};
 
@@ -736,8 +824,6 @@ function spotIllustration(spot){
 function spotMarkerIcon(spot){
   return typeIcons[spotVisualType(spot)]||'📍';
 }
-
-const routeIllustration=()=>`<svg class="route-icon" viewBox="0 0 92 66" aria-hidden="true"><g fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 52c15-28 32-28 47-4 8 13 19 10 29-3" stroke-dasharray="5 7"/><circle cx="9" cy="51" r="7" fill="#F2A497"/><path d="m84 34 7 12-13 1Z" fill="#B9DAA5"/><rect x="30" y="8" width="35" height="25" rx="9" fill="#A8D3E6"/><path d="M38 15h8v8h-8Zm12 0h8v8h-8Z" fill="#FFFCF6"/><circle cx="39" cy="34" r="4" fill="#3E3A39"/><circle cx="56" cy="34" r="4" fill="#3E3A39"/></g></svg>`;
 
 function initVectorMap(){
   if(!window.maplibregl){
@@ -800,6 +886,10 @@ function setView(view){
   });
   window.scrollTo({top:0,behavior:scrollBehavior()});
   if(isMap&&vectorMap)window.setTimeout(()=>vectorMap.resize(),0);
+  if(isRoutes){
+    ensureRouteMap();
+    window.setTimeout(()=>{if(routeMap){routeMap.resize();fitRouteMap()}},0);
+  }
 }
 
 function openInMap(spot,scroll=true,pan=true){
@@ -895,12 +985,132 @@ function render(list){
 }
 
 function renderRoutes(){
-  els.routes.replaceChildren();
-  routes.forEach(route=>{
-    const card=document.createElement('article'); card.className='route';
-    const stops=route.stops.map(stop=>`<li><a href="${mapLink(stop,route.area||'')}" target="_blank" rel="noopener noreferrer">${stop} ↗</a></li>`).join('');
-    card.innerHTML=`${routeIllustration()}<h3>${route.name}</h3><ol>${stops}</ol><p class="note">${route.note}</p>`;
-    els.routes.appendChild(card);
+  els.routeCount.textContent=`${routes.length} 條`;
+  routes.forEach((route,index)=>els.routeSelect.add(new Option(route.name,String(index))));
+  els.routeSelect.addEventListener('change',()=>renderRoute(Number(els.routeSelect.value)));
+  renderRoute(0);
+}
+
+function routeStopIcon(name){
+  if(/書店/.test(name))return '📖';
+  if(/碼頭/.test(name))return '⛵';
+  if(/夜市/.test(name))return '🏮';
+  if(/咖啡/.test(name))return '☕';
+  if(/晚餐/.test(name))return '🍽️';
+  if(/站|車站/.test(name))return '🚉';
+  if(/花市/.test(name))return '🌼';
+  if(/博物館|美術館|電影|表演藝術|中山堂/.test(name))return '🖼️';
+  if(/公園|山|步道|橋|地熱谷/.test(name))return '🌿';
+  return '📍';
+}
+
+function routeDirectionsUrl(names){
+  const positions=names.map(name=>routeLocations[name]);
+  const params=new URLSearchParams({api:'1',origin:positions[0].join(','),destination:positions.at(-1).join(','),travelmode:'walking'});
+  if(positions.length>2)params.set('waypoints',positions.slice(1,-1).map(position=>position.join(',')).join('|'));
+  return `https://www.google.com/maps/dir/?${params}`;
+}
+
+function renderRouteDirections(route){
+  els.routeDirections.replaceChildren();
+  for(let start=0,part=1;start<route.stops.length-1;start+=4,part++){
+    const names=route.stops.slice(start,start+5);
+    const link=document.createElement('a');
+    link.className='button-link';
+    link.href=routeDirectionsUrl(names);link.target='_blank';link.rel='noopener noreferrer';
+    link.textContent=route.stops.length<=5?'在 Google Maps 看路程 ↗':`第 ${part} 段（${start+1}–${start+names.length} 站）↗`;
+    els.routeDirections.appendChild(link);
+  }
+  if(route.stops.length>5||route.stops.some(name=>routeStopDetails[name]?.hint)){
+    const note=document.createElement('p');note.className='route-directions-note';
+    note.textContent=[
+      route.stops.length>5?'手機瀏覽器的多站路線分段開啟；兩段在共用站點銜接。':'',
+      route.stops.some(name=>routeStopDetails[name]?.hint)?'標示為示意的街區或活動站點，導航只會帶到參考位置。':''
+    ].filter(Boolean).join(' ');
+    els.routeDirections.appendChild(note);
+  }
+}
+
+function renderRoute(index){
+  selectedRouteIndex=index;
+  selectedRouteStop=-1;
+  const route=routes[index];
+  els.routeSelect.value=String(index);
+  const kind=/跑步|縱走|福州山/.test(route.name)?'🌿 戶外路線':/文化路徑/.test(route.name)?'🏛️ 文化散步':'🚶 散步路線';
+  els.routeMeta.innerHTML=`<span>📍 ${route.stops.length} 站</span><span>${kind}</span>`;
+  els.routeMapCanvas.setAttribute('aria-label',`${route.name}的站點位置地圖`);
+  els.routeStops.replaceChildren();
+  route.stops.forEach((name,stopIndex)=>{
+    const row=document.createElement('div');row.className='route-step-row';
+    const button=document.createElement('button');button.type='button';button.className='route-step';
+    button.setAttribute('aria-label',`在地圖定位第 ${stopIndex+1} 站：${name}`);
+    const number=document.createElement('span');number.className='order';number.textContent=stopIndex+1;
+    const label=document.createElement('span');label.className='name';label.textContent=name;
+    const hint=routeStopDetails[name]?.hint;
+    if(hint){const small=document.createElement('small');small.className='hint';small.textContent=hint;label.appendChild(small)}
+    button.append(number,label);button.addEventListener('click',()=>focusRouteStop(stopIndex));
+    const link=document.createElement('a');link.className='route-step-link';link.textContent='↗';
+    link.setAttribute('aria-label',`在 Google Maps 開啟${name}`);
+    link.href=mapLink(routeStopDetails[name]?.query||name,route.area||'台北');
+    link.target='_blank';link.rel='noopener noreferrer';
+    row.append(button,link);els.routeStops.appendChild(row);
+  });
+  renderRouteDirections(route);
+  const trail=/跑步|縱走|福州山/.test(route.name)?' 戶外步道請依現場指標；Google Maps 步行路程僅供參考。':'';
+  els.routeNote.textContent=route.note+trail;
+  updateRouteMap();
+}
+
+function focusRouteStop(index){
+  selectedRouteStop=index;
+  els.routeStops.querySelectorAll('.route-step').forEach((button,buttonIndex)=>{
+    const active=buttonIndex===index;
+    button.classList.toggle('is-active',active);
+    button.setAttribute('aria-pressed',String(active));
+  });
+  routeMarkers.forEach((entry,markerIndex)=>entry.element.classList.toggle('is-active',markerIndex===index));
+  const position=routeLocations[routes[selectedRouteIndex].stops[index]];
+  if(routeMap&&position)routeMap.easeTo({center:[position[1],position[0]],duration:scrollBehavior()==='smooth'?500:0});
+}
+
+function fitRouteMap(){
+  if(!routeMap)return;
+  const positions=routes[selectedRouteIndex].stops.map(name=>routeLocations[name]);
+  const bounds=positions.reduce((box,position)=>box.extend([position[1],position[0]]),new maplibregl.LngLatBounds());
+  routeMap.fitBounds(bounds,{padding:55,maxZoom:14.5,duration:scrollBehavior()==='smooth'?600:0});
+}
+
+function updateRouteMap(){
+  if(!routeMap||!routeMap.getSource('route-order'))return;
+  routeMarkers.forEach(entry=>entry.marker.remove());routeMarkers.length=0;
+  const route=routes[selectedRouteIndex];
+  const coordinates=route.stops.map(name=>{const point=routeLocations[name];return [point[1],point[0]]});
+  routeMap.getSource('route-order').setData({type:'Feature',geometry:{type:'LineString',coordinates}});
+  route.stops.forEach((name,index)=>{
+    const element=document.createElement('button');element.type='button';element.className='route-pin';
+    element.setAttribute('aria-label',`第 ${index+1} 站：${name}`);
+    element.innerHTML=`<span aria-hidden="true">${routeStopIcon(name)}</span><span class="order" aria-hidden="true">${index+1}</span>`;
+    element.addEventListener('click',()=>focusRouteStop(index));
+    const marker=new maplibregl.Marker({element,anchor:'center'}).setLngLat(coordinates[index]).addTo(routeMap);
+    routeMarkers.push({marker,element});
+  });
+  routeMap.resize();fitRouteMap();
+}
+
+function ensureRouteMap(){
+  if(routeMap)return;
+  if(!window.maplibregl){els.routeMapCanvas.innerHTML='<p class="empty">地圖暫時無法載入；仍可使用下方站點與 Google Maps 連結。</p>';return}
+  routeMap=new maplibregl.Map({
+    container:els.routeMapCanvas,
+    style:'https://tiles.openfreemap.org/styles/positron',
+    center:[121.52,25.05],zoom:12,attributionControl:true,
+    localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
+  });
+  routeMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  routeMap.on('load',()=>{
+    routeMap.addSource('route-order',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[]}}});
+    routeMap.addLayer({id:'route-order-line',type:'line',source:'route-order',paint:{'line-color':'#3E3A39','line-width':3,'line-dasharray':[1.5,2.5]}});
+    updateRouteMap();
   });
 }
 
