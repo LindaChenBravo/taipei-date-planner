@@ -40,7 +40,6 @@
     .type-tag{padding:8px 13px;border-radius:999px;background:#fff;font-size:14px;font-weight:700}
     .type-tag.active{background:#fff;outline:3px solid var(--coral);outline-offset:2px}
     .type-tag .tag-icon{margin-right:4px}
-    .type-tags:not(.expanded) .type-tag.extra{display:none}
     .type-picker{background:transparent;border:0;border-radius:0;padding:0;margin-bottom:14px}
     .keyword-label,.type-heading{display:flex;align-items:center;gap:7px;margin-bottom:8px;font-size:15px;font-weight:800}
     .keyword-label span{font-size:12px;font-weight:500;color:var(--muted)}
@@ -49,8 +48,6 @@
     .keyword-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:16px}
     .keyword-field input::placeholder{color:var(--muted)}
     .keyword-field:focus-within{outline:4px solid var(--blue);outline-offset:3px}
-    .type-heading{justify-content:space-between}
-    .type-heading button{padding:3px 7px;border:0;background:transparent;font-size:12px;text-decoration:underline}
     .list-search-controls{padding:0;border:0;border-radius:0;background:transparent}
     .list-search-controls .controls{grid-template-columns:1fr}
     .list-search-controls select{background:#fff}
@@ -255,7 +252,7 @@
     <section class="type-picker" aria-label="依類型篩選">
       <label class="keyword-label" for="keyword">想找什麼？ <span>選填</span></label>
       <div class="keyword-field"><span aria-hidden="true">⌕</span><input id="keyword" type="search" placeholder="搜尋店名、餐點或關鍵字" autocomplete="off"></div>
-      <div class="type-heading"><span>類型</span><button id="moreTypesBtn" type="button" aria-expanded="false" aria-controls="typeTags">更多類型 ⌄</button></div>
+      <div class="type-heading">類型</div>
       <div id="typeTags" class="type-tags" role="group" aria-label="選擇玩樂類型">
         <button type="button" class="type-tag active" data-type="all" aria-pressed="true">全部（<span data-total-count></span>）</button>
         <button type="button" class="type-tag" data-type="文創" aria-pressed="false">文創</button>
@@ -913,7 +910,7 @@ const routeStopDetails={
 
 const els = {
   area:document.getElementById('area'), keyword:document.getElementById('keyword'), typeTags:document.getElementById('typeTags'),
-  moreTypesBtn:document.getElementById('moreTypesBtn'), activeFilters:document.getElementById('activeFilters'),
+  activeFilters:document.getElementById('activeFilters'),
   randomBtn:document.getElementById('randomBtn'), resetBtn:document.getElementById('resetBtn'),
   cards:document.getElementById('cards'), count:document.getElementById('count'), recommendation:document.getElementById('recommendation'),
   routeSection:document.getElementById('routeSection'), routeCount:document.getElementById('routeCount'), routeSelect:document.getElementById('routeSelect'),
@@ -1319,11 +1316,7 @@ function initListFilters(){
     const rank=tag=>{const index=preferred.indexOf(tag.dataset.type);return index<0?preferred.length+originalOrder.get(tag):index};
     return rank(a)-rank(b);
   });
-  tags.forEach((tag,index)=>{
-    tag.classList.toggle('extra',index>=preferred.length);
-    els.typeTags.append(tag);
-  });
-  els.moreTypesBtn.textContent=`更多類型（${tags.length-preferred.length}）⌄`;
+  tags.forEach(tag=>els.typeTags.append(tag));
 }
 
 function updateSearchSummary(){
@@ -1373,12 +1366,6 @@ function clearHighlights(){els.recommendation.classList.add('hidden');els.routeS
 
 function selectType(type,button){
   selectedType=type;
-  const listTag=[...els.typeTags.querySelectorAll('.type-tag')].find(tag=>tag.dataset.type===type);
-  if(listTag?.classList.contains('extra')){
-    els.typeTags.classList.add('expanded');
-    els.moreTypesBtn.setAttribute('aria-expanded','true');
-    els.moreTypesBtn.textContent='收起類型 ⌃';
-  }
   button.classList.remove('pop'); void button.offsetWidth; button.classList.add('pop');
   window.setTimeout(()=>button.classList.remove('pop'),360);
   document.querySelectorAll('[data-type]').forEach(tag=>{
@@ -1387,11 +1374,6 @@ function selectType(type,button){
   clearHighlights(); render(filtered()); updateNearbyStatus();
 }
 
-els.moreTypesBtn.addEventListener('click',()=>{
-  const expanded=els.typeTags.classList.toggle('expanded');
-  els.moreTypesBtn.setAttribute('aria-expanded',String(expanded));
-  els.moreTypesBtn.textContent=expanded?'收起類型 ⌃':`更多類型（${els.typeTags.querySelectorAll('.extra').length}）⌄`;
-});
 let keywordTimer;
 els.keyword.addEventListener('input',()=>{
   window.clearTimeout(keywordTimer);
@@ -1455,9 +1437,6 @@ els.resetBtn.addEventListener('click',()=>{
   window.clearTimeout(keywordTimer);
   clearLocation();
   els.area.value='all'; els.keyword.value=''; selectedType='all';
-  els.typeTags.classList.remove('expanded');
-  els.moreTypesBtn.setAttribute('aria-expanded','false');
-  els.moreTypesBtn.textContent=`更多類型（${els.typeTags.querySelectorAll('.extra').length}）⌄`;
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type==='all'; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
   });
