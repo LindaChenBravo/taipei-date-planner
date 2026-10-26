@@ -211,7 +211,7 @@
       <div class="hero-copy">
         <div class="eyebrow">Taipei Fun Map · Four Ways</div>
         <h1>台北玩樂<br>地圖</h1>
-        <p class="sub">依區域、類型與時間，探索台北好玩的地點。選好景點後，可直接預覽位置或開啟 Google Maps 導航。</p>
+      <p class="sub">依區域與類型，探索台北好玩的地點。選好景點後，可直接預覽位置或開啟 Google Maps 導航。</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <svg viewBox="0 0 390 250" role="img">
@@ -841,12 +841,6 @@ for(const [name,area,category,hours,note,lat,lng,guideId,address] of goodEyePlac
     spots.push({name,area,type:[category,'Good Eye'],hours,note,coords:[lat,lng],
       mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${address} 台北`)}`,guideUrl});
   }
-}
-
-const areaSelect=document.getElementById('area');
-const existingAreas=new Set([...areaSelect.options].map(option=>option.value));
-for(const area of new Set(spots.map(spot=>spot.area))){
-  if(!existingAreas.has(area))areaSelect.add(new Option(area,area));
 }
 
 document.querySelectorAll('[data-total-count]').forEach(label=>{label.textContent=spots.length;});
