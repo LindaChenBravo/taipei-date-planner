@@ -146,13 +146,13 @@
     body.view-routes #routeSection{display:block!important;margin-top:8px}
     .hero,.type-picker,.panel,#recommendation,#routeSection,main>section[aria-labelledby="spotTitle"]{width:calc(100% - 28px);max-width:1080px;align-self:center}
     .cloud{animation:cloudDrift 4.6s ease-in-out infinite alternate}
-    .gondola{transform-origin:76px 46px;animation:gondolaBob 2.8s ease-in-out infinite}
-    .spark{transform-origin:center;animation:sparkle 2s ease-in-out infinite}
+    .gondola{animation:gondolaGlide 5.2s ease-in-out infinite alternate}
+    .spark{transform-box:fill-box;transform-origin:center;animation:starSpin 8s linear infinite}
     .spot-illustration svg{animation:floaty 3s ease-in-out infinite}
     .type-tag.pop,.map-type-tag.pop{animation:pop .34s ease-out}
-    @keyframes cloudDrift{to{transform:translateX(10px)}}
-    @keyframes gondolaBob{50%{transform:translateY(-3px) rotate(-1deg)}}
-    @keyframes sparkle{50%{transform:scale(1.2) rotate(8deg)}}
+    @keyframes cloudDrift{from{transform:translateX(-5px)}to{transform:translateX(5px)}}
+    @keyframes gondolaGlide{from{transform:translate(-12px,-2px)}to{transform:translate(12px,2px)}}
+    @keyframes starSpin{to{transform:rotate(360deg)}}
     @keyframes floaty{50%{transform:translateY(-4px) rotate(1deg)}}
     @keyframes pop{50%{transform:scale(1.13)}100%{transform:scale(1)}}
     @keyframes cardPop{50%{transform:scale(1.025)}100%{transform:scale(1)}}
@@ -186,7 +186,10 @@
         <svg viewBox="0 0 390 250" role="img">
           <g fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="318" cy="49" r="30" fill="#F2A497"/>
-            <g class="cloud" fill="#FFFCF6"><path d="M276 104c2-11 17-15 24-6 7-12 27-6 26 8 12-1 17 16 3 19h-50c-15-2-15-20-3-21Z"/></g>
+            <g class="cloud" fill="#FFFCF6">
+              <path d="M276 104c2-11 17-15 24-6 7-12 27-6 26 8 12-1 17 16 3 19h-50c-15-2-15-20-3-21Z"/>
+              <path d="M32 140c1-8 9-12 16-10 4-9 19-10 25-2 10-2 16 5 16 11 8-1 13 5 13 12 0 7-5 11-13 11H43c-9 0-14-5-14-11 0-5 1-8 3-11Z"/>
+            </g>
             <path d="M-4 27c55 3 110 12 166 28"/>
             <path d="M18 205c40-48 78-44 112 0 42-65 90-70 135 0 34-39 68-36 107 0v28H18Z" fill="#B9DAA5"/>
             <g class="gondola">
@@ -212,10 +215,7 @@
               <path d="M32 49v8m6-8v8m-6 8v8m6-8v8m-6 8v8m6-8v8m-6 8v8m6-8v8m-6 8v8m6-8v8m-6 8v8m6-8v8m-6 8v8m6-8v8" stroke-width="1.5"/>
               <path d="M22 180h26M22 189h26M22 198h26" stroke-width="2"/>
             </g>
-            <g class="spark" fill="#F6D27A">
-              <path d="m144 112 5 10 10 5-10 5-5 10-5-10-10-5 10-5Z"/>
-              <path d="m341 139 4 8 8 4-8 4-4 8-4-8-8-4 8-4Z"/>
-            </g>
+            <path class="spark" d="m341 139 4 8 8 4-8 4-4 8-4-8-8-4 8-4Z" fill="#F6D27A"/>
           </g>
         </svg>
       </div>
