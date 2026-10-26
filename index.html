@@ -485,12 +485,22 @@ const addedPlaces = [
   ['仙跡岩步道','文山','戶外,自然,拍照',2,'景美附近的親山步道，適合郊山散步與登高賞景。',24.9922688,121.5467354,'2d8f1ab9c51d1f01'],
   ['富陽自然生態公園','東區／大安','戶外,自然',2,'城市裡的森林步道，可銜接福州山，圖片路線一圈約 2.5 公里。',25.0167202,121.5574983,'2d19625a6d3c557d'],
   ['福州山公園','東區／大安','戶外,自然,拍照',2,'可從富陽自然生態公園步行銜接，登高欣賞臺北 101。',25.0160102,121.55484,'5f3acc4cf2688cb4'],
-  ['四獸山縱走','信義','戶外,自然,拍照',4,'圖片路線約 5 公里，串連象山、獅山、豹山與虎山；地圖標記為四獸山風景區，建議由象山站 2 號出口起步。',25.0267159,121.5822018,'71800f0271ab279d']
+  ['四獸山縱走','信義','戶外,自然,拍照',4,'圖片路線約 5 公里，串連象山、獅山、豹山與虎山；地圖標記為四獸山風景區，建議由象山站 2 號出口起步。',25.0267159,121.5822018,'71800f0271ab279d'],
+  // 來源：使用者提供的 Threads〈推薦我三重咖啡廳！！！〉推薦摘要；店名與座標對照 Google 地圖。
+  ['豆口加','三重','咖啡,美食',2,'Threads 店家自薦：新開幕、靠近捷運三重站，咖啡與餐點多為手作；貼文提到不限時、有插座，可預約插座座位。',25.0594299,121.4831938,'39375e15562dbbd2','https://www.threads.com/@doko.jia/post/DaS8W1QjzKh'],
+  ['毅然蕨然 Resolutely Coffee','三重','咖啡',2,'Threads 店家分享：店內有鹿角蕨與兩隻貓；貼文提到不限時、有插座，適合喜歡植物與貓咪的人。',25.0949874,121.4696015,'e34e116b3ac5e5d6','https://www.threads.com/@resolutely_coffee/post/DaUf76ED_sb'],
+  ['Bo yang cafe','三重','咖啡,美食',2,'Threads 網友推薦：天台影城對面，芭樂咖啡、奶泡與酒味濃郁的提拉米蘇；貼文提到不限時、有插座。',25.0618402,121.4983113,'886d4c21a2cc199f','https://www.threads.com/@lydia.goodspa/post/DaSJtsPgZwk'],
+  ['驚嘆號咖啡','三重','咖啡,美食',2,'Threads 網友推薦：提拉米蘇、拿鐵與海鹽系列咖啡；提拉米蘇偏冰淇淋口感、份量略小。貼文未提及插座與限時。',25.0786454,121.4850468,'10428a151910bd1a','https://www.threads.com/@raeeeeee91/post/DaS5TxnmrS5'],
+  ['豆然咖啡','三重','咖啡',2,'Threads 網友與原 PO 推薦：靠近捷運徐匯中學站，網友稱讚整體質感。貼文未提及插座與限時。',25.079046,121.481122,'a179ada44e4fbb4f','https://www.threads.com/@raeeeeee91/post/DaSzqK8Gryg'],
+  ['亞曼手工咖啡館','三重','咖啡',2,'Threads 網友特別推薦咖啡；原 PO 覺得似乎有不少在地客。地址為中正北路 19 號；貼文未提及插座與限時。',25.0618458,121.4927026,'2bb3fb62afa55c2b','https://www.threads.com/@wow_togeh/post/DaSK7yUEiJH'],
+  ['李好咖啡','三重','咖啡',2,'Threads 網友分享：夫妻共同喜愛、經常回訪的在地小店。貼文未提及插座與限時。',25.0750448,121.4779629,'41c5b9d16ce0d139','https://www.threads.com/@yu.si.hua/post/DaSMgrrGQqX'],
+  ['西當·普里斯','三重','咖啡',2,'Threads 網友推薦：隱身巷弄的咖啡店，原 PO 對店內環境感興趣。貼文未提及插座與限時。',25.0696965,121.4960702,'57f3f88bd58bd7f','https://www.threads.com/@wendyotdaily/post/DaSJ6OckuW6'],
+  ['KOON Coffee','三重','咖啡',2,'Threads 店家自薦：自稱「咖啡店，不是咖啡廳」，偏重咖啡本身；貼文未提及內用座位、插座與限時。',25.0536804,121.4858786,'58017885b4aad7ab','https://www.threads.com/@kooncoffee0801/post/DaSDjf1H8mJ']
 ];
 
-spots.push(...addedPlaces.map(([name,area,types,hours,note,lat,lng,cid])=>({
+spots.push(...addedPlaces.map(([name,area,types,hours,note,lat,lng,cid,sourceUrl])=>({
   name,area,type:types.split(','),hours,note,coords:[lat,lng],
-  mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`
+  mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`,sourceUrl
 })));
 
 // 十八拐圳與 Google 地圖上的「十八份水圳步道」相鄰，使用搜尋連結避免誤導到另一條水圳。
@@ -606,7 +616,8 @@ function updateMarkerSelection(){
 
 function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
-  els.mapSpotCard.innerHTML=`<div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a></div></div>`;
+  const sourceLink=spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
+  els.mapSpotCard.innerHTML=`<div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spot.area}・約 ${spot.hours} 小時</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${sourceLink}</div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
 
@@ -706,6 +717,10 @@ function render(list){
     const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
     external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
     actions.append(preview,external); card.appendChild(actions); els.cards.appendChild(card);
+    if(spot.sourceUrl){
+      const source=document.createElement('a');source.className='button-link';source.textContent='推薦貼文 ↗';
+      source.href=spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
+    }
   });
   renderMapList(list);
 }
