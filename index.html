@@ -39,7 +39,30 @@
     .type-tags{display:flex;flex-wrap:wrap;gap:8px}
     .type-tag{padding:8px 13px;border-radius:999px;background:#fff;font-size:14px;font-weight:700}
     .type-tag.active{background:#fff;outline:3px solid var(--coral);outline-offset:2px}
+    .type-tag .tag-icon{margin-right:4px}
+    .type-tags:not(.expanded) .type-tag.extra{display:none}
     .type-picker{background:transparent;border:0;border-radius:0;padding:0;margin-bottom:14px}
+    .keyword-label,.type-heading{display:flex;align-items:center;gap:7px;margin-bottom:8px;font-size:15px;font-weight:800}
+    .keyword-label span{font-size:12px;font-weight:500;color:var(--muted)}
+    .keyword-field{display:flex;align-items:center;gap:7px;min-height:48px;margin-bottom:18px;padding:0 13px;border:var(--line);border-radius:16px;background:#fff}
+    .keyword-field span{font-size:25px;line-height:1}
+    .keyword-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:16px}
+    .keyword-field input::placeholder{color:var(--muted)}
+    .keyword-field:focus-within{outline:4px solid var(--blue);outline-offset:3px}
+    .type-heading{justify-content:space-between}
+    .type-heading button{padding:3px 7px;border:0;background:transparent;font-size:12px;text-decoration:underline}
+    .list-search-controls{padding:0;border:0;border-radius:0;background:transparent}
+    .list-search-controls .controls{grid-template-columns:1fr}
+    .list-search-controls select{background:#fff}
+    .random-cta{display:flex;align-items:center;justify-content:flex-start;gap:11px;width:100%;min-height:58px;margin-top:14px;text-align:left;background:var(--coral)}
+    .random-cta .random-icon{font-size:25px}
+    .random-cta .random-copy{display:grid;gap:2px;flex:1}
+    .random-cta .random-copy small{font-size:12px;font-weight:400}
+    .random-cta .random-arrow{font-size:21px}
+    .active-filters{margin:10px 0 0;color:var(--muted);font-size:13px}
+    .list-result-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .reset-inline{padding:4px;border:0;background:transparent;font-size:13px;text-decoration:underline}
+    #listSection>.section-title{flex-wrap:wrap}
     button,.button-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:16px;border:var(--line);background:var(--paper);color:var(--ink);cursor:pointer;text-decoration:none;font-weight:700;transition:transform .18s ease}
     button:hover,.button-link:hover{transform:translateY(-2px)}
     button.primary{background:var(--coral)}
@@ -163,6 +186,14 @@
       .map-frame-toolbar{left:22px;right:22px;padding:0}
       .site-tab{font-size:15px;padding:11px 10px}
     }
+    @media(max-width:719px){
+      body.view-list .hero{display:flex;justify-content:space-between;gap:5px;min-height:128px;padding:13px 15px}
+      body.view-list .eyebrow{display:none}
+      body.view-list h1{font-size:27px;margin:0 0 5px}
+      body.view-list .sub{font-size:12px;line-height:1.4;max-width:220px}
+      body.view-list .hero-art{flex:0 0 112px;width:112px;min-height:0}
+      body.view-list .hero-art svg{width:112px}
+    }
     @media(max-width:420px){
       .map-spot-card{grid-template-columns:54px minmax(0,1fr);gap:9px;padding:13px 48px 13px 13px}
       .map-spot-card .spot-illustration,.map-spot-card .spot-illustration svg{width:52px;height:52px}
@@ -222,6 +253,9 @@
     </header>
 
     <section class="type-picker" aria-label="依類型篩選">
+      <label class="keyword-label" for="keyword">想找什麼？ <span>選填</span></label>
+      <div class="keyword-field"><span aria-hidden="true">⌕</span><input id="keyword" type="search" placeholder="搜尋店名、餐點或關鍵字" autocomplete="off"></div>
+      <div class="type-heading"><span>類型</span><button id="moreTypesBtn" type="button" aria-expanded="false" aria-controls="typeTags">更多類型 ⌄</button></div>
       <div id="typeTags" class="type-tags" role="group" aria-label="選擇玩樂類型">
         <button type="button" class="type-tag active" data-type="all" aria-pressed="true">全部（<span data-total-count></span>）</button>
         <button type="button" class="type-tag" data-type="文創" aria-pressed="false">文創</button>
@@ -246,31 +280,17 @@
       </div>
     </section>
 
-    <section class="panel" aria-labelledby="filterTitle">
+    <section class="panel list-search-controls" aria-labelledby="filterTitle">
       <h2 id="filterTitle" class="sr-only">篩選條件</h2>
       <div class="controls">
         <label for="area">想去哪一區？
           <select id="area">
             <option value="all">全部區域</option>
-            <option>中山／赤峰街</option><option>中山／松江南京</option><option>永康街／東門</option><option>華山／忠孝新生</option>
-            <option>圓山</option><option>松山</option><option>信義</option><option>東區／大安</option>
-            <option>台電大樓</option><option>大稻埕</option><option>北投</option><option>北投／關渡</option>
-            <option>三重</option><option>南港</option><option>板橋</option><option>永和</option><option>東北角</option>
-          </select>
-        </label>
-        <label for="duration">可用時間
-          <select id="duration">
-            <option value="all">不限</option>
-            <option value="2">約 2 小時</option><option value="4">半日</option><option value="8">一日</option>
           </select>
         </label>
       </div>
-      <div class="buttons">
-        <button class="primary" id="filterBtn" type="button">套用篩選</button>
-        <button id="randomBtn" type="button">幫我找玩法</button>
-        <button id="mapBtn" type="button">前往地圖總覽</button>
-        <button id="resetBtn" type="button">重設</button>
-      </div>
+      <p id="activeFilters" class="active-filters hidden" aria-live="polite"></p>
+      <button id="randomBtn" class="random-cta" type="button"><span class="random-icon" aria-hidden="true">🎲</span><span class="random-copy"><strong>幫我找玩法</strong><small>依目前條件隨機推薦</small></span><span class="random-arrow" aria-hidden="true">↗</span></button>
     </section>
 
     <section id="recommendation" class="callout hidden" aria-live="polite"></section>
@@ -340,7 +360,7 @@
     </section>
 
     <section id="listSection" aria-labelledby="spotTitle">
-      <div class="section-title"><h2 id="spotTitle">景點清單</h2><span id="count" class="badge" aria-live="polite"></span></div>
+      <div class="section-title"><h2 id="spotTitle">搜尋結果</h2><div class="list-result-actions"><button id="resetBtn" class="reset-inline hidden" type="button">清除條件</button><span id="count" class="badge" aria-live="polite"></span></div></div>
       <div id="cards" class="grid"></div>
     </section>
 
@@ -898,9 +918,9 @@ const routeStopDetails={
 };
 
 const els = {
-  area:document.getElementById('area'), duration:document.getElementById('duration'), typeTags:document.getElementById('typeTags'),
-  filterBtn:document.getElementById('filterBtn'), randomBtn:document.getElementById('randomBtn'),
-  mapBtn:document.getElementById('mapBtn'), resetBtn:document.getElementById('resetBtn'),
+  area:document.getElementById('area'), keyword:document.getElementById('keyword'), typeTags:document.getElementById('typeTags'),
+  moreTypesBtn:document.getElementById('moreTypesBtn'), activeFilters:document.getElementById('activeFilters'),
+  randomBtn:document.getElementById('randomBtn'), resetBtn:document.getElementById('resetBtn'),
   cards:document.getElementById('cards'), count:document.getElementById('count'), recommendation:document.getElementById('recommendation'),
   routeSection:document.getElementById('routeSection'), routeCount:document.getElementById('routeCount'), routeSelect:document.getElementById('routeSelect'),
   routeMeta:document.getElementById('routeMeta'), routeMapCanvas:document.getElementById('routeMapCanvas'), routeStops:document.getElementById('routeStops'),
@@ -1127,9 +1147,10 @@ function renderMapList(list){
 }
 
 function render(list){
+  updateSearchSummary();
   els.cards.replaceChildren();
   els.count.textContent=`${list.length} 個地點`;
-  if(!list.length){els.cards.innerHTML='<div class="card empty">目前沒有符合條件的地點，試著放寬時間或類型。</div>';renderMapList(list);return;}
+  if(!list.length){els.cards.innerHTML='<div class="card empty">目前沒有符合條件的地點，試著換個關鍵字、類型或區域。</div>';renderMapList(list);return;}
   list.forEach(spot=>{
     const card=document.createElement('article'); card.className='card';
     card.id=`spot-card-${spots.indexOf(spot)}`; card.tabIndex=-1;
@@ -1294,9 +1315,44 @@ function spotMeta(spot){
   return `${spot.area}・約 ${spot.hours} 小時${Number.isFinite(distance)?`・距離 ${distance.toFixed(1)} 公里`:''}`;
 }
 
+function initListFilters(){
+  const areas=[...new Set(spots.map(spot=>spot.area).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-Hant'));
+  areas.forEach(area=>els.area.add(new Option(area,area)));
+  const preferred=['all','美食','咖啡','書店','戶外','早餐'];
+  const tags=[...els.typeTags.querySelectorAll('.type-tag')];
+  const originalOrder=new Map(tags.map((tag,index)=>[tag,index]));
+  tags.sort((a,b)=>{
+    const rank=tag=>{const index=preferred.indexOf(tag.dataset.type);return index<0?preferred.length+originalOrder.get(tag):index};
+    return rank(a)-rank(b);
+  });
+  tags.forEach((tag,index)=>{
+    const source=[...els.mapTypeTags.querySelectorAll('.map-type-tag[data-type]')].find(item=>item.dataset.type===tag.dataset.type);
+    const icon=source?.querySelector('.tag-icon')?.cloneNode(true);
+    if(icon)tag.prepend(icon);
+    tag.classList.toggle('extra',index>=preferred.length);
+    els.typeTags.append(tag);
+  });
+  els.moreTypesBtn.textContent=`更多類型（${tags.length-preferred.length}）⌄`;
+}
+
+function updateSearchSummary(){
+  const conditions=[];
+  if(els.keyword.value.trim())conditions.push(`關鍵字「${els.keyword.value.trim()}」`);
+  if(selectedType!=='all')conditions.push(selectedType);
+  if(els.area.value!=='all')conditions.push(els.area.value);
+  els.activeFilters.textContent=conditions.length?`目前條件：${conditions.join(' · ')}`:'';
+  els.activeFilters.classList.toggle('hidden',!conditions.length);
+  els.resetBtn.classList.toggle('hidden',!conditions.length);
+}
+
 function filtered(){
-  const area=els.area.value,type=selectedType,duration=els.duration.value;
-  const matches=spots.filter(spot=>(userLocation||area==='all'||spot.area===area)&&(type==='all'||spot.type.includes(type))&&(userLocation||duration==='all'||spot.hours<=Number(duration)));
+  const area=els.area.value,type=selectedType,query=els.keyword.value.trim().normalize('NFKC').toLocaleLowerCase('zh-TW');
+  const matches=spots.filter(spot=>{
+    if(area!=='all'&&spot.area!==area)return false;
+    if(type!=='all'&&!spot.type.includes(type))return false;
+    if(!query)return true;
+    return `${spot.name} ${spot.area} ${spot.type.join(' ')} ${spot.note} ${spot.address||''}`.normalize('NFKC').toLocaleLowerCase('zh-TW').includes(query);
+  });
   return userLocation?matches.filter(spot=>distanceKm(spot)<=nearbyRadiusKm).sort((a,b)=>distanceKm(a)-distanceKm(b)):matches;
 }
 
@@ -1326,6 +1382,12 @@ function clearHighlights(){els.recommendation.classList.add('hidden');els.routeS
 
 function selectType(type,button){
   selectedType=type;
+  const listTag=[...els.typeTags.querySelectorAll('.type-tag')].find(tag=>tag.dataset.type===type);
+  if(listTag?.classList.contains('extra')){
+    els.typeTags.classList.add('expanded');
+    els.moreTypesBtn.setAttribute('aria-expanded','true');
+    els.moreTypesBtn.textContent='收起類型 ⌃';
+  }
   button.classList.remove('pop'); void button.offsetWidth; button.classList.add('pop');
   window.setTimeout(()=>button.classList.remove('pop'),360);
   document.querySelectorAll('[data-type]').forEach(tag=>{
@@ -1334,7 +1396,17 @@ function selectType(type,button){
   clearHighlights(); render(filtered()); updateNearbyStatus();
 }
 
-els.filterBtn.addEventListener('click',()=>{clearHighlights();render(filtered())});
+els.moreTypesBtn.addEventListener('click',()=>{
+  const expanded=els.typeTags.classList.toggle('expanded');
+  els.moreTypesBtn.setAttribute('aria-expanded',String(expanded));
+  els.moreTypesBtn.textContent=expanded?'收起類型 ⌃':`更多類型（${els.typeTags.querySelectorAll('.extra').length}）⌄`;
+});
+let keywordTimer;
+els.keyword.addEventListener('input',()=>{
+  window.clearTimeout(keywordTimer);
+  keywordTimer=window.setTimeout(()=>{clearHighlights();render(filtered());updateNearbyStatus()},120);
+});
+els.area.addEventListener('change',()=>{clearHighlights();render(filtered());updateNearbyStatus()});
 els.typeTags.addEventListener('click',event=>{
   const button=event.target.closest('.type-tag');
   if(!button)return;
@@ -1389,14 +1461,17 @@ els.locateBtn.addEventListener('click',()=>{
   },{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
 });
 els.resetBtn.addEventListener('click',()=>{
+  window.clearTimeout(keywordTimer);
   clearLocation();
-  els.area.value=els.duration.value='all'; selectedType='all';
+  els.area.value='all'; els.keyword.value=''; selectedType='all';
+  els.typeTags.classList.remove('expanded');
+  els.moreTypesBtn.setAttribute('aria-expanded','false');
+  els.moreTypesBtn.textContent=`更多類型（${els.typeTags.querySelectorAll('.extra').length}）⌄`;
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type==='all'; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
   });
   clearHighlights(); render(spots);
 });
-els.mapBtn.addEventListener('click',()=>setView('map'));
 els.siteTabs.forEach(tab=>tab.addEventListener('click',()=>setView(tab.dataset.view)));
 els.randomBtn.addEventListener('click',()=>{
   const pool=filtered();
@@ -1404,13 +1479,21 @@ els.randomBtn.addEventListener('click',()=>{
   const grouped={}; pool.forEach(spot=>(grouped[spot.area]??=[]).push(spot));
   const areas=Object.keys(grouped),chosen=areas[Math.floor(Math.random()*areas.length)];
   const picks=[...grouped[chosen]].sort(()=>Math.random()-.5).slice(0,3);
-  const items=picks.map(spot=>`<li><a class="inline-map-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">${spot.name} ↗</a></li>`).join('');
-  els.recommendation.innerHTML=`<strong>今日推薦：${chosen}</strong><ol>${items}</ol><div class="note">市集、展覽與營業資訊可能變動，出發前請再確認。</div>`;
-  els.recommendation.classList.remove('hidden'); render(grouped[chosen]);
+  const title=document.createElement('strong'); title.textContent=`今日推薦：${chosen}`;
+  const items=document.createElement('ol');
+  picks.forEach(spot=>{
+    const item=document.createElement('li'),link=document.createElement('a');
+    link.className='inline-map-link';link.href=spotMapLink(spot);link.target='_blank';link.rel='noopener noreferrer';link.textContent=`${spot.name} ↗`;
+    item.append(link);items.append(item);
+  });
+  const note=document.createElement('div');note.className='note';note.textContent='市集、展覽與營業資訊可能變動，出發前請再確認。';
+  els.recommendation.replaceChildren(title,items,note);
+  els.recommendation.classList.remove('hidden');
 });
 
 renderRoutes();
 initVectorMap();
+initListFilters();
 render(spots);
 </script>
 </body>
