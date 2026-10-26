@@ -237,10 +237,10 @@
         <button type="button" class="type-tag" data-type="市集" aria-pressed="false">市集</button>
         <button type="button" class="type-tag" data-type="拍照" aria-pressed="false">拍照</button>
         <button type="button" class="type-tag" data-type="泡湯" aria-pressed="false">泡湯</button>
+        <button type="button" class="type-tag" data-type="按摩" aria-pressed="false">按摩</button>
         <button type="button" class="type-tag" data-type="書店" aria-pressed="false">書店</button>
         <button type="button" class="type-tag" data-type="圖書館" aria-pressed="false">圖書館</button>
         <button type="button" class="type-tag" data-type="Good Eye" aria-pressed="false">Good Eye</button>
-        <button type="button" class="type-tag" data-type="酒吧" aria-pressed="false">酒吧</button>
         <button type="button" class="type-tag" data-type="音樂" aria-pressed="false">音樂</button>
         <button type="button" class="type-tag" data-type="自然" aria-pressed="false">自然</button>
       </div>
@@ -319,10 +319,10 @@
                 <button type="button" class="map-type-tag" data-type="市集" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🧺</span>市集</button>
                 <button type="button" class="map-type-tag" data-type="拍照" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📷</span>拍照</button>
                 <button type="button" class="map-type-tag" data-type="泡湯" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♨️</span>泡湯</button>
+                <button type="button" class="map-type-tag" data-type="按摩" aria-pressed="false"><span class="tag-icon" aria-hidden="true">💆</span>按摩</button>
                 <button type="button" class="map-type-tag" data-type="書店" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📖</span>書店</button>
                 <button type="button" class="map-type-tag" data-type="圖書館" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📚</span>圖書館</button>
                 <button type="button" class="map-type-tag" data-type="Good Eye" aria-pressed="false"><span class="tag-icon" aria-hidden="true">👁️</span>Good Eye</button>
-                <button type="button" class="map-type-tag" data-type="酒吧" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍸</span>酒吧</button>
                 <button type="button" class="map-type-tag" data-type="音樂" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♫</span>音樂</button>
                 <button type="button" class="map-type-tag" data-type="自然" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🌿</span>自然</button>
               </div>
@@ -386,7 +386,6 @@ const spots = [
   {name:'未央咖啡店',area:'東區／大安',type:['咖啡','書店'],hours:3,note:'適合看書、聊天或悠閒待上一段時間。'},
   {name:'C-LAB 臺灣當代文化實驗場',area:'東區／大安',type:['文創','展覽','戶外'],hours:3,note:'文化展演空間，出發前可查看近期活動。'},
   {name:'小白兔唱片行',area:'台電大樓',type:['音樂','文創'],hours:1,note:'可逛唱片、音樂周邊與獨立出版品。'},
-  {name:'台北藍調',area:'台電大樓',type:['酒吧','音樂'],hours:3,note:'老牌爵士空間，適合喜歡現場音樂的人。'},
   {name:'慈聖宮小吃',area:'大稻埕',type:['美食'],hours:2,note:'適合安排早餐或午餐。'},
   {name:'大稻埕散步',area:'大稻埕',type:['戶外','文創','拍照'],hours:3,note:'老街、選物、市集與河岸夕陽。'},
   {name:'幻猻家珈琲',area:'大稻埕',type:['咖啡','美食','書店'],hours:2,note:'咖啡、咖哩與閱讀氛圍兼具。'},
@@ -471,7 +470,6 @@ const addedPlaces = [
   ['1976 道地香港美食 敦南本店','東區／大安','美食',2,'評論提到腸粉、粥品與牛腩撈麵，菜色選擇多。',25.0404529,121.5499458,'2ef0d1cc95993007'],
   ['BLIKE 奶茶專門 台北延吉店','東區／大安','飲品,美食',1,'評論提到鮮奶茶、珍珠與咖啡凍，無糖選擇受到喜愛。',25.0398596,121.5549813,'6b575132f83f8115'],
   ['紅燒牛肉河粉','東區／大安','美食',1,'評論推薦牛肉河粉與越南生春捲；內用座位不多。',25.0400489,121.5549702,'96b208a4a14605d3'],
-  ['大村武串燒居酒屋 大安店','東區／大安','美食,酒吧',2,'評論提到雞肉串與松阪豬炒水蓮，整體口味評價不一。',25.043895,121.5475549,'5e413e923a5a4b50'],
   ['重慶郭魚湯','大稻埕','美食',1,'評論提到鮮美魚湯、油豆腐與豬腳，部分滷味偏鹹。',25.0619483,121.513937,'50351a875f1e21c0'],
   ['三寶小火鍋','三重','美食',2,'評論提到湯頭、份量與乾淨環境，營業時間出發前請確認。',25.0711779,121.4833989,'130bd26c2868bb05'],
   ['錢冠涮涮鍋','三重','美食',2,'評論提到平價鍋物與副餐選擇，份量受到肯定。',25.0834883,121.4921289,'3a19dac7925157ec'],
@@ -791,7 +789,13 @@ const goodEyePlaces = [
   ['248簡單市集','信義','市集',2,'四四南村的週日生活市集，有農產與手作；出發前確認當週場次。',25.0313421,121.5619356,'3Q6','松勤街50號'],
   ['寧夏夜市','大稻埕','夜市',2,'小吃攤集中，適合一路品嚐蚵仔煎、芋丸與潤餅。',25.0569697,121.5155911,'3R1','寧夏路'],
   ['師大夜市','台電大樓','夜市',2,'師大路周邊的巷弄夜市，可找生煎包與滷味。',25.0246244,121.5293362,'3R3','師大路'],
-  ['南機場夜市','南機場／中正','夜市',2,'以在地小吃聞名，可從蚵嗲、黑輪與炸雞開始逛。',25.0291603,121.5059145,'3R2','中華路二段307巷']
+  ['南機場夜市','南機場／中正','夜市',2,'以在地小吃聞名，可從蚵嗲、黑輪與炸雞開始逛。',25.0291603,121.5059145,'3R2','中華路二段307巷'],
+  ['指舞春秋（安和會館）','信義安和','按摩',2,'鄰近信義安和站，提供腳底與全身按摩，適合逛街後放鬆。',25.0316252,121.5526304,'5C1','安和路二段37號'],
+  // 原南京會館已搬遷至市府會館，沿用指南的品牌來源但改用現址。
+  ['6星集（市府會館）','信義','按摩',2,'原南京會館搬到市府站旁，可選腳底或全身按摩。',25.0415,121.5653,'5C2','忠孝東路五段17之3號'],
+  ['隱舍 Nuance Privée','東區／大安','按摩',2,'仁愛路巷內的 SPA，提供獨立空間與全身放鬆療程。',25.0347889,121.5497587,'5C3','仁愛路四段112巷41號'],
+  // 指南中的北門站點已不適用，改收錄仍營業的雙連店。
+  ['台灣阿甘按摩小棧（雙連店）','中山／赤峰街','按摩',1,'雙連站地下街的視障按摩小站，逛街後可做局部或全身按摩。',25.0578,121.5209,'5C4','民生西路47號B1中山地下街B57號']
 ];
 for(const [name,area,category,hours,note,lat,lng,guideId,address] of goodEyePlaces){
   const spot=spots.find(item=>item.name===name);
@@ -908,7 +912,7 @@ const nearbyRadiusKm=5;
 const markerByName=new Map();
 const routeMarkers=[];
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
-const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',市集:'🧺',拍照:'📷',泡湯:'♨️',書店:'📖',圖書館:'📚','Good Eye':'👁️',酒吧:'🍸',音樂:'♫',自然:'🌿'};
+const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',市集:'🧺',拍照:'📷',泡湯:'♨️',按摩:'💆',書店:'📖',圖書館:'📚','Good Eye':'👁️',音樂:'♫',自然:'🌿'};
 
 document.querySelectorAll('button[data-type]').forEach(button=>{
   if(button.querySelector('.tag-icon'))return;
@@ -930,7 +934,7 @@ const spotCoordinates={
   '華山1914文創園區':[25.0441,121.5294],'台北市立美術館':[25.0720,121.5247],'圓山花博公園':[25.0702,121.5218],
   '饒河夜市':[25.0507,121.5760],'彩虹橋':[25.0515,121.5770],'四四南村':[25.0315,121.5620],
   '象山步道':[25.0274,121.5708],'大安森林公園':[25.0297,121.5358],'未央咖啡店':[25.0418,121.5486],
-  'C-LAB 臺灣當代文化實驗場':[25.0410,121.5402],'小白兔唱片行':[25.0180,121.5313],'台北藍調':[25.0210,121.5282],
+  'C-LAB 臺灣當代文化實驗場':[25.0410,121.5402],'小白兔唱片行':[25.0180,121.5313],
   '慈聖宮小吃':[25.0593,121.5114],'大稻埕散步':[25.0567,121.5073],'幻猻家珈琲':[25.0558,121.5112],
   '北投市場':[25.1322,121.5039],'山峸二手書店':[25.131137,121.5000675],'拾米屋':[25.1361,121.4990],
   '川湯溫泉':[25.1386,121.5296],'皇池溫泉':[25.1397,121.5290],'臺北藝術大學':[25.1328,121.4693],
@@ -947,10 +951,11 @@ function spotVisualType(spot){
   if(spot.type.includes('甜點'))return '甜點';
   if(spot.type.includes('書店'))return '書店';
   if(spot.type.includes('泡湯'))return '泡湯';
+  if(spot.type.includes('按摩'))return '按摩';
   if(spot.type.includes('夜市')&&/夜市|市場|市集/.test(spot.name))return '夜市';
   if(spot.type.includes('市集'))return '市集';
   if(foodTypes.some(type=>spot.type.includes(type)))return '美食';
-  return ['咖啡','音樂','自然','戶外','拍照','展覽','手作','文創','酒吧','夜市'].find(type=>spot.type.includes(type))||'文創';
+  return ['咖啡','音樂','自然','戶外','拍照','展覽','手作','文創','夜市'].find(type=>spot.type.includes(type))||'文創';
 }
 
 function spotIllustration(spot){
@@ -959,6 +964,7 @@ function spotIllustration(spot){
   if(visual==='飲品')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M19 22h37l-5 39H24Z" fill="#A8D3E6"/><path d="M15 22h45M39 22 46 7h11M29 49h16M31 40h12"/><circle cx="33" cy="55" r="2" fill="#3E3A39"/><circle cx="43" cy="55" r="2" fill="#3E3A39"/></g></svg>`;
   if(visual==='書店'||visual==='圖書館')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M12 17c11-4 20-2 24 4v40c-5-6-13-8-24-4Zm48 0c-11-4-20-2-24 4v40c5-6 13-8 24-4Z" fill="#A8D3E6"/><path d="M36 21v40M20 29h9M20 38h9M43 29h9M43 38h9"/></g></svg>`;
   if(visual==='泡湯')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M15 40c6 5 12 5 18 0s12-5 18 0 10 5 13 2v17H9V42c2 1 4 0 6-2Z" fill="#A8D3E6"/><path d="M22 32c-7-7 7-10 0-19M39 32c-7-7 7-10 0-19M55 32c-7-7 7-10 0-19"/></g></svg>`;
+  if(visual==='按摩')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><circle cx="36" cy="20" r="10" fill="#F6D27A"/><path d="M16 58c0-13 8-22 20-22s20 9 20 22Z" fill="#B9DAA5"/><path d="M11 27c-5 6-5 13 0 19M61 27c5 6 5 13 0 19M7 58h58"/></g></svg>`;
   if(visual==='甜點')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M11 55h50L50 28H21Z" fill="#F6D27A"/><path d="M16 42h39l6 13H11Z" fill="#F2A497"/><path d="M21 28c3-7 9-9 15-4 6-5 12-3 14 4M36 22v-8"/><circle cx="36" cy="12" r="4" fill="#F2A497"/><path d="M9 61h54"/></g></svg>`;
   if(visual==='市集')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M10 27h52l-6-16H16Z" fill="#F2A497"/><path d="M16 27v33h40V27M11 27c0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0" fill="#F6D27A"/><path d="M26 60V42h20v18M9 60h54"/></g></svg>`;
   if(visual==='美食')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><circle cx="36" cy="36" r="20" fill="#F6D27A"/><circle cx="36" cy="36" r="12" fill="#FFFCF6"/><path d="M8 12v48M4 12v14c0 5 8 5 8 0V12M64 12v48M60 12c-5 7-5 16 4 19"/></g></svg>`;
