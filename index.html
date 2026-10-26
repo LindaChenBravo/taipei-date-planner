@@ -234,6 +234,8 @@
         <button type="button" class="type-tag" data-type="拍照" aria-pressed="false">拍照</button>
         <button type="button" class="type-tag" data-type="泡湯" aria-pressed="false">泡湯</button>
         <button type="button" class="type-tag" data-type="書店" aria-pressed="false">書店</button>
+        <button type="button" class="type-tag" data-type="圖書館" aria-pressed="false">圖書館</button>
+        <button type="button" class="type-tag" data-type="Good Eye" aria-pressed="false">Good Eye</button>
         <button type="button" class="type-tag" data-type="酒吧" aria-pressed="false">酒吧</button>
         <button type="button" class="type-tag" data-type="音樂" aria-pressed="false">音樂</button>
         <button type="button" class="type-tag" data-type="自然" aria-pressed="false">自然</button>
@@ -313,6 +315,8 @@
                 <button type="button" class="map-type-tag" data-type="拍照" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📷</span>拍照</button>
                 <button type="button" class="map-type-tag" data-type="泡湯" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♨️</span>泡湯</button>
                 <button type="button" class="map-type-tag" data-type="書店" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📖</span>書店</button>
+                <button type="button" class="map-type-tag" data-type="圖書館" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📚</span>圖書館</button>
+                <button type="button" class="map-type-tag" data-type="Good Eye" aria-pressed="false"><span class="tag-icon" aria-hidden="true">👁️</span>Good Eye</button>
                 <button type="button" class="map-type-tag" data-type="酒吧" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍸</span>酒吧</button>
                 <button type="button" class="map-type-tag" data-type="音樂" aria-pressed="false"><span class="tag-icon" aria-hidden="true">♫</span>音樂</button>
                 <button type="button" class="map-type-tag" data-type="自然" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🌿</span>自然</button>
@@ -685,6 +689,41 @@ spots.push(...unochaTaipeiStores.map(([branch,area,address,lat,lng,cid,note,revi
   note,coords:[lat,lng],mapUrl:`https://www.google.com/maps?cid=${BigInt(`0x${cid}`).toString()}`,reviewUrl
 })));
 
+// Good Eye Taipei 的書店、圖書館與美術館。保留既有地點，只補來源標籤與特色。
+// 原指南有過時地址：Lightbox 已搬遷；好樣思維已歇業，卡片明確標示。
+const goodEyePlaces = [
+  ['下北沢世代','萬華','書店',1,'以國內外獨立刊物與 zine 為主的選書空間；出發前請確認是否開放。',25.0333514,121.5057314,'1A1','和平西路二段141號2樓之2'],
+  ['朋丁 Pon Ding','中山／赤峰街','書店',2,'一樓藝術書店、二樓咖啡、三樓展場，可以從選書一路逛到展覽。',25.0491925,121.5220399,'1A2','中山北路一段53巷6號'],
+  ['漫畫私倉 Mangasick','台電大樓','書店',2,'專營另類漫畫與次文化視覺藝術，也有台灣獨立刊物與小型展覽。',25.016454,121.530909,'1A3','羅斯福路三段244巷10弄2號B1'],
+  ['舊香居','台電大樓','書店',2,'老牌舊書店，適合慢慢翻找絕版書與舊刊物。',25.0221486,121.5292718,'1A4','龍泉街81號'],
+  ['台灣 e 店','台電大樓','書店',1,'以台灣歷史、文化和本土議題選書，也有音樂與文創商品。',25.0194673,121.5330293,'1A5','新生南路三段76巷6號'],
+  ['好樣思維 VVG Thinking','華山／忠孝新生','書店',1,'曾是華山紅磚倉庫裡的書籍與雜貨空間；已於 2021 年結束營業，僅供舊誌回顧。',25.0441,121.5294,'1A6','華山文創園區紅磚六合院'],
+  ['Boven 雜誌圖書館','東區／大安','圖書館',2,'收藏設計與生活風格雜誌的主題圖書館，適合慢慢翻閱。',25.0441952,121.5451715,'1B1','復興南路一段107巷5弄18號B1'],
+  ['不只是圖書館','松山','圖書館',2,'松山文創園區的設計主題圖書館，空間也值得一看。',25.0436839,121.55935,'1B2','光復南路133號2樓'],
+  ['辜振甫先生紀念圖書館','公館','圖書館',2,'位於臺大社科院，以建築師伊東豊雄設計的閱覽空間聞名。',25.0205851,121.5423287,'1B3','羅斯福路四段1號臺大社科院'],
+  ['北投圖書館','北投','圖書館',2,'臺灣首座綠建築圖書館，木質建築坐落在北投公園樹蔭間。',25.1364397,121.5062909,'1B4','光明路251號'],
+  ['Lightbox 攝影圖書室','台電大樓','圖書館',2,'以台灣攝影出版物為核心的公共閱讀空間；現址在羅斯福路三段。',25.0197506,121.530562,'1B5','羅斯福路三段269巷19號'],
+  ['臺北市立美術館圖書室','圓山','圖書館',2,'館內視覺藝術專門圖書室，適合查閱藝術史與展覽資料。',25.0725939,121.5248517,'1B6','中山北路三段181號'],
+  ['國立故宮博物院','士林','展覽',3,'典藏豐富歷史文物，適合安排半天細看常設展與特展。',25.1023639,121.5485016,'1C1','至善路二段221號'],
+  ['台北市立美術館','圓山','展覽',3,'以現代與當代藝術展覽為主，適合搭配圓山散步。',25.0720,121.5247,'1C2','中山北路三段181號'],
+  ['台北數位藝術中心','士林','展覽',2,'科技與數位藝術的展演空間，不定期舉辦展覽與工作坊。',25.1058587,121.5220107,'1C3','福華路180號'],
+  ['樹火紀念紙博物館','中山／松江南京','展覽',2,'以紙與造紙文化為主題的小型博物館，也有紙藝體驗。',25.048197,121.533603,'1C4','長安東路二段68號'],
+  ['台北當代藝術館','中山／赤峰街','展覽',2,'老校舍改建的當代藝術館，展覽與建築都值得停留。',25.0505,121.5189,'1C5','長安西路39號'],
+  ['忠泰美術館','華山／忠孝新生','展覽',2,'聚焦城市與未來議題，展覽常結合建築、設計與當代藝術。',25.0442952,121.5373147,'1C6','市民大道三段178號']
+];
+for(const [name,area,category,hours,note,lat,lng,guideId,address] of goodEyePlaces){
+  const spot=spots.find(item=>item.name===name);
+  const guideUrl=`https://taipei.goodeye.guide/#${guideId}`;
+  if(spot){
+    if(!spot.type.includes(category))spot.type.unshift(category);
+    if(!spot.type.includes('Good Eye'))spot.type.push('Good Eye');
+    spot.note=note;spot.guideUrl=guideUrl;
+  }else{
+    spots.push({name,area,type:[category,'Good Eye'],hours,note,coords:[lat,lng],
+      mapUrl:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${address} 台北`)}`,guideUrl});
+  }
+}
+
 const areaSelect=document.getElementById('area');
 const existingAreas=new Set([...areaSelect.options].map(option=>option.value));
 for(const area of new Set(spots.map(spot=>spot.area))){
@@ -786,7 +825,7 @@ const nearbyRadiusKm=5;
 const markerByName=new Map();
 const routeMarkers=[];
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
-const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點飲料:'🍽️',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',酒吧:'🍸',音樂:'♫',自然:'🌿'};
+const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點飲料:'🍽️',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',圖書館:'📚','Good Eye':'👁️',酒吧:'🍸',音樂:'♫',自然:'🌿'};
 
 document.querySelectorAll('button[data-type]').forEach(button=>{
   if(button.querySelector('.tag-icon'))return;
@@ -819,6 +858,7 @@ const spotCoordinates={
 const foodTypes=['美食','早餐','甜點飲料'];
 function spotVisualType(spot){
   if(spot.type.includes('飲品'))return '飲品';
+  if(spot.type.includes('圖書館'))return '圖書館';
   if(spot.type[0]==='書店')return '書店';
   if(spot.type.includes('咖啡'))return '咖啡';
   if(spot.type.includes('書店'))return '書店';
@@ -832,7 +872,7 @@ function spotIllustration(spot){
   const common='fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"';
   const visual=spotVisualType(spot);
   if(visual==='飲品')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M19 22h37l-5 39H24Z" fill="#A8D3E6"/><path d="M15 22h45M39 22 46 7h11M29 49h16M31 40h12"/><circle cx="33" cy="55" r="2" fill="#3E3A39"/><circle cx="43" cy="55" r="2" fill="#3E3A39"/></g></svg>`;
-  if(visual==='書店')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M12 17c11-4 20-2 24 4v40c-5-6-13-8-24-4Zm48 0c-11-4-20-2-24 4v40c5-6 13-8 24-4Z" fill="#A8D3E6"/><path d="M36 21v40M20 29h9M20 38h9M43 29h9M43 38h9"/></g></svg>`;
+  if(visual==='書店'||visual==='圖書館')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M12 17c11-4 20-2 24 4v40c-5-6-13-8-24-4Zm48 0c-11-4-20-2-24 4v40c5-6 13-8 24-4Z" fill="#A8D3E6"/><path d="M36 21v40M20 29h9M20 38h9M43 29h9M43 38h9"/></g></svg>`;
   if(visual==='泡湯')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M15 40c6 5 12 5 18 0s12-5 18 0 10 5 13 2v17H9V42c2 1 4 0 6-2Z" fill="#A8D3E6"/><path d="M22 32c-7-7 7-10 0-19M39 32c-7-7 7-10 0-19M55 32c-7-7 7-10 0-19"/></g></svg>`;
   if(visual==='美食')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><circle cx="36" cy="36" r="20" fill="#F6D27A"/><circle cx="36" cy="36" r="12" fill="#FFFCF6"/><path d="M8 12v48M4 12v14c0 5 8 5 8 0V12M64 12v48M60 12c-5 7-5 16 4 19"/></g></svg>`;
   if(visual==='咖啡')return `<svg viewBox="0 0 72 72" aria-hidden="true"><g ${common}><path d="M14 25h41v21c0 10-8 17-18 17h-5c-10 0-18-7-18-17Z" fill="#F6D27A"/><path d="M55 30h4c12 0 11 17 0 17h-4M23 16c-5-6 5-8 0-13M39 16c-5-6 5-8 0-13"/><path d="M12 64h48"/></g></svg>`;
@@ -869,7 +909,7 @@ function updateMarkerSelection(){
 
 function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
-  const sourceLink=spot.reviewUrl?`<a class="button-link" href="${spot.reviewUrl}" target="_blank" rel="noopener noreferrer">推薦依據 ↗</a>`:spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
+  const sourceLink=spot.guideUrl?`<a class="button-link" href="${spot.guideUrl}" target="_blank" rel="noopener noreferrer">Good Eye 介紹 ↗</a>`:spot.reviewUrl?`<a class="button-link" href="${spot.reviewUrl}" target="_blank" rel="noopener noreferrer">推薦依據 ↗</a>`:spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
   els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${sourceLink}</div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
@@ -996,9 +1036,9 @@ function render(list){
     const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
     external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
     actions.append(preview,external); card.appendChild(actions); els.cards.appendChild(card);
-    if(spot.reviewUrl||spot.sourceUrl){
-      const source=document.createElement('a');source.className='button-link';source.textContent=spot.reviewUrl?'推薦依據 ↗':'推薦貼文 ↗';
-      source.href=spot.reviewUrl||spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
+    if(spot.guideUrl||spot.reviewUrl||spot.sourceUrl){
+      const source=document.createElement('a');source.className='button-link';source.textContent=spot.guideUrl?'Good Eye 介紹 ↗':spot.reviewUrl?'推薦依據 ↗':'推薦貼文 ↗';
+      source.href=spot.guideUrl||spot.reviewUrl||spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
     }
   });
   renderMapList(list);
