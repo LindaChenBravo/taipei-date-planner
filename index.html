@@ -1077,7 +1077,7 @@ function fitRouteMap(){
   if(!routeMap)return;
   const positions=routes[selectedRouteIndex].stops.map(name=>routeLocations[name]);
   const bounds=positions.reduce((box,position)=>box.extend([position[1],position[0]]),new maplibregl.LngLatBounds());
-  routeMap.fitBounds(bounds,{padding:55,maxZoom:14.5,duration:scrollBehavior()==='smooth'?600:0});
+  routeMap.fitBounds(bounds,{padding:55,maxZoom:14.5,duration:0});
 }
 
 function updateRouteMap(){
