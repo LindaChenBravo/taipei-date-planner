@@ -109,7 +109,7 @@
     .empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .site-tabs{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:900;width:min(640px,calc(100% - 28px));padding:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;background:rgba(255,252,246,.94);border:var(--line);border-radius:22px;box-shadow:0 8px 24px rgba(62,58,57,.18);backdrop-filter:blur(10px)}
-    .site-tab{border:0;border-radius:14px;padding:11px 5px;background:transparent;white-space:nowrap;font-size:13px}
+    .site-tab{display:flex;align-items:center;justify-content:center;gap:4px;border:0;border-radius:14px;padding:11px 5px;background:transparent;white-space:nowrap;font-size:13px;color:var(--ink);text-decoration:none}
     .site-tab.active{background:var(--yellow);box-shadow:inset 0 0 0 2px var(--ink)}
     body.view-map .hero,body.view-map .type-picker,body.view-map .panel,body.view-map #recommendation,body.view-map #routeSection,body.view-map #listSection{display:none!important}
     body.view-map .wrap{padding-bottom:0}
@@ -118,15 +118,7 @@
     body.view-list .wrap,body.view-routes .wrap{padding:14px 14px 100px}
     body.view-routes .hero,body.view-routes .type-picker,body.view-routes .panel,body.view-routes #recommendation,body.view-routes #mapSection,body.view-routes #listSection{display:none!important}
     body.view-routes #routeSection{display:block!important;margin-top:8px}
-    body.view-add .hero,body.view-add .type-picker,body.view-add .panel,body.view-add #recommendation,body.view-add #mapSection,body.view-add #listSection,body.view-add #routeSection{display:none!important}
-    body.view-add .wrap{padding:14px 14px 100px}
-    body:not(.view-add) #addPlaceSection{display:none!important}
-    .add-place-card{padding:22px;background:#F2FAFD}
-    .add-place-card h3{margin:0 0 10px;font-size:22px}
-    .add-place-card p{margin:0 0 14px;color:var(--muted);line-height:1.7}
-    .add-place-steps{margin:0 0 18px;padding-left:22px;line-height:1.9}
-    .add-place-note{font-size:13px;color:var(--muted);margin-top:10px}
-    .hero,.type-picker,.panel,#recommendation,#routeSection,#addPlaceSection,main>section[aria-labelledby="spotTitle"]{width:calc(100% - 28px);max-width:1080px;align-self:center}
+    .hero,.type-picker,.panel,#recommendation,#routeSection,main>section[aria-labelledby="spotTitle"]{width:calc(100% - 28px);max-width:1080px;align-self:center}
     .cloud{animation:cloudDrift 4.6s ease-in-out infinite alternate}
     .train{animation:trainBob 2.4s ease-in-out infinite}
     .spark{transform-origin:center;animation:sparkle 2s ease-in-out infinite}
@@ -290,30 +282,13 @@
       <div id="cards" class="grid"></div>
     </section>
 
-    <section id="addPlaceSection" aria-labelledby="addPlaceTitle">
-      <div class="section-title">
-        <div><h2 id="addPlaceTitle">新增地點</h2><p class="section-copy">把喜歡的店家或景點交給對話整理，再加入這份地圖。</p></div>
-        <span class="badge">投稿入口</span>
-      </div>
-      <article class="card add-place-card">
-        <h3>推薦一個新的約會地點</h3>
-        <p>前往 Claude 對話後，貼上地點名稱、Google Maps 連結，以及你想補充的資訊。</p>
-        <ol class="add-place-steps">
-          <li>整理 Google Maps 精選評論重點</li>
-          <li>判斷適合的區域與約會類別</li>
-          <li>整理成網站圖卡內容並更新地圖</li>
-        </ol>
-        <div><a id="claudeConversationLink" class="button-link" href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">前往 Claude 新增地點 ↗</a></div>
-        <div class="add-place-note">目前暫時連至 Claude 新對話；設定固定對話網址後，會直接回到指定對話。</div>
-      </article>
-    </section>
   </main>
 
   <nav class="site-tabs" aria-label="瀏覽方式">
     <button type="button" class="site-tab active" data-view="map" aria-pressed="true"><span aria-hidden="true">🗺️</span> 地圖探索</button>
     <button type="button" class="site-tab" data-view="list" aria-pressed="false"><span aria-hidden="true">🔎</span> 條件搜尋</button>
     <button type="button" class="site-tab" data-view="routes" aria-pressed="false"><span aria-hidden="true">🚋</span> 精選路線</button>
-    <button type="button" class="site-tab" data-view="add" aria-pressed="false"><span aria-hidden="true">＋</span> 新增地點</button>
+    <a class="site-tab" href="https://chatgpt.com/s/cx_6adea5b363d08191984399c50e6361b8" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">＋</span> 新增地點 <span class="sr-only">（在新分頁開啟）</span></a>
   </nav>
 
 <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
@@ -371,7 +346,7 @@ const els = {
   routeSection:document.getElementById('routeSection'), routes:document.getElementById('routes'), mapSection:document.getElementById('mapSection'),
   mapTypeTags:document.getElementById('mapTypeTags'), mapCanvas:document.getElementById('mapCanvas'), mapSpotCard:document.getElementById('mapSpotCard'), mapTitle:document.getElementById('mapTitle'),
   mapExternalLink:document.getElementById('mapExternalLink'), mapCount:document.getElementById('mapCount'),
-  siteTabs:[...document.querySelectorAll('.site-tab')]
+  siteTabs:[...document.querySelectorAll('.site-tab[data-view]')]
 };
 
 let selectedType='all';
@@ -446,11 +421,9 @@ function setView(view){
   const isMap=view==='map';
   const isList=view==='list';
   const isRoutes=view==='routes';
-  const isAdd=view==='add';
   document.body.classList.toggle('view-map',isMap);
   document.body.classList.toggle('view-list',isList);
   document.body.classList.toggle('view-routes',isRoutes);
-  document.body.classList.toggle('view-add',isAdd);
   els.routeSection.classList.toggle('hidden',!isRoutes);
   els.siteTabs.forEach(tab=>{
     const active=tab.dataset.view===view;
