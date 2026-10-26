@@ -201,8 +201,6 @@
         <button type="button" class="type-tag" data-type="手作" aria-pressed="false">手作</button>
         <button type="button" class="type-tag" data-type="美食" aria-pressed="false">美食</button>
         <button type="button" class="type-tag" data-type="早餐" aria-pressed="false">早餐</button>
-        <button type="button" class="type-tag" data-type="中晚餐" aria-pressed="false">中晚餐</button>
-        <button type="button" class="type-tag" data-type="宵夜" aria-pressed="false">宵夜</button>
         <button type="button" class="type-tag" data-type="甜點飲料" aria-pressed="false">甜點飲料</button>
         <button type="button" class="type-tag" data-type="夜市" aria-pressed="false">夜市</button>
         <button type="button" class="type-tag" data-type="拍照" aria-pressed="false">拍照</button>
@@ -270,8 +268,6 @@
                 <button type="button" class="map-type-tag" data-type="手作" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🧵</span>手作</button>
                 <button type="button" class="map-type-tag" data-type="美食" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍽️</span>美食</button>
                 <button type="button" class="map-type-tag" data-type="早餐" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍽️</span>早餐</button>
-                <button type="button" class="map-type-tag" data-type="中晚餐" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍽️</span>中晚餐</button>
-                <button type="button" class="map-type-tag" data-type="宵夜" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍽️</span>宵夜</button>
                 <button type="button" class="map-type-tag" data-type="甜點飲料" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🍽️</span>甜點飲料</button>
                 <button type="button" class="map-type-tag" data-type="夜市" aria-pressed="false"><span class="tag-icon" aria-hidden="true">🏮</span>夜市</button>
                 <button type="button" class="map-type-tag" data-type="拍照" aria-pressed="false"><span class="tag-icon" aria-hidden="true">📷</span>拍照</button>
@@ -627,7 +623,7 @@ const xizhiPlaces = [
   ['牧童咖啡（福德店）','咖啡','推薦餐點與環境。',25.0682707,121.6372759]
 ];
 spots.push(...xizhiPlaces.map(([name,categories,note,lat,lng,search])=>({
-  name,area:'汐止',type:['美食',...categories.split(',')],hours:1,note,coords:[lat,lng],
+  name,area:'汐止',type:['美食',...categories.split(',').filter(category=>category!=='中晚餐'&&category!=='宵夜')],hours:1,note,coords:[lat,lng],
   ...(search?{mapUrl:search.startsWith('https://')?search:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${search} 新北市汐止區`)}`}:{})
 })));
 
@@ -671,7 +667,7 @@ let currentMapSpot=null;
 let vectorMap=null;
 const markerByName=new Map();
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
-const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',中晚餐:'🍽️',宵夜:'🍽️',甜點飲料:'🍽️',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',酒吧:'🍸',音樂:'♫',自然:'🌿'};
+const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點飲料:'🍽️',夜市:'🏮',拍照:'📷',泡湯:'♨️',書店:'📖',酒吧:'🍸',音樂:'♫',自然:'🌿'};
 
 document.querySelectorAll('button[data-type]').forEach(button=>{
   if(button.querySelector('.tag-icon'))return;
@@ -701,7 +697,7 @@ const spotCoordinates={
   '龍洞':[25.1110,121.9170],'劍龍稜':[25.1107,121.8620]
 };
 
-const foodTypes=['美食','早餐','中晚餐','宵夜','甜點飲料'];
+const foodTypes=['美食','早餐','甜點飲料'];
 function spotVisualType(spot){
   if(spot.type.includes('飲品'))return '飲品';
   if(spot.type[0]==='書店')return '書店';
