@@ -1,0 +1,3759 @@
+{
+  "date": "2026-10-27",
+  "reviewScope": "全站498張卡片的介紹文字檢查、50筆待補清單逐一查核及先前咖啡／早餐不足之處補查。非全站營業狀態保證。",
+  "previousReview": "data/description-review-2026-10-27.json",
+  "summary": {
+    "totalReviewed": 498,
+    "descriptionsUpdated": 63,
+    "previousQueueReviewed": 50,
+    "previousQueueUpdated": 44,
+    "previousQueueRetained": 6,
+    "otherEvidenceExceptions": 3,
+    "maxDescriptionCharacters": 42,
+    "nonDescriptionFieldsChanged": 0
+  },
+  "changes": [
+    {
+      "name": "未央咖啡店",
+      "before": "結合咖啡與閱讀的空間；若要帶電腦久坐，先確認限時與插座規定。",
+      "after": "可點冰滴咖啡、檸檬美式配檸檬起司蛋糕，也供應水餃；可閱讀、聊天。",
+      "basis": "保留閱讀聊天特色，補具體品項",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn104search0",
+          "title": "台北深夜咖啡廳推薦！公館古亭／北車／信義區讀書續攤，19家營業時間、菜單｜食尚玩家",
+          "url": "https://supertaste.tvbs.com.tw/food/356539"
+        },
+        {
+          "ref": "turn104search3",
+          "title": "〖台北不限時咖啡廳〗10間特色推薦：「角公園咖啡」復古浪漫氛圍、「未央咖啡店」營業到凌晨？ | Tatler Asia",
+          "url": "https://www.tatlerasia.com/dining/food/taipei-cafes-romantic-zh-hant"
+        }
+      ]
+    },
+    {
+      "name": "拾米屋",
+      "before": "北投的咖啡與甜點店；當日甜點品項及供應時間先向店家確認。",
+      "after": "以咖啡、蛋糕與巧克力為主，不供應正餐；想喝咖啡吃點心可先確認當日甜點。",
+      "basis": "保留咖啡點心，補用餐限制",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn103search2",
+          "title": "拾米屋 2026｜北投日式老穀倉咖啡館，下午茶必訪推薦｜阿新筆記",
+          "url": "https://shin.tw/taipei-sheme-house/"
+        }
+      ]
+    },
+    {
+      "name": "三姐妹廚房 3Ả KITCHEN",
+      "before": "可試越式麵食份量足，炒飯與環境評價較分歧。",
+      "after": "越式麵食份量足；炒飯與用餐環境評價較分歧。",
+      "basis": "保留使用者原有推薦理由，只精簡語句或點餐動作",
+      "existingSources": [],
+      "sources": []
+    },
+    {
+      "name": "豆然咖啡",
+      "before": "靠近捷運徐匯中學站；若要帶電腦，先詢問插座與用餐限時。",
+      "after": "近徐匯中學站，可先試聞咖啡豆再選口味；落地窗與奶油色牆面是空間特色。",
+      "basis": "保留位置與空間質感，補實際選豆方式",
+      "existingSources": [
+        "https://www.threads.com/@raeeeeee91/post/DaSzqK8Gryg"
+      ],
+      "sources": [
+        {
+          "ref": "turn112search0",
+          "title": "三重咖啡廳推薦｜徐匯中學站豆然咖啡｜韓系風格咖啡廳 – 當婚禮顧問下班時＿米娜",
+          "url": "https://mina.tw/inner_bean_coffee_minalike/"
+        },
+        {
+          "ref": "turn112search3",
+          "title": "咖喳 Catcha | 豆然咖啡INNER BEAN COFFEE | 推薦一家適合工作的咖啡廳，有限時、部分有插座、WIFI 很強",
+          "url": "https://catcha-cafes.com/place/inner-bean-coffee/"
+        }
+      ]
+    },
+    {
+      "name": "亞曼手工咖啡館",
+      "before": "位於中正北路19號，以手工咖啡為主；內用規定與當日供應先向店家確認。",
+      "after": "中正北路19號，提供單品咖啡、甜點與正餐；當日餐點供應可先詢問。",
+      "basis": "保留地址與咖啡推薦，補已列服務，不加入未確認插座政策",
+      "existingSources": [
+        "https://www.threads.com/@wow_togeh/post/DaSK7yUEiJH"
+      ],
+      "sources": [
+        {
+          "ref": "turn114search0",
+          "title": "亞曼手工咖啡館 - Cafe Nomad",
+          "url": "https://cafenomad.tw/shop/f6fcf4cd-5a64-4070-956f-e16d2c379354"
+        }
+      ]
+    },
+    {
+      "name": "李好咖啡",
+      "before": "三重的在地咖啡小店；餐點、插座與限時資訊尚待店家確認。",
+      "after": "三重巷弄咖啡店，可試焦糖布丁、手沖咖啡；草莓鬆餅為季節供應。",
+      "basis": "同店地址與具體食記",
+      "existingSources": [
+        "https://www.threads.com/@yu.si.hua/post/DaSMgrrGQqX"
+      ],
+      "sources": [
+        {
+          "ref": "turn94search1",
+          "title": "新北市三重區〖三重咖啡館〗李好咖啡，草莓鬆餅、焦糖布丁好吃推薦|美食|WalkerLand窩客島",
+          "url": "https://www.walkerland.com.tw/article/view/383551"
+        },
+        {
+          "ref": "turn101search0",
+          "title": "〖2026三重早午餐推薦〗17家三重蘆洲早餐、早午餐 | 各種選擇吃不膩！ - 花時光旅行實驗室",
+          "url": "https://whatime.space/sanchong-luzhou-breakfast/"
+        }
+      ]
+    },
+    {
+      "name": "西當·普里斯",
+      "before": "隱身三重巷弄的咖啡店；內用低消、限時與插座須先向店家確認。",
+      "after": "三重安樂街的自家焙煎咖啡店，可買咖啡豆、濾掛；購豆可先詢問代磨服務。",
+      "basis": "同店官方服務資訊",
+      "existingSources": [
+        "https://www.threads.com/@wendyotdaily/post/DaSJ6OckuW6"
+      ],
+      "sources": [
+        {
+          "ref": "turn111search0",
+          "title": "西當普里斯工作室｜公司簡介－104人力銀行",
+          "url": "https://www.104.com.tw/company/1a2x6bn53x"
+        },
+        {
+          "ref": "turn111search2",
+          "title": "西當・普里斯︱自家焙煎咖啡店",
+          "url": "https://myship.7-11.com.tw/general/detail?id=GM2508294104707"
+        },
+        {
+          "ref": "turn111search3",
+          "title": "網路咖啡豆推薦清單 - Cafe Nomad",
+          "url": "https://cafenomad.tw/coffee"
+        }
+      ]
+    },
+    {
+      "name": "KOON Coffee",
+      "before": "以咖啡飲品為主；內用座位、插座與限時規定須先向店家確認。",
+      "after": "近捷運三重站的一店以自家淺焙咖啡為主，也供應單品臺灣茶；甜點依門市供應。",
+      "basis": "依座標區分一店，不套用二店肉桂捲推薦",
+      "existingSources": [
+        "https://www.threads.com/@kooncoffee0801/post/DaSDjf1H8mJ"
+      ],
+      "sources": [
+        {
+          "ref": "turn113search1",
+          "title": "三重超人氣肉桂捲！Koon coffee 㒭咖啡.台北橋寵物友善咖啡廳 – C妞日記｜Claire's Diary",
+          "url": "https://clairetila.com/kooncoffee/"
+        },
+        {
+          "ref": "turn113search0",
+          "title": "Koon Coffee｜精品咖啡：雙胞胎兄弟使用灣得客製服務，點綴夢想中的品牌咖啡廳",
+          "url": "https://www.wonder-product.com/pages/koon-coffee"
+        }
+      ]
+    },
+    {
+      "name": "管麵素食麵館",
+      "before": "南機場一帶的素食麵館，適合安排素食小吃。",
+      "after": "南機場的素食麵館，可試蒸臭豆腐，蒸煮入味、口感滑嫩；素食類型先向店家確認。",
+      "basis": "具名蒸臭豆腐心得",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn87search2",
+          "title": "管麵蒸臭豆腐蒸的道地入味滑嫩真材實料#南機場美食 ...",
+          "url": "https://www.facebook.com/vegetarianFamily/posts/%E7%AE%A1%E9%BA%B5%E8%92%B8%E8%87%AD%E8%B1%86%E8%85%90%E8%92%B8%E7%9A%84%E9%81%93%E5%9C%B0%E5%85%A5%E5%91%B3-%E6%BB%91%E5%AB%A9%E7%9C%9F%E6%9D%90%E5%AF%A6%E6%96%99%E5%8D%97%E6%A9%9F%E5%A0%B4%E7%BE%8E%E9%A3%9F-%E7%AE%A1%E9%BA%B5%E7%B4%A0%E9%A3%9F%E9%BA%B5%E9%A4%A8-%E8%92%B8%E8%87%AD%E8%B1%86%E8%85%90%E5%A5%BD%E5%90%83/777950304368423/"
+        },
+        {
+          "ref": "turn87search4",
+          "title": "素易食《管麵素食麵館》村民食記- \"蒸\"的臭豆腐",
+          "url": "https://food.suiis.com/comm_display.aspx?comm_id=100002856"
+        }
+      ]
+    },
+    {
+      "name": "東港旗魚串",
+      "before": "艋舺夜市的旗魚串小吃。",
+      "after": "現炸旗魚黑輪內包水煮蛋，外皮酥脆；可自行加甜辣醬或芥末醬。",
+      "basis": "顧客實食心得",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn67search3",
+          "title": "東港旗魚黑輪 在 Fooday 美食社群 | 找餐廳不踩雷，最真實的美食 App",
+          "url": "https://fooday.app/zh-TW/spots/WPbbUJ8exWWdCPMMQ5gSWp"
+        },
+        {
+          "ref": "turn67search1",
+          "title": "艋舺夜市排隊沒斷過的東港旗魚串，20年老店是夜市裡的排隊王，每個人都買一大包 @Irene's 食旅．時旅",
+          "url": "https://irenelife.com/blog/post/i-yu-chuan"
+        }
+      ]
+    },
+    {
+      "name": "郭家炒牛肉",
+      "before": "華西街的熱炒牛肉，適合安排夜市正餐。",
+      "after": "可試沙茶炒牛肉配白飯，牛雜湯可續湯；華西街用餐尖峰常需等候。",
+      "basis": "具體食記",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn70search2",
+          "title": "〖華西街美食推薦〗郭家炒牛肉｜台北超人氣沙茶炒牛肉、免費續湯牛雜湯（附菜單） @Nash，神之領域",
+          "url": "https://nash.tw/letsgoguojiabeef2026080/"
+        }
+      ]
+    },
+    {
+      "name": "南機場芋頭大王",
+      "before": "南機場夜市的芋頭甜品。",
+      "after": "可試蜜芋頭配剉冰，芋頭綿密；另可搭花生、粉粿，配料依當日供應。",
+      "basis": "具體食記口感與選料",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn72search0",
+          "title": "南機場芋頭大王｜食尚玩家",
+          "url": "https://supertaste.tvbs.com.tw/infocard/7036"
+        },
+        {
+          "ref": "turn72search1",
+          "title": "2026台北南機場一日遊！免門票植物園、史博館翻新必看，10大必吃美食地圖｜食尚玩家",
+          "url": "https://supertaste.tvbs.com.tw/food/359119"
+        }
+      ]
+    },
+    {
+      "name": "早安大飯糰（民族六街）",
+      "before": "Google 地圖列於民族六街。",
+      "after": "民族六街市場入口附近的飯糰攤，現包出餐；早上常有排隊人潮。",
+      "basis": "同攤位顧客心得，未挪用連興店口味",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn102search0",
+          "title": "新北市汐止區｜早安大飯糰",
+          "url": "https://footinder.app/places/642a65a0a99b7dfe5fea4b2e"
+        },
+        {
+          "ref": "turn102search1",
+          "title": "[問題] 汐止有包滷蛋的飯糰嗎 - 看板 Sijhih - 批踢踢實業坊",
+          "url": "https://www.ptt.cc/bbs/Sijhih/M.1644760598.A.6A0.html"
+        }
+      ]
+    },
+    {
+      "name": "手工赤肉羹、古早味滷肉飯",
+      "before": "樟樹二路的赤肉羹與滷肉飯。",
+      "after": "可選手工赤肉羹搭滷肉飯，赤肉條滑嫩、羹湯濃稠；位於樟樹二路。",
+      "basis": "餐點描述與外送按讚資訊",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn47search0",
+          "title": "Order 唐媽媽手工赤肉羹 古早味滷肉飯 Menu Delivery〖Menu & Prices〗| Taipei | Uber Eats",
+          "url": "https://www.ubereats.com/store/%E5%94%90%E5%AA%BD%E5%AA%BD%E6%89%8B%E5%B7%A5%E8%B5%A4%E8%82%89%E7%BE%B9-%E5%8F%A4%E6%97%A9%E5%91%B3%E6%BB%B7%E8%82%89%E9%A3%AF/9E855KGhUrW3DrP-ftWufg"
+        },
+        {
+          "ref": "turn47search2",
+          "title": "唐媽媽手工赤肉羹 古早味滷肉飯 Menu Delivery in Taipei | Delivery Menu & Prices | Uber Eats",
+          "url": "https://www.ubereats.com/tw-en/store/%E5%94%90%E5%AA%BD%E5%AA%BD%E6%89%8B%E5%B7%A5%E8%B5%A4%E8%82%89%E7%BE%B9-%E5%8F%A4%E6%97%A9%E5%91%B3%E6%BB%B7%E8%82%89%E9%A3%AF/9E855KGhUrW3DrP-ftWufg"
+        }
+      ]
+    },
+    {
+      "name": "成大器烤肉飯",
+      "before": "樟樹二路 136 巷的烤肉飯。",
+      "after": "主打直火烤肉便當，肉片帶烤香；汐止店也有烤鯖魚飯可選。",
+      "basis": "品牌特色與汐止店食用留言",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn25search0",
+          "title": "#汐止樟樹店",
+          "url": "https://www.facebook.com/groups/488447408628123/posts/2289082738564572/"
+        },
+        {
+          "ref": "turn25search3",
+          "title": "成大器也來汐止插旗囉～～一樣爆多人！",
+          "url": "https://www.threads.com/%40nick43092000/post/DYb6qkND0X9/%E6%88%90%E5%A4%A7%E5%99%A8%E4%B9%9F%E4%BE%86%E6%B1%90%E6%AD%A2%E6%8F%92%E6%97%97%E5%9B%89%E4%B8%80%E6%A8%A3%E7%88%86%E5%A4%9A%E4%BA%BA%E5%90%83%E7%9A%84%E9%81%B8%E6%93%87%E8%B6%8A%E4%BE%86%E8%B6%8A%E5%A4%9A%E4%BA%86/"
+        },
+        {
+          "ref": "turn25search6",
+          "title": "新開門市買一送一！「便當界烤肉王」直火現烤＋澎派肉量",
+          "url": "https://supertaste.tvbs.com.tw/food/358190"
+        }
+      ]
+    },
+    {
+      "name": "武牛牛排館",
+      "before": "連興街的牛排館，除了牛排，也可留意雞排。",
+      "after": "連興街的排餐店，除牛排外也可試雞排。",
+      "basis": "保留使用者原有推薦理由，只精簡語句或點餐動作",
+      "existingSources": [
+        "https://www.threads.com/@albee0424/post/DW87wUlkVfp"
+      ],
+      "sources": []
+    },
+    {
+      "name": "家กินข้าว 泰料理",
+      "before": "明峰街的泰式料理。",
+      "after": "明峰街的泰式料理店，供應涼拌海鮮泡麵；甜點可留意現做芒果糯米飯。",
+      "basis": "店家公開餐點資訊，非評論排行",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn25search5",
+          "title": "家・泰料理開放線上點餐啦！ 不過小 ...",
+          "url": "https://www.facebook.com/61572899308452/posts/-%E5%AE%B6%E6%B3%B0%E6%96%99%E7%90%86-%E9%96%8B%E6%94%BE%E7%B7%9A%E4%B8%8A%E9%BB%9E%E9%A4%90%E5%95%A6%E4%B8%8D%E9%81%8E%E5%B0%8F%E6%8F%90%E9%86%92%E7%9B%AE%E5%89%8D%E5%8F%AA%E6%8F%90%E4%BE%9B%E4%BE%86%E5%BA%97%E8%87%AA%E5%8F%96%E5%96%94%E6%83%B3%E5%A4%96%E9%80%81%E7%9A%84%E6%9C%8B%E5%8F%8B%E8%AB%8B%E9%80%8F%E9%81%8E-uber-eats-%E9%BB%9E%E9%A4%90%E5%A4%96%E9%80%81%E5%B0%8F%E5%93%A5%E5%93%A5%E5%B0%8F%E5%A7%8A%E5%A7%8A%E6%9C%83%E6%BA%96%E6%99%82%E8%A1%9D%E5%88%BA-%E9%A4%90%E9%BB%9E%E7%8F%BE%E5%81%9A%E5%A4%A7%E7%B4%84-1520-%E5%88%86%E9%90%98%E5%AE%8C%E6%88%90/122138340332763310/"
+        },
+        {
+          "ref": "turn25search11",
+          "title": "涼拌海鮮泡麵🇹🇭ยำมาม่าทะเล 家กินข้าว泰料理新北市汐止 ...",
+          "url": "https://www.facebook.com/61572899308452/videos/%E6%B6%BC%E6%8B%8C%E6%B5%B7%E9%AE%AE%E6%B3%A1%E9%BA%B5-%E0%B8%A2%E0%B8%B3%E0%B8%A1%E0%B8%B2%E0%B8%A1%E0%B9%88%E0%B8%B2%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E5%AE%B6%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E6%B3%B0%E6%96%99%E7%90%86-%E6%96%B0%E5%8C%97%E5%B8%82%E6%B1%90%E6%AD%A2%E5%8D%80%E6%98%8E%E5%B3%B0%E8%A1%9794-1%E8%99%9F%E6%B3%B0%E5%BC%8F%E6%96%99%E7%90%86-%E5%AE%B6%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E6%B3%B0%E6%96%99%E7%90%86-%E6%B1%90%E6%AD%A2%E7%BE%8E%E9%A3%9F-%E5%AE%B6%E6%B3%B0%E6%96%99%E7%90%86-%E6%B1%90%E6%AD%A2%E7%BE%8E%E9%A3%9F-taiw/701623072709051/"
+        }
+      ]
+    },
+    {
+      "name": "楓玥日本料理",
+      "before": "湖前街的日本料理。",
+      "after": "可試牛肉平盆鍋、豆乳雞鍋或馬卡龍壽司，也供應生魚片；晚餐先訂位。",
+      "basis": "具名餐點心得",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn26search3",
+          "title": "新北市汐止區｜楓玥日本料理",
+          "url": "https://footinder.app/places/642a65f9a99b7dfe5fea4b4a"
+        },
+        {
+          "ref": "turn26search0",
+          "title": "楓玥日本料理 – 新北/基隆汐止區的日式料理輕食外帶店家庭聚餐 | OpenRice 台灣開飯喇",
+          "url": "https://tw.openrice.com/zh-tw/newtaipei-keelung/r-%E6%A5%93%E7%8E%A5%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86-%E6%B1%90%E6%AD%A2%E5%8D%80-%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86-%E8%BC%95%E9%A3%9F-r581706"
+        }
+      ]
+    },
+    {
+      "name": "阿財鍋貼",
+      "before": "中興路的鍋貼店。",
+      "after": "可試底皮煎脆、內餡多汁的鍋貼；水餃也有湯汁，尖峰時段常要排隊。",
+      "basis": "食記口感與候位提醒",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn24search19",
+          "title": "nickhow給阿財鍋貼．水餃的食記",
+          "url": "https://www.openrice.com/zh-tw/newtaipei-keelung/review/%E6%96%B0%E5%8C%97%E6%B1%90%E6%AD%A2-%E9%98%BF%E8%B2%A1%E9%8D%8B%E8%B2%BC%E6%B0%B4%E9%A4%83%E5%B0%88%E8%B3%A3%E5%BA%97-%E5%85%A7%E9%A4%A1%E9%A3%BD%E6%BB%BF%E7%88%86%E6%BC%BF%E9%8D%8B%E8%B2%BC-%E6%B1%90%E6%AD%A2%E7%BE%8E%E9%A3%9F%E6%8E%A8%E8%96%A6%E9%A3%9F%E8%A8%98-e15666"
+        },
+        {
+          "ref": "turn24search13",
+          "title": "阿財鍋貼‧水餃汐止專賣店【汐科火車站】(新北市汐止區)",
+          "url": "https://char.tw/blog/post/42937622"
+        }
+      ]
+    },
+    {
+      "name": "黃金三角臭豆腐",
+      "before": "中興路的臭豆腐。",
+      "after": "可試酥脆臭豆腐配泡菜，也有大腸麵線；麵線勾芡較薄、口味清淡。",
+      "basis": "食記口感",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn29search2",
+          "title": "黃金三角臭豆腐地址、電話、菜單、訂位、營業時間（PTT/Dcard/mobild01評價）",
+          "url": "https://food.timetables.tw/restaurant/ChIJ0fHnq0xTXTQRv0yDfvIqamY/"
+        },
+        {
+          "ref": "turn29search3",
+          "title": "黃金三角臭豆腐香脆必點~大腸麵線也好吃~銅板美食必推｜BJ愛吃客的沙龍",
+          "url": "https://vocus.cc/article/694f8bbffd89780001052084"
+        }
+      ]
+    },
+    {
+      "name": "韋安鍋貼專賣店",
+      "before": "樟樹一路的鍋貼專賣店。",
+      "after": "樟樹一路144號的鍋貼專賣店，想買多份可先電話詢問供應與取餐時間。",
+      "basis": "已核對店家，無具體評論故以取餐提醒補充",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn27search0",
+          "title": "韋安鍋貼專賣店",
+          "url": "https://www.findcompany.com.tw/%E9%9F%8B%E5%AE%89%E9%8D%8B%E8%B2%BC%E5%B0%88%E8%B3%A3%E5%BA%97"
+        },
+        {
+          "ref": "turn27search1",
+          "title": "汐止區「麵食點心」中式料理 美食資訊 Page 1/4 - 食在北台灣",
+          "url": "https://lovetpe.com/area/xinbei-479-140-1.html"
+        }
+      ]
+    },
+    {
+      "name": "老家餡餅（汐止店）",
+      "before": "餡餅內餡多汁，享用時留意燙口。",
+      "after": "餡餅內餡多汁，剛上桌先小口咬，留意熱湯汁燙口。",
+      "basis": "保留使用者原有推薦理由，只精簡語句或點餐動作",
+      "existingSources": [
+        "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0"
+      ],
+      "sources": []
+    },
+    {
+      "name": "三媽臭臭鍋（汐止忠孝店）",
+      "before": "忠孝東路 256 號的三媽臭臭鍋。",
+      "after": "忠孝東路256號的個人鍋，菜單有沙茶牛肉、牛奶與南瓜湯底。",
+      "basis": "分店菜單，不宣稱評論推薦",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn30search2",
+          "title": "三媽臭臭鍋 汐止忠孝店的菜單和價目表 | 汐止外送 | Uber Eats",
+          "url": "https://www.ubereats.com/tw/store/%E4%B8%89%E5%AA%BD%E8%87%AD%E8%87%AD%E9%8D%8B-%E6%B1%90%E6%AD%A2%E5%BF%A0%E5%AD%9D%E5%BA%97/9Hyr7JDoSk2GHicxxi-leQ?diningMode=DELIVERY"
+        }
+      ]
+    },
+    {
+      "name": "郭呷萬潤餅捲店",
+      "before": "水源路一段的潤餅捲店。",
+      "after": "可試招牌潤餅，包入紅燒肉、蛋酥、豆乾與蔬菜，再加花生粉提香。",
+      "basis": "食記與菜單核對",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn31search0",
+          "title": "台北潤餅推薦｜清明節必吃這5家名店，經典與創意口味一次看 - 遠傳電信FETnet",
+          "url": "https://www.fetnet.net/content/cbu/tw/lifecircle/life/2026/03/TPE_FSRoll.html"
+        },
+        {
+          "ref": "turn31search2",
+          "title": "郭呷萬潤餅捲店 Menu Delivery in Taipei | Delivery Menu & Prices | Uber Eats",
+          "url": "https://www.ubereats.com/tw-en/store/%E9%83%AD%E5%91%B7%E8%90%AC%E6%BD%A4%E9%A4%85%E6%8D%B2%E5%BA%97/y1LBuYRZUe2W6G7TywQEoA"
+        }
+      ]
+    },
+    {
+      "name": "河南鍋貼店",
+      "before": "仁愛路的鍋貼店。",
+      "after": "可試鍋貼搭配店內獨門辣椒醬汁；用餐時段人多，外帶也需預留候餐時間。",
+      "basis": "食記推薦",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn32search3",
+          "title": "河南鍋貼》汐止在地大推薦的人氣鍋貼店，獨門辣椒醬汁很好吃！ – 柒柒夫妻543",
+          "url": "https://sainteat.tw/%E6%B2%B3%E5%8D%97%E9%8D%8B%E8%B2%BC/"
+        }
+      ]
+    },
+    {
+      "name": "嚐歡鐵板燒",
+      "before": "建成路 57 巷的鐵板燒。",
+      "after": "可試雞腿排，外帶也能保留餐點風味；想單點主餐可先詢問供應方式。",
+      "basis": "外送顧客具體心得，非品牌廣告",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn34search0",
+          "title": "評論 嚐歡鐵板燒 | foodpanda Taiwan",
+          "url": "https://www.foodpanda.com.tw/restaurant/yull/chang-huan-tie-ban-shao/reviews"
+        }
+      ]
+    },
+    {
+      "name": "海原日式涮涮鍋（汐止店）",
+      "before": "汐止店的日式涮涮鍋。",
+      "after": "福德一路50號的日式涮涮鍋，設有自助吧與調味區；內容依門市供應。",
+      "basis": "店家工作內容可證實設備，無餐點推薦資料",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn36search0",
+          "title": "誠徵晚班內場計時人員 - 海原日式涮涮鍋(汐止店/多福小吃店) - 新北市打工職缺 | 小雞上工",
+          "url": "https://tw.chickpt.com.tw/job-dqQ0MozBV1oJ"
+        }
+      ]
+    },
+    {
+      "name": "龍鹽酥雞（汐止店）",
+      "before": "福德一路的鹽酥雞。",
+      "after": "可試無骨鹽酥雞、甜不辣與米血，搭配九層塔、洋蔥和蒜頭。",
+      "basis": "外送顧客留言與分店菜單",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn37search2",
+          "title": "龍鹽酥雞 新北汐止店 Menu Delivery in Taipei | Delivery Menu & Prices | Uber Eats",
+          "url": "https://guava.failover.uber.com/tw-en/store/%E9%BE%8D%E9%B9%BD%E9%85%A5%E9%9B%9E-%E6%96%B0%E5%8C%97%E6%B1%90%E6%AD%A2%E5%BA%97/zEwN8w0VWsWW9ai_VudPYA?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlNpZXduYSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVoZFRhV1YzYm1Fc0lFdHlZV3ZEczNjc0lGQnZiR0Z1WkNJdUtpd0tGQW9TQ2NNOFo3UDBXaFpIRVVxWXBFNTNhRVV4RWhRS0VnblJHRTQxd0VRV1J4R19pa2QydGJacnRBJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMmdvb2dsZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTUwLjA5NDIwMjglMkMlMjJsb25naXR1ZGUlMjIlM0ExOS45NTE1NDYzJTdE"
+        },
+        {
+          "ref": "turn37search3",
+          "title": "龍鹽酥雞 新北汐止店的菜單和價目表 | 台北外送 | Uber Eats",
+          "url": "https://www.ubereats.com/tw/store/%E9%BE%8D%E9%B9%BD%E9%85%A5%E9%9B%9E-%E6%96%B0%E5%8C%97%E6%B1%90%E6%AD%A2%E5%BA%97/zEwN8w0VWsWW9ai_VudPYA?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNiU5NiVCMCVFNyVBQiVCOSVFNyVCOCVBMyUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUoxVTlub1N4QmFEUVJ5UjhmRGw4VVlVQSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EyNC44Mzg3MjI2JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTIxLjAxNzcyNDYlN0Q%3D"
+        }
+      ]
+    },
+    {
+      "name": "吮指王（汐止樟樹店）",
+      "before": "樟樹二路的炸物。",
+      "after": "樟樹二路249號，供應美式炸雞與台式雞排，可依喜好選不同炸物。",
+      "basis": "店家服務資訊，不宣稱熱門",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn35search3",
+          "title": "吮指王炸雞(汐止樟樹店)－公司簡介與打工兼職｜小雞上工",
+          "url": "https://www.chickpt.com.tw/company/Br856kXkb02b"
+        },
+        {
+          "ref": "turn35search0",
+          "title": "門市據點 - 吮指王KING-美式炸雞 台式雞排加盟官網",
+          "url": "https://sdc.net.tw/store"
+        }
+      ]
+    },
+    {
+      "name": "噴射雞鹹水雞",
+      "before": "莊敬街的鹹水雞。",
+      "after": "莊敬街的鹹水雞店，可選半雞餐或蔬菜餐；配料、口味依當日供應。",
+      "basis": "分店菜單",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn39search3",
+          "title": "噴射雞鹹水雞菜單 價格 | 向附近的噴射雞鹹水雞訂購 | foodpanda 外送",
+          "url": "https://www.foodpanda.com.tw/restaurant/h6cs/pen-she-ji-xian-shui-ji"
+        }
+      ]
+    },
+    {
+      "name": "香聚麻辣燙",
+      "before": "福德二路的麻辣燙與個人鍋。",
+      "after": "骨湯麻辣燙可自選食材，也有蔬菜套餐；位於福德二路30號。",
+      "basis": "店家與分店菜單",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn40search1",
+          "title": "Order 香聚麻辣燙 - Menu Delivery〖Menu & Prices〗| Taipei | Uber Eats",
+          "url": "https://www.ubereats.com/store/%E9%A6%99%E8%81%9A%E9%BA%BB%E8%BE%A3%E7%87%99/itHtUhpKUWKd8nxBJfThCA"
+        }
+      ]
+    },
+    {
+      "name": "燃燒漢堡 BURN BURGER",
+      "before": "汐止觀光夜市 35 號攤位。",
+      "after": "汐止觀光夜市35號攤，可選燃燒之王、燃燒熔岩漢堡，另有起司玉米濃湯。",
+      "basis": "分店菜單",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn41search0",
+          "title": "燃燒漢堡 BURN BURGER Menu Delivery in Taipei | Delivery Menu & Prices | Uber Eats",
+          "url": "https://guava.failover.uber.com/tw-en/store/%E7%87%83%E7%87%92%E6%BC%A2%E5%A0%A1-burn-burger/1mOc127eU8aP2512yEOJBg?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlNpZXduYSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVoZFRhV1YzYm1Fc0lFdHlZV3ZEczNjc0lGQnZiR0Z1WkNJdUtpd0tGQW9TQ2NNOFo3UDBXaFpIRVVxWXBFNTNhRVV4RWhRS0VnblJHRTQxd0VRV1J4R19pa2QydGJacnRBJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMmdvb2dsZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTUwLjA5NDIwMjglMkMlMjJsb25naXR1ZGUlMjIlM0ExOS45NTE1NDYzJTdE"
+        },
+        {
+          "ref": "turn41search1",
+          "title": "燃燒漢堡 BURN BURGER的菜單和價目表 | 台北外送 | Uber Eats",
+          "url": "https://www.ubereats.com/tw/store/%E7%87%83%E7%87%92%E6%BC%A2%E5%A0%A1-burn-burger/1mOc127eU8aP2512yEOJBg"
+        }
+      ]
+    },
+    {
+      "name": "包不滿蔥油餅",
+      "before": "中興路 168 號附近的蔥油餅。",
+      "after": "可試手工現做蔥油餅；另有韭菜盒子、水煎包，現做需等候。",
+      "basis": "食記實際點餐",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn42search1",
+          "title": "新北汐止美食｜『包不滿蔥油餅』總是大排長龍的小攤販～必吃手工現做蔥油餅！ @瑋瑋＊美食萬歲",
+          "url": "https://vivawei.tw/xizhi-scallion-pancake/"
+        }
+      ]
+    },
+    {
+      "name": "烤霸串燒",
+      "before": "忠孝東路的串燒店。",
+      "after": "可試蔥肉捲、豆包或醬燒牛肋條，辣粉可另行備註；支援內用與外帶。",
+      "basis": "分店按讚品項與店家服務",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn78view0",
+          "title": "烤霸串燒的菜單和價目表 | 汐止外送 | Uber Eats",
+          "url": "https://www.ubereats.com/tw/store/%E7%83%A4%E9%9C%B8%E4%B8%B2%E7%87%92/SKAgg3YXTbO2W6RVnVmHxQ?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjExNCUyMFNlbGxlcnMlMjBBdmUlMjIlMkMlMjJyZWZlcmVuY2UlMjIlM0ElMjJDaElKVzVaUm9Zb3pLNGdSOHJqN1JTYUhYYlElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBNDMuNjgzOTQ4NSUyQyUyMmxvbmdpdHVkZSUyMiUzQS03OS40NDY4MTMzJTdE"
+        },
+        {
+          "ref": "turn43search1",
+          "title": "烤霸串燒",
+          "url": "https://trade.1111.com.tw/Comp_Info?vNo=252680"
+        }
+      ]
+    },
+    {
+      "name": "饗味鹹酥雞（汐止中興店）",
+      "before": "福德二路 91 巷的鹹酥雞。",
+      "after": "可試外酥內軟的煉乳銀絲卷、多汁蔥爆牛肉丸；配料有酸菜、洋蔥與蒜片。",
+      "basis": "地址相符的顧客實食心得",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn85search0",
+          "title": "饗味鹹酥雞 汐止中興店 | 來自 雷姆踩點筆記 的 4.5 顆星評論 | 炸物、鹹酥雞 | 找餐廳用 Fooday",
+          "url": "https://fooday.app/zh-TW/reviews/kmrDS3mypUCqBLwat8cVTF"
+        }
+      ]
+    },
+    {
+      "name": "品都串燒攤",
+      "before": "中興路 41 巷的串燒攤。",
+      "after": "可選雞腿肉、麻辣貢丸或銀絲卷；青花椒粉是特色，中興路41巷的汐止分店。",
+      "basis": "品牌推薦與汐止分店資訊，未套用別店排隊時長",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn82view0",
+          "title": "台北最強排隊燒烤「品都串燒」新店插旗汐止！試營運時間地址曝",
+          "url": "https://news.tvbs.com.tw/life/3187824"
+        }
+      ]
+    },
+    {
+      "name": "超屌麵線⊙鹹水雞",
+      "before": "建成路 23 巷的鹹水雞，推薦加檸檬汁。",
+      "after": "建成路23巷的鹹水雞，可加檸檬汁提酸香。",
+      "basis": "保留使用者原有推薦理由，只精簡語句或點餐動作",
+      "existingSources": [],
+      "sources": []
+    },
+    {
+      "name": "紅茶巴士 Black Tea Bus（汐止樟樹站）",
+      "before": "樟樹二路的飲料店。",
+      "after": "可試爆打檸檬多多、荔枝金萱雙Q；偏好奶茶可選巴士奶茶或粉角紅茶牛奶。",
+      "basis": "分店按讚品項及菜單",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn77view0",
+          "title": "台北紅茶巴士Black Tea Bus 汐止樟樹站的餐點外送 | 價目表和價格 | Uber Eats",
+          "url": "https://guava.failover.uber.com/tw/store/%E7%B4%85%E8%8C%B6%E5%B7%B4%E5%A3%ABblack-tea-bus-%E6%B1%90%E6%AD%A2%E6%A8%9F%E6%A8%B9%E7%AB%99/7Yfgvg7QV4OdfxCCIFc06Q?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlNpZXduYSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVoZFRhV1YzYm1Fc0lFdHlZV3ZEczNjc0lGQnZiR0Z1WkNJdUtpd0tGQW9TQ2NNOFo3UDBXaFpIRVVxWXBFNTNhRVV4RWhRS0VnblJHRTQxd0VRV1J4R19pa2QydGJacnRBJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMmdvb2dsZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTUwLjA5NDIwMjglMkMlMjJsb25naXR1ZGUlMjIlM0ExOS45NTE1NDYzJTdE"
+        }
+      ]
+    },
+    {
+      "name": "黑白ㄍㄚ豆花",
+      "before": "水源路一段的豆花。",
+      "after": "可試芝麻豆花，口感綿密、芝麻香濃；傳統冰豆花可配芋圓、粉圓。",
+      "basis": "顧客實食心得",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn48search3",
+          "title": "黑白ㄍㄚ豆花 | 來自 臉書搜尋花貴賓皮蛋 的 4 顆星評論 | 街頭攤販 | 找餐廳用 Fooday",
+          "url": "https://fooday.app/zh-TW/reviews/Jn3JQn2Anz8PrzFRF5ZfnM"
+        }
+      ]
+    },
+    {
+      "name": "佳樂蛋糕森林",
+      "before": "青山路的蛋糕店。",
+      "after": "青山路25號的西點蛋糕店；整顆蛋糕先詢問口味、尺寸與取貨時間。",
+      "basis": "同名店區分，無可靠品項推薦故不硬加",
+      "existingSources": [],
+      "sources": [
+        {
+          "ref": "turn46search0",
+          "title": "會員名錄 | 新北市糕餅商業同業公會",
+          "url": "https://www.caotc.org.tw/home/membership/9"
+        },
+        {
+          "ref": "turn46search2",
+          "title": "新北市汐止區麵包店與甜點店：Google 評分、評論與營業時間 | Local Taiwan",
+          "url": "https://localtaiwan.net/category/bakeries/new-taipei/xizhi"
+        }
+      ]
+    },
+    {
+      "name": "大嗑西式餐館",
+      "before": "小巧的義法餐館，以紮實的西式料理見長。",
+      "after": "小巧義法餐館，可試櫻桃鴨胸、墨魚海鮮燉飯；威靈頓牛排需提前預訂。",
+      "basis": "保留小巧義法餐館特色，補具名食記菜色與預訂提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3K5"
+      ],
+      "sources": [
+        {
+          "ref": "turn118search2",
+          "title": "大嗑西式餐館 24hr線上訂位 - 台北中正區的義式料理 | 愛食記",
+          "url": "https://www.ifoodie.tw/restaurant/559d6308c03a103ee86c6d68-%E5%A4%A7%E5%97%91%E8%A5%BF%E5%BC%8F%E9%A4%90%E9%A4%A8"
+        },
+        {
+          "ref": "turn118search4",
+          "title": "大嗑西式餐館 (中正區) - 餐廳/美食評論 - Tripadvisor",
+          "url": "https://www.tripadvisor.com.tw/Restaurant_Review-g13808853-d6144291-Reviews-Ducky_Restaurant-Zhongzheng_District_Taipei.html"
+        }
+      ]
+    },
+    {
+      "name": "上海張家包子",
+      "before": "竹林市場內的包子店，適合買份包子當早餐。",
+      "after": "竹林市場的現包現蒸肉包，外皮鬆軟、內餡多汁；可外帶作早餐。",
+      "basis": "具名店實拍與店址核對",
+      "existingSources": [
+        "https://www.unitedway.org.tw/news_page.aspx?RID=68d549fa-b246-4e58-8e86-ea7fab369ecc&SNo=4872"
+      ],
+      "sources": [
+        {
+          "ref": "turn96youtube12",
+          "title": "永和最強肉包店！無時無刻都要排隊才能吃到的美味，當天現包現蒸，剛剛出爐就會被大家買光光，皮薄到可以透光，一口咬下，內餡鮮美可口外皮鬆軟好入口，好吃的沒話說｜永和 上海張家包子 - YouTube",
+          "url": "https://www.youtube.com/watch?v=jSab3M36_c8"
+        },
+        {
+          "ref": "turn96youtube13",
+          "title": "*2023/12/22/永和區 無名麵攤+上海張家包子【Meck大叔】 - YouTube",
+          "url": "https://www.youtube.com/watch?v=p-WewHXH0AI"
+        }
+      ]
+    },
+    {
+      "name": "香香自助餐",
+      "before": "番茄炒蛋是推薦配菜，容易賣完；想吃這道可提前電話詢問能否預留。",
+      "after": "番茄炒蛋是推薦配菜，容易賣完；可提前電話詢問能否預留。",
+      "basis": "保留使用者原有推薦理由，只精簡語句或點餐動作",
+      "existingSources": [
+        "https://info.technews.tw/company/26556284-%E9%A6%99%E9%A6%99%E8%87%AA%E5%8A%A9%E9%A4%90"
+      ],
+      "sources": []
+    },
+    {
+      "name": "盒飯先生",
+      "before": "永貞路上的盒飯便當選擇。",
+      "after": "永貞路385號的便當店，可試招牌盒飯或雞腿盒飯。",
+      "basis": "地址相符的具名食記",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6a226bb6927f80ee7ac3587a"
+      ],
+      "sources": [
+        {
+          "ref": "turn100view0",
+          "title": "盒飯先生 - 新北永和區的餐盒餐廳 | 愛食記",
+          "url": "https://ifoodie.tw/restaurant/6a226bb6927f80ee7ac3587a"
+        }
+      ]
+    },
+    {
+      "name": "秀朗特製汕頭麵（成功店）",
+      "before": "成功路上的汕頭麵店，適合簡單吃碗麵。",
+      "after": "可點汕頭麵搭黑白切，麵體偏軟；吃辣可加特製辣椒，另有蛋包湯、福州魚丸湯。",
+      "basis": "成功店評論與具名菜色",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/55a5b3dcc03a10241de67c18"
+      ],
+      "sources": [
+        {
+          "ref": "turn79view0",
+          "title": "秀朗特製汕頭麵 - 新北永和區的小吃 | 愛食記",
+          "url": "https://ifoodie.tw/restaurant/55a5b3dcc03a10241de67c18-%E7%A7%80%E6%9C%97%E7%89%B9%E8%A3%BD%E6%B1%95%E9%A0%AD%E9%BA%B5"
+        }
+      ]
+    },
+    {
+      "name": "旗津深海鮮魚湯",
+      "before": "保平路上的魚湯小吃選擇。",
+      "after": "可試厚切鮮魚湯、滷肉飯與滷豆腐；魚肉嫩口有彈性，店內環境較簡單。",
+      "basis": "具體顧客心得",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6879b6f57be9c3dcb4a4e9b6"
+      ],
+      "sources": [
+        {
+          "ref": "turn54search0",
+          "title": "旗津深海鮮魚湯 - 新北永和區的小吃 | 愛食記",
+          "url": "https://ifoodie.tw/restaurant/6879b6f57be9c3dcb4a4e9b6-%E6%97%97%E6%B4%A5%E6%B7%B1%E6%B5%B7%E9%AE%AE%E9%AD%9A%E6%B9%AF"
+        },
+        {
+          "ref": "turn54search2",
+          "title": "陳鴻也淪陷的鮮魚湯，還有銷魂滷肉飯！",
+          "url": "https://mibaoma.tw/qi-jin-shen-hai/"
+        }
+      ]
+    },
+    {
+      "name": "西瓜大王（樂華保平店）",
+      "before": "樂華夜市附近的現打果汁選擇。",
+      "after": "可試西瓜汁、木瓜牛奶或酪梨牛奶；綠豆沙牛奶的甜度、冰量固定。",
+      "basis": "分店菜單與按讚品項",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/%E8%A5%BF%E7%93%9C%E5%A4%A7%E7%8E%8B%E7%8F%BE%E6%89%93%E6%9E%9C%E6%B1%81-%E6%A8%82%E8%8F%AF%E5%BA%97/gJV7tBD3UVWo5EeEXr9JEQ"
+      ],
+      "sources": [
+        {
+          "ref": "turn76view0",
+          "title": "西瓜大王現打果汁 樂華店 Menu Delivery in Taipei | Delivery Menu & Prices | Uber Eats",
+          "url": "https://www.ubereats.com/tw-en/store/%E8%A5%BF%E7%93%9C%E5%A4%A7%E7%8E%8B%E7%8F%BE%E6%89%93%E6%9E%9C%E6%B1%81-%E6%A8%82%E8%8F%AF%E5%BA%97/gJV7tBD3UVWo5EeEXr9JEQ"
+        }
+      ]
+    },
+    {
+      "name": "Nim's 泰式廚房（担担泰）",
+      "before": "泰式料理小店，提供酸辣風味餐點。",
+      "after": "可試媽媽湯麵或泰式炒泡麵，香料味明顯；辣度先詢問，現址在中和路。",
+      "basis": "同店歷史食記、近年顧客心得及現址核對",
+      "existingSources": [
+        "https://autoreserve.com/zh-tw/restaurants/pnDD5B9Pvq3F7dM3C4Gj"
+      ],
+      "sources": [
+        {
+          "ref": "turn84search0",
+          "title": "担担泰 | 來自 糖糖 的 4 顆星評論 | 泰式料理 | 找餐廳用 Fooday",
+          "url": "https://fooday.app/zh-TW/reviews/dGZdn6TvkdYtndF8KtXYVB"
+        },
+        {
+          "ref": "turn84search2",
+          "title": "永和超道地泰式料理—Nim’s 泰式廚房（担担泰）-發胖版｜PopDaily 波波黛莉",
+          "url": "https://www.popdaily.com.tw/forum/food/682883?fromPage.pageComponent=read-more-recommender&fromPage.pageName=article&is_app=true"
+        },
+        {
+          "ref": "turn57search0",
+          "title": "Nim's 泰式廚房 (担担泰) | 永和區, 新北市 | 泰式料理",
+          "url": "https://autoreserve.com/zh-tw/restaurants/pnDD5B9Pvq3F7dM3C4Gj"
+        }
+      ]
+    },
+    {
+      "name": "福哥泰泰式小吃",
+      "before": "保平路上的泰式小吃選擇。",
+      "after": "保平路的泰式小吃店，菜單有打拋豬、香茅檸檬雞，也供應咖哩與湯品。",
+      "basis": "分店菜單，不冒稱評論熱門",
+      "existingSources": [
+        "https://www.iyp.com.tw/tax/95196975"
+      ],
+      "sources": [
+        {
+          "ref": "turn80view0",
+          "title": "樂華夜市 福哥泰 泰式料理的菜單和價目表 | 台北外送 | Uber Eats",
+          "url": "https://www.ubereats.com/tw/store/%E6%A8%82%E8%8F%AF%E5%A4%9C%E5%B8%82-%E7%A6%8F%E5%93%A5%E6%B3%B0-%E6%B3%B0%E5%BC%8F%E6%96%99%E7%90%86/m_FNhE18WjKhgfRRy1TSXA?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkthaG5hd2FrZSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpuUm9zcDQ4VHlVd1I2ejFuSTAyMkluUSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS40MTA3ODQ3JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTczLjY4MTQ3NjMlN0Q%3D"
+        },
+        {
+          "ref": "turn55search0",
+          "title": "福哥泰泰式小吃店 - 中華黃頁網路電話簿",
+          "url": "https://www.iyp.com.tw/tax/95196975"
+        }
+      ]
+    },
+    {
+      "name": "泰王泰式料理",
+      "before": "提供泰式料理，適合揪人一起分享用餐。",
+      "after": "可點月亮蝦餅、涼拌海鮮或椒麻雞，口味偏臺式雲泰風；多人可點菜分食。",
+      "basis": "地址相符的同店食記，未套用板橋同名店",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/66961519eb74c4faee25bc3c"
+      ],
+      "sources": [
+        {
+          "ref": "turn92search3",
+          "title": "新北永和美食。泰王泰式料理餐廳。中山路上平價雲南泰國餐廳導航食記 | Yuki的食味人生 | 生活綜合分享 | 痞客邦 | PIXNET",
+          "url": "https://yukisu.pixnet.net/blog/posts/15345533781"
+        },
+        {
+          "ref": "turn83search3",
+          "title": "新北永和美食。泰王泰式料理餐廳。中山路上平價雲南泰國餐廳導航食記』| 泰王泰式料理餐廳 - 愛食記",
+          "url": "https://ifoodie.tw/post/669614707be9c3e0636bc676"
+        }
+      ]
+    },
+    {
+      "name": "中田咖哩（性感店）",
+      "before": "竹林路上的咖哩飯專門店。",
+      "after": "可試性感牛肉塊咖哩，牛腱軟嫩；也可選金黃酥脆的炸豬排。",
+      "basis": "官方招牌與食記",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/657910eb7be9c36f9f0dcd78"
+      ],
+      "sources": [
+        {
+          "ref": "turn61search0",
+          "title": "中田咖哩 - 主頁 HOME",
+          "url": "https://jhongtiankali.weebly.com/"
+        },
+        {
+          "ref": "turn61search2",
+          "title": "新北永和．中田咖哩｜最性感的咖哩店！金黃酥脆炸豬排與軟嫩牛腱心和日式濃郁咖哩的組合！-發胖版｜PopDaily 波波黛莉",
+          "url": "https://www.popdaily.com.tw/forum/food/1466869"
+        }
+      ]
+    },
+    {
+      "name": "韓五花韓式燒烤料理",
+      "before": "提供韓式燒烤料理，適合多人聚餐。",
+      "after": "可試酥脆海鮮煎餅、豬五花；想吃厚切口感，點餐時先確認肉片厚度與套餐。",
+      "basis": "具體食記與點餐差異",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6041ad09cd9957378f20e68b"
+      ],
+      "sources": [
+        {
+          "ref": "turn86search2",
+          "title": "〖新北永和區〗♥韓五花韓式燒烤料理♥googe評分4.3,廚師是韓國人,偏台式口味的韓國料理.必點海鮮煎餅,永和平價韓式燒烤推薦.四號公園美食 - 加小菲愛碎碎唸",
+          "url": "https://feitravel.tw/p-5069527406/"
+        },
+        {
+          "ref": "turn86search1",
+          "title": "韓五花韓式燒烤料理 (永和) - 餐廳/美食評論 - Tripadvisor",
+          "url": "https://www.tripadvisor.com.tw/Restaurant_Review-g13808622-d16706530-Reviews-Han_Woo_Hua-Yonghe_New_Taipei.html"
+        }
+      ]
+    },
+    {
+      "name": "旺角石頭火鍋（永和店）",
+      "before": "永貞路上的石頭火鍋，適合與親友一起吃鍋。",
+      "after": "肉片桌邊爆炒再加湯，搭配手作沙茶；可選梅花豬肉鍋，尖峰建議先訂位。",
+      "basis": "近期同分店食記",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5ebb620ed6895d51f93df69c"
+      ],
+      "sources": [
+        {
+          "ref": "turn75view0",
+          "title": "〖中和永和美食〗旺角石頭火鍋永和店 超人氣平價火鍋店推薦！生意超好建議先訂位預約 @周花花，甲飽沒",
+          "url": "https://tenjo.tw/mongkok/"
+        }
+      ]
+    },
+    {
+      "name": "8鍋（文化路）",
+      "before": "文化路上的個人小火鍋選擇。",
+      "after": "文化路35號的個人小火鍋，可試牛奶鍋；湯底與加點依當日菜單。",
+      "basis": "具名食記，未沿用舊價格",
+      "existingSources": [
+        "https://blog.footinder.app/%E6%96%B0%E5%8C%97%E5%B8%82%E6%B0%B8%E5%92%8C%E5%8D%80-2/%E6%96%B0%E5%8C%97%E5%B8%82-%E6%B0%B8%E5%92%8C%E5%8D%80-8%E9%8D%8B/"
+      ],
+      "sources": [
+        {
+          "ref": "turn63search3",
+          "title": "[食記] 新北永和 8鍋臭臭鍋 - 看板 Food - 批踢踢實業坊",
+          "url": "https://www.ptt.cc/bbs/Food/M.1441540982.A.8C4.html"
+        }
+      ]
+    },
+    {
+      "name": "永青鐵板燒",
+      "before": "永貞路上的鐵板燒店，適合日常正餐。",
+      "after": "可試黑胡椒雞腿、澳洲牛肉片或塔香羊肉，套餐附白飯、鮮蔬與豆芽。",
+      "basis": "外送顧客逐道推薦與菜單",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/580cfb8f2756dd486ee546d5"
+      ],
+      "sources": [
+        {
+          "ref": "turn64search2",
+          "title": "評論 永青鐵板燒 | foodpanda Taiwan",
+          "url": "https://www.foodpanda.com.tw/restaurant/wype/yong-qing-tie-ban-shao/reviews"
+        },
+        {
+          "ref": "turn64search0",
+          "title": "永青鐵板燒菜單 價格 | 向附近的永青鐵板燒訂購 | foodpanda 外送",
+          "url": "https://www.foodpanda.com.tw/restaurant/wype/yong-qing-tie-ban-shao"
+        }
+      ]
+    },
+    {
+      "name": "大賞鐵板燒（永和安樂店）",
+      "before": "安樂路上的平價鐵板燒選擇。",
+      "after": "平價單人鐵板燒套餐，白飯、熱湯與冰品可自助取用；供應依現場公告。",
+      "basis": "食記實用資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/65543895eb74c430d004c533"
+      ],
+      "sources": [
+        {
+          "ref": "turn65search2",
+          "title": "大賞鐵板燒永和店｜白飯熱湯冰品吃到飽CP值高 – 可可多冰",
+          "url": "https://aova.tw/tai-show/"
+        },
+        {
+          "ref": "turn65search3",
+          "title": "大賞平價鐵板燒-永和安樂店 ，四號公園平價鐵板燒，單人套餐吃飽飽』| 大賞平價鐵板燒 永和安樂店 - 愛食記",
+          "url": "https://ifoodie.tw/post/67119afb7be9c3f55e3e1531-%E5%A4%A7%E8%B3%9E%E5%B9%B3%E5%83%B9%E9%90%B5%E6%9D%BF%E7%87%92-%E6%B0%B8%E5%92%8C%E5%AE%89%E6%A8%82%E5%BA%97-%EF%BC%8C%E5%9B%9B%E8%99%9F%E5%85%AC%E5%9C%92%E5%B9%B3"
+        }
+      ]
+    },
+    {
+      "name": "上介青快炒",
+      "before": "提供海鮮與台式熱炒，可與親友點菜分享。",
+      "after": "海鮮與台式熱炒可分食，可選椒麻雞、炒山蘇，位於永貞路307號。",
+      "basis": "官方旅遊頁所列店家推薦",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6022770c226139205de848ec"
+      ],
+      "sources": [
+        {
+          "ref": "turn108search0",
+          "title": "上介青快炒",
+          "url": "https://newtaipei.travel/zh-tw/shop/detail/206548"
+        }
+      ]
+    },
+    {
+      "name": "御鼎潮州砂鍋粥",
+      "before": "提供砂鍋粥，適合揪人一起分食。",
+      "after": "可試土雞粥與蛋豆腐；砂鍋粥生米現煮約需40分鐘，可先電話預訂。",
+      "basis": "合作頁顧客心得與預訂提醒，未沿用過期優惠",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/55a5c6b1c03a10241de6820d"
+      ],
+      "sources": [
+        {
+          "ref": "turn69search0",
+          "title": "御鼎潮州沙鍋粥超值優惠方案| Gomaji 懂生活的好麻吉",
+          "url": "https://www.gomaji.com/store/39239/pid/368374"
+        }
+      ]
+    },
+    {
+      "name": "弍弎居食",
+      "before": "安平路上的日式料理專門店。",
+      "after": "可試鮭魚親子丼、雞肉親子丼或豬肉泡菜丼；多人也可點生魚片、串燒盛合。",
+      "basis": "具體食記推薦",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/65cf6153927f8005d3b9adcb"
+      ],
+      "sources": [
+        {
+          "ref": "turn66search1",
+          "title": "《新北市|中和區- 弍弎居食 日式料理專門店–美食紀錄 – 開箱分享》 - RD爸爸隨手記",
+          "url": "https://rdpapa.tw/2023/09/21/%E3%80%8A%E6%96%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%92%8C%E5%8D%80-%E5%BC%8D%E5%BC%8E%E5%B1%85%E9%A3%9F-%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86%E5%B0%88%E9%96%80%E5%BA%97-%E7%BE%8E%E9%A3%9F/"
+        },
+        {
+          "ref": "turn66search3",
+          "title": "〖中和美食推薦〗弍弎居食日式料理專門店 超浮誇不燒腦盛合！生魚片握壽司串燒一次滿足 @周花花，甲飽沒",
+          "url": "https://tenjo.tw/nisan-izakaya/"
+        }
+      ]
+    },
+    {
+      "name": "小本經營",
+      "before": "提供中式炒飯與麵點，適合日常正餐。",
+      "after": "可試排骨蛋炒飯，排骨厚實多汁、炒飯粒粒分明；另有拌麵、家常炒餅。",
+      "basis": "保留中式炒飯麵點，補具體菜色與口感",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/65eee9157be9c34cc87c0932"
+      ],
+      "sources": [
+        {
+          "ref": "turn106search2",
+          "title": "小本經營｜食尚玩家",
+          "url": "https://supertaste.tvbs.com.tw/infocard/28080"
+        },
+        {
+          "ref": "turn106search3",
+          "title": "小本經營｜排骨炒飯必點，厚實又多汁的排骨，粒粒分明的炒飯很有水準 @安妮塔ANiTa",
+          "url": "https://anita.tw/yonghe-xiaoben/"
+        }
+      ]
+    },
+    {
+      "name": "客家小館",
+      "before": "以客家菜為主、江浙菜為輔，適合家庭聚餐。",
+      "after": "客家、江浙合菜可分食，梅菜扣肉肥而不膩；菜飯、白菜釀豆腐限量，宜早到。",
+      "basis": "保留客家江浙與聚餐特色，補官方指南菜色",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c24a2c03a101f6d8b8afb"
+      ],
+      "sources": [
+        {
+          "ref": "turn109view0",
+          "title": "客家小館 – New Taipei - a MICHELIN Guide Restaurant",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/garden-h"
+        }
+      ]
+    },
+    {
+      "name": "東引快刀手（永貞店）",
+      "before": "提供滷味、麵食等餐點，適合晚餐或宵夜。",
+      "after": "可試牛油麻醬麵、牛肉乾拌麵配滷味；牛腱厚切軟嫩，刀削麵有咬勁。",
+      "basis": "地址相符的評論及具名食記",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/689f33e9927f80ba7adb66da"
+      ],
+      "sources": [
+        {
+          "ref": "turn105search1",
+          "title": "東引快刀手 - 新北中和區的小吃 | 愛食記",
+          "url": "https://ifoodie.tw/restaurant/689f33e9927f80ba7adb66da-%E6%9D%B1%E5%BC%95%E5%BF%AB%E5%88%80%E6%89%8B"
+        }
+      ]
+    },
+    {
+      "name": "十九甲雞排（汐止明峰店）",
+      "before": "三角骨是推薦品項，可試試三種調味粉都加的吃法。",
+      "after": "可試三角骨，調味可選三種粉都加，喜歡重口味可從這款選起。",
+      "basis": "保留使用者原有推薦理由，只精簡語句或點餐動作",
+      "existingSources": [
+        "https://19jia.com.tw/store.php"
+      ],
+      "sources": []
+    }
+  ],
+  "retainedWithInsufficientEvidence": [
+    {
+      "name": "豪家牛排館",
+      "reason": "確認台式牛排館與樟樹一路97號，但未取得可靠的具名餐點評論。",
+      "refs": [
+        "turn28search0",
+        "turn28search1"
+      ],
+      "sources": [
+        {
+          "ref": "turn28search0",
+          "title": "豪家牛排館(豪家小吃店)－公司簡介與打工兼職｜小雞上工",
+          "url": "https://www.chickpt.com.tw/company/BZQ1oDMgA5qx"
+        },
+        {
+          "ref": "turn28search1",
+          "title": "工讀生早晚班皆可 - 豪家牛排館(豪家小吃店) - 新北市打工職缺 | 小雞上工",
+          "url": "https://www.chickpt.com.tw/job-XDA1QOPKX0jx"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "五牛汕頭牛肉麵",
+      "reason": "可核對樟樹一路店家身分，未取得足夠的湯頭、部位或品項推薦資料。",
+      "refs": [
+        "turn33search0",
+        "turn90search12"
+      ],
+      "sources": [
+        {
+          "ref": "turn33search0",
+          "title": "去趣 - 汐止美食 樟樹一路 推薦 〖五牛牛肉麵〗｜天界之舟行善濟世@佛手問路",
+          "url": "https://www.chictrip.com.tw/service/exchange/pixnet/lighthearted22_16892381"
+        },
+        {
+          "ref": "turn90search12",
+          "title": "<table id=\"e1\">",
+          "url": "https://www.firstbank.com.tw/sites/fcb/files/1565697720780"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "古早味高雄黑輪",
+      "reason": "搜尋多為高雄或明峰街別店；無法確認福德二路此攤的具體餐點評論。",
+      "refs": [
+        "turn73search4"
+      ],
+      "sources": [
+        {
+          "ref": "turn73search4",
+          "title": "高雄黑輪大王-汐止店| Xinbei",
+          "url": "https://www.facebook.com/people/%E9%AB%98%E9%9B%84%E9%BB%91%E8%BC%AA%E5%A4%A7%E7%8E%8B-%E6%B1%90%E6%AD%A2%E5%BA%97/100054327588527/?locale=ku_TR"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "賀郎中式便當",
+      "reason": "既有來源頁無法讀取，搜尋多為無敵賀加或繼一郎等不同店，避免套用。",
+      "refs": [],
+      "sources": [],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "香港鴻運燒臘",
+      "reason": "可核對秀朗路登記地址，未取得餐點推薦；未套用保平路香港鴻海等同類店資料。",
+      "refs": [
+        "turn52search0",
+        "turn52search13"
+      ],
+      "sources": [
+        {
+          "ref": "turn52search0",
+          "title": "香港鴻運燒臘",
+          "url": "https://www.findcompany.com.tw/%E9%A6%99%E6%B8%AF%E9%B4%BB%E9%81%8B%E7%87%92%E8%87%98"
+        },
+        {
+          "ref": "turn52search13",
+          "title": "商業登記設立登記所營事業項目清冊",
+          "url": "https://serv.gcis.nat.gov.tw/moeadsBF/cmpy/reportAction.do?fileName=376410000Asetup11504.pdf&method=report&reportClass=bmsItem&subPath=11504"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "源林鐵板燒",
+      "reason": "只有水源街登記與目錄，尚無足夠菜單或餐點評論；未套用桃園同名店。",
+      "refs": [
+        "turn97view0",
+        "turn62search1"
+      ],
+      "sources": [
+        {
+          "ref": "turn97view0",
+          "title": "源林鐵板燒",
+          "url": "https://www.findcompany.com.tw/%E6%BA%90%E6%9E%97%E9%90%B5%E6%9D%BF%E7%87%92"
+        },
+        {
+          "ref": "turn62search1",
+          "title": "「新北市永和區水源街」 美食資訊 Page 1/1 - 食在北台灣",
+          "url": "https://lovetpe.com/address/%E6%96%B0%E5%8C%97%E5%B8%82%E6%B0%B8%E5%92%8C%E5%8D%80%E6%B0%B4%E6%BA%90%E8%A1%97-1.html"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "Neco Coffee",
+      "reason": "目前地圖標示中山赤峰街，搜尋到的Neko貓珈在信陽街；不移用別店資訊，保留原來待確認提醒。",
+      "refs": [
+        "turn120search0",
+        "turn120search3"
+      ],
+      "sources": [
+        {
+          "ref": "turn120search0",
+          "title": "中正｜ 📍 Neko coffee 貓珈無提供訂位採現場候位制平日 ...",
+          "url": "https://www.facebook.com/hanni4fun/videos/%E5%BF%AB%E6%A8%82%E8%B2%93%E8%B2%93%E6%97%A5%D9%A9%CC%B6%CD%88%CC%80%E0%AF%B0%CC%B6%CD%88%CC%81%D9%88%E5%8F%B0%E5%8C%97%E4%B8%AD%E6%AD%A3-neko-coffee-%E8%B2%93%E7%8F%88%E7%84%A1%E6%8F%90%E4%BE%9B%E8%A8%82%E4%BD%8D%E6%8E%A1%E7%8F%BE%E5%A0%B4%E5%80%99%E4%BD%8D%E5%88%B6%E5%B9%B3%E6%97%A5%E6%9C%80%E9%AB%98%E6%94%B6%E8%B2%BB490%E5%81%87%E6%97%A5590%E5%90%AB%E9%A3%B2%E6%96%99%E7%84%A1%E9%99%90%E6%9A%A2%E9%A3%B2%E5%8F%AF%E4%BB%A5%E5%BE%9E%E6%97%A9%E4%B8%8A10%E9%BB%9E%E5%BE%85%E5%88%B0%E6%99%9A%E4%B8%8A8%E9%BB%9E%E5%BE%88/475640738798665/"
+        },
+        {
+          "ref": "turn120search3",
+          "title": "貓咪嚕到飽2.社交時差🏠台北市中山區林森北 ...",
+          "url": "https://www.facebook.com/100083207768447/posts/%E5%8F%B0%E5%8C%97%E8%80%8D%E5%BB%A2%E8%BA%BA%E5%B9%B3%E4%B8%80%E6%97%A5%E9%81%8A-%E8%A1%8C%E7%A8%8B%E9%80%99%E6%A8%A3%E5%AE%89%E6%8E%92%E5%B0%B1%E5%B0%8D%E4%BA%861neko-coffee-%E8%B2%93%E7%8F%88-%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E9%99%BD%E8%A1%979%E8%99%9F%E4%B8%8A2%E6%A8%93%E5%8F%B0%E5%8C%97%E8%BB%8A%E7%AB%99%E5%B9%B3%E6%97%A5%E6%9C%80%E9%AB%98490%E5%85%83-%E5%81%87%E6%97%A5590%E5%85%83-%E4%B8%8D%E9%99%90%E6%99%82%E9%A3%B2%E6%96%99%E7%84%A1%E9%99%90%E6%9A%A2%E9%A3%B2-%E6%9C%89%E6%BC%AB%E7%95%ABs/921667280616856/"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "元氣早餐吧",
+      "reason": "核對汐止樟樹二路店；厚蛋餅食評其實為臺北酒泉街同名店，已排除。",
+      "refs": [
+        "turn93search0",
+        "turn110view0"
+      ],
+      "sources": [
+        {
+          "ref": "turn93search0",
+          "title": "新北市汐止區 元氣早餐吧 - 台灣餐廳推薦 手搖推薦 甜點推薦 買一送一 優惠訊息",
+          "url": "https://footinder.com.tw/%E6%96%B0%E5%8C%97%E5%B8%82%E6%B1%90%E6%AD%A2%E5%8D%80/126129/"
+        }
+      ],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    },
+    {
+      "name": "早安大飯糰（福德二路）",
+      "reason": "未取得福德二路店具名餐點推薦；不套用連興街與民族六街別店食評。",
+      "refs": [],
+      "sources": [],
+      "action": "保留原文；查核已記錄，不補造餐點或套用別家資訊。"
+    }
+  ],
+  "fullTextReview": [
+    {
+      "name": "樂天羊肉（三重店）",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "蕨食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "老麵店",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "宵夜牛肉麵大王 大安店 / NIGHT BEEF NOODLES KING DAAN",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "Hui Fu Teas 薈福村茶",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "旅徒咖啡",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "小皮蛋食堂/早午餐/烏龍麵炒泡麵專賣店",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "豬跳舞小餐館",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "仙菓園",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "Panino Garage 歐式佛卡夏三明治",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "Neco Coffee",
+      "status": "retained_insufficient_evidence",
+      "characters": 29
+    },
+    {
+      "name": "Snappp 拍貼",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "赤峰街散步",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "濕地 Venue",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "珈琲寶山",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "台北當代藝術館",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "築夢 JUMENG",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "榕錦時光生活園區",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "悄悄好食",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "華山1914文創園區",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "台北市立美術館",
+      "status": "retained_existing_specific_content",
+      "characters": 39
+    },
+    {
+      "name": "圓山花博公園",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "饒河夜市",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "彩虹橋",
+      "status": "retained_existing_specific_content",
+      "characters": 35
+    },
+    {
+      "name": "四四南村",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "象山步道",
+      "status": "retained_existing_specific_content",
+      "characters": 38
+    },
+    {
+      "name": "大安森林公園",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "未央咖啡店",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "C-LAB 臺灣當代文化實驗場",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "小白兔唱片行",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "慈聖宮小吃",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "大稻埕散步",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "幻猻家珈琲",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "北投市場",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "山峸二手書店",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "拾米屋",
+      "status": "updated",
+      "characters": 35
+    },
+    {
+      "name": "川湯溫泉",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "皇池溫泉",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "臺北藝術大學",
+      "status": "retained_existing_specific_content",
+      "characters": 38
+    },
+    {
+      "name": "台北市立天文館",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "福和觀光市集",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "小小書房",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "龍洞",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "劍龍稜",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "肥仔尹魯肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "東吉手切肥牛汕頭火鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "YouBike微笑單車 2.0：白沙灣",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "麟山鼻地質景觀生態步道",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "麟山鼻木棧道",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "白沙灣哈那海邊咖啡屋 Hana Beach Cafe",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "GRAY CAFE 咖灰",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "豹豹咖啡・海邊館",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "背包廚房手工披薩咖啡屋",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "我不怕你泰胖",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "中原福州乾麵",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "元信蔘藥行",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "爐鍋咖啡 Luguo Cafe 小藝埕",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "根牛棧 STEAK",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "金龍日料行",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "Luna Dessert Atelier",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "插角25號咖啡",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "老本壽司・生魚片",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "村秀家ベーカリー 大同日光店",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "番紅花城土耳其餐廳",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "雲鼎正宗雲泰料理",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "有壹燒肉 Yoooi Yakiniku",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "泰好吃 平價鍋燒麵・泰式小火鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "洋町食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "中華そば 丸宗",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "蹭蹭 Tseng Tseng 咖啡甜點工作室",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "十三甜品棧 蘆洲集賢店",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "三姐妹廚房 3Ả KITCHEN",
+      "status": "updated",
+      "characters": 21
+    },
+    {
+      "name": "雙爸食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "兩腳吖爆汁烤雞 大安店",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "燒肉燒",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "日十 鶯歌光明店",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "LAIFA Coffee Ying 來發咖啡鶯",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "樂樂軒・元祖中華拉麵",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "新北市立鶯歌陶瓷博物館",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "皇冠早午餐／租書城",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "ASIA JAYA",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "芙豆花・冰品",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "熊果園",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "Árbol 西班牙樹",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "府城涼麵",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "海全牛肉羊肉拉麵",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "娜咔泰式燒烤 Naka Mookata",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "成記脆皮烤鴨",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "朝鮮味韓國料理",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "台灣蕃薯",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "Facile pasta",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "雙囍號麵線",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "台美豆漿店",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "光興腿庫",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "巷口船麵",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "BANCO 窯烤 Pizza 八德門市",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "KOOBESTAR 酷覓咖啡 忠孝敦化門市",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "無聊秘境",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "野毛洋食屋",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "暖烘咖啡 Nuan Home Studio",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "小王煮瓜",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "薛家東山鴨頭",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "北投高記茶莊總店",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "陳家剉冰",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "北投本土味明泉紅茶",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "韓喧 行天宮店",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "太陽蕃茄拉麵 南港 LaLaport",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "1976 道地香港美食 敦南本店",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "BLIKE 奶茶專門 台北延吉店",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "紅燒牛肉河粉",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "重慶郭魚湯",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "三寶小火鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "錢冠涮涮鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "加分100% 浜中特選昆布鍋物 三重正義店",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "武鼎越豐",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "市場口木瓜牛奶專賣店",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "武大郎蔥仔餅",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "阿餅・哲來折趣法式可麗餅",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "旭集 和食集錦 信義店",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "店小二魯肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "吃麵",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "今大魯肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "唯豐魯肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "五燈獎豬腳飯",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "阿發豬腳飯便當",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "北港江記龍門生炒鴨肉焿",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "阿田麵",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "蔣老爹麵食館 三重總店",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "阿倍麵線",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "朱記花枝羹・米粉炒",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "萬粒肉圓1974",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "集美蚵嗲",
+      "status": "retained_existing_specific_content",
+      "characters": 13
+    },
+    {
+      "name": "龍門胡椒餅",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "太順油飯",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "阿田油飯",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "雲林鍋貼",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "三重蛋餅大王",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "集美水煎包・小籠包",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "三重牛乳大王",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "三重稅捐處豆花",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "四十年甜甜圈 雙胞胎",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "大不同西點麵包（餐包）",
+      "status": "retained_existing_specific_content",
+      "characters": 13
+    },
+    {
+      "name": "百年東山鴨頭",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "阿信牛排",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "暹羅廚房・三重泰國菜",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "三重霸味薑母鴨",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "大周蒙古烤肉",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "五円・ご緣",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "老沐涮涮屋 三重火鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "水星藝大書店",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "郭怡美書店",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "現流冊店",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "朋丁 Pon Ding",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "左轉有書",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "飛地 nowhere",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "童里繪本洋行",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "紀州庵文學森林",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "Book Bar",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "重本書店 Weight Books",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "金鳳書苑",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "麥克兒童外文書店",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "文心藝所 Winsing Art Place",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "桑格設計書店（圖中：聚落設計書店）",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "市民書店 Citizen Bookstore",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "竹風書苑二手書店 南港店",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "Boven 雜誌圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "女書店 fembooks",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "貴子坑親山步道",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "二子坪步道",
+      "status": "retained_existing_specific_content",
+      "characters": 37
+    },
+    {
+      "name": "竹子湖水車寮步道",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "七星山步道",
+      "status": "retained_existing_specific_content",
+      "characters": 37
+    },
+    {
+      "name": "半嶺水圳步道",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "坪頂古圳步道",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "虎山親山步道",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "金面山親山步道",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "貓空樟樹步道",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "仙跡岩步道",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "富陽自然生態公園",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "福州山公園",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "四獸山縱走",
+      "status": "retained_existing_specific_content",
+      "characters": 40
+    },
+    {
+      "name": "豆口加",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "毅然蕨然 Resolutely Coffee",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "Bo yang cafe",
+      "status": "retained_existing_specific_content",
+      "characters": 35
+    },
+    {
+      "name": "驚嘆號咖啡",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "豆然咖啡",
+      "status": "updated",
+      "characters": 34
+    },
+    {
+      "name": "亞曼手工咖啡館",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "李好咖啡",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "西當·普里斯",
+      "status": "updated",
+      "characters": 34
+    },
+    {
+      "name": "KOON Coffee",
+      "status": "updated",
+      "characters": 36
+    },
+    {
+      "name": "源芳刈包",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "兩喜號（廣州街總店）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "大鼎肉羹（地圖：大鐤肉羹）",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "蘇來傳",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "阿義魯肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "管麵素食麵館",
+      "status": "updated",
+      "characters": 37
+    },
+    {
+      "name": "廣州街脆皮蚵仔煎",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "布袋鮮蚵（地圖：布袋鮮之蚵）",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "陳記蚵仔麵線",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "東港旗魚串",
+      "status": "updated",
+      "characters": 29
+    },
+    {
+      "name": "福州元祖胡椒餅（原萬華戲院旁）",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "南機場13號基隆黑輪（關東煮）",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "郭家炒牛肉",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "阿珍滷雞腳",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "龍都冰菓專業家",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "懷念愛玉冰",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "南機場芋頭大王",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "十八拐圳步道",
+      "status": "retained_existing_specific_content",
+      "characters": 35
+    },
+    {
+      "name": "早餐店阿姨",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "元氣早餐吧",
+      "status": "retained_insufficient_evidence",
+      "characters": 10
+    },
+    {
+      "name": "呷胖汐止（樟樹店）",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "呷胖汐止（中興店）",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "左撇子日常 Lefty Daily",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "巨林美而美（汐止湖前店）",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "早安大飯糰（連興街）",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "早安大飯糰（民族六街）",
+      "status": "updated",
+      "characters": 29
+    },
+    {
+      "name": "早安大飯糰（福德二路）",
+      "status": "retained_insufficient_evidence",
+      "characters": 15
+    },
+    {
+      "name": "Ho & lin's store",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "早午 J&M BRUNCH",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "手工赤肉羹、古早味滷肉飯",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "成大器烤肉飯",
+      "status": "updated",
+      "characters": 27
+    },
+    {
+      "name": "豪家牛排館",
+      "status": "retained_insufficient_evidence",
+      "characters": 9
+    },
+    {
+      "name": "武牛牛排館",
+      "status": "updated",
+      "characters": 18
+    },
+    {
+      "name": "家กินข้าว 泰料理",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "楓玥日本料理",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "阿財鍋貼",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "麵麵屋",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "吉美蒸籠包",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "楊家意麵・油飯・扁食",
+      "status": "retained_existing_specific_content",
+      "characters": 13
+    },
+    {
+      "name": "黃金三角臭豆腐",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "阿基手工臭豆腐",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "華姐麵店（樟樹店）",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "韋安鍋貼專賣店",
+      "status": "updated",
+      "characters": 33
+    },
+    {
+      "name": "沈家涼麵店",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "老家餡餅（汐止店）",
+      "status": "updated",
+      "characters": 23
+    },
+    {
+      "name": "三媽臭臭鍋（汐止忠孝店）",
+      "status": "updated",
+      "characters": 29
+    },
+    {
+      "name": "無名麵店排骨湯",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "大汐止排骨酥麵",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "廣州燒臘美食專家",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "龍安飯包",
+      "status": "retained_existing_specific_content",
+      "characters": 11
+    },
+    {
+      "name": "青朝麻（汐止店）",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "郭呷萬潤餅捲店",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "河南鍋貼店",
+      "status": "updated",
+      "characters": 33
+    },
+    {
+      "name": "來發牛排",
+      "status": "retained_existing_specific_content",
+      "characters": 9
+    },
+    {
+      "name": "越南美食（茄苳路）",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "四季大補帖",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "撲克專業麵線（汐止店）",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "五牛汕頭牛肉麵",
+      "status": "retained_insufficient_evidence",
+      "characters": 10
+    },
+    {
+      "name": "嚐歡鐵板燒",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "海原日式涮涮鍋（汐止店）",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "龍鹽酥雞（汐止店）",
+      "status": "updated",
+      "characters": 27
+    },
+    {
+      "name": "吮指王（汐止樟樹店）",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "噴射雞鹹水雞",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "老師傅點心攤",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "香聚麻辣燙",
+      "status": "updated",
+      "characters": 28
+    },
+    {
+      "name": "瑞芳臭豆腐",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "好先生美食（汐止觀光夜市）",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "燃燒漢堡 BURN BURGER",
+      "status": "updated",
+      "characters": 34
+    },
+    {
+      "name": "燒燙燙烤蜀黍",
+      "status": "retained_existing_specific_content",
+      "characters": 6
+    },
+    {
+      "name": "古早味高雄黑輪",
+      "status": "retained_insufficient_evidence",
+      "characters": 10
+    },
+    {
+      "name": "大汐止百貨大腸包小腸",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "中興路夜市炸雞（大腸包小腸隔壁）",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "包不滿蔥油餅",
+      "status": "updated",
+      "characters": 27
+    },
+    {
+      "name": "忠哥鹹酥雞",
+      "status": "retained_existing_specific_content",
+      "characters": 13
+    },
+    {
+      "name": "蔥之香蔥仔餅",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "烤霸串燒",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "饗味鹹酥雞（汐止中興店）",
+      "status": "updated",
+      "characters": 33
+    },
+    {
+      "name": "品都串燒攤",
+      "status": "updated",
+      "characters": 35
+    },
+    {
+      "name": "超屌麵線⊙鹹水雞",
+      "status": "updated",
+      "characters": 20
+    },
+    {
+      "name": "紅茶巴士 Black Tea Bus（汐止樟樹站）",
+      "status": "updated",
+      "characters": 34
+    },
+    {
+      "name": "黑白ㄍㄚ豆花",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "佳樂蛋糕森林",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "汐止富利西餅蛋糕",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "芋玉豆花",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "如果有一天咖啡館 If one day cafe",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "姊妹豆花",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "牧童咖啡（連興店）",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "牧童咖啡（夢想店）",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "牧童咖啡（福德店）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "烏弄原茶 台北西湖店",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "烏弄原茶 信義松山店",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "烏弄原茶 信義吳興店",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "烏弄原茶 內湖港墘店",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "烏弄原茶 台北公館店",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "烏弄原茶 中山晴光店",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "烏弄原茶 台北遼寧店",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "烏弄原茶 台北圓山店",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "烏弄原茶 士林芝山店",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "下北沢世代",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "漫畫私倉 Mangasick",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "舊香居",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "台灣 e 店",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "不只是圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 35
+    },
+    {
+      "name": "辜振甫先生紀念圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "北投圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "Lightbox 攝影圖書室",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "臺北市立美術館圖書室",
+      "status": "retained_existing_specific_content",
+      "characters": 35
+    },
+    {
+      "name": "國立故宮博物院",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "台北數位藝術中心",
+      "status": "retained_existing_specific_content",
+      "characters": 38
+    },
+    {
+      "name": "樹火紀念紙博物館",
+      "status": "retained_existing_specific_content",
+      "characters": 39
+    },
+    {
+      "name": "忠泰美術館",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "味鼎蛋餅",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "永和豆漿大王（復興南路店）",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "阜杭豆漿",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "一級棒早點",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "葉家肉粥",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "周家豆腐捲",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "欣葉台菜（創始店）",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "阿華熱炒",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "呂桑食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "四知堂",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "雞家莊",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "豐盛食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "詹記麻辣火鍋（南京店）",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "東門餃子館",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "霸味薑母鴨（萬華店）",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "下港吔羊肉爐",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "元香沙茶火鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "史記正宗牛肉麵",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "許仔豬腳麵線",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "好記擔仔麵",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "永樂米苔目",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "巧之味手工水餃",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "鼎泰豐（信義本店）",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "東一排骨飯",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "張媽媽自助餐",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "小李子清粥小菜",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "阿英滷肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "藍家割包",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "原汁排骨湯",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "阿桐阿寶四神湯",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "昌吉豬血湯",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "紅燒土魠魚羹（民樂街）",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "阿財虱目魚",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "北投鼎邊銼",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "想想廚房",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "巫雲",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "秀蘭小館",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "咖哩先生",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "勺勺客陝西料理",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "滿儎屋台",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "Woolloomooloo",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "大嗑西式餐館",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "貓下去敦北俱樂部",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "三六九素食包子",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "蔬河 VEGE CREEK",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "果然匯",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "自然食 Ooh Cha Cha",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "Plants",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "Jack & NaNa COFFEE STORE",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "森高砂咖啡",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "鴨埠咖啡 Yaboo Cafe",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "James House",
+      "status": "retained_existing_specific_content",
+      "characters": 27
+    },
+    {
+      "name": "建興青草店",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "東門江記豆花",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "臺一牛奶大王",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "古早茶坊",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "雪王冰淇淋",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "東區粉圓",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "雙連圓仔湯",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "永康街芋頭大王",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "春一枝商行",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "東門市場",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "光復市場",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "上引水產",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "內湖花市",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "248簡單市集",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "寧夏夜市",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "師大夜市",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "南機場夜市",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "指舞春秋（安和會館）",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "6星集（市府會館）",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "隱舍 Nuance Privée",
+      "status": "retained_existing_specific_content",
+      "characters": 38
+    },
+    {
+      "name": "台灣阿甘按摩小棧（雙連店）",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "蘑菇 MOGU（然後店）",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "繭裹子（稻埕輕衫）",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "印花樂（印花作夥）",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "小日子商號（華山店）",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "Eye Candle（松菸炊事場）",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "阿原肥皂（永康間）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "茶籽堂（誠品松菸店）",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "台客藍（民藝埕）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "行天宮附設玄空圖書館（敦化本館）",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "國家圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "政大達賢圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 37
+    },
+    {
+      "name": "臺北市立圖書館稻香分館",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "臺北市立圖書館廣慈分館",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "CE' & LIB-RARY（天母店）",
+      "status": "retained_existing_specific_content",
+      "characters": 37
+    },
+    {
+      "name": "CE' & LIB-RARY（遼寧店）",
+      "status": "retained_existing_specific_content",
+      "characters": 36
+    },
+    {
+      "name": "兩廳院表演藝術圖書館",
+      "status": "retained_existing_specific_content",
+      "characters": 42
+    },
+    {
+      "name": "國家圖書館多媒體創意實驗中心 OPEN LAB",
+      "status": "retained_existing_specific_content",
+      "characters": 37
+    },
+    {
+      "name": "REEDS PIZZERIA & COFFEE 榮富店",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "REEDS PIZZERIA & BOOKSTORE 民權店",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "REEDS COFFEE & BAKERY 北投店",
+      "status": "retained_existing_specific_content",
+      "characters": 35
+    },
+    {
+      "name": "WE里手工pizza 日本料理 串燒",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "養成零早午餐",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "上海張家包子",
+      "status": "updated",
+      "characters": 29
+    },
+    {
+      "name": "Apple 203（國光店）",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "永和豆漿中正店",
+      "status": "retained_existing_specific_content",
+      "characters": 16
+    },
+    {
+      "name": "永和老曾碳烤燒餅專賣店",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "排骨王",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "香香自助餐",
+      "status": "updated",
+      "characters": 27
+    },
+    {
+      "name": "池上木片便當（成功店）",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "廣東正龍城烤鴨",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "保平雞腿達人",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "頂級飯包（竹林路）",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "盒飯先生",
+      "status": "updated",
+      "characters": 24
+    },
+    {
+      "name": "入魂燒味",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "賀郎中式便當",
+      "status": "retained_insufficient_evidence",
+      "characters": 16
+    },
+    {
+      "name": "正忠排骨飯（保平店）",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "香港鴻運燒臘",
+      "status": "retained_insufficient_evidence",
+      "characters": 14
+    },
+    {
+      "name": "禾牧糧倉私廚餐盒",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "竹林雞肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "竹林口小吃",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "陳記阿榮本家米粉湯",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "御禾號滷肉飯",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "北斗肉圓（永貞路）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "民生路肉圓",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "秀朗特製汕頭麵（成功店）",
+      "status": "updated",
+      "characters": 36
+    },
+    {
+      "name": "南川麵館",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "老黃原汁牛肉麵",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "阿敏水餃牛肉麵",
+      "status": "retained_existing_specific_content",
+      "characters": 14
+    },
+    {
+      "name": "士林米粉湯（永貞路）",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "雙龍涼麵",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "東石蚵仔虱目魚之家",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "鄉下人豬血湯",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "三塊厝鵝家庄",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "老蔡鵝肉",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "郭記麻辣臭豆腐",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "何佳佳蔥油餅（樂華店）",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "權仔鴨肉冬粉",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "五草車中華食館",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "阿倫蛋包飯",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "六鼎煨豬腳",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "旗津深海鮮魚湯",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "卜記麵線",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "台南東山鴨頭",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "丞祖胡椒餅（永和店）",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "永和佳佳香鍋貼",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "花姐正宗重慶酸辣粉",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "西瓜大王（樂華保平店）",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "辰拉麵",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "長生塩人（永和店）",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "PARCO義大利麵",
+      "status": "retained_existing_specific_content",
+      "characters": 34
+    },
+    {
+      "name": "Café Del Mar 智利三明治",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "Nim's 泰式廚房（担担泰）",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "雲南婆婆",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "福哥泰泰式小吃",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "泰王泰式料理",
+      "status": "updated",
+      "characters": 33
+    },
+    {
+      "name": "烏哩日式黑咖哩",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "中田咖哩（性感店）",
+      "status": "updated",
+      "characters": 27
+    },
+    {
+      "name": "艷紅酒咖喱",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "韓五花韓式燒烤料理",
+      "status": "updated",
+      "characters": 34
+    },
+    {
+      "name": "金花子韓式料理",
+      "status": "retained_existing_specific_content",
+      "characters": 32
+    },
+    {
+      "name": "嘉義鱔魚麵（永貞路）",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "麒麟閣沙茶火鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 31
+    },
+    {
+      "name": "川田涮涮鍋",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "加分火鍋（永和樂華店）",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "旺角石頭火鍋（永和店）",
+      "status": "updated",
+      "characters": 33
+    },
+    {
+      "name": "8鍋（文化路）",
+      "status": "updated",
+      "characters": 30
+    },
+    {
+      "name": "米個人燒肉",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "阿里小廚美式牛排",
+      "status": "retained_existing_specific_content",
+      "characters": 15
+    },
+    {
+      "name": "小時厚牛排（永和店）",
+      "status": "retained_existing_specific_content",
+      "characters": 18
+    },
+    {
+      "name": "源林鐵板燒",
+      "status": "retained_insufficient_evidence",
+      "characters": 12
+    },
+    {
+      "name": "永青鐵板燒",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "大賞鐵板燒（永和安樂店）",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "上介青快炒",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "御鼎潮州砂鍋粥",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "霸味薑母鴨（永和店）",
+      "status": "retained_existing_specific_content",
+      "characters": 17
+    },
+    {
+      "name": "野馬燒",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "隱居居酒屋（永貞店）",
+      "status": "retained_existing_specific_content",
+      "characters": 20
+    },
+    {
+      "name": "什串居酒屋",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "登坂居酒屋",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "弍弎居食",
+      "status": "updated",
+      "characters": 34
+    },
+    {
+      "name": "小本經營",
+      "status": "updated",
+      "characters": 32
+    },
+    {
+      "name": "客家小館",
+      "status": "updated",
+      "characters": 35
+    },
+    {
+      "name": "東引快刀手（永貞店）",
+      "status": "updated",
+      "characters": 31
+    },
+    {
+      "name": "SHUU",
+      "status": "retained_existing_specific_content",
+      "characters": 26
+    },
+    {
+      "name": "Mr.雪腐（永和店）",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "豆林豆花",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "華泰豆花粉圓",
+      "status": "retained_existing_specific_content",
+      "characters": 33
+    },
+    {
+      "name": "文化養生豆漿豆花",
+      "status": "retained_existing_specific_content",
+      "characters": 28
+    },
+    {
+      "name": "微苦咖啡 WEI KU COFFEE",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "圈外咖啡 Kengai Coffea",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "Back of the house",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "日日村咖啡食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "謝謝 DOUMO",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "王師父餅舖",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "CHOPCHOP 炒炒",
+      "status": "retained_existing_specific_content",
+      "characters": 30
+    },
+    {
+      "name": "春立鍋燒專賣店",
+      "status": "retained_existing_specific_content",
+      "characters": 23
+    },
+    {
+      "name": "蒸滿萬_蒸餃餡餅專賣店",
+      "status": "retained_existing_specific_content",
+      "characters": 22
+    },
+    {
+      "name": "一刻茶 YI KE CHA（汐止康寧店）",
+      "status": "retained_existing_specific_content",
+      "characters": 25
+    },
+    {
+      "name": "十九甲雞排（汐止明峰店）",
+      "status": "updated",
+      "characters": 28
+    },
+    {
+      "name": "雲記越式法國麵包（汐止店）",
+      "status": "retained_existing_specific_content",
+      "characters": 21
+    },
+    {
+      "name": "左可碳烤三明治",
+      "status": "retained_existing_specific_content",
+      "characters": 29
+    },
+    {
+      "name": "佳元蔥油餅舖（汐止忠孝店）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "Moke’s burger 莫克漢堡（汐止總店）",
+      "status": "retained_existing_specific_content",
+      "characters": 24
+    },
+    {
+      "name": "何佳佳蔥油餅（汐止新台五店）",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    },
+    {
+      "name": "山頂舜麵食堂",
+      "status": "retained_existing_specific_content",
+      "characters": 19
+    }
+  ],
+  "checks": {
+    "spotCount": 498,
+    "allDescriptionsAtMost50Characters": true,
+    "noLegacyReviewAttributionPrefixes": true,
+    "onlyNotesChanged": true,
+    "originalTextPreservedInChangeRecords": true
+  }
+}
