@@ -254,6 +254,12 @@ function routeStopIcon(name){
 }
 
 function routeDirectionsUrl(names){
+  if(routes[selectedRouteIndex].mapMode==='links'){
+    const places=names.map(name=>routeStopDetails[name]?.query||`${name} ${routes[selectedRouteIndex].area}`);
+    const params=new URLSearchParams({api:'1',origin:places[0],destination:places.at(-1),travelmode:'walking'});
+    if(places.length>2)params.set('waypoints',places.slice(1,-1).join('|'));
+    return `https://www.google.com/maps/dir/?${params}`;
+  }
   const positions=names.map(name=>routeLocations[name]);
   const params=new URLSearchParams({api:'1',origin:positions[0].join(','),destination:positions.at(-1).join(','),travelmode:'walking'});
   if(positions.length>2)params.set('waypoints',positions.slice(1,-1).map(position=>position.join(',')).join('|'));
@@ -270,11 +276,11 @@ function renderRouteDirections(route){
     link.textContent=route.stops.length<=5?'在 Google Maps 看路程 ↗':`第 ${part} 段（${start+1}–${start+names.length} 站）↗`;
     els.routeDirections.appendChild(link);
   }
-  if(route.stops.length>5||route.stops.some(name=>routeStopDetails[name]?.hint)){
+  if(route.stops.length>5||(route.mapMode!=='links'&&route.stops.some(name=>routeStopDetails[name]?.hint))){
     const note=document.createElement('p');note.className='route-directions-note';
     note.textContent=[
       route.stops.length>5?'手機瀏覽器的多站路線分段開啟；兩段在共用站點銜接。':'',
-      route.stops.some(name=>routeStopDetails[name]?.hint)?'標示為示意的街區或活動站點，導航只會帶到參考位置。':''
+      (route.mapMode!=='links'&&route.stops.some(name=>routeStopDetails[name]?.hint))?'標示為示意的街區或活動站點，導航只會帶到參考位置。':''
     ].filter(Boolean).join(' ');
     els.routeDirections.appendChild(note);
   }
@@ -285,6 +291,8 @@ function renderRoute(index){
   selectedRouteStop=-1;
   const route=routes[index];
   els.routeSelect.value=String(index);
+  els.routeMapCanvas.closest('.route-map-wrap').classList.toggle('hidden',route.mapMode==='links');
+  document.querySelector('.route-steps-heading span').textContent=route.mapMode==='links'?'點 ↗ 開啟店家地圖':'點站點可在地圖定位';
   const kind=/跑步|縱走|福州山/.test(route.name)?'🌿 戶外路線':/文化路徑/.test(route.name)?'🏛️ 文化散步':'🚶 散步路線';
   els.routeMeta.innerHTML=`<span>📍 ${route.stops.length} 站</span><span>${kind}</span>`;
   els.routeMapCanvas.setAttribute('aria-label',`${route.name}的站點位置地圖`);
@@ -323,13 +331,14 @@ function focusRouteStop(index){
 }
 
 function fitRouteMap(){
-  if(!routeMap)return;
+  if(!routeMap||routes[selectedRouteIndex].mapMode==='links')return;
   const positions=routes[selectedRouteIndex].stops.map(name=>routeLocations[name]);
   const bounds=positions.reduce((box,position)=>box.extend([position[1],position[0]]),new maplibregl.LngLatBounds());
   routeMap.fitBounds(bounds,{padding:55,maxZoom:14.5,duration:0});
 }
 
 function updateRouteMap(){
+  if(routes[selectedRouteIndex].mapMode==='links')return;
   if(!routeMap||!routeMap.getSource('route-order'))return;
   routeMarkers.forEach(entry=>entry.marker.remove());routeMarkers.length=0;
   const route=routes[selectedRouteIndex];
