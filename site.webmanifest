@@ -1,0 +1,24 @@
+{
+  "name": "台北玩樂地圖",
+  "short_name": "玩樂地圖",
+  "description": "依區域與類型探索台北玩樂地點。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFFCF6",
+  "theme_color": "#F6D27A",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

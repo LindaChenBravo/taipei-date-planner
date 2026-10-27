@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">台北玩樂地圖 App 圖示</title>
+  <rect width="512" height="512" rx="108" fill="#F6D27A"/>
+  <g stroke="#3E3A39" stroke-linecap="round" stroke-linejoin="round" stroke-width="11">
+    <circle cx="400" cy="112" r="37" fill="#F2A497"/>
+    <path d="M-10 379c78-70 135-55 191 0 63-85 133-93 207-3 48-44 81-38 134 3v145H-10Z" fill="#B9DAA5"/>
+    <g fill="#A8D3E6">
+      <path d="M255 110v38h31v18h-31l-14 28h57l-14-28h-29"/>
+      <path d="M236 194h67l-8 29h-51Z"/>
+      <path d="M230 223h79l-9 31h-61Z"/>
+      <path d="M223 254h93l-9 32h-75Z"/>
+      <path d="M216 286h107l-10 33h-87Z"/>
+      <path d="M209 319h121l-11 34h-99Z"/>
+      <path d="M224 353h92l20 90H204Z"/>
+    </g>
+    <path d="M271 228v113m0 23v62" fill="none"/>
+    <path d="M-5 98c77 8 139 20 206 40" fill="none"/>
+    <path d="M104 127v31m-19-33h38" fill="none"/>
+    <circle cx="104" cy="124" r="8" fill="#3E3A39"/>
+    <path d="M58 159h92c14 0 23 10 23 24v41c0 16-10 25-25 25H60c-16 0-25-9-25-25v-41c0-14 9-24 23-24Z" fill="#F2A497"/>
+    <path d="M53 180h37v39H53Zm65 0h37v39h-37Z" fill="#A8D3E6"/>
+    <path d="M104 160v89M44 232h120" fill="none"/>
+    <path d="m398 222 10 24 24 10-24 10-10 24-10-24-24-10 24-10Z" fill="#FFFCF6"/>
+  </g>
+</svg>
