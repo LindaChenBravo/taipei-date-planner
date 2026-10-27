@@ -1,0 +1,5688 @@
+{
+  "reviewedDate": "2026-10-27",
+  "scope": "其餘402筆地點介紹第一輪：保留具體推薦、精簡來源字眼、補充可查核的實用資訊。未宣稱重新驗證全部既有評論。",
+  "limits": {
+    "maxCharacters": 50,
+    "onlyFieldsChanged": [
+      "note"
+    ],
+    "keepExistingCategories": true
+  },
+  "summary": {
+    "reviewed": 402,
+    "changed": 174,
+    "retained": 228,
+    "needsMoreSpecificInformation": 50
+  },
+  "entries": [
+    {
+      "name": "樂天羊肉（三重店）",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：羊肉湯可續湯，滷肉飯與親切服務也常獲好評。",
+      "after": "羊肉湯可續湯，想吃飯可搭配滷肉飯；服務親切。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "蕨食堂",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：定食與早午餐選擇多，份量受到肯定；配菜評價略有分歧。",
+      "after": "定食與早午餐選擇多，份量受到肯定；配菜評價略有分歧。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "老麵店",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：四醬麵、乾麵與滷菜受推薦，也有小菜偏鹹的意見。",
+      "after": "可試四醬麵、乾麵與滷菜；部分小菜偏鹹，口味清淡者點餐時先詢問。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "宵夜牛肉麵大王 大安店 / NIGHT BEEF NOODLES KING DAAN",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：紅燒牛肉麵、牛筋與湯頭有人推薦，出餐品質評價不一。",
+      "after": "可試紅燒牛肉麵與牛筋，湯頭有好評；出餐品質評價不一。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "Hui Fu Teas 薈福村茶",
+      "types": [
+        "飲品",
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：茶、甜點和音樂氛圍受好評，店內也有茶道具與禮盒。",
+      "after": "茶與甜點可搭配音樂慢慢品嚐，店內也有茶道具與禮盒。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "小皮蛋食堂/早午餐/烏龍麵炒泡麵專賣店",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：早午餐價格實在，餐點與自製醬料受推薦，店內座位較少。",
+      "after": "早午餐價格實在，自製醬料是特色；店內座位較少，想內用先看空位。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "豬跳舞小餐館",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：義大利麵、燉飯與雙人套餐受歡迎，餐館空間小巧。",
+      "after": "可點義大利麵、燉飯或雙人套餐，餐館空間小巧。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "仙菓園",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：水果訂購與售後服務獲得肯定，適合挑選水果帶回家分享。",
+      "after": "可訂購水果，售後服務有好評；想買水果帶回家分享可先詢問品項。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "Panino Garage 歐式佛卡夏三明治",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論重點：佛卡夏與酸種麵包的食材搭配、清爽口味受好評。",
+      "after": "佛卡夏與酸種麵包搭配清爽內餡，喜歡非厚重醬料的三明治可留意。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "Snappp 拍貼",
+      "types": [
+        "拍照"
+      ],
+      "before": "適合和朋友留下紀念。",
+      "after": "拍貼機可留下朋友合照；拍攝前先確認人數、列印張數與檔案下載方式。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "赤峰街散步",
+      "types": [
+        "文創",
+        "拍照"
+      ],
+      "before": "底片相機店、選物店與巷弄小店集中。",
+      "after": "巷弄集中底片相機店、選物與小店，可先逛街再找咖啡；各店開門時間不同。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "築夢 JUMENG",
+      "types": [
+        "文創"
+      ],
+      "before": "可愛文創與選物。",
+      "after": "永康街巷內的文創選物店，可挑臺灣主題明信片與手作小物。",
+      "status": "updated",
+      "reason": "保留選物特色並補充可買品項",
+      "existingSources": [],
+      "supplementSources": [
+        "https://note.com/arch_taiwan/n/n3d152498eb08"
+      ]
+    },
+    {
+      "name": "榕錦時光生活園區",
+      "types": [
+        "文創",
+        "拍照",
+        "戶外"
+      ],
+      "before": "老屋園區，適合散步與拍照。",
+      "after": "日式老屋園區可散步拍照，餐飲與選物分布其中；店家營業時間各自不同。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "圓山花博公園",
+      "types": [
+        "戶外",
+        "拍照"
+      ],
+      "before": "草地、市集與戶外空間豐富。",
+      "after": "草地可散步休息，市集依活動檔期舉辦；想逛攤位先確認當週場次。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "饒河夜市",
+      "types": [
+        "夜市",
+        "美食"
+      ],
+      "before": "適合安排晚餐與小吃。",
+      "after": "可從胡椒餅、藥燉排骨開始吃，晚餐後能走到彩虹橋看河景。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://blog.udn.com/vincent1070/3436881"
+      ]
+    },
+    {
+      "name": "彩虹橋",
+      "types": [
+        "戶外",
+        "拍照",
+        "自然"
+      ],
+      "before": "可從彩虹橋沿基隆河右岸跑向大直橋，圖片路線單趟約 7 公里；傍晚也可順遊饒河夜市。",
+      "after": "彩虹橋至大直橋參考路線單趟約7公里，沿基隆河右岸；傍晚可順逛饒河夜市。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "四四南村",
+      "types": [
+        "戶外",
+        "拍照",
+        "文創"
+      ],
+      "before": "可拍到台北101，假日偶有市集。",
+      "after": "眷村老屋可拍到臺北101；假日偶有市集，出發前確認當週場次。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "象山步道",
+      "types": [
+        "戶外",
+        "自然",
+        "拍照"
+      ],
+      "before": "可從象山站 2 號出口前往登山口，欣賞臺北 101；四獸山縱走也可由此起步。",
+      "after": "可從象山站 2 號出口前往登山口，欣賞臺北 101；四獸山縱走也可由此起步。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "大安森林公園",
+      "types": [
+        "戶外",
+        "拍照"
+      ],
+      "before": "野餐、散步與放空都很適合。",
+      "after": "可野餐、散步與看生態池，沿樹蔭步道繞行；想賞鳥可先到公園西北側水池。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://travel.taipei/zh-tw/attraction/details/190"
+      ]
+    },
+    {
+      "name": "小白兔唱片行",
+      "types": [
+        "音樂",
+        "文創"
+      ],
+      "before": "可逛唱片、音樂周邊與獨立出版品。",
+      "after": "可逛唱片、音樂周邊與獨立出版品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "慈聖宮小吃",
+      "types": [
+        "美食"
+      ],
+      "before": "適合安排早餐或午餐。",
+      "after": "廟口可吃肉粥、紅燒肉、豬腳麵線與排骨湯，早餐、午餐都能安排。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://supertaste.tvbs.com.tw/pack/347150",
+        "https://www.tcma.gov.taipei/News_Content.aspx?n=19DD8FBEECB25BCF&s=45213A299C690D8C&sms=35E20F60B9AD033F"
+      ]
+    },
+    {
+      "name": "大稻埕散步",
+      "types": [
+        "戶外",
+        "文創",
+        "拍照"
+      ],
+      "before": "老街、選物、市集與河岸夕陽。",
+      "after": "白天逛老街、選物與市集，傍晚可走到大稻埕河岸看夕陽；市集先確認場次。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "北投市場",
+      "types": [
+        "市集",
+        "美食",
+        "Good Eye"
+      ],
+      "before": "溫泉鄉的傳統市場，二樓聚集不少在地小吃。",
+      "after": "溫泉鄉的傳統市場，二樓聚集不少在地小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3Q1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "山峸二手書店",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "北投老屋裡的二手書店，也有藝文活動與輕食空間。",
+      "after": "北投老屋裡的二手書店，也有藝文活動與輕食空間。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "川湯溫泉",
+      "types": [
+        "泡湯",
+        "美食"
+      ],
+      "before": "冬季與假日人潮較多。",
+      "after": "可選大眾池或湯屋，泡湯前先購票；自備毛浴巾，冬季與假日人潮較多。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://michell5168.pixnet.net/blog/posts/2035917407"
+      ]
+    },
+    {
+      "name": "皇池溫泉",
+      "types": [
+        "泡湯",
+        "美食"
+      ],
+      "before": "可安排泡湯與用餐。",
+      "after": "原可泡湯搭配用餐；本館有停業改建公告，各館開放與餐廳新址須先向店家確認。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://girlsplan.com/hiciwavch/"
+      ]
+    },
+    {
+      "name": "福和觀光市集",
+      "types": [
+        "文創",
+        "美食"
+      ],
+      "before": "跳蚤市場與老物挖寶，適合早上前往。",
+      "after": "跳蚤市場與老物挖寶，適合早上前往。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "龍洞",
+      "types": [
+        "自然",
+        "戶外",
+        "拍照"
+      ],
+      "before": "可玩水、走步道與欣賞海岸地形。",
+      "after": "可看海岸岩層、走灣岬步道，也有水域活動；下水須另確認場域開放與海況。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://www.necoast-nsa.gov.tw/Articles.aspx?a=3647&l=1"
+      ]
+    },
+    {
+      "name": "劍龍稜",
+      "types": [
+        "自然",
+        "戶外"
+      ],
+      "before": "需要戶外經驗、適當裝備並留意天候。",
+      "after": "岩稜需手腳並用攀爬，須有戶外經驗與裝備；先查天候，並非一般散步步道。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://hiking.biji.co/index.php?act=detail&id=662&q=trail"
+      ]
+    },
+    {
+      "name": "肥仔尹魯肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到滷肉飯偏肥香、份量剛好；白飯口感偶有不同意見。",
+      "after": "可試滷肉飯偏肥香、份量剛好；白飯口感偶有不同意見。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "東吉手切肥牛汕頭火鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "評論稱讚湯頭、鮮切牛肉和用餐空間，適合一起吃火鍋。",
+      "after": "鮮切牛肉是重點，汕頭火鍋湯頭與用餐空間也有好評。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "YouBike微笑單車 2.0：白沙灣",
+      "types": [
+        "戶外"
+      ],
+      "before": "白沙灣周邊的公共自行車站，可銜接海邊散步路線。",
+      "after": "白沙灣的YouBike站，可接海邊散步；出發與還車前先查即時車輛、空位。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "麟山鼻地質景觀生態步道",
+      "types": [
+        "自然",
+        "戶外",
+        "拍照"
+      ],
+      "before": "評論提到步道平緩、海景宜人；沿途設施較少。",
+      "after": "步道平緩，可看海岸景色；沿途設施較少，先備飲水，海風強時注意保暖。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "麟山鼻木棧道",
+      "types": [
+        "自然",
+        "戶外",
+        "拍照"
+      ],
+      "before": "評論推薦木棧道與海岸景色，可順路到沙灘。",
+      "after": "沿木棧道看海，可順路走到沙灘；雨後木面可能濕滑，穿好走的防滑鞋。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "我不怕你泰胖",
+      "types": [
+        "美食"
+      ],
+      "before": "泰式主食與套餐，評論對份量和口味有不同看法。",
+      "after": "泰式主食與套餐，評論對份量和口味有不同看法。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "中原福州乾麵",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到乾麵、餛飩與滷味小菜，午間人潮較多。",
+      "after": "可點乾麵搭配餛飩與滷味小菜；午間人潮較多，候餐時間要留餘裕。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "元信蔘藥行",
+      "types": [
+        "文創"
+      ],
+      "before": "評論提到果乾種類多、店家親切，可搭配迪化街散步。",
+      "after": "果乾種類多，店家可協助挑選；可搭配迪化街散步，想買伴手禮可先看果乾。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "根牛棧 STEAK",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦牛排、牛肉蔬菜湯與餐包，份量受到肯定。",
+      "after": "可試牛排，搭配牛肉蔬菜湯與餐包，份量受到肯定。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "金龍日料行",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到生魚片、鮭魚親子丼與食材新鮮。",
+      "after": "生魚片與鮭魚親子丼以食材鮮度獲好評。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "老本壽司・生魚片",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦焦糖鮭魚與牛肉串；出餐速度評價不一。",
+      "after": "可試焦糖鮭魚與牛肉串；出餐速度評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "番紅花城土耳其餐廳",
+      "types": [
+        "美食"
+      ],
+      "before": "評論喜歡香料飯、烤肉與土耳其咖啡，店家介紹熱情。",
+      "after": "可點香料飯搭配烤肉、土耳其咖啡；店家會熱情介紹餐點。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "雲鼎正宗雲泰料理",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦三味魚、酸湯與椰汁西米露。",
+      "after": "可試三味魚、酸湯與椰汁西米露。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "有壹燒肉 Yoooi Yakiniku",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到雙人餐肉質與桌邊服務，鄰近徐匯中學站。",
+      "after": "雙人餐的肉質與桌邊服務有好評，位置鄰近徐匯中學站。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "泰好吃 平價鍋燒麵・泰式小火鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到鍋燒麵、牛奶鍋與親切服務；辣度評價不一。",
+      "after": "可點鍋燒麵或牛奶鍋，服務親切；辣度評價不一，點餐時先確認。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "洋町食堂",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到親子丼與日式炒麵，份量與價格評價不一。",
+      "after": "可試親子丼與日式炒麵，份量與價格評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "中華そば 丸宗",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦醬油拉麵的湯頭與麵體；建議留意營業時間。",
+      "after": "醬油拉麵的湯頭與麵體是重點，出發前先確認營業時間。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "十三甜品棧 蘆洲集賢店",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦豆花與布丁珍珠牛奶冰，店面乾淨。",
+      "after": "可試豆花、布丁珍珠牛奶冰，店面乾淨。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "三姐妹廚房 3Ả KITCHEN",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到越式麵食份量足，炒飯與環境評價較分歧。",
+      "after": "可試越式麵食份量足，炒飯與環境評價較分歧。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "雙爸食堂",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦咖哩、濃湯與布丁，適合輕鬆用餐。",
+      "after": "可點咖哩搭配濃湯，飯後再吃布丁。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "兩腳吖爆汁烤雞 大安店",
+      "types": [
+        "美食"
+      ],
+      "before": "烤雞店，近期評論對雞肉口感與份量有不同看法。",
+      "after": "烤雞店，近期評論對雞肉口感與份量有不同看法。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "燒肉燒",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦松阪豬與牛舌，生意較好可先訂位。",
+      "after": "可試松阪豬與牛舌，生意較好可先訂位。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "日十 鶯歌光明店",
+      "types": [
+        "美食"
+      ],
+      "before": "早餐店，評論提到蛋餅與漢堡，口味評價不一。",
+      "after": "可選蛋餅或漢堡，口味評價不一；這張卡片連到鶯歌光明店。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "樂樂軒・元祖中華拉麵",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到中華拉麵、燒肉丼與炸雞，鄰近陶瓷老街。",
+      "after": "可試中華拉麵、燒肉丼與炸雞，鄰近陶瓷老街。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "皇冠早午餐／租書城",
+      "types": [
+        "美食",
+        "書店"
+      ],
+      "before": "評論提到早午餐、奶蓋茶與漫畫書空間。",
+      "after": "可吃早午餐、喝奶蓋茶，也有漫畫書可翻閱。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "ASIA JAYA",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到異國料理、雞肉餐點與親切服務，近鶯歌車站。",
+      "after": "近鶯歌車站的異國料理店，可留意雞肉餐點，服務親切。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "芙豆花・冰品",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦無糖豆漿豆花、花生與芋圓。",
+      "after": "可試無糖豆漿豆花、花生與芋圓。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "熊果園",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到水果製品真材實料、店家服務親切。",
+      "after": "水果製品用料實在，店家服務親切；當日品項可先詢問。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "Árbol 西班牙樹",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到西班牙香腸拼盤、煙燻烤雞與手工塔可。",
+      "after": "可試西班牙香腸拼盤、煙燻烤雞與手工塔可。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "府城涼麵",
+      "types": [
+        "美食"
+      ],
+      "before": "評論喜歡爽口涼麵，也有醬料與湯品較普通的意見。",
+      "after": "涼麵口味爽口；醬料與湯品也有較普通的評價。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "海全牛肉羊肉拉麵",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到牛筋麵、清爽湯頭與滷味小菜。",
+      "after": "可點牛筋麵搭配滷味小菜，湯頭較清爽。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "娜咔泰式燒烤 Naka Mookata",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到泰式烤肉、打拋豬與芒果糯米飯。",
+      "after": "可試泰式烤肉、打拋豬與芒果糯米飯。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "成記脆皮烤鴨",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦炒鴨架與烤鴨，可先電話預訂。",
+      "after": "可試炒鴨架與烤鴨，可先電話預訂。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "朝鮮味韓國料理",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到小菜、煎餅與銅盤烤肉；鍋物評價有分歧。",
+      "after": "可試小菜、煎餅與銅盤烤肉；鍋物評價有分歧。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "台灣蕃薯",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦多種口味可頌與草莓大福。",
+      "after": "可試不同口味的可頌、草莓大福，水果甜點依當日供應。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "Facile pasta",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到義大利麵、份量與素食選擇，空間乾淨。",
+      "after": "提供義大利麵及素食選擇，空間乾淨；食量較大可先詢問份量。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "雙囍號麵線",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到清淡柴魚麵線、蚵仔與軟嫩大腸。",
+      "after": "麵線以清淡柴魚湯底搭配蚵仔、軟嫩大腸，可按喜好選料。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "台美豆漿店",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦鍋貼、粉漿蛋餅與特製醬料。",
+      "after": "可試鍋貼、粉漿蛋餅與特製醬料。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "光興腿庫",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到腿庫便當、滷肉飯與不過鹹的滷汁。",
+      "after": "可點腿庫便當或滷肉飯，滷汁不過鹹。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "巷口船麵",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到泰式船麵湯頭濃、肉量足，河粉份量較少。",
+      "after": "泰式船麵湯頭濃、肉量足，河粉份量較少；食量大可先問能否加麵。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "BANCO 窯烤 Pizza 八德門市",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦披薩，生麵口感與座位舒適度評價不一。",
+      "after": "可試窯烤披薩；生麵口感與座位舒適度評價不一。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "野毛洋食屋",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到日式咖哩、漢堡排、濃湯與布丁。",
+      "after": "可試日式咖哩、漢堡排、濃湯與布丁。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "小王煮瓜",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "華西街小吃；店家招牌為香菇滷肉飯與清湯瓜仔肉。",
+      "after": "華西街小吃；店家招牌為香菇滷肉飯與清湯瓜仔肉。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "薛家東山鴨頭",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦甜不辣、雞皮與鴨脖子，可先電話點餐。",
+      "after": "可試甜不辣、雞皮與鴨脖子，可先電話點餐。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "北投高記茶莊總店",
+      "types": [
+        "飲品",
+        "美食"
+      ],
+      "before": "評論推薦紅茶、仙草茶與季節飲品。",
+      "after": "可試紅茶、仙草茶與季節飲品。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "陳家剉冰",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到豆花、芋圓與黑糖粉粿，假日可能需等候。",
+      "after": "可試豆花、芋圓與黑糖粉粿，假日可能需等候。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "北投本土味明泉紅茶",
+      "types": [
+        "飲品",
+        "美食"
+      ],
+      "before": "評論喜歡古早味紅茶與茶香；甜度、冰量可能無法調整。",
+      "after": "古早味紅茶以茶香獲好評；甜度、冰量可能無法調整，點餐時先確認。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "韓喧 行天宮店",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦海鮮豆腐鍋與韓式炸雞，小菜鹹度評價不一。",
+      "after": "可試海鮮豆腐鍋與韓式炸雞，小菜鹹度評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "太陽蕃茄拉麵 南港 LaLaport",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到濃郁番茄拉麵、布丁與親切服務。",
+      "after": "可點濃郁番茄拉麵，飯後搭配布丁，服務親切。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "1976 道地香港美食 敦南本店",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到腸粉、粥品與牛腩撈麵，菜色選擇多。",
+      "after": "可試腸粉、粥品與牛腩撈麵，菜色選擇多。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "BLIKE 奶茶專門 台北延吉店",
+      "types": [
+        "飲品",
+        "美食"
+      ],
+      "before": "評論提到鮮奶茶、珍珠與咖啡凍，無糖選擇受到喜愛。",
+      "after": "可試鮮奶茶搭配珍珠或咖啡凍，偏好少甜可選無糖茶底。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "紅燒牛肉河粉",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦牛肉河粉與越南生春捲；內用座位不多。",
+      "after": "可試牛肉河粉與越南生春捲；內用座位不多。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "重慶郭魚湯",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到鮮美魚湯、油豆腐與豬腳，部分滷味偏鹹。",
+      "after": "可點魚湯搭配油豆腐或豬腳；部分滷味偏鹹。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "三寶小火鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到湯頭、份量與乾淨環境，營業時間出發前請確認。",
+      "after": "火鍋湯頭與份量有好評，環境乾淨；出發前確認營業時間。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "錢冠涮涮鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到平價鍋物與副餐選擇，份量受到肯定。",
+      "after": "平價涮涮鍋的份量有好評，可依喜好搭配副餐。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "加分100% 浜中特選昆布鍋物 三重正義店",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦白醬、泡菜與蒜頭雞湯底。",
+      "after": "可試白醬、泡菜與蒜頭雞湯底。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "武鼎越豐",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到越式河粉與酸辣湯頭，牛肉口感評價不一。",
+      "after": "可試越式河粉與酸辣湯頭，牛肉口感評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "市場口木瓜牛奶專賣店",
+      "types": [
+        "飲品",
+        "美食"
+      ],
+      "before": "評論提到冰涼木瓜牛奶，服務評價不一。",
+      "after": "可點木瓜牛奶，服務評價不一。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "武大郎蔥仔餅",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦剛起鍋的酥脆蔥仔餅。",
+      "after": "可試剛起鍋的蔥仔餅，重點是酥脆外皮。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿餅・哲來折趣法式可麗餅",
+      "types": [
+        "美食"
+      ],
+      "before": "評論推薦巧克力麻糬與燻雞沙拉口味。",
+      "after": "甜口味可選巧克力麻糬，鹹口味可選燻雞沙拉可麗餅。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "旭集 和食集錦 信義店",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到海鮮、生魚片與握壽司，用餐環境舒適。",
+      "after": "以海鮮、生魚片與握壽司為推薦重點，用餐環境舒適。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "店小二魯肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到魯肉飯、蝦仁羹與多樣小菜。",
+      "after": "可試魯肉飯、蝦仁羹與多樣小菜。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "吃麵",
+      "types": [
+        "美食"
+      ],
+      "before": "評論提到船麵、綠咖哩與泰式小吃。",
+      "after": "可試船麵、綠咖哩與泰式小吃。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "今大魯肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到魯肉飯、滷白菜與香菇排骨湯；尖峰時段可能需要排隊。",
+      "after": "可試魯肉飯、滷白菜與香菇排骨湯；尖峰時段可能需要排隊。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "唯豐魯肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到魯肉飯、滷豆腐與可自行搭配的小菜。",
+      "after": "可點魯肉飯搭配滷豆腐，小菜可自行挑選。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "五燈獎豬腳飯",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到入味的豬腳飯與滷肉飯；價格、服務評價不一。",
+      "after": "可點入味豬腳飯或滷肉飯；價格、服務評價不一。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿發豬腳飯便當",
+      "types": [
+        "美食"
+      ],
+      "before": "豬腳便當店，位於同安街；Google Maps 顯示午間與晚間分段營業。",
+      "after": "豬腳便當店，位於同安街；午間與晚間分段營業。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "北港江記龍門生炒鴨肉焿",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦鴨肉羹麵加辣椒粉；附近停車較不方便。",
+      "after": "可試鴨肉羹麵加辣椒粉；附近停車較不方便。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿田麵",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到古早味油蔥湯頭、滷蛋與餛飩。",
+      "after": "麵食以古早味油蔥湯頭為特色，可搭配滷蛋、餛飩。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "蔣老爹麵食館 三重總店",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦高麗菜水餃、牛肉清湯與滷味。",
+      "after": "可試高麗菜水餃、牛肉清湯與滷味。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿倍麵線",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到蒜香麵線與滷得入味的大腸，口味偏重。",
+      "after": "可試蒜香麵線與滷得入味的大腸，口味偏重。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "朱記花枝羹・米粉炒",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到花枝羹、米粉炒與俐落出餐；騎樓座位較簡單。",
+      "after": "可點花枝羹配米粉炒，出餐俐落；騎樓座位較簡單。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "萬粒肉圓1974",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到肉圓與蒜泥醬料，口感評價不一。",
+      "after": "肉圓可搭蒜泥醬料，口感評價不一。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "集美蚵嗲",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到蚵嗲、炸米腸與豬血湯。",
+      "after": "可試蚵嗲、炸米腸與豬血湯。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "龍門胡椒餅",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到胡椒餅與小酥餅，口感評價不一。",
+      "after": "可試胡椒餅與小酥餅，口感評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "太順油飯",
+      "types": [
+        "美食"
+      ],
+      "before": "中央北路的油飯小吃攤，可與三和夜市行程一起安排。",
+      "after": "中央北路的油飯小吃攤，可與三和夜市行程一起安排。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿田油飯",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦油飯搭甜辣醬與貢丸湯；出發前請再次確認營業時間。",
+      "after": "可試油飯搭甜辣醬與貢丸湯；出發前請再次確認營業時間。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "雲林鍋貼",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦鍋貼與脆皮蚵仔煎，酸辣湯也有人喜歡。",
+      "after": "可試鍋貼與脆皮蚵仔煎，酸辣湯也有人喜歡。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "三重蛋餅大王",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到帶油條口感的蛋餅皮與鹹豆漿。",
+      "after": "蛋餅皮帶油條般的口感，可搭鹹豆漿。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "集美水煎包・小籠包",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到高麗菜煎包與小籠包，適合當點心。",
+      "after": "可試高麗菜煎包與小籠包，適合當點心。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "三重牛乳大王",
+      "types": [
+        "飲品",
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦木瓜牛乳、芋頭牛乳與輕食；店內環境評價不一。",
+      "after": "可試木瓜牛乳、芋頭牛乳與輕食；店內環境評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "三重稅捐處豆花",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到檸檬粉粿冰、仙草冰與豆花，部分品項偏甜。",
+      "after": "可試檸檬粉粿冰、仙草冰與豆花，部分品項偏甜。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "四十年甜甜圈 雙胞胎",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到古早味甜甜圈、雙胞胎與酸菜包。",
+      "after": "可試古早味甜甜圈、雙胞胎與酸菜包。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "大不同西點麵包（餐包）",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦鹹奶油餐包與花生麵包。",
+      "after": "可試鹹奶油餐包與花生麵包。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "百年東山鴨頭",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到甜不辣、豬血糕、豆干與鴨脖子。",
+      "after": "可試甜不辣、豬血糕、豆干與鴨脖子。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿信牛排",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到平價牛排、麵與濃湯，肉的份量受到肯定。",
+      "after": "可試平價牛排、麵與濃湯，肉的份量受到肯定。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "暹羅廚房・三重泰國菜",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦檸檬香酥魚、打拋豬與綠咖哩。",
+      "after": "可試檸檬香酥魚、打拋豬與綠咖哩。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "三重霸味薑母鴨",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到炭火砂鍋湯頭與豆皮，冬天可能需要等候。",
+      "after": "可試炭火砂鍋湯頭與豆皮，冬天可能需要等候。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "大周蒙古烤肉",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論喜歡現炒香氣、脆口蔬菜與嫩肉片。",
+      "after": "現炒蒙古烤肉有鑊氣，蔬菜脆口、肉片軟嫩。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "五円・ご緣",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論推薦日式定食、洋釀炸雞與抹茶甜點；口味評價不一。",
+      "after": "可試日式定食、洋釀炸雞與抹茶甜點；口味評價不一。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "老沐涮涮屋 三重火鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "Google Maps 評論提到雙人套餐、海鮮與肉質，也有飯後甜點。",
+      "after": "可選雙人套餐搭配海鮮與肉品，也有飯後甜點。",
+      "status": "updated",
+      "reason": "保留具體推薦理由，改為自然短句",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "郭怡美書店",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "迪化街老屋書店，評論提到世界文學、藝術設計書區與展覽空間。",
+      "after": "迪化街老屋書店，世界文學、藝術設計書區與展覽空間。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "飛地 nowhere",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "西門町巷弄書店，以香港文化與獨立出版為特色。",
+      "after": "西門町巷弄書店，以香港文化與獨立出版為特色。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "麥克兒童外文書店",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "外文童書選購空間；Google Maps 標示預約制、非門市，地址與圖片略有差異，請先確認。",
+      "after": "外文童書採預約洽詢，非一般開放門市；原資料地址與圖片不同，先確認再前往。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "桑格設計書店（圖中：聚落設計書店）",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "設計主題選書與活動空間；Google Maps 現名「桑格設計書店」。",
+      "after": "設計選書與活動空間，現名「桑格設計書店」；查地圖時使用現名較好辨識。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "竹風書苑二手書店 南港店",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "研究院路的二手書店；出發前建議確認當日營業時間。",
+      "after": "研究院路的二手書店；出發前建議確認當日營業時間。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "女書店 fembooks",
+      "types": [
+        "書店",
+        "文創"
+      ],
+      "before": "以女性與性別議題選書為特色，評論提到安靜閱讀與親切服務。",
+      "after": "以女性與性別議題選書為特色，安靜閱讀與親切服務。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "貴子坑親山步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "北投山谷步道，沿途可見溪流與綠蔭，適合親山散步。",
+      "after": "北投山谷步道，沿途可見溪流與綠蔭，適合親山散步。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "二子坪步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "陽明山林蔭步道，可從二子坪遊客服務站一帶出發。",
+      "after": "從二子坪遊客服務站走林蔭步道，至親水公園單程約1.8公里；可選無階梯路線。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://www.ymsnp.gov.tw/ch/specialreport/accessible-travel/138"
+      ]
+    },
+    {
+      "name": "竹子湖水車寮步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "竹子湖溪畔步道，沿途有農村景色；可搭公車到湖田國小附近。",
+      "after": "竹子湖溪畔步道，沿途有農村景色；可搭公車到湖田國小附近。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "七星山步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "陽明山登山路線，山徑有坡度；出發前留意天候與自身體力。",
+      "after": "山徑有坡度，需評估體力；登山前查天候並備飲水、防風衣，雲霧大時視線易受限。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "半嶺水圳步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "士林山區的水圳步道，適合欣賞林蔭與水路景色。",
+      "after": "士林山區的水圳步道，適合欣賞林蔭與水路景色。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "坪頂古圳步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "古圳、溪水與林蔭相伴，可走訪士林的水圳地景。",
+      "after": "古圳、溪水與林蔭相伴，可走訪士林的水圳地景。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "虎山親山步道",
+      "types": [
+        "戶外",
+        "自然",
+        "拍照"
+      ],
+      "before": "四獸山之一，可走林間山徑並欣賞信義區景色。",
+      "after": "四獸山之一，可走林間山徑並欣賞信義區景色。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "金面山親山步道",
+      "types": [
+        "戶外",
+        "自然",
+        "拍照"
+      ],
+      "before": "內湖登山步道，山徑有較陡路段，可登高看城市景色。",
+      "after": "山徑含較陡路段，可登高看內湖城市景色；穿防滑鞋，雨後不宜冒進。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "貓空樟樹步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "貓空一帶的步道，適合散步並欣賞山間田園景色。",
+      "after": "貓空一帶的步道，適合散步並欣賞山間田園景色。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "仙跡岩步道",
+      "types": [
+        "戶外",
+        "自然",
+        "拍照"
+      ],
+      "before": "景美附近的親山步道，適合郊山散步與登高賞景。",
+      "after": "景美附近的親山步道，適合郊山散步與登高賞景。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "富陽自然生態公園",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "城市裡的森林步道，可銜接福州山，圖片路線一圈約 2.5 公里。",
+      "after": "森林步道可銜接福州山，原參考環線約2.5公里；路線含爬升，並非全程平地。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "福州山公園",
+      "types": [
+        "戶外",
+        "自然",
+        "拍照"
+      ],
+      "before": "可從富陽自然生態公園步行銜接，登高欣賞臺北 101。",
+      "after": "可從富陽自然生態公園步行銜接，登高欣賞臺北 101。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "四獸山縱走",
+      "types": [
+        "戶外",
+        "自然",
+        "拍照"
+      ],
+      "before": "圖片路線約 5 公里，串連象山、獅山、豹山與虎山；地圖標記為四獸山風景區，建議由象山站 2 號出口起步。",
+      "after": "參考路線約5公里，串連象、獅、豹、虎山；象山站2號出口起步，標記為四獸山風景區。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "源芳刈包",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "華西街傳統刈包，適合安排艋舺小吃散步。",
+      "after": "華西街的傳統刈包，可安排在艋舺小吃散步途中吃一份。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "兩喜號（廣州街總店）",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "傳統小吃，推薦魷魚羹；此圖卡連到廣州街總店。",
+      "after": "可點魷魚羹搭配傳統小吃；這張卡片連到廣州街總店。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "大鼎肉羹（地圖：大鐤肉羹）",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "華西街的肉羹料理；Google 地圖店名為「大鐤肉羹」。",
+      "after": "華西街的肉羹料理；地圖店名為「大鐤肉羹」。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "蘇來傳",
+      "types": [
+        "美食"
+      ],
+      "before": "和平西路一帶的傳統小吃店；Google 地圖名稱為「露店 蘇來傳」。",
+      "after": "和平西路一帶的傳統小吃店；地圖名稱為「露店 蘇來傳」。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿義魯肉飯",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "華西街滷肉飯，也有蚵仔滷肉飯；清單中的「阿義滷肉飯」與「阿義蚵仔滷肉飯」為同一家。",
+      "after": "可點滷肉飯或蚵仔滷肉飯，兩種名稱對應同一家華西街店。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "管麵素食麵館",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "南機場一帶的素食麵館，適合安排素食小吃。",
+      "after": "南機場一帶的素食麵館，適合安排素食小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "廣州街脆皮蚵仔煎",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "廣州街夜市蚵仔煎，特色是酥脆外皮。",
+      "after": "廣州街夜市蚵仔煎，特色是酥脆外皮。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "布袋鮮蚵（地圖：布袋鮮之蚵）",
+      "types": [
+        "美食"
+      ],
+      "before": "和平西路的鮮蚵料理；Google 地圖店名為「布袋鮮之蚵」。",
+      "after": "和平西路的鮮蚵料理；地圖店名為「布袋鮮之蚵」。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "陳記蚵仔麵線",
+      "types": [
+        "美食"
+      ],
+      "before": "和平西路的蚵仔麵線；Google 地圖店名為「陳記腸蚵專業麵線」。",
+      "after": "和平西路的蚵仔麵線；地圖店名為「陳記腸蚵專業麵線」。",
+      "status": "updated",
+      "reason": "保留原推薦與提醒，移除來源稱謂",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "東港旗魚串",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "艋舺夜市的旗魚串小吃。",
+      "after": "艋舺夜市的旗魚串小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "福州元祖胡椒餅（原萬華戲院旁）",
+      "types": [
+        "美食"
+      ],
+      "before": "清單中的「萬華戲院胡椒餅」；店家現位於和平西路三段巷內。",
+      "after": "清單中的「萬華戲院胡椒餅」；店家現位於和平西路三段巷內。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "南機場13號基隆黑輪（關東煮）",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "清單中的「南機場關東煮」；對應南機場夜市 13 號攤的基隆黑輪與綜合甜不辣。",
+      "after": "南機場夜市13號攤，可點基隆黑輪、關東煮與綜合甜不辣。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "郭家炒牛肉",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "華西街的熱炒牛肉，適合安排夜市正餐。",
+      "after": "華西街的熱炒牛肉，適合安排夜市正餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿珍滷雞腳",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "廣州街夜市的滷雞腳與滷味；清單第 15、20 項為同一家。",
+      "after": "廣州街夜市的滷雞腳與滷味，原清單兩筆推薦已合併為同一家。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "龍都冰菓專業家",
+      "types": [
+        "美食"
+      ],
+      "before": "傳統冰品店，清單推薦芒果冰。",
+      "after": "可試芒果冰，搭配華西街小吃行程吃甜點。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "懷念愛玉冰",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "廣州街的愛玉冰，清單提到多位網友推薦。",
+      "after": "廣州街夜市的愛玉冰，吃完夜市鹹食可搭配一杯。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "南機場芋頭大王",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "南機場夜市的芋頭甜品。",
+      "after": "南機場夜市的芋頭甜品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "十八拐圳步道",
+      "types": [
+        "戶外",
+        "自然"
+      ],
+      "before": "北投泉源地區的古圳步道，沿途可看水圳與田園；地圖標記為鄰近的十八份水圳區域，請依現場指標尋找入口。",
+      "after": "古圳旁可看水路與田園；標記為鄰近十八份水圳區域，入口須依現場指標確認。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "手工赤肉羹、古早味滷肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹二路的赤肉羹與滷肉飯。",
+      "after": "樟樹二路的赤肉羹與滷肉飯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "成大器烤肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹二路 136 巷的烤肉飯。",
+      "after": "樟樹二路 136 巷的烤肉飯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "豪家牛排館",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹一路的牛排館。",
+      "after": "樟樹一路的牛排館。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "武牛牛排館",
+      "types": [
+        "美食"
+      ],
+      "before": "連興街的牛排館，除了牛排，也可留意雞排。",
+      "after": "連興街的牛排館，除了牛排，也可留意雞排。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.threads.com/@albee0424/post/DW87wUlkVfp"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "家กินข้าว 泰料理",
+      "types": [
+        "美食"
+      ],
+      "before": "明峰街的泰式料理。",
+      "after": "明峰街的泰式料理。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "楓玥日本料理",
+      "types": [
+        "美食"
+      ],
+      "before": "湖前街的日本料理。",
+      "after": "湖前街的日本料理。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿財鍋貼",
+      "types": [
+        "美食"
+      ],
+      "before": "中興路的鍋貼店。",
+      "after": "中興路的鍋貼店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "麵麵屋",
+      "types": [
+        "美食"
+      ],
+      "before": "仁愛路上的義大利麵餐館，可留意蒜味蘑菇蝦等品項。",
+      "after": "仁愛路上的義大利麵餐館，可留意蒜味蘑菇蝦等品項。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6a833426eb74c41ab7d82b31"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "楊家意麵・油飯・扁食",
+      "types": [
+        "美食"
+      ],
+      "before": "明峰街的意麵、油飯與扁食。",
+      "after": "明峰街的意麵、油飯與扁食。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "黃金三角臭豆腐",
+      "types": [
+        "美食"
+      ],
+      "before": "中興路的臭豆腐。",
+      "after": "中興路的臭豆腐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "阿基手工臭豆腐",
+      "types": [
+        "美食"
+      ],
+      "before": "康寧街的手工臭豆腐；Google 地圖另列大腸蚵仔麵線。",
+      "after": "可點手工臭豆腐，也供應大腸蚵仔麵線；位於康寧街。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "華姐麵店（樟樹店）",
+      "types": [
+        "美食"
+      ],
+      "before": "推薦鴨肉飯；Google 地圖店名為「華姐麵店」。",
+      "after": "可試鴨肉飯，地圖上的店名是「華姐麵店」，位置在樟樹店。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "韋安鍋貼專賣店",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹一路的鍋貼專賣店。",
+      "after": "樟樹一路的鍋貼專賣店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "沈家涼麵店",
+      "types": [
+        "美食"
+      ],
+      "before": "福德一路的涼麵店，多次獲推薦。",
+      "after": "福德一路的涼麵店，多次獲推薦。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "老家餡餅（汐止店）",
+      "types": [
+        "美食"
+      ],
+      "before": "餡餅內餡多汁，享用時留意燙口。",
+      "after": "餡餅內餡多汁，享用時留意燙口。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "三媽臭臭鍋（汐止忠孝店）",
+      "types": [
+        "美食"
+      ],
+      "before": "忠孝東路 256 號的三媽臭臭鍋。",
+      "after": "忠孝東路 256 號的三媽臭臭鍋。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "無名麵店排骨湯",
+      "types": [
+        "美食"
+      ],
+      "before": "在忠孝東路三媽對面；推薦金針排骨麵。",
+      "after": "在忠孝東路三媽對面；推薦金針排骨麵。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "大汐止排骨酥麵",
+      "types": [
+        "美食"
+      ],
+      "before": "推薦排骨酥麵與口味偏甜的滷肉飯。",
+      "after": "推薦排骨酥麵與口味偏甜的滷肉飯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "廣州燒臘美食專家",
+      "types": [
+        "美食"
+      ],
+      "before": "忠孝東路的燒臘店；推薦鴨腿飯。",
+      "after": "忠孝東路的燒臘店；推薦鴨腿飯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "龍安飯包",
+      "types": [
+        "美食"
+      ],
+      "before": "推薦糖醋排骨與炸雞腿。",
+      "after": "推薦糖醋排骨與炸雞腿。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "青朝麻（汐止店）",
+      "types": [
+        "美食"
+      ],
+      "before": "青麻椒臭豆腐與鴨血，位於福德一路。",
+      "after": "青麻椒臭豆腐與鴨血，位於福德一路。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "郭呷萬潤餅捲店",
+      "types": [
+        "美食"
+      ],
+      "before": "水源路一段的潤餅捲店。",
+      "after": "水源路一段的潤餅捲店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "河南鍋貼店",
+      "types": [
+        "美食"
+      ],
+      "before": "仁愛路的鍋貼店。",
+      "after": "仁愛路的鍋貼店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "來發牛排",
+      "types": [
+        "美食"
+      ],
+      "before": "推薦大塊原肉牛排。",
+      "after": "推薦大塊原肉牛排。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "越南美食（茄苳路）",
+      "types": [
+        "美食"
+      ],
+      "before": "茄苳路 15 號的越南料理；推薦炒飯與乾炒牛肉河粉。",
+      "after": "茄苳路 15 號的越南料理；推薦炒飯與乾炒牛肉河粉。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "四季大補帖",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹一路的藥燉料理，推薦藥燉排骨。",
+      "after": "樟樹一路的藥燉料理，推薦藥燉排骨。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "撲克專業麵線（汐止店）",
+      "types": [
+        "美食"
+      ],
+      "before": "對應推薦清單的「專業麵線」；Google 地圖店名為撲克專業麵線。",
+      "after": "汐止的麵線店，對應原推薦「專業麵線」；地圖店名為撲克專業麵線。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "五牛汕頭牛肉麵",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹一路的牛肉麵店。",
+      "after": "樟樹一路的牛肉麵店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "嚐歡鐵板燒",
+      "types": [
+        "美食"
+      ],
+      "before": "建成路 57 巷的鐵板燒。",
+      "after": "建成路 57 巷的鐵板燒。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "海原日式涮涮鍋（汐止店）",
+      "types": [
+        "美食"
+      ],
+      "before": "汐止店的日式涮涮鍋。",
+      "after": "汐止店的日式涮涮鍋。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "龍鹽酥雞（汐止店）",
+      "types": [
+        "美食"
+      ],
+      "before": "福德一路的鹽酥雞。",
+      "after": "福德一路的鹽酥雞。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "吮指王（汐止樟樹店）",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹二路的炸物。",
+      "after": "樟樹二路的炸物。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "噴射雞鹹水雞",
+      "types": [
+        "美食"
+      ],
+      "before": "莊敬街的鹹水雞。",
+      "after": "莊敬街的鹹水雞。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "老師傅點心攤",
+      "types": [
+        "美食"
+      ],
+      "before": "中興市場旁的點心攤，推薦煎蘿蔔糕與油飯。",
+      "after": "中興市場旁的點心攤，推薦煎蘿蔔糕與油飯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "香聚麻辣燙",
+      "types": [
+        "美食"
+      ],
+      "before": "福德二路的麻辣燙與個人鍋。",
+      "after": "福德二路的麻辣燙與個人鍋。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "瑞芳臭豆腐",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "⭐ 首選：汐止觀光夜市的臭豆腐。",
+      "after": "⭐ 首選：汐止觀光夜市的臭豆腐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "好先生美食（汐止觀光夜市）",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "汐止觀光夜市 90 號攤位，推薦小辣臭豆腐與不加料的清麵線。",
+      "after": "汐止觀光夜市 90 號攤位，推薦小辣臭豆腐與不加料的清麵線。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6aba695dbe6a36a36cff108a"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "燃燒漢堡 BURN BURGER",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "汐止觀光夜市 35 號攤位。",
+      "after": "汐止觀光夜市 35 號攤位。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "燒燙燙烤蜀黍",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "推薦烤玉米。",
+      "after": "推薦烤玉米。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "古早味高雄黑輪",
+      "types": [
+        "美食"
+      ],
+      "before": "福德二路的黑輪小吃。",
+      "after": "福德二路的黑輪小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "大汐止百貨大腸包小腸",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "中興路 168 號；推薦綜合加辣。",
+      "after": "中興路 168 號；推薦綜合加辣。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "中興路夜市炸雞（大腸包小腸隔壁）",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "據推薦位於大腸包小腸隔壁；標記是中興路 168 號附近，請現場確認攤位。",
+      "after": "中興路168號附近、大腸包小腸隔壁的炸雞攤；標記非精確攤位，請現場確認。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "包不滿蔥油餅",
+      "types": [
+        "美食",
+        "夜市"
+      ],
+      "before": "中興路 168 號附近的蔥油餅。",
+      "after": "中興路 168 號附近的蔥油餅。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "忠哥鹹酥雞",
+      "types": [
+        "美食"
+      ],
+      "before": "湖前街的鹹酥雞，推薦炸物。",
+      "after": "湖前街的鹹酥雞，推薦炸物。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "蔥之香蔥仔餅",
+      "types": [
+        "美食"
+      ],
+      "before": "推薦蔥油餅；開店時間不固定。Google 地圖列復興路 31 號，出發前請先確認。",
+      "after": "可試蔥油餅；地圖列復興路31號，開店時間不固定，出發前先確認。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "烤霸串燒",
+      "types": [
+        "美食"
+      ],
+      "before": "忠孝東路的串燒店。",
+      "after": "忠孝東路的串燒店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "饗味鹹酥雞（汐止中興店）",
+      "types": [
+        "美食"
+      ],
+      "before": "福德二路 91 巷的鹹酥雞。",
+      "after": "福德二路 91 巷的鹹酥雞。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "品都串燒攤",
+      "types": [
+        "美食"
+      ],
+      "before": "中興路 41 巷的串燒攤。",
+      "after": "中興路 41 巷的串燒攤。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "超屌麵線⊙鹹水雞",
+      "types": [
+        "美食"
+      ],
+      "before": "建成路 23 巷的鹹水雞，推薦加檸檬汁。",
+      "after": "建成路 23 巷的鹹水雞，推薦加檸檬汁。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "紅茶巴士 Black Tea Bus（汐止樟樹站）",
+      "types": [
+        "美食",
+        "飲品"
+      ],
+      "before": "樟樹二路的飲料店。",
+      "after": "樟樹二路的飲料店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "黑白ㄍㄚ豆花",
+      "types": [
+        "美食",
+        "甜點"
+      ],
+      "before": "水源路一段的豆花。",
+      "after": "水源路一段的豆花。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "佳樂蛋糕森林",
+      "types": [
+        "美食",
+        "甜點"
+      ],
+      "before": "青山路的蛋糕店。",
+      "after": "青山路的蛋糕店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "汐止富利西餅蛋糕",
+      "types": [
+        "美食",
+        "甜點"
+      ],
+      "before": "宜興街的西餅蛋糕店，推薦麵包。",
+      "after": "宜興街的西餅蛋糕店，推薦麵包。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "芋玉豆花",
+      "types": [
+        "美食",
+        "甜點"
+      ],
+      "before": "樟樹一路 135 巷的豆花店，推薦芋頭。",
+      "after": "樟樹一路 135 巷的豆花店，推薦芋頭。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "姊妹豆花",
+      "types": [
+        "美食",
+        "甜點"
+      ],
+      "before": "大汐止排骨酥麵對面；推薦黑糖碎冰、綠豆蒜、粉圓與花生仁。",
+      "after": "大汐止排骨酥麵對面；推薦黑糖碎冰、綠豆蒜、粉圓與花生仁。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 台北西湖店",
+      "types": [
+        "飲品"
+      ],
+      "before": "Google Maps 評論推薦手採阿里山金萱加珍珠，茶香清甜、珍珠 Q 嫩；喜歡奶香也可試鮮奶茶。",
+      "after": "可試手採阿里山金萱加珍珠，茶香清甜、珍珠Q嫩；喜歡奶香可選鮮奶茶。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 信義松山店",
+      "types": [
+        "飲品"
+      ],
+      "before": "Google Maps 評論點名蕎麥冬露，蕎麥香明顯；另有茶友選台茶 18 號紅玉無糖微冰。",
+      "after": "蕎麥冬露有明顯蕎麥香；偏愛純茶可選台茶18號紅玉，試無糖微冰。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 信義吳興店",
+      "types": [
+        "飲品"
+      ],
+      "before": "評論推薦杏仁凍冬片仔，無糖也不苦澀、還能做溫飲；金萱烏龍也獲好評。",
+      "after": "可試杏仁凍冬片仔，無糖也不苦澀，還能做溫飲；另有金萱烏龍。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://footinder.app/places/6428582f4452c39081075ee4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 內湖港墘店",
+      "types": [
+        "飲品"
+      ],
+      "before": "實喝心得推薦名間鄉冬片仔，茶香有餘韻；紅茶拿鐵則是茶味較重、奶味剛好。",
+      "after": "名間鄉冬片仔茶香有餘韻；紅茶拿鐵偏重茶味，奶味適中。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://chenslife.com/johnteacompany-unocha-neihu"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 台北公館店",
+      "types": [
+        "飲品"
+      ],
+      "before": "食記推薦玉霞紅茶拿鐵與桂花凍紅玉；偏愛純茶可試名間鄉冬片仔，清爽回甘。",
+      "after": "可試玉霞紅茶拿鐵、桂花凍紅玉；純茶可選名間鄉冬片仔，清爽回甘。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://fooday.app/zh-TW/spots/n9bJtkG8QN38KQiDqP8As8"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 中山晴光店",
+      "types": [
+        "飲品"
+      ],
+      "before": "晴光店實喝推薦名間鄉冬片仔與冬露冬片仔：前者清香，後者帶冬瓜的清甜。",
+      "after": "名間鄉冬片仔清香；冬露冬片仔加入冬瓜甜味，兩款可依甜度偏好選。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://blake.com.tw/blog/post/unocha"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 台北遼寧店",
+      "types": [
+        "飲品"
+      ],
+      "before": "實喝心得推薦珍珠紅茶拿鐵：茶味較濃、鮮奶比例適中，珍珠帶蜂蜜香。",
+      "after": "可試珍珠紅茶拿鐵，茶味較濃、鮮奶比例適中，珍珠帶蜂蜜香。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://www.poponote.com/note/6173846812936081c1ec4226"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 台北圓山店",
+      "types": [
+        "飲品"
+      ],
+      "before": "外送顧客常點手採阿里山金萱；玉霞紅茶拿鐵也獲得高比例好評，喜歡奶茶可試。",
+      "after": "可從手採阿里山金萱選起；想喝奶茶可試玉霞紅茶拿鐵。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/%E7%83%8F%E5%BC%84-%E5%9C%93%E5%B1%B1%E5%BA%97/aWITBW0-V5mmtztHDfvYdQ"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏弄原茶 士林芝山店",
+      "types": [
+        "飲品"
+      ],
+      "before": "外送顧客常點檸檬冬片仔、名間鄉冬片仔；想喝奶茶可試金萱烏龍拿鐵。",
+      "after": "純茶可試檸檬冬片仔、名間鄉冬片仔；奶茶可選金萱烏龍拿鐵。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/%E7%83%8F%E5%BC%84-%E5%A3%AB%E6%9E%97%E8%8A%9D%E5%B1%B1%E5%BA%97/dK5AXv4dT5OEIW829I92eg"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "下北沢世代",
+      "types": [
+        "書店",
+        "Good Eye"
+      ],
+      "before": "以國內外獨立刊物與 zine 為主的選書空間；出發前請確認是否開放。",
+      "after": "以國內外獨立刊物與 zine 為主的選書空間；出發前請確認是否開放。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1A1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "漫畫私倉 Mangasick",
+      "types": [
+        "書店",
+        "Good Eye"
+      ],
+      "before": "專營另類漫畫與次文化視覺藝術，也有台灣獨立刊物與小型展覽。",
+      "after": "專營另類漫畫與次文化視覺藝術，也有台灣獨立刊物與小型展覽。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1A3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "舊香居",
+      "types": [
+        "書店",
+        "Good Eye"
+      ],
+      "before": "老牌舊書店，適合慢慢翻找絕版書與舊刊物。",
+      "after": "老牌舊書店，適合慢慢翻找絕版書與舊刊物。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1A4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "台灣 e 店",
+      "types": [
+        "書店",
+        "Good Eye"
+      ],
+      "before": "以台灣歷史、文化和本土議題選書，也有音樂與文創商品。",
+      "after": "以台灣歷史、文化和本土議題選書，也有音樂與文創商品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1A5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "不只是圖書館",
+      "types": [
+        "圖書館",
+        "Good Eye"
+      ],
+      "before": "松山文創園區的設計主題圖書館，空間也值得一看。",
+      "after": "松菸女澡堂改建的設計圖書館，全票100元，可於當日自由進出台灣設計館。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1B2"
+      ],
+      "supplementSources": [
+        "https://www.tdri.org.tw/zh-TW/service-and-space/not-just-library"
+      ]
+    },
+    {
+      "name": "辜振甫先生紀念圖書館",
+      "types": [
+        "圖書館",
+        "Good Eye"
+      ],
+      "before": "位於臺大社科院，以建築師伊東豊雄設計的閱覽空間聞名。",
+      "after": "位於臺大社科院，以建築師伊東豊雄設計的閱覽空間聞名。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1B3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "北投圖書館",
+      "types": [
+        "圖書館",
+        "Good Eye"
+      ],
+      "before": "臺灣首座綠建築圖書館，木質建築坐落在北投公園樹蔭間。",
+      "after": "臺灣首座綠建築圖書館，木質建築坐落在北投公園樹蔭間。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1B4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Lightbox 攝影圖書室",
+      "types": [
+        "圖書館",
+        "Good Eye"
+      ],
+      "before": "以台灣攝影出版物為核心的公共閱讀空間；現址在羅斯福路三段。",
+      "after": "以臺灣攝影出版物為主的公共閱讀空間，現址在羅斯福路三段；出發前查開館日。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1B5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "臺北市立美術館圖書室",
+      "types": [
+        "圖書館",
+        "Good Eye"
+      ],
+      "before": "館內視覺藝術專門圖書室，適合查閱藝術史與展覽資料。",
+      "after": "視覺藝術專門圖書室，可查藝術史、展覽資料；圖書室時間與美術館展場不同。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#1B6"
+      ],
+      "supplementSources": [
+        "https://www.tfam.museum/Common/editor.aspx?ddlLang=zh-tw&id=230"
+      ]
+    },
+    {
+      "name": "欣葉台菜（創始店）",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "雙城街老牌台菜館，適合點幾道家常菜與經典大菜一起分享。",
+      "after": "雙城街老牌台菜館，適合點幾道家常菜與經典大菜一起分享。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3E1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿華熱炒",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以海鮮熱炒為主，適合朋友圍桌點菜分享。",
+      "after": "以海鮮熱炒為主，適合朋友圍桌點菜分享。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3E2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "呂桑食堂",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以宜蘭風味料理為特色，Good Eye 也推薦隨餐供應的金棗茶。",
+      "after": "宜蘭風味料理，可留意隨餐供應的金棗茶。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3E3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "四知堂",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "在特色建築裡吃創意台菜與精緻甜點；現址已搬至四維路。",
+      "after": "在特色建築裡吃創意台菜與精緻甜點；現址已搬至四維路。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3E4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "雞家莊",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "招牌三味雞、雞家豆腐與雞蛋布丁，適合多人一起點菜。",
+      "after": "招牌三味雞、雞家豆腐與雞蛋布丁，適合多人一起點菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3E5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "豐盛食堂",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以清爽台菜和古早味家常料理為主，適合圍桌聚餐。",
+      "after": "以清爽台菜和古早味家常料理為主，適合圍桌聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3E6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "詹記麻辣火鍋（南京店）",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "復古風格麻辣鍋，鴨血是 Good Eye 點名的招牌。",
+      "after": "復古風格麻辣鍋，可點招牌鴨血搭配鍋料。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3F2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東門餃子館",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "除了水餃，也能點料多的酸菜白肉鍋。",
+      "after": "除了水餃，也能點料多的酸菜白肉鍋。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3F3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "霸味薑母鴨（萬華店）",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "天冷可吃熱騰騰的薑母鴨；此地點是艋舺大道的萬華分店。",
+      "after": "天冷可吃熱騰騰的薑母鴨；此地點是艋舺大道的萬華分店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3F4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "下港吔羊肉爐",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "來自岡山的羊肉爐，適合天冷時聚餐。",
+      "after": "來自岡山的羊肉爐，適合天冷時聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3F5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "元香沙茶火鍋",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "老派清湯火鍋搭配自製沙茶醬，能按喜好挑選鍋料。",
+      "after": "老派清湯火鍋搭配自製沙茶醬，能按喜好挑選鍋料。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3F6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "史記正宗牛肉麵",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "清燉牛肉麵有濃郁奶白湯頭；現址已搬至四平街。",
+      "after": "清燉牛肉麵有濃郁奶白湯頭；現址已搬至四平街。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3G1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "許仔豬腳麵線",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "慈聖宮旁的白湯豬腳麵線，豬腳軟嫩、湯頭清甜。",
+      "after": "慈聖宮旁的白湯豬腳麵線，豬腳軟嫩、湯頭清甜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3G2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "好記擔仔麵",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以鮮蝦熬出擔仔麵湯頭，適合搭配台式小菜。",
+      "after": "以鮮蝦熬出擔仔麵湯頭，適合搭配台式小菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3G3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "永樂米苔目",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "米苔目口感軟Q，可搭配黑白切與油豆腐；現址在民樂街。",
+      "after": "米苔目口感軟Q，可搭配黑白切與油豆腐；現址在民樂街。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3G4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "巧之味手工水餃",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "手工水餃的干貝口味最有辨識度。",
+      "after": "手工水餃的干貝口味最有辨識度。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3G5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "鼎泰豐（信義本店）",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "經典小籠包皮薄多汁，也能點炒飯與蝦仁燒賣。",
+      "after": "經典小籠包皮薄多汁，也能點炒飯與蝦仁燒賣。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3G6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東一排骨飯",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "懷舊風格的排骨飯，酥香排骨搭配傳統配菜。",
+      "after": "懷舊風格的排骨飯，酥香排骨搭配傳統配菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3H1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "張媽媽自助餐",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "東門市場的自助餐，能自由挑選家常菜色。",
+      "after": "東門市場的自助餐，能自由挑選家常菜色。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3H3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "小李子清粥小菜",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "地瓜清粥配多樣現做小菜，適合想吃清爽一餐時。",
+      "after": "地瓜清粥配多樣現做小菜，適合想吃清爽一餐時。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3H4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿英滷肉飯",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "滷肉飯配半熟蛋，是溫州街的經典小吃組合。",
+      "after": "滷肉飯配半熟蛋，是溫州街的經典小吃組合。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3H5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "藍家割包",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "割包可選肥瘦比例，也有四神湯可搭配。",
+      "after": "割包可選肥瘦比例，也有四神湯可搭配。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3H6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "原汁排骨湯",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "慈聖宮一帶的蘿蔔排骨湯，湯頭清甜。",
+      "after": "慈聖宮一帶的蘿蔔排骨湯，湯頭清甜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3I1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿桐阿寶四神湯",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "四神湯料多，適合搭配傳統小吃。",
+      "after": "四神湯料多，適合搭配傳統小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3I2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "昌吉豬血湯",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "豬血湯加入韭菜與沙茶，是昌吉街的老味道。",
+      "after": "豬血湯加入韭菜與沙茶，是昌吉街的老味道。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3I3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "紅燒土魠魚羹（民樂街）",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "酥炸土魠魚塊配白菜羹，湯頭濃稠暖胃。",
+      "after": "酥炸土魠魚塊配白菜羹，湯頭濃稠暖胃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3I4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿財虱目魚",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "可點虱目魚肚湯，感受鮮甜魚湯的台式早午餐。",
+      "after": "可點虱目魚肚湯，感受鮮甜魚湯的台式早午餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3I5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "北投鼎邊銼",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "北投市場裡的傳統鼎邊銼，以米漿製成麵片、搭配高湯。",
+      "after": "北投市場裡的傳統鼎邊銼，以米漿製成麵片、搭配高湯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3I6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "想想廚房",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以台灣食材詮釋印度香料料理，口味有創意。",
+      "after": "以台灣食材詮釋印度香料料理，口味有創意。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3J1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "巫雲",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "雲南料理辛香酸辣，適合喜歡層次風味的人。",
+      "after": "雲南料理辛香酸辣，適合喜歡層次風味的人。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3J2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "秀蘭小館",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "江浙菜館，可點菜飯與獅子頭一起分享。",
+      "after": "江浙菜館，可點菜飯與獅子頭一起分享。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3J3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "咖哩先生",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "港式家常菜與咖哩飯，現址在公館羅斯福路巷內。",
+      "after": "港式家常菜與咖哩飯，現址在公館羅斯福路巷內。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3J4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "勺勺客陝西料理",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "陝西料理口味鮮明，招牌蒙古炸奶豆腐很特別。",
+      "after": "陝西料理口味鮮明，招牌蒙古炸奶豆腐很特別。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3J5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "滿儎屋台",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "主打自製一夜干的日式居酒屋，適合晚餐聚會。",
+      "after": "主打自製一夜干的日式居酒屋，適合晚餐聚會。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3J6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Woolloomooloo",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "澳洲風格餐食與咖啡，白天到夜晚都適合聚餐。",
+      "after": "澳洲風格餐食與咖啡，白天到夜晚都適合聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3K1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "大嗑西式餐館",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "小巧的義法餐館，以紮實的西式料理見長。",
+      "after": "小巧的義法餐館，以紮實的西式料理見長。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3K5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "貓下去敦北俱樂部",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "有創意台式餐食與調酒，適合夜晚和朋友聚餐。",
+      "after": "有創意台式餐食與調酒，適合夜晚和朋友聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3K6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "三六九素食包子",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "雪裡紅、高麗菜等多種素食包子，方便外帶。",
+      "after": "雪裡紅、高麗菜等多種素食包子，方便外帶。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3L1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "蔬河 VEGE CREEK",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "自選蔬菜與配料的蔬食滷味，吃法自由。",
+      "after": "自選蔬菜與配料的蔬食滷味，吃法自由。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3L2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "果然匯",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "蔬食自助餐選擇多，適合多人聚餐。",
+      "after": "蔬食自助餐選擇多，適合多人聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3L4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "自然食 Ooh Cha Cha",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以全植物食材做輕食與主餐，風格清爽。",
+      "after": "以全植物食材做輕食與主餐，風格清爽。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3L5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Plants",
+      "types": [
+        "美食",
+        "Good Eye"
+      ],
+      "before": "以全植物與永續飲食為概念的創意料理。",
+      "after": "以全植物與永續飲食為概念的創意料理。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3L6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "建興青草店",
+      "types": [
+        "飲品",
+        "Good Eye"
+      ],
+      "before": "老字號青草茶，適合走逛中山商圈時來杯清涼飲品。",
+      "after": "老字號青草茶，適合走逛中山商圈時來杯清涼飲品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3N3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東門江記豆花",
+      "types": [
+        "飲品",
+        "Good Eye"
+      ],
+      "before": "東門市場的豆花與豆漿，簡單的古早味甜品。",
+      "after": "東門市場的豆花與豆漿，簡單的古早味甜品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3N4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "臺一牛奶大王",
+      "types": [
+        "飲品",
+        "Good Eye"
+      ],
+      "before": "木瓜牛奶、剉冰與湯圓都受歡迎。",
+      "after": "木瓜牛奶、剉冰與湯圓都受歡迎。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3N5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "古早茶坊",
+      "types": [
+        "飲品",
+        "Good Eye"
+      ],
+      "before": "冬瓜茶、酸梅湯與仙草茶，適合散步時外帶。",
+      "after": "冬瓜茶、酸梅湯與仙草茶，適合散步時外帶。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3N6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "雪王冰淇淋",
+      "types": [
+        "甜點",
+        "Good Eye"
+      ],
+      "before": "老字號冰淇淋店，口味大膽多元，Good Eye 特別點名肉鬆冰淇淋。",
+      "after": "口味多元的老字號冰淇淋店，可試鹹甜交錯的肉鬆口味。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3O2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東區粉圓",
+      "types": [
+        "甜點",
+        "Good Eye"
+      ],
+      "before": "仙草粉圓冰是經典，可自己搭配喜歡的配料。",
+      "after": "仙草粉圓冰是經典，可自己搭配喜歡的配料。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3O3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "雙連圓仔湯",
+      "types": [
+        "甜點",
+        "Good Eye"
+      ],
+      "before": "雙連市場旁的湯圓老店，烤麻糬也值得點。",
+      "after": "雙連市場旁的湯圓老店，烤麻糬也值得點。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3O4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "永康街芋頭大王",
+      "types": [
+        "甜點",
+        "Good Eye"
+      ],
+      "before": "芋頭甜湯口感綿密，也能試試芋頭冰品。",
+      "after": "芋頭甜湯口感綿密，也能試試芋頭冰品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3O5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "春一枝商行",
+      "types": [
+        "甜點",
+        "Good Eye"
+      ],
+      "before": "以天然水果製成冰棒，店內可自助挑選不同口味。",
+      "after": "以天然水果製成冰棒，店內可自助挑選不同口味。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3O6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東門市場",
+      "types": [
+        "市集",
+        "Good Eye"
+      ],
+      "before": "老市場的攤位延伸進巷弄，適合邊走邊找傳統小吃。",
+      "after": "老市場的攤位延伸進巷弄，適合邊走邊找傳統小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3Q2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "光復市場",
+      "types": [
+        "市集",
+        "Good Eye"
+      ],
+      "before": "藏在東區巷弄裡的小型傳統市場，可逛生鮮與熟食攤。",
+      "after": "藏在東區巷弄裡的小型傳統市場，可逛生鮮與熟食攤。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3Q3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "上引水產",
+      "types": [
+        "市集",
+        "Good Eye"
+      ],
+      "before": "結合魚市與餐飲空間，可選購海鮮並吃生魚片。",
+      "after": "結合魚市與餐飲空間，可選購海鮮並吃生魚片。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3Q4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "內湖花市",
+      "types": [
+        "市集",
+        "Good Eye"
+      ],
+      "before": "成排花卉與植栽攤位，適合挑一束花帶回家。",
+      "after": "成排花卉與植栽攤位，適合挑一束花帶回家。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3Q5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "248簡單市集",
+      "types": [
+        "市集",
+        "Good Eye"
+      ],
+      "before": "四四南村的週日生活市集，有農產與手作；出發前確認當週場次。",
+      "after": "四四南村的週日生活市集，有農產與手作；出發前確認當週場次。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3Q6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "寧夏夜市",
+      "types": [
+        "夜市",
+        "Good Eye"
+      ],
+      "before": "小吃攤集中，適合一路品嚐蚵仔煎、芋丸與潤餅。",
+      "after": "小吃攤集中，適合一路品嚐蚵仔煎、芋丸與潤餅。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3R1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "師大夜市",
+      "types": [
+        "夜市",
+        "Good Eye"
+      ],
+      "before": "師大路周邊的巷弄夜市，可找生煎包與滷味。",
+      "after": "師大路周邊的巷弄夜市，可找生煎包與滷味。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3R3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "南機場夜市",
+      "types": [
+        "夜市",
+        "Good Eye"
+      ],
+      "before": "以在地小吃聞名，可從蚵嗲、黑輪與炸雞開始逛。",
+      "after": "以在地小吃聞名，可從蚵嗲、黑輪與炸雞開始逛。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#3R2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "指舞春秋（安和會館）",
+      "types": [
+        "按摩",
+        "Good Eye"
+      ],
+      "before": "鄰近信義安和站，提供腳底與全身按摩，適合逛街後放鬆。",
+      "after": "信義安和站附近，可選腳底或全身按摩；預約時先確認療程分鐘數與價格。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#5C1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "6星集（市府會館）",
+      "types": [
+        "按摩",
+        "Good Eye"
+      ],
+      "before": "原南京會館搬到市府站旁，可選腳底或全身按摩。",
+      "after": "原南京會館搬至市府站旁，可選腳底或全身按摩；預約時確認分店與時段。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#5C2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "隱舍 Nuance Privée",
+      "types": [
+        "按摩",
+        "Good Eye"
+      ],
+      "before": "仁愛路巷內的 SPA，提供獨立空間與全身放鬆療程。",
+      "after": "仁愛路巷內的SPA，提供獨立空間與全身療程；預約時確認療程內容、時間與費用。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#5C3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "台灣阿甘按摩小棧（雙連店）",
+      "types": [
+        "按摩",
+        "Good Eye"
+      ],
+      "before": "雙連站地下街的視障按摩小站，逛街後可做局部或全身按摩。",
+      "after": "雙連站地下街的視障按摩小站，可選局部或全身按摩；先確認當日服務時段。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#5C4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "蘑菇 MOGU（然後店）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "逛帆布袋、棉麻服飾與台灣設計小物的生活選品店。",
+      "after": "逛帆布袋、棉麻服飾與台灣設計小物的生活選品店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2B1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "繭裹子（稻埕輕衫）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "以公平貿易與手織布為特色，可逛服飾和生活雜貨。",
+      "after": "以公平貿易與手織布為特色，可逛服飾和生活雜貨。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2B2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "印花樂（印花作夥）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "走進迪化街老屋，挑台灣意象印花布與日常用品。",
+      "after": "走進迪化街老屋，挑台灣意象印花布與日常用品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2B5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "小日子商號（華山店）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "由雜誌延伸的選物空間，可逛文具、刊物與台灣設計小物。",
+      "after": "由雜誌延伸的選物空間，可逛文具、刊物與台灣設計小物。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2B6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Eye Candle（松菸炊事場）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "在舊炊事場聞香選蠟燭，也能參加調香工作坊。",
+      "after": "松菸舊炊事場可聞香選蠟燭；調香工作坊另查開課、費用與報名名額。",
+      "status": "updated",
+      "reason": "保留既有特色，補充行前操作提醒",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2E2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿原肥皂（永康間）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "以台灣青草藥製成手工皂，店裡可試香與挑洗沐用品。",
+      "after": "以台灣青草藥製成手工皂，店裡可試香與挑洗沐用品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2E3"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "茶籽堂（誠品松菸店）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "將台灣苦茶籽做成洗沐與保養用品，適合挑選實用伴手禮。",
+      "after": "將台灣苦茶籽做成洗沐與保養用品，適合挑選實用伴手禮。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2E4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "台客藍（民藝埕）",
+      "types": [
+        "文創",
+        "Good Eye"
+      ],
+      "before": "以台灣日常為靈感的陶瓷器皿，能逛杯盤與生活小物。",
+      "after": "以台灣日常為靈感的陶瓷器皿，能逛杯盤與生活小物。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taipei.goodeye.guide/#2E6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "行天宮附設玄空圖書館（敦化本館）",
+      "types": [
+        "圖書館"
+      ],
+      "before": "地下樓有漫畫區；獨立閱讀座位與可調光檯燈，適合安靜看書。",
+      "after": "地下樓有漫畫區；獨立閱讀座位與可調光檯燈，適合安靜看書。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "國家圖書館",
+      "types": [
+        "圖書館"
+      ],
+      "before": "5 樓窗邊視野佳，適合查閱館藏；入館需依規定辦理閱覽證。",
+      "after": "5 樓窗邊視野佳，適合查閱館藏；入館需依規定辦理閱覽證。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "政大達賢圖書館",
+      "types": [
+        "圖書館"
+      ],
+      "before": "挑高、寬敞的閱讀空間，窗邊座位很受歡迎；校外人士可憑證件登記，名額可能調整。",
+      "after": "挑高閱讀空間與窗邊座位；校外18歲以上可登記持證換一日來賓證，名額依公告。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://www.lib.nccu.edu.tw/p/404-1000-321.php?Lang=zh-tw"
+      ]
+    },
+    {
+      "name": "臺北市立圖書館稻香分館",
+      "types": [
+        "圖書館"
+      ],
+      "before": "暖色調的溫馨閱讀空間，從高樓層還可眺望大屯山與關渡平原。",
+      "after": "暖色調的溫馨閱讀空間，從高樓層還可眺望大屯山與關渡平原。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "臺北市立圖書館廣慈分館",
+      "types": [
+        "圖書館"
+      ],
+      "before": "採光明亮、座位選擇多，適合花一個下午閱讀或自修。",
+      "after": "採光明亮、座位選擇多，適合花一個下午閱讀或自修。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "兩廳院表演藝術圖書館",
+      "types": [
+        "圖書館"
+      ],
+      "before": "藏有戲劇、音樂與舞蹈的圖書、節目單及影音資料，也有主題展覽；入口在國家戲劇院地下層。",
+      "after": "藏有戲劇、音樂與舞蹈的圖書、節目單及影音資料，也有主題展覽；入口在國家戲劇院地下層。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [],
+      "supplementSources": []
+    },
+    {
+      "name": "國家圖書館多媒體創意實驗中心 OPEN LAB",
+      "types": [
+        "圖書館"
+      ],
+      "before": "結合閱讀與創作，可體驗 3D 列印、手作及影音設備；6 歲以上可依規定辦證入館。",
+      "after": "可使用3D列印、手作與影音設備；6歲以上可辦證，設備使用另查預約與材料費。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [],
+      "supplementSources": [
+        "https://www.ncl.edu.tw/regulations/0Q090387295603483412",
+        "https://open.ncl.edu.tw/about"
+      ]
+    },
+    {
+      "name": "WE里手工pizza 日本料理 串燒",
+      "types": [
+        "美食"
+      ],
+      "before": "結合手工窯烤披薩與日本料理，也提供壽司、生魚片和串燒，適合聚餐。",
+      "after": "結合手工窯烤披薩與日本料理，也提供壽司、生魚片和串燒，適合聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.fonfood.com/store/7758653"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "排骨王",
+      "types": [
+        "美食"
+      ],
+      "before": "炸雞腿便當是重點，喜歡酥脆口感可點餐時詢問。",
+      "after": "炸雞腿便當是重點，喜歡酥脆口感可點餐時詢問。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6a1c34e2927f80affb92e902"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "香香自助餐",
+      "types": [
+        "美食"
+      ],
+      "before": "日常自助餐選擇，番茄炒蛋是這份名單特別提到的配菜。",
+      "after": "番茄炒蛋是推薦配菜，容易賣完；想吃這道可提前電話詢問能否預留。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://info.technews.tw/company/26556284-%E9%A6%99%E9%A6%99%E8%87%AA%E5%8A%A9%E9%A4%90"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "池上木片便當（成功店）",
+      "types": [
+        "美食"
+      ],
+      "before": "木片盒便當，可選雞腿、排骨等主菜。",
+      "after": "木片盒便當，可選雞腿、排骨等主菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ifoodie.tw/restaurant/67fdc384eb74c4fd7c486dff"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "廣東正龍城烤鴨",
+      "types": [
+        "美食"
+      ],
+      "before": "燒臘便當與廣式料理選擇，適合午餐或晚餐。",
+      "after": "燒臘便當與廣式料理選擇，適合午餐或晚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c1f7bc03a101f6d8b8853"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "保平雞腿達人",
+      "types": [
+        "美食"
+      ],
+      "before": "保平路上的便當店，雞腿飯是主要選擇。",
+      "after": "保平路上的便當店，雞腿飯是主要選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://blog.udn.com/coffeebar/179129558"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "頂級飯包（竹林路）",
+      "types": [
+        "美食"
+      ],
+      "before": "竹林路上的便當店，可選雞腿、排骨等主菜。",
+      "after": "竹林路上的便當店，可選雞腿、排骨等主菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://opengovtw.com/faden/F-200083375-00001-1"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "盒飯先生",
+      "types": [
+        "美食"
+      ],
+      "before": "永貞路上的盒飯便當選擇。",
+      "after": "永貞路上的盒飯便當選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6a226bb6927f80ee7ac3587a"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "入魂燒味",
+      "types": [
+        "美食"
+      ],
+      "before": "提供港式燒臘料理，可搭配燒肉、叉燒等品項。",
+      "after": "提供港式燒臘料理，可搭配燒肉、叉燒等品項。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/607e52d3873d7920b6f2b9dd"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "賀郎中式便當",
+      "types": [
+        "美食"
+      ],
+      "before": "中式便當選擇，適合日常外帶用餐。",
+      "after": "中式便當選擇，適合日常外帶用餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6aa8e229b921a4143ff5fc32"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "正忠排骨飯（保平店）",
+      "types": [
+        "美食"
+      ],
+      "before": "以排骨飯為主的便當店，適合日常午晚餐。",
+      "after": "以排骨飯為主的便當店，適合日常午晚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/61a32e3dcd99576a40a25558"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "香港鴻運燒臘",
+      "types": [
+        "美食"
+      ],
+      "before": "秀朗路上的港式燒臘便當選擇。",
+      "after": "秀朗路上的港式燒臘便當選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.findcompany.com.tw/%E9%A6%99%E6%B8%AF%E9%B4%BB%E9%81%8B%E7%87%92%E8%87%98"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "禾牧糧倉私廚餐盒",
+      "types": [
+        "美食"
+      ],
+      "before": "提供三杯雞、紅糟肉與排骨等餐盒，鄰近永和成功路一帶。",
+      "after": "提供三杯雞、紅糟肉與排骨等餐盒，鄰近永和成功路一帶。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://mibaoma.tw/he-mu-liang-cang/"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "竹林雞肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "雞肉切盤搭配雞油飯，也可選銷魂雞飯與雞湯。",
+      "after": "雞肉切盤搭配雞油飯，也可選銷魂雞飯與雞湯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5b852d7323679c57ba5f1236"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "竹林口小吃",
+      "types": [
+        "美食"
+      ],
+      "before": "可點牛肉燴飯，也有炒飯、炒麵等台式餐點。",
+      "after": "可點牛肉燴飯，也有炒飯、炒麵等台式餐點。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/58ab30612756dd1e61effda2"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "陳記阿榮本家米粉湯",
+      "types": [
+        "美食"
+      ],
+      "before": "可搭配米粉湯、香菇肉粥與紅燒肉等小菜。",
+      "after": "米粉湯、香菇肉粥可搭配紅燒肉等小菜，想吃炸物可先從紅燒肉點起。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/561bfdc22756dd74737fb2ec"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "御禾號滷肉飯",
+      "types": [
+        "美食"
+      ],
+      "before": "以現碾白米為特色，可搭配滷肉飯與小菜。",
+      "after": "以現碾白米為特色，可搭配滷肉飯與小菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.youtube.com/watch?v=Cmu43bktJfY"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "北斗肉圓（永貞路）",
+      "types": [
+        "美食"
+      ],
+      "before": "傳統肉圓搭配湯品，芋頭與竹筍口味依店家當日供應。",
+      "after": "傳統肉圓搭配湯品，芋頭與竹筍口味依店家當日供應。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5999cfa92756dd46da6727f4"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "民生路肉圓",
+      "types": [
+        "美食"
+      ],
+      "before": "傳統清蒸肉圓，可搭配四神湯。",
+      "after": "傳統清蒸肉圓，可搭配四神湯。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6a69aaa8eb74c46821b6cae5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "秀朗特製汕頭麵（成功店）",
+      "types": [
+        "美食"
+      ],
+      "before": "成功路上的汕頭麵店，適合簡單吃碗麵。",
+      "after": "成功路上的汕頭麵店，適合簡單吃碗麵。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/55a5b3dcc03a10241de67c18"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "南川麵館",
+      "types": [
+        "美食"
+      ],
+      "before": "老字號川味麵館，可選麵食與小菜。",
+      "after": "老字號川味麵館，可選擔擔麵、紅油抄手與小菜；擔擔麵帶花生粉香。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c28dfc03a101f6d8b8d52"
+      ],
+      "supplementSources": [
+        "https://www.fonfood.com/store/521623"
+      ]
+    },
+    {
+      "name": "老黃原汁牛肉麵",
+      "types": [
+        "美食"
+      ],
+      "before": "以原汁湯頭搭配牛肉與麵條，也有小菜可加點。",
+      "after": "以原汁湯頭搭配牛肉與麵條，也有小菜可加點。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/58c19a602756dd732689b792"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿敏水餃牛肉麵",
+      "types": [
+        "美食"
+      ],
+      "before": "永貞路上的牛肉麵與水餃選擇。",
+      "after": "永貞路上的牛肉麵與水餃選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/64323bf777b9e92fc197e31e"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "士林米粉湯（永貞路）",
+      "types": [
+        "美食"
+      ],
+      "before": "四號公園旁的晚餐宵夜選擇，可吃米粉湯與小菜。",
+      "after": "四號公園旁的晚餐宵夜選擇，可吃米粉湯與小菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.walkerland.com.tw/article/view/374148"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "雙龍涼麵",
+      "types": [
+        "美食"
+      ],
+      "before": "永利路上的涼麵店，可依喜好搭配辣椒與湯品。",
+      "after": "永利路上的涼麵店，可依喜好搭配辣椒與湯品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/61c04852781cc016914adfe0"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東石蚵仔虱目魚之家",
+      "types": [
+        "美食"
+      ],
+      "before": "提供蚵仔、虱目魚與海鮮類台式小吃。",
+      "after": "提供蚵仔、虱目魚與海鮮類台式小吃。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://taiwan17go.com/deherd/"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "鄉下人豬血湯",
+      "types": [
+        "美食"
+      ],
+      "before": "厚切豬血湯搭配乾麵、麻醬麵與黑白切。",
+      "after": "厚切豬血湯搭配乾麵、麻醬麵與黑白切。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6749bf4f927f800531974c32"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "三塊厝鵝家庄",
+      "types": [
+        "美食"
+      ],
+      "before": "鵝肉料理選擇，可搭配鵝肉飯、切盤與湯品。",
+      "after": "鵝肉料理選擇，可搭配鵝肉飯、切盤與湯品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6a5c36cb927f80421636bc7b"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "老蔡鵝肉",
+      "types": [
+        "美食"
+      ],
+      "before": "信義路上的鵝肉小吃，可搭配飯麵與湯品。",
+      "after": "信義路上的鵝肉小吃，可搭配飯麵與湯品。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/56f6cf4f2756dd377a860881"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "郭記麻辣臭豆腐",
+      "types": [
+        "美食"
+      ],
+      "before": "麻辣臭豆腐小吃選擇，適合喜歡香辣風味的人。",
+      "after": "麻辣臭豆腐小吃選擇，適合喜歡香辣風味的人。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5a5b9cc32756dd60a4212d40"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "何佳佳蔥油餅（樂華店）",
+      "types": [
+        "美食"
+      ],
+      "before": "樂華夜市裡的蔥油餅，可作為散步時的鹹點。",
+      "after": "樂華夜市裡的蔥油餅，可作為散步時的鹹點。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://gzifood.com/he-jia-jia-cong-you-bing/"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "權仔鴨肉冬粉",
+      "types": [
+        "美食"
+      ],
+      "before": "永貞路上的鴨肉冬粉店，湯頭清香，冬粉有嚼勁。",
+      "after": "永貞路上的鴨肉冬粉店，湯頭清香，冬粉有嚼勁。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/55a4f776c03a10241de63c4c"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "五草車中華食館",
+      "types": [
+        "美食"
+      ],
+      "before": "提供炒飯、麵食與中式小菜，適合簡單聚餐。",
+      "after": "提供炒飯、麵食與中式小菜，適合簡單聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/583b206f2756dd2fe91e3bd7"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿倫蛋包飯",
+      "types": [
+        "美食"
+      ],
+      "before": "多種口味的蛋包飯，可搭配豬排等主菜。",
+      "after": "多種口味的蛋包飯，可搭配豬排等主菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/55a67acec03a104df53ca574"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "六鼎煨豬腳",
+      "types": [
+        "美食"
+      ],
+      "before": "除了豬腳，也有雞腿、排骨等便當選擇。",
+      "after": "除了豬腳，也有雞腿、排骨等便當選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/596513ca2756dd6e3969f2c9"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "旗津深海鮮魚湯",
+      "types": [
+        "美食"
+      ],
+      "before": "保平路上的魚湯小吃選擇。",
+      "after": "保平路上的魚湯小吃選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6879b6f57be9c3dcb4a4e9b6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "卜記麵線",
+      "types": [
+        "美食"
+      ],
+      "before": "提供大腸、蚵仔與綜合麵線，適合當正餐或點心。",
+      "after": "提供大腸、蚵仔與綜合麵線，適合當正餐或點心。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/570a95ba2756dd7a190c7894"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "台南東山鴨頭",
+      "types": [
+        "美食"
+      ],
+      "before": "可留意甜不辣等滷炸品項，尖峰時段可能需要等候。",
+      "after": "可試甜不辣等滷炸品項；尖峰時段常需等候，想吃炸物可預留候餐時間。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5d8cbbb62261394fb5cb9d7c"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "丞祖胡椒餅（永和店）",
+      "types": [
+        "美食"
+      ],
+      "before": "頂溪站附近的胡椒餅，可選豬肉、牛肉與加料口味。",
+      "after": "頂溪站附近的胡椒餅，可選豬肉、牛肉與加料口味。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/66f40e28927f803fa741f833"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "永和佳佳香鍋貼",
+      "types": [
+        "美食"
+      ],
+      "before": "現煎鍋貼搭配酸辣湯、豆漿，是簡單飽足的一餐。",
+      "after": "現煎鍋貼搭配酸辣湯、豆漿，是簡單飽足的一餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c05d7c03a101f6d8b7cbb"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "花姐正宗重慶酸辣粉",
+      "types": [
+        "美食"
+      ],
+      "before": "竹林市場一帶的酸辣粉，適合喜歡酸香麻辣口味的人。",
+      "after": "竹林市場一帶的酸辣粉，適合喜歡酸香麻辣口味的人。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5ed2700f2756dd5139e6a037"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "西瓜大王（樂華保平店）",
+      "types": [
+        "飲品"
+      ],
+      "before": "樂華夜市附近的現打果汁選擇。",
+      "after": "樂華夜市附近的現打果汁選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/%E8%A5%BF%E7%93%9C%E5%A4%A7%E7%8E%8B%E7%8F%BE%E6%89%93%E6%9E%9C%E6%B1%81-%E6%A8%82%E8%8F%AF%E5%BA%97/gJV7tBD3UVWo5EeEXr9JEQ"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "辰拉麵",
+      "types": [
+        "美食"
+      ],
+      "before": "提供濃郁湯頭拉麵與叉燒飯，出發前可先確認營業與候位方式。",
+      "after": "提供濃郁湯頭拉麵與叉燒飯，出發前可先確認營業與候位方式。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5d564ebdd6895d67ac81e724"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "長生塩人（永和店）",
+      "types": [
+        "美食"
+      ],
+      "before": "日式拉麵選擇，也可留意日式炒麵等品項。",
+      "after": "日式拉麵選擇，也可留意日式炒麵等品項。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.dorts.ntpc.gov.tw/documentary/articleInfo/xVR2eOr0ZJ36"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "PARCO義大利麵",
+      "types": [
+        "美食"
+      ],
+      "before": "四號公園附近的義大利麵選擇，加麵規則以店家現場公告為準。",
+      "after": "四號公園附近的義大利麵店，可詢問免費加麵；適用品項與次數依現場規則。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c2102c03a101f6d8b88e0"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Café Del Mar 智利三明治",
+      "types": [
+        "美食"
+      ],
+      "before": "以智利三明治為特色，適合想換換口味時前往。",
+      "after": "以智利三明治為特色，適合想換換口味時前往。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://fooday.app/zh-TW/spots/jSafCQmyPMWXjvzKhnKWXY"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Nim's 泰式廚房（担担泰）",
+      "types": [
+        "美食"
+      ],
+      "before": "泰式料理小店，提供酸辣風味餐點。",
+      "after": "泰式料理小店，提供酸辣風味餐點。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://autoreserve.com/zh-tw/restaurants/pnDD5B9Pvq3F7dM3C4Gj"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "雲南婆婆",
+      "types": [
+        "美食"
+      ],
+      "before": "滇緬風味小吃，可選米線、粑粑絲與涼拌料理。",
+      "after": "滇緬風味小吃，可選米線、粑粑絲與涼拌料理。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c1c09c03a101f6d8b86d6"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "福哥泰泰式小吃",
+      "types": [
+        "美食"
+      ],
+      "before": "保平路上的泰式小吃選擇。",
+      "after": "保平路上的泰式小吃選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.iyp.com.tw/tax/95196975"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "泰王泰式料理",
+      "types": [
+        "美食"
+      ],
+      "before": "提供泰式料理，適合揪人一起分享用餐。",
+      "after": "提供泰式料理，適合揪人一起分享用餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/66961519eb74c4faee25bc3c"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "烏哩日式黑咖哩",
+      "types": [
+        "美食"
+      ],
+      "before": "以日式黑咖哩為主，可搭配不同主食。",
+      "after": "以日式黑咖哩為主，可搭配不同主食。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/624afa6d781cc03662b0596c"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "中田咖哩（性感店）",
+      "types": [
+        "美食"
+      ],
+      "before": "竹林路上的咖哩飯專門店。",
+      "after": "竹林路上的咖哩飯專門店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/657910eb7be9c36f9f0dcd78"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "艷紅酒咖喱",
+      "types": [
+        "美食"
+      ],
+      "before": "復古風格的咖哩店，以紅酒香料咖哩為特色。",
+      "after": "復古風格的咖哩店，以紅酒香料咖哩為特色。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ifoodie.tw/restaurant/5f3d352102935e2908bc4268"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "韓五花韓式燒烤料理",
+      "types": [
+        "美食"
+      ],
+      "before": "提供韓式燒烤料理，適合多人聚餐。",
+      "after": "提供韓式燒烤料理，適合多人聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6041ad09cd9957378f20e68b"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "金花子韓式料理",
+      "types": [
+        "美食"
+      ],
+      "before": "韓式料理口袋名單。",
+      "after": "可點韓國拉麵、豆腐煲或海鮮煎餅；韓式小菜可續用，規則依現場公告。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5f43d7402261390ab7440f4c"
+      ],
+      "supplementSources": [
+        "https://www.facebook.com/Kimhwaja07/posts/1595534462372569/",
+        "https://www.ptt.cc/bbs/Food/M.1605117838.A.4C8.html"
+      ]
+    },
+    {
+      "name": "嘉義鱔魚麵（永貞路）",
+      "types": [
+        "美食"
+      ],
+      "before": "大火快炒的鱔魚麵，酸甜調味搭配爽脆鱔魚。",
+      "after": "大火快炒的鱔魚麵，酸甜調味搭配爽脆鱔魚。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/607063107cc7fc06e651bb14"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "麒麟閣沙茶火鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "沙茶火鍋之外，也可點雞翅、炸旗魚與花枝丸分享。",
+      "after": "沙茶火鍋之外可點炸雞翅，外酥多汁；炸旗魚、炸花枝丸也值得搭配。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://www.kirinhouse.com.tw/"
+      ],
+      "supplementSources": [
+        "https://www.kirinhouse.com.tw/special.html",
+        "https://www.walkerland.com.tw/article/view/414701"
+      ]
+    },
+    {
+      "name": "川田涮涮鍋",
+      "types": [
+        "美食"
+      ],
+      "before": "個人火鍋選擇，醬料區可搭配香菜與薑絲。",
+      "after": "個人火鍋選擇，醬料區可搭配香菜與薑絲。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6188c6c3a627285413d3a10d"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "加分火鍋（永和樂華店）",
+      "types": [
+        "美食"
+      ],
+      "before": "可留意牛奶鍋等湯底，適合聚餐吃鍋。",
+      "after": "可試牛奶鍋湯底，位於樂華夜市附近。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6172d17d7cc7fc4ef955c14e"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "旺角石頭火鍋（永和店）",
+      "types": [
+        "美食"
+      ],
+      "before": "永貞路上的石頭火鍋，適合與親友一起吃鍋。",
+      "after": "永貞路上的石頭火鍋，適合與親友一起吃鍋。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5ebb620ed6895d51f93df69c"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "8鍋（文化路）",
+      "types": [
+        "美食"
+      ],
+      "before": "文化路上的個人小火鍋選擇。",
+      "after": "文化路上的個人小火鍋選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://blog.footinder.app/%E6%96%B0%E5%8C%97%E5%B8%82%E6%B0%B8%E5%92%8C%E5%8D%80-2/%E6%96%B0%E5%8C%97%E5%B8%82-%E6%B0%B8%E5%92%8C%E5%8D%80-8%E9%8D%8B/"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "米個人燒肉",
+      "types": [
+        "美食"
+      ],
+      "before": "以個人燒肉為主，一個人也能吃燒肉。",
+      "after": "以個人燒肉為主，一個人也能吃燒肉。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/69102e00eb74c4ccc5708b09"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "阿里小廚美式牛排",
+      "types": [
+        "美食"
+      ],
+      "before": "提供牛排等美式排餐，適合聚餐。",
+      "after": "提供牛排等美式排餐，適合聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/5d31d1c22756dd2aa63f8221"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "小時厚牛排（永和店）",
+      "types": [
+        "美食"
+      ],
+      "before": "竹林路上的牛排店，提供排餐與自助吧。",
+      "after": "竹林路上的牛排店，提供排餐與自助吧。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/64d0fd121887bf2b8272a907"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "源林鐵板燒",
+      "types": [
+        "美食"
+      ],
+      "before": "水源街一帶的鐵板燒選擇。",
+      "after": "水源街一帶的鐵板燒選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.findcompany.com.tw/%E6%BA%90%E6%9E%97%E9%90%B5%E6%9D%BF%E7%87%92"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "永青鐵板燒",
+      "types": [
+        "美食"
+      ],
+      "before": "永貞路上的鐵板燒店，適合日常正餐。",
+      "after": "永貞路上的鐵板燒店，適合日常正餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/580cfb8f2756dd486ee546d5"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "大賞鐵板燒（永和安樂店）",
+      "types": [
+        "美食"
+      ],
+      "before": "安樂路上的平價鐵板燒選擇。",
+      "after": "安樂路上的平價鐵板燒選擇。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/65543895eb74c430d004c533"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "上介青快炒",
+      "types": [
+        "美食"
+      ],
+      "before": "提供海鮮與台式熱炒，可與親友點菜分享。",
+      "after": "提供海鮮與台式熱炒，可與親友點菜分享。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/6022770c226139205de848ec"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "御鼎潮州砂鍋粥",
+      "types": [
+        "美食"
+      ],
+      "before": "提供砂鍋粥，適合揪人一起分食。",
+      "after": "提供砂鍋粥，適合揪人一起分食。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/55a5c6b1c03a10241de6820d"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "霸味薑母鴨（永和店）",
+      "types": [
+        "美食"
+      ],
+      "before": "永亨路上的薑母鴨，適合天冷時聚餐。",
+      "after": "永亨路上的薑母鴨，適合天冷時聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.fonfood.com/store/30951/branch"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "野馬燒",
+      "types": [
+        "美食"
+      ],
+      "before": "串燒與居酒屋料理，也可留意高雄黑輪。",
+      "after": "居酒屋串燒之外可試高雄黑輪，想換成湯煮小食可從這道選起。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://footinder.com.tw/%E6%96%B0%E5%8C%97%E5%B8%82%E6%B0%B8%E5%92%8C%E5%8D%80/48970/"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "隱居居酒屋（永貞店）",
+      "types": [
+        "美食"
+      ],
+      "before": "提供日式居酒屋料理與串燒，適合晚餐聚會。",
+      "after": "提供日式居酒屋料理與串燒，適合晚餐聚會。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ifoodie.tw/restaurant/58612a77699b6e2cd24a16c7"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "什串居酒屋",
+      "types": [
+        "美食"
+      ],
+      "before": "多種創意串燒與日式小菜，適合朋友聚餐。",
+      "after": "多種創意串燒與日式小菜，適合朋友聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/600adf952756dd10f78e3dff"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "登坂居酒屋",
+      "types": [
+        "美食"
+      ],
+      "before": "提供日式居酒屋料理，可留意關東煮與蘿蔔唐揚。",
+      "after": "提供日式居酒屋料理，可留意關東煮與蘿蔔唐揚。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.104.com.tw/company/1a2x6bnrod"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "弍弎居食",
+      "types": [
+        "美食"
+      ],
+      "before": "安平路上的日式料理專門店。",
+      "after": "安平路上的日式料理專門店。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/65cf6153927f8005d3b9adcb"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "小本經營",
+      "types": [
+        "美食"
+      ],
+      "before": "提供中式炒飯與麵點，適合日常正餐。",
+      "after": "提供中式炒飯與麵點，適合日常正餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/65eee9157be9c34cc87c0932"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "客家小館",
+      "types": [
+        "美食"
+      ],
+      "before": "以客家菜為主、江浙菜為輔，適合家庭聚餐。",
+      "after": "以客家菜為主、江浙菜為輔，適合家庭聚餐。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c24a2c03a101f6d8b8afb"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "東引快刀手（永貞店）",
+      "types": [
+        "美食"
+      ],
+      "before": "提供滷味、麵食等餐點，適合晚餐或宵夜。",
+      "after": "提供滷味、麵食等餐點，適合晚餐或宵夜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/689f33e9927f80ba7adb66da"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "SHUU",
+      "types": [
+        "甜點"
+      ],
+      "before": "美式甜點店，可留意黑魔鬼巧克力蛋糕。",
+      "after": "可試黑魔鬼巧克力蛋糕，喜歡巧克力甜點可先從這款選起。",
+      "status": "updated",
+      "reason": "保留原推薦，精簡或補回對話已提供資訊",
+      "existingSources": [
+        "https://www.newtaipei.io/lehua/lh-036"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Mr.雪腐（永和店）",
+      "types": [
+        "甜點"
+      ],
+      "before": "得和路上的雪花冰專賣店。",
+      "after": "得和路的雪花冰店，可試台18珍奶；季節水果口味依當日供應。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c26f7c03a101f6d8b8c2b"
+      ],
+      "supplementSources": [
+        "https://www.esther7.com/2017/07/mr.chef.ice.html?m=0"
+      ]
+    },
+    {
+      "name": "豆林豆花",
+      "types": [
+        "甜點"
+      ],
+      "before": "福和路上的豆花甜品選擇。",
+      "after": "可試花生珍珠豆漿豆花，份量足；開店日不固定，出發前先確認是否營業。",
+      "status": "updated",
+      "reason": "保留豆花主題並補充餐點與開店提醒",
+      "existingSources": [
+        "https://www.findcompany.com.tw/%E8%B1%86%E6%9E%97%E8%B1%86%E8%8A%B1"
+      ],
+      "supplementSources": [
+        "https://500times.udn.com/wtimes/story/124537/8866215?from=udn-last-newnews_ch8787",
+        "https://footinder.app/places/6450a6eed625dd1931103e10"
+      ]
+    },
+    {
+      "name": "華泰豆花粉圓",
+      "types": [
+        "甜點"
+      ],
+      "before": "四號公園附近的手工豆花與甜湯小店。",
+      "after": "四號公園附近的手工豆花與甜湯店，豆花滑順有豆香，配料可依喜好搭配。",
+      "status": "updated",
+      "reason": "保留原特色並補充豆花口感",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c2052c03a101f6d8b88a2"
+      ],
+      "supplementSources": [
+        "https://tendercarelife.pixnet.net/blog/posts/14217333293"
+      ]
+    },
+    {
+      "name": "文化養生豆漿豆花",
+      "types": [
+        "甜點"
+      ],
+      "before": "永貞路上的豆漿與豆花甜品店。",
+      "after": "永貞路的豆漿豆花，口感綿密，以豆漿取代糖水；配料選擇多。",
+      "status": "updated",
+      "reason": "保留原特色並補充吃法",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559c028dc03a101f6d8b7b0a"
+      ],
+      "supplementSources": [
+        "https://www.ptt.cc/bbs/Food/M.1514086001.A.E8C.html"
+      ]
+    },
+    {
+      "name": "王師父餅舖",
+      "types": [
+        "甜點"
+      ],
+      "before": "招牌金月娘以綠豆沙搭配蛋黃內餡，適合買作伴手禮。",
+      "after": "招牌金月娘以綠豆沙搭配蛋黃內餡，適合買作伴手禮。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/559bfe03c03a101f6d8b78fc"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "CHOPCHOP 炒炒",
+      "types": [
+        "美食"
+      ],
+      "before": "汐科站附近的義大利麵餐館，適合午餐或晚餐。",
+      "after": "汐科站附近的義大利麵餐館，可選冬蔭功酸辣雞肉麵，偏酸香風味。",
+      "status": "updated",
+      "reason": "保留既有特色並補充查核資訊",
+      "existingSources": [
+        "https://shop.ichefpos.com/store/ATZ0uzH7/information"
+      ],
+      "supplementSources": [
+        "https://www.facebook.com/61588168911157/posts/122104872747272297/"
+      ]
+    },
+    {
+      "name": "春立鍋燒專賣店",
+      "types": [
+        "美食"
+      ],
+      "before": "樟樹一路上的鍋燒麵專賣店，可選不同湯底與麵種。",
+      "after": "樟樹一路上的鍋燒麵專賣店，可選不同湯底與麵種。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/春立鍋燒專賣店/-ONDVmwGUl27whi-i7w4xg"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "蒸滿萬_蒸餃餡餅專賣店",
+      "types": [
+        "美食"
+      ],
+      "before": "手工蒸餃與餡餅專賣店，也有特色麵點褡褳火燒。",
+      "after": "手工蒸餃與餡餅專賣店，也有特色麵點褡褳火燒。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/653a69640fbeb1de09cf116f"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "一刻茶 YI KE CHA（汐止康寧店）",
+      "types": [
+        "飲品"
+      ],
+      "before": "可試試果茶與現萃茶，店家菜單標示使用手煮自熬蔗糖。",
+      "after": "可試試果茶與現萃茶，店家菜單標示使用手煮自熬蔗糖。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/一刻茶-yi-ke-cha-汐止康寧店/m5Tgmd6WX66k8we32M4Z3g"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "十九甲雞排（汐止明峰店）",
+      "types": [
+        "美食"
+      ],
+      "before": "三角骨是推薦品項，可試試三種調味粉都加的吃法。",
+      "after": "三角骨是推薦品項，可試試三種調味粉都加的吃法。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://19jia.com.tw/store.php"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "雲記越式法國麵包（汐止店）",
+      "types": [
+        "美食"
+      ],
+      "before": "招牌法國麵包外酥內軟，可搭配綜合牛肉米線。",
+      "after": "招牌法國麵包外酥內軟，可搭配綜合牛肉米線。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://leafyeh.com/lobanhmihongdao/"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "佳元蔥油餅舖（汐止忠孝店）",
+      "types": [
+        "美食"
+      ],
+      "before": "忠孝東路上的蔥油餅店，可選原味、胡椒椒鹽等口味。",
+      "after": "忠孝東路上的蔥油餅店，可選原味、胡椒椒鹽等口味。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/佳元蔥油餅舖-汐止忠孝店/55x-7EVqWZqlhTjd00Gi5g",
+        "https://www.threads.com/@love0926515682/post/DW8-sUFj2py"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "Moke’s burger 莫克漢堡（汐止總店）",
+      "types": [
+        "美食"
+      ],
+      "before": "仁愛路上的美式漢堡店，適合想吃漢堡與炸物時前往。",
+      "after": "仁愛路上的美式漢堡店，適合想吃漢堡與炸物時前往。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://www.ubereats.com/tw/store/莫克漢堡-汐止總店/ZUGKQNGfTByl_CgYNiqc4w",
+        "https://www.threads.com/@70741981rolaluna/post/DXA495qkjNh"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "何佳佳蔥油餅（汐止新台五店）",
+      "types": [
+        "美食"
+      ],
+      "before": "現點現做的手工蔥油餅，可試試梅子口味。",
+      "after": "現點現做的手工蔥油餅，可試試梅子口味。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://engmiumiu.com/food-hejiajia-xizhi/",
+        "https://www.threads.com/@food_realcamera/post/DW9ECjgk2aJ"
+      ],
+      "supplementSources": []
+    },
+    {
+      "name": "山頂舜麵食堂",
+      "types": [
+        "美食"
+      ],
+      "before": "提供滷肉飯、雞肉絲飯、麵食與各式小菜。",
+      "after": "提供滷肉飯、雞肉絲飯、麵食與各式小菜。",
+      "status": "retained",
+      "reason": "保留既有具體內容；資料不足者不硬加新推薦。",
+      "existingSources": [
+        "https://ifoodie.tw/restaurant/62d4d606cd995749dd9f4a56",
+        "https://www.threads.com/@topshun128/post/DW9Ga-tmWu-"
+      ],
+      "supplementSources": []
+    }
+  ],
+  "needsMoreSpecificInformation": [
+    {
+      "name": "管麵素食麵館",
+      "note": "南機場一帶的素食麵館，適合安排素食小吃。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "東港旗魚串",
+      "note": "艋舺夜市的旗魚串小吃。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "郭家炒牛肉",
+      "note": "華西街的熱炒牛肉，適合安排夜市正餐。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "南機場芋頭大王",
+      "note": "南機場夜市的芋頭甜品。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "手工赤肉羹、古早味滷肉飯",
+      "note": "樟樹二路的赤肉羹與滷肉飯。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "成大器烤肉飯",
+      "note": "樟樹二路 136 巷的烤肉飯。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "豪家牛排館",
+      "note": "樟樹一路的牛排館。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "家กินข้าว 泰料理",
+      "note": "明峰街的泰式料理。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "楓玥日本料理",
+      "note": "湖前街的日本料理。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "阿財鍋貼",
+      "note": "中興路的鍋貼店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "黃金三角臭豆腐",
+      "note": "中興路的臭豆腐。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "韋安鍋貼專賣店",
+      "note": "樟樹一路的鍋貼專賣店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "三媽臭臭鍋（汐止忠孝店）",
+      "note": "忠孝東路 256 號的三媽臭臭鍋。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "郭呷萬潤餅捲店",
+      "note": "水源路一段的潤餅捲店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "河南鍋貼店",
+      "note": "仁愛路的鍋貼店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "五牛汕頭牛肉麵",
+      "note": "樟樹一路的牛肉麵店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "嚐歡鐵板燒",
+      "note": "建成路 57 巷的鐵板燒。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "海原日式涮涮鍋（汐止店）",
+      "note": "汐止店的日式涮涮鍋。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "龍鹽酥雞（汐止店）",
+      "note": "福德一路的鹽酥雞。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "吮指王（汐止樟樹店）",
+      "note": "樟樹二路的炸物。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "噴射雞鹹水雞",
+      "note": "莊敬街的鹹水雞。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "香聚麻辣燙",
+      "note": "福德二路的麻辣燙與個人鍋。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "燃燒漢堡 BURN BURGER",
+      "note": "汐止觀光夜市 35 號攤位。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "古早味高雄黑輪",
+      "note": "福德二路的黑輪小吃。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "包不滿蔥油餅",
+      "note": "中興路 168 號附近的蔥油餅。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "烤霸串燒",
+      "note": "忠孝東路的串燒店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "饗味鹹酥雞（汐止中興店）",
+      "note": "福德二路 91 巷的鹹酥雞。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "品都串燒攤",
+      "note": "中興路 41 巷的串燒攤。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "紅茶巴士 Black Tea Bus（汐止樟樹站）",
+      "note": "樟樹二路的飲料店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "黑白ㄍㄚ豆花",
+      "note": "水源路一段的豆花。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "佳樂蛋糕森林",
+      "note": "青山路的蛋糕店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "大嗑西式餐館",
+      "note": "小巧的義法餐館，以紮實的西式料理見長。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "盒飯先生",
+      "note": "永貞路上的盒飯便當選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "賀郎中式便當",
+      "note": "中式便當選擇，適合日常外帶用餐。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "香港鴻運燒臘",
+      "note": "秀朗路上的港式燒臘便當選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "秀朗特製汕頭麵（成功店）",
+      "note": "成功路上的汕頭麵店，適合簡單吃碗麵。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "旗津深海鮮魚湯",
+      "note": "保平路上的魚湯小吃選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "西瓜大王（樂華保平店）",
+      "note": "樂華夜市附近的現打果汁選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "Nim's 泰式廚房（担担泰）",
+      "note": "泰式料理小店，提供酸辣風味餐點。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "福哥泰泰式小吃",
+      "note": "保平路上的泰式小吃選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "泰王泰式料理",
+      "note": "提供泰式料理，適合揪人一起分享用餐。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "中田咖哩（性感店）",
+      "note": "竹林路上的咖哩飯專門店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "韓五花韓式燒烤料理",
+      "note": "提供韓式燒烤料理，適合多人聚餐。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "旺角石頭火鍋（永和店）",
+      "note": "永貞路上的石頭火鍋，適合與親友一起吃鍋。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "8鍋（文化路）",
+      "note": "文化路上的個人小火鍋選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "源林鐵板燒",
+      "note": "水源街一帶的鐵板燒選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "永青鐵板燒",
+      "note": "永貞路上的鐵板燒店，適合日常正餐。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "大賞鐵板燒（永和安樂店）",
+      "note": "安樂路上的平價鐵板燒選擇。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "御鼎潮州砂鍋粥",
+      "note": "提供砂鍋粥，適合揪人一起分食。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    },
+    {
+      "name": "弍弎居食",
+      "note": "安平路上的日式料理專門店。",
+      "reason": "本輪未取得足以補充具體推薦餐點或使用方式的分店資料，保留原文。"
+    }
+  ]
+}
