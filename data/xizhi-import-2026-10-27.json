@@ -1,0 +1,91 @@
+{
+  "checkedOn": "2026-10-27",
+  "explicitRequest": {
+    "added": [
+      "CHOPCHOP 炒炒",
+      "春立鍋燒專賣店",
+      "蒸滿萬_蒸餃餡餅專賣店",
+      "一刻茶 YI KE CHA（汐止康寧店）",
+      "十九甲雞排（汐止明峰店）",
+      "雲記越式法國麵包（汐止店）"
+    ],
+    "updated": [
+      "麵麵屋",
+      "好先生美食（汐止觀光夜市）"
+    ],
+    "nameResolution": {
+      "requested": "春麗鍋燒專賣店",
+      "recorded": "春立鍋燒專賣店",
+      "address": "新北市汐止區樟樹一路26號",
+      "sourceUrl": "https://www.ubereats.com/tw/store/春立鍋燒專賣店/-ONDVmwGUl27whi-i7w4xg"
+    }
+  },
+  "thread": {
+    "sourceUrl": "https://www.threads.com/@albee0424/post/DW87AkuEeuB",
+    "coverage": "僅整理未登入狀態公開可見的貼文與回覆；頁面顯示147則留言，更多回覆需要登入，因此不是完整討論串。",
+    "items": [
+      {
+        "name": "武牛牛排館",
+        "highlight": "除了牛排，也有人特別推薦雞排。",
+        "sourceUrl": "https://www.threads.com/@albee0424/post/DW87wUlkVfp",
+        "siteMatch": "武牛牛排館"
+      },
+      {
+        "name": "左可碳烤三明治",
+        "highlight": "位於秀豐市場，推薦三明治；回覆提到沙拉每日限量。",
+        "sourceUrl": "https://www.threads.com/@elly_c_tw/post/DW89RNYDy8A",
+        "siteMatch": null
+      },
+      {
+        "name": "佳元蔥油餅",
+        "highlight": "留言推薦忠孝東路的店家。",
+        "sourceUrl": "https://www.threads.com/@love0926515682/post/DW8-sUFj2py",
+        "siteMatch": null
+      },
+      {
+        "name": "Moke’s burger_bbq 煙燻莫克漢堡（汐止總店）",
+        "highlight": "有人推薦並附上汐止總店的Google Maps資訊。",
+        "sourceUrl": "https://www.threads.com/@70741981rolaluna/post/DXA495qkjNh",
+        "siteMatch": null
+      },
+      {
+        "name": "何佳佳蔥油餅",
+        "highlight": "推薦梅子口味；汐止分店位置尚待確認。",
+        "sourceUrl": "https://www.threads.com/@food_realcamera/post/DW9ECjgk2aJ",
+        "siteMatch": null
+      },
+      {
+        "name": "楊家扁食",
+        "highlight": "列入麵食推薦名單。",
+        "sourceUrl": "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0",
+        "possibleSiteMatch": "楊家意麵・油飯・扁食"
+      },
+      {
+        "name": "華姐鴨肉飯",
+        "highlight": "列入小吃推薦名單。",
+        "sourceUrl": "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0",
+        "possibleSiteMatch": "華姐麵店（樟樹店）"
+      },
+      {
+        "name": "老家餡餅",
+        "highlight": "餡餅多汁，入口時留意燙口。",
+        "sourceUrl": "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0",
+        "possibleSiteMatch": "老家餡餅（汐止店）"
+      },
+      {
+        "name": "山頂舜麵食堂",
+        "highlight": "店家自薦滷肉飯、雞肉絲飯與各式小菜。",
+        "sourceUrl": "https://www.threads.com/@topshun128/post/DW9Ga-tmWu-",
+        "siteMatch": null
+      }
+    ],
+    "unidentified": [
+      {
+        "name": "麵店（未提供店名）",
+        "highlight": "乾粄條、豬肝湯；同一留言也提到風味與過去不同。",
+        "sourceUrl": "https://www.threads.com/@sskjx_own/post/DW9GMfJEve0"
+      }
+    ],
+    "publication": "此區為討論串整理；未經店名、分店地址與位置確認的店家未新增至網站地圖。"
+  }
+}
