@@ -254,7 +254,7 @@ function routeStopIcon(name){
 }
 
 function routeDirectionsUrl(names){
-  if(routes[selectedRouteIndex].mapMode==='links'){
+  if(['links','places'].includes(routes[selectedRouteIndex].mapMode)){
     const places=names.map(name=>routeStopDetails[name]?.query||`${name} ${routes[selectedRouteIndex].area}`);
     const params=new URLSearchParams({api:'1',origin:places[0],destination:places.at(-1),travelmode:'walking'});
     if(places.length>2)params.set('waypoints',places.slice(1,-1).join('|'));
@@ -276,11 +276,12 @@ function renderRouteDirections(route){
     link.textContent=route.stops.length<=5?'在 Google Maps 看路程 ↗':`第 ${part} 段（${start+1}–${start+names.length} 站）↗`;
     els.routeDirections.appendChild(link);
   }
-  if(route.stops.length>5||(route.mapMode!=='links'&&route.stops.some(name=>routeStopDetails[name]?.hint))){
+  const hasReferenceStops=route.stops.some(name=>route.mapMode==='places'?routeStopDetails[name]?.approximate:routeStopDetails[name]?.hint);
+  if(route.stops.length>5||(route.mapMode!=='links'&&hasReferenceStops)){
     const note=document.createElement('p');note.className='route-directions-note';
     note.textContent=[
       route.stops.length>5?'手機瀏覽器的多站路線分段開啟；兩段在共用站點銜接。':'',
-      (route.mapMode!=='links'&&route.stops.some(name=>routeStopDetails[name]?.hint))?'標示為示意的街區或活動站點，導航只會帶到參考位置。':''
+      (route.mapMode!=='links'&&hasReferenceStops)?'標示為示意的站點僅供位置參考；實際店址請用各站的 Google Maps 連結確認。':''
     ].filter(Boolean).join(' ');
     els.routeDirections.appendChild(note);
   }
@@ -334,7 +335,7 @@ function fitRouteMap(){
   if(!routeMap||routes[selectedRouteIndex].mapMode==='links')return;
   const positions=routes[selectedRouteIndex].stops.map(name=>routeLocations[name]);
   const bounds=positions.reduce((box,position)=>box.extend([position[1],position[0]]),new maplibregl.LngLatBounds());
-  routeMap.fitBounds(bounds,{padding:55,maxZoom:14.5,duration:0});
+  routeMap.fitBounds(bounds,{padding:55,maxZoom:routes[selectedRouteIndex].mapMaxZoom||14.5,duration:0});
 }
 
 function updateRouteMap(){
@@ -349,7 +350,7 @@ function updateRouteMap(){
     element.setAttribute('aria-label',`第 ${index+1} 站：${name}`);
     element.innerHTML=`<span aria-hidden="true">${routeStopIcon(name)}</span><span class="order" aria-hidden="true">${index+1}</span>`;
     element.addEventListener('click',()=>focusRouteStop(index));
-    const marker=new maplibregl.Marker({element,anchor:'center'}).setLngLat(coordinates[index]).addTo(routeMap);
+    const marker=new maplibregl.Marker({element,anchor:'center',offset:routeStopDetails[name]?.markerOffset||[0,0]}).setLngLat(coordinates[index]).addTo(routeMap);
     routeMarkers.push({marker,element});
   });
   routeMap.resize();fitRouteMap();
