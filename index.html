@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="依區域與類型探索台北玩樂地點，並直接查看地圖與精選路線。" />
   <title>台北玩樂地圖</title>
   <meta name="theme-color" content="#F6D27A" />
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style.css?v=ui-polish-20261028" />
 </head>
 <body class="view-map">
   <main class="wrap">
@@ -179,7 +179,7 @@
   </main>
 
   <nav class="site-tabs" aria-label="瀏覽方式">
-    <button type="button" class="site-tab active" data-view="map" aria-pressed="true"><span aria-hidden="true">🗺️</span> 地圖探索</button>
+    <button type="button" class="site-tab active" data-view="map" aria-pressed="true" aria-current="page"><span aria-hidden="true">🗺️</span> 地圖探索</button>
     <button type="button" class="site-tab" data-view="list" aria-pressed="false"><span aria-hidden="true">🔎</span> 條件搜尋</button>
     <button type="button" class="site-tab" data-view="routes" aria-pressed="false"><span aria-hidden="true">🚋</span> 精選路線</button>
     <a class="site-tab" href="https://chatgpt.com/g/g-p-6ae0b6d9a31c8191b31bedc45744a672-tai-bei-chu-you-wang-zhan-geng-xin/c/6ae004ea-4c6c-83e8-bf61-61fef53b1f8d" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">＋</span> 新增地點 <span class="sr-only">（在新分頁開啟）</span></a>
@@ -188,6 +188,6 @@
 <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
 <script src="./data/spots.js?v=remove-fruitful-20261028"></script>
 <script src="./data/routes.js?v=pinglin-order-20261028"></script>
-<script src="./app.js?v=pinglin-map-20261028"></script>
+<script src="./app.js?v=ui-polish-20261028"></script>
 </body>
 </html>

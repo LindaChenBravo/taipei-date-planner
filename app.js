@@ -73,12 +73,23 @@ function spotMarkerIcon(spot){
   return typeIcons[spotVisualType(spot)]||'📍';
 }
 
+function showMapFallback(container,message,offerSearch=false){
+  const box=document.createElement('div');box.className='map-fallback';box.setAttribute('role','status');
+  const text=document.createElement('p');text.textContent=message;box.appendChild(text);
+  if(offerSearch){
+    const button=document.createElement('button');button.type='button';button.textContent='改用條件搜尋';
+    button.addEventListener('click',()=>{setView('list');els.keyword.focus({preventScroll:true})});box.appendChild(button);
+  }
+  container.replaceChildren(box);
+}
+
 function initVectorMap(){
   if(!window.maplibregl){
-    els.mapCanvas.innerHTML='<p class="empty">互動地圖載入失敗，請檢查網路連線後重新整理。</p>';
+    showMapFallback(els.mapCanvas,'互動地圖暫時無法載入，仍可用條件搜尋找地點並開啟 Google Maps。',true);
     return;
   }
-  vectorMap=new maplibregl.Map({
+  try{
+    vectorMap=new maplibregl.Map({
     container:els.mapCanvas,
     style:'https://tiles.openfreemap.org/styles/positron',
     center:[121.545,25.052],
@@ -87,6 +98,10 @@ function initVectorMap(){
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
   vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  }catch(error){
+    vectorMap=null;
+    showMapFallback(els.mapCanvas,'這個瀏覽器暫時無法顯示互動地圖，請改用條件搜尋或 Google Maps。',true);
+  }
 }
 
 function updateMarkerSelection(){
@@ -131,6 +146,7 @@ function setView(view){
     const active=tab.dataset.view===view;
     tab.classList.toggle('active',active);
     tab.setAttribute('aria-pressed',String(active));
+    if(active)tab.setAttribute('aria-current','page');else tab.removeAttribute('aria-current');
   });
   window.scrollTo({top:0,behavior:scrollBehavior()});
   if(isMap&&vectorMap)window.setTimeout(()=>vectorMap.resize(),0);
@@ -358,8 +374,9 @@ function updateRouteMap(){
 
 function ensureRouteMap(){
   if(routeMap)return;
-  if(!window.maplibregl){els.routeMapCanvas.innerHTML='<p class="empty">地圖暫時無法載入；仍可使用下方站點與 Google Maps 連結。</p>';return}
-  routeMap=new maplibregl.Map({
+  if(!window.maplibregl){showMapFallback(els.routeMapCanvas,'地圖暫時無法載入；仍可使用下方站點與 Google Maps 連結。');return}
+  try{
+    routeMap=new maplibregl.Map({
     container:els.routeMapCanvas,
     style:'https://tiles.openfreemap.org/styles/positron',
     center:[121.52,25.05],zoom:12,attributionControl:true,
@@ -371,6 +388,10 @@ function ensureRouteMap(){
     routeMap.addLayer({id:'route-order-line',type:'line',source:'route-order',paint:{'line-color':'#3E3A39','line-width':3,'line-dasharray':[1.5,2.5]}});
     updateRouteMap();
   });
+  }catch(error){
+    routeMap=null;
+    showMapFallback(els.routeMapCanvas,'這個瀏覽器暫時無法顯示地圖；下方站點與 Google Maps 導航仍可使用。');
+  }
 }
 
 function distanceKm(spot){
