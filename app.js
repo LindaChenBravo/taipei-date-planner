@@ -112,7 +112,7 @@ function updateMarkerSelection(){
 
 function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
-  const sourceLink=spot.guideUrl?`<a class="button-link" href="${spot.guideUrl}" target="_blank" rel="noopener noreferrer">Good Eye 介紹 ↗</a>`:spot.reviewUrl?`<a class="button-link" href="${spot.reviewUrl}" target="_blank" rel="noopener noreferrer">推薦依據 ↗</a>`:spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
+  const sourceLink=spot.guideUrl?`<a class="button-link" href="${spot.guideUrl}" target="_blank" rel="noopener noreferrer">Good Eye 介紹 ↗</a>`:spot.reviewUrl?'':spot.sourceUrl?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
   els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${sourceLink}</div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
@@ -241,8 +241,8 @@ function render(list){
     const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
     external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
     actions.append(preview,external); card.appendChild(actions); els.cards.appendChild(card);
-    if(spot.guideUrl||spot.reviewUrl||spot.sourceUrl){
-      const source=document.createElement('a');source.className='button-link';source.textContent=spot.guideUrl?'Good Eye 介紹 ↗':spot.reviewUrl?'推薦依據 ↗':'推薦貼文 ↗';
+    if(spot.guideUrl||(!spot.reviewUrl&&spot.sourceUrl)){
+      const source=document.createElement('a');source.className='button-link';source.textContent=spot.guideUrl?'Good Eye 介紹 ↗':'推薦貼文 ↗';
       source.href=spot.guideUrl||spot.reviewUrl||spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
     }
   });
