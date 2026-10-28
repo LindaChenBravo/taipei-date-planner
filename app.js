@@ -282,15 +282,13 @@ function routeStopIcon(name){
 }
 
 function routeDirectionsUrl(names){
-  if(['links','places'].includes(routes[selectedRouteIndex].mapMode)){
-    const places=names.map(name=>routeStopDetails[name]?.query||`${name} ${routes[selectedRouteIndex].area}`);
-    const params=new URLSearchParams({api:'1',origin:places[0],destination:places.at(-1),travelmode:'walking'});
-    if(places.length>2)params.set('waypoints',places.slice(1,-1).join('|'));
-    return `https://www.google.com/maps/dir/?${params}`;
-  }
-  const positions=names.map(name=>routeLocations[name]);
-  const params=new URLSearchParams({api:'1',origin:positions[0].join(','),destination:positions.at(-1).join(','),travelmode:'walking'});
-  if(positions.length>2)params.set('waypoints',positions.slice(1,-1).map(position=>position.join(',')).join('|'));
+  const route=routes[selectedRouteIndex];
+  const places=names.map(name=>{
+    const query=routeStopDetails[name]?.query||name;
+    return `${query} ${route.area||'台北'} 台灣`;
+  });
+  const params=new URLSearchParams({api:'1',origin:places[0],destination:places.at(-1),travelmode:'walking'});
+  if(places.length>2)params.set('waypoints',places.slice(1,-1).join('|'));
   return `https://www.google.com/maps/dir/?${params}`;
 }
 
