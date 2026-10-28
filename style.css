@@ -118,7 +118,7 @@
     .map-spot-actions{display:flex;flex-wrap:wrap;gap:8px}
     .map-spot-actions button,.map-spot-actions a{min-height:44px;font-size:14px;padding:9px 11px;border-width:2px;border-radius:12px}
     .card.map-target{outline:5px solid var(--coral);outline-offset:5px;animation:cardPop .48s ease-out}
-    .route-picker{margin:12px 0 10px}
+    .route-picker{display:block;margin:16px 0}
     .route-picker select{margin-top:0;background:var(--white);font-size:17px;font-weight:700}
     .route-meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}
     .route-meta span{border:2px solid var(--ink);border-radius:999px;background:var(--white);padding:5px 10px;font-size:13px;font-weight:700}
