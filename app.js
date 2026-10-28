@@ -26,6 +26,11 @@ let locationRequestId=0;
 const nearbyRadiusKm=5;
 const markerByName=new Map();
 const routeMarkers=[];
+let currentResults=spots;
+let mapMarkerFrame=0;
+let mapMarkerGeneration=0;
+let cardObserver=null;
+const cardBatchSize=30;
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
 const typeIcons={all:'✦',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',市集:'🧺',拍照:'📷',泡湯:'♨️',按摩:'💆',書店:'📖',圖書館:'📚','Good Eye':'👁️',音樂:'♫',自然:'🌿'};
 
@@ -151,6 +156,7 @@ function setView(view){
   });
   window.scrollTo({top:0,behavior:scrollBehavior()});
   if(isMap&&vectorMap)window.setTimeout(()=>vectorMap.resize(),0);
+  if(isList)renderCards();
   if(isRoutes){
     ensureRouteMap();
     window.setTimeout(()=>{if(routeMap){routeMap.resize();fitRouteMap()}},0);
@@ -185,6 +191,8 @@ function scrollToSpotCard(){
 }
 
 function renderMapList(list){
+  cancelAnimationFrame(mapMarkerFrame);
+  const generation=++mapMarkerGeneration;
   markerByName.forEach(entry=>entry.marker.remove());
   markerByName.clear();
   els.mapCount.textContent=`${list.length} 個地點`;
@@ -192,17 +200,25 @@ function renderMapList(list){
   els.mapSpotCard.classList.add('hidden');
   els.mapTitle.textContent='選擇一個景點';
   els.mapExternalLink.classList.add('hidden');
-  list.forEach(spot=>{
-    const position=spot.coords;
-    if(vectorMap&&position){
-      const element=document.createElement('button');
-      element.type='button'; element.className='map-marker'; element.title=spot.name; element.setAttribute('aria-label',spot.name);
-      element.innerHTML=`<span class="spot-pin"><span aria-hidden="true">${spotMarkerIcon(spot)}</span></span>`;
-      element.addEventListener('click',()=>openInMap(spot,false,true));
-      const marker=new maplibregl.Marker({element,anchor:'bottom'}).setLngLat([position[1],position[0]]).addTo(vectorMap);
-      markerByName.set(spot.name,{marker,element});
-    }
-  });
+  if(vectorMap){
+    let next=0;
+    const addMarkerBatch=()=>{
+      if(generation!==mapMarkerGeneration)return;
+      const fragmentEnd=Math.min(next+40,list.length);
+      for(;next<fragmentEnd;next++){
+        const spot=list[next],position=spot.coords;
+        if(!position)continue;
+        const element=document.createElement('button');
+        element.type='button';element.className='map-marker';element.title=spot.name;element.setAttribute('aria-label',spot.name);
+        element.innerHTML=`<span class="spot-pin"><span aria-hidden="true">${spotMarkerIcon(spot)}</span></span>`;
+        element.addEventListener('click',()=>openInMap(spot,false,true));
+        const marker=new maplibregl.Marker({element,anchor:'bottom'}).setLngLat([position[1],position[0]]).addTo(vectorMap);
+        markerByName.set(spot.name,{marker,element});
+      }
+      if(next<list.length)mapMarkerFrame=requestAnimationFrame(addMarkerBatch);
+    };
+    mapMarkerFrame=requestAnimationFrame(addMarkerBatch);
+  }
   if(userLocation&&vectorMap){
     vectorMap.easeTo({center:[userLocation.lng,userLocation.lat],zoom:13,duration:scrollBehavior()==='smooth'?650:0});
     window.setTimeout(()=>vectorMap.resize(),0);
@@ -227,11 +243,25 @@ function renderMapList(list){
 }
 
 function render(list){
+  currentResults=list;
   updateSearchSummary();
-  els.cards.replaceChildren();
   els.count.textContent=`${list.length} 個地點`;
-  if(!list.length){els.cards.innerHTML='<div class="card empty">目前沒有符合條件的地點，試著換個關鍵字、類型或區域。</div>';renderMapList(list);return;}
-  list.forEach(spot=>{
+  if(document.body.classList.contains('view-list'))renderCards();
+  renderMapList(list);
+}
+
+function renderCards(){
+  cardObserver?.disconnect();
+  els.cards.replaceChildren();
+  const list=currentResults;
+  if(!list.length){els.cards.innerHTML='<div class="card empty">目前沒有符合條件的地點，試著換個關鍵字、類型或區域。</div>';return;}
+  let next=0;
+  const sentinel=document.createElement('div');sentinel.className='cards-sentinel';
+  const appendBatch=()=>{
+    const fragment=document.createDocumentFragment();
+    const limit=Math.min(next+cardBatchSize,list.length);
+    for(;next<limit;next++){
+      const spot=list[next];
     const card=document.createElement('article'); card.className='card';
     card.id=`spot-card-${spots.indexOf(spot)}`; card.tabIndex=-1;
     const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
@@ -246,13 +276,23 @@ function render(list){
       const official=document.createElement('a');official.className='button-link';official.textContent='官網 ↗';
       official.href=spot.officialUrl;official.target='_blank';official.rel='noopener noreferrer';actions.appendChild(official);
     }
-    card.appendChild(actions); els.cards.appendChild(card);
+    card.appendChild(actions); fragment.appendChild(card);
     if(spot.guideUrl||(!spot.reviewUrl&&spot.sourceUrl)){
       const source=document.createElement('a');source.className='button-link';source.textContent=spot.guideUrl?'Good Eye 介紹 ↗':'推薦貼文 ↗';
       source.href=spot.guideUrl||spot.reviewUrl||spot.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';actions.appendChild(source);
     }
-  });
-  renderMapList(list);
+    }
+    els.cards.insertBefore(fragment,sentinel);
+    if(next>=list.length){cardObserver?.disconnect();sentinel.remove();}
+  };
+  els.cards.append(sentinel);
+  appendBatch();
+  if(next<list.length){
+    cardObserver=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting))appendBatch();
+    },{rootMargin:'400px'});
+    cardObserver.observe(sentinel);
+  }
 }
 
 function renderRoutes(){
