@@ -195,7 +195,7 @@ function renderMapList(list){
   const generation=++mapMarkerGeneration;
   markerByName.forEach(entry=>entry.marker.remove());
   markerByName.clear();
-  els.mapCount.textContent=`${list.length} 個地點`;
+  els.mapCount.textContent=`${list.filter(spot=>spot.coords).length} 個地點`;
   currentMapSpot=null;
   els.mapSpotCard.classList.add('hidden');
   els.mapTitle.textContent='選擇一個景點';
@@ -271,7 +271,9 @@ function renderCards(){
     preview.addEventListener('click',()=>openInMap(spot));
     const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
     external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
-    actions.append(preview,external);
+    if(spot.coords)actions.append(preview);
+    else {const pending=document.createElement('span');pending.className='note';pending.textContent='地圖圖釘位置待確認';actions.append(pending);}
+    actions.append(external);
     if(spot.type.includes('圖書館')&&spot.officialUrl){
       const official=document.createElement('a');official.className='button-link';official.textContent='官網 ↗';
       official.href=spot.officialUrl;official.target='_blank';official.rel='noopener noreferrer';actions.appendChild(official);

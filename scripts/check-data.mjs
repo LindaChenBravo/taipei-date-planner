@@ -14,7 +14,7 @@ for(const [index,spot] of spots.entries()){
   for(const key of ['name','area','note'])if(typeof spot[key]!=='string'||!spot[key].trim())errors.push(`${where}缺少 ${key}`);
   if(!Array.isArray(spot.type)||!spot.type.length||spot.type.some(type=>!availableTypes.has(type)))errors.push(`${where}的 type 沒有對應標籤`);
   if(!Number.isFinite(spot.hours)||spot.hours<=0)errors.push(`${where}的 hours 無效`);
-  if(!Array.isArray(spot.coords)||spot.coords.length!==2||!Number.isFinite(spot.coords[0])||!Number.isFinite(spot.coords[1])||spot.coords[0]<20||spot.coords[0]>28||spot.coords[1]<118||spot.coords[1]>123)errors.push(`${where}的 coords 無效`);
+  if(spot.coords!==null&&(!Array.isArray(spot.coords)||spot.coords.length!==2||!Number.isFinite(spot.coords[0])||!Number.isFinite(spot.coords[1])||spot.coords[0]<20||spot.coords[0]>28||spot.coords[1]<118||spot.coords[1]>123))errors.push(`${where}的 coords 無效`);
   for(const key of ['mapUrl','guideUrl','reviewUrl','sourceUrl'])if((key==='mapUrl'||spot[key]!==undefined)&&!validUrl(spot[key]))errors.push(`${where}的 ${key} 無效`);
   const identity=`${spot.name}\u0000${spot.area}`;
   if(seen.has(identity))errors.push(`${where}重複`);
