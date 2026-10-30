@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="依區域與類型探索台北玩樂地點，並直接查看地圖與精選路線。" />
   <title>台北玩樂地圖</title>
+  <link rel="preload" as="image" href="./assets/taipei-loader.webp" fetchpriority="high" />
   <meta name="theme-color" content="#F6D27A" />
   <meta name="apple-mobile-web-app-title" content="台北玩樂地圖" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,34 +60,25 @@ html,body{background:#FFFCF6}
 @keyframes city-clouds{to{transform:translateX(30px)}}
 @media(min-aspect-ratio:1/1){.loader-city{object-fit:cover}.page-loader-box{padding-top:9svh}}
 @media(prefers-reduced-motion:reduce){.city-tram,.city-cloud{animation:none}}
+
+.page-loader{background:#FFFDF6}
+.loader-artwork{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;animation:loader-scene-breathe 5s ease-in-out infinite alternate}
+@media(max-aspect-ratio:3/4){.loader-artwork{object-fit:cover}}
+@keyframes loader-scene-breathe{to{transform:scale(1.015)}}
+@media(prefers-reduced-motion:reduce){.loader-artwork{animation:none}}
 </style>
 </head>
 <body class="view-map">
 <div class="page-loader" id="pageLoader" role="status" aria-label="網站載入中">
-  <svg class="loader-city" viewBox="0 0 900 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<rect width="900" height="1100" fill="#FFF8E9"/>
-<g stroke="#3E3A39" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-<circle cx="690" cy="245" r="66" fill="#F6D27A"/>
-<g class="city-cloud" fill="#FFFCF6"><path d="M100 220c-15-48 54-71 78-28 35-39 88-5 73 30 48-9 61 42 15 48H103c-40-3-40-46-3-50Z"/><path d="M500 360c-8-30 30-42 48-20 22-27 55-8 53 14 34-5 38 30 10 32H503c-22-3-23-24-3-26Z"/></g>
-<path d="M-80 710 115 475 278 670 420 510 665 720 820 540 990 750V1100H-80Z" fill="#B9DAA5"/>
-<path d="M-30 790 175 650 360 780 590 625 940 815V1100H-30Z" fill="#8FBEA0"/>
-<g fill="#A8D3E6"><path d="M580 450v-85m-20 90h40l-5 32h-30Zm-8 38h56l-6 37h-44Zm-7 43h70l-6 38h-58Zm-7 44h84l-6 40h-72Zm-7 46h98l-6 42h-86Zm-7 48h112l-6 44H524Zm-7 50h126v73H517Z"/><path d="M580 452v-18" fill="none"/></g>
-<g fill="#FFFCF6"><path d="M555 492h50m-57 43h64m-71 44h78m-85 46h92m-99 48h106" fill="none"/><path d="M565 735v30h30v-30Z"/></g>
-<path d="M90 710V605h148v105" fill="#F2A497"/><path d="m76 607 90-55 87 55Z" fill="#F6D27A"/>
-<path d="M117 638h28v34h-28Zm68 0h28v34h-28Z" fill="#FFFCF6"/>
-<path d="M260 745V645h160v100" fill="#F6D27A"/><path d="M247 646h186l-13-27H260Z" fill="#F2A497"/>
-<path d="M280 674h34v40h-34Zm65 0h50v71h-50Z" fill="#A8D3E6"/>
-<path d="M-60 866Q265 740 940 885V1100H-60Z" fill="#F2DDB8"/>
-<path d="M-60 910Q300 795 970 926" fill="none" stroke-width="12"/>
-<path d="M-60 929Q300 814 970 945" fill="none" stroke-width="5"/>
-<g class="city-tram"><path d="M315 798h210q22 0 22 22v66H293v-66q0-22 22-22Z" fill="#F2A497"/><path d="M306 814h226v40H306Z" fill="#A8D3E6"/><path d="M358 814v40m57-40v40m57-40v40" fill="none"/><path d="M293 866h254" fill="none"/><circle cx="338" cy="889" r="12" fill="#3E3A39"/><circle cx="499" cy="889" r="12" fill="#3E3A39"/><path d="M405 798v-18h40v18" fill="#F6D27A"/></g>
-<g fill="#B9DAA5"><path d="M720 765v-92" fill="none"/><path d="M720 690c-65 5-71-69-21-78 19-58 81-30 77 7 47 28 9 87-56 71Z"/><path d="M50 840v-80" fill="none"/><path d="M50 775c-57 3-69-63-22-72 13-49 70-34 69 1 46 21 14 82-47 71Z"/></g>
-</g></svg><div class="page-loader-box"><div class="page-loader-text">準備好玩的地方…</div><div class="page-loader-dots" aria-hidden="true"><span></span><span></span><span></span></div></div>
+  <img class="loader-artwork" src="./assets/taipei-loader.webp" alt="" fetchpriority="high" decoding="async" />
 </div>
 <script>
 (()=>{
   const loader=document.getElementById('pageLoader');
-  const loaderStarted=performance.now();
+  let loaderStarted=performance.now();
+  const artwork=loader.querySelector('.loader-artwork');
+  const artworkReady=artwork.complete?Promise.resolve():new Promise(resolve=>{artwork.addEventListener('load',resolve,{once:true});artwork.addEventListener('error',resolve,{once:true})});
+  artworkReady.then(()=>{loaderStarted=performance.now()});
   let loaderTimer;
   const finish=(immediate=false)=>{
     if(!loader||loader.classList.contains('is-ready'))return;
@@ -95,7 +87,7 @@ html,body{background:#FFFCF6}
     loaderTimer=window.setTimeout(()=>{loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>loader.remove(),250)},remaining);
   };
   const stylesReady=Promise.all([...document.querySelectorAll('link[data-page-style]')].map(link=>link.sheet?Promise.resolve():new Promise(resolve=>{link.addEventListener('load',resolve,{once:true});link.addEventListener('error',resolve,{once:true})})));
-  document.addEventListener('DOMContentLoaded',()=>stylesReady.then(()=>requestAnimationFrame(()=>requestAnimationFrame(()=>finish()))),{once:true});
+  document.addEventListener('DOMContentLoaded',()=>Promise.all([stylesReady,artworkReady]).then(()=>requestAnimationFrame(()=>requestAnimationFrame(()=>finish()))),{once:true});
   window.setTimeout(finish,8000);
   window.addEventListener('pageshow',event=>{if(event.persisted)finish(true)});
 })();
