@@ -30,6 +30,22 @@ html,body{background:#FFFCF6}
 @keyframes loader-bob{50%{transform:translateY(-7px) rotate(-4deg)}}
 @keyframes loader-dot{50%{transform:translateY(-5px)}}
 @media(prefers-reduced-motion:reduce){.page-loader,.page-loader-icon,.page-loader-dots span{animation:none;transition:none}}
+
+/* Full-screen opening composition, scoped to the loader. */
+.page-loader{overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 45%,#FFFCF6 20%,#F9EED9 100%)}
+.page-loader::before,.page-loader::after{content:"";position:absolute;z-index:-1;width:70vmax;height:70vmax;border:3px solid #3E3A39;border-radius:42%;opacity:.65;animation:loader-drift 9s ease-in-out infinite alternate}
+.page-loader::before{background:#A8D3E6;left:-40vmax;top:-35vmax}
+.page-loader::after{background:#B9DAA5;right:-40vmax;bottom:-40vmax;animation-delay:-4s}
+.page-loader-box{box-sizing:border-box;width:100%;min-height:100svh;align-content:center;gap:28px;padding:36px 24px}
+.page-loader-icon{width:clamp(130px,34vw,230px);height:clamp(130px,34vw,230px);font-size:clamp(68px,17vw,120px);border-width:4px;border-radius:30%;box-shadow:8px 8px 0 #3E3A39;position:relative}
+.page-loader-icon::before,.page-loader-icon::after{position:absolute;font-size:clamp(30px,7vw,52px);line-height:1}
+.page-loader-icon::before{content:"☀️";left:-35%;top:-25%;transform:rotate(-12deg)}
+.page-loader-icon::after{content:"🌿";right:-34%;bottom:-20%;transform:rotate(15deg)}
+.page-loader-text{font-size:clamp(20px,5vw,30px);font-weight:700;margin-top:12px;text-align:center}
+.page-loader-dots{gap:12px}
+.page-loader-dots span{width:12px;height:12px}
+@keyframes loader-drift{to{transform:translate(5vmax,4vmax) rotate(16deg)}}
+@media(prefers-reduced-motion:reduce){.page-loader::before,.page-loader::after{animation:none}}
 </style>
 </head>
 <body class="view-map">
