@@ -30,7 +30,7 @@ html,body{background:#FFFCF6}
 .city-tram{animation:city-ride 3.5s ease-in-out infinite alternate}
 .city-cloud{animation:city-clouds 8s ease-in-out infinite alternate}
 @keyframes loader-dot{50%{transform:translateY(-5px)}}
-@keyframes city-ride{from{transform:translateX(-24px)}to{transform:translateX(24px)}}
+@keyframes city-ride{from{transform:translate(-12px,1px)}to{transform:translate(12px,-1px)}}
 @keyframes city-clouds{to{transform:translateX(18px)}}
 @media(min-aspect-ratio:1/1){.page-loader-box{top:6svh}.loader-city{width:100%;height:100%}}
 @media(prefers-reduced-motion:reduce){.page-loader,.city-tram,.city-cloud,.page-loader-dots span{animation:none;transition:none}}
@@ -41,20 +41,23 @@ html,body{background:#FFFCF6}
   <svg class="loader-city" viewBox="0 0 900 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <rect x="-5000" width="10900" height="1100" fill="#FFF8E9"/>
 <g stroke="#3E3A39" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-<circle cx="690" cy="245" r="66" fill="#F6D27A"/>
-<g class="city-cloud" fill="#FFFCF6"><path d="M100 220c-15-48 54-71 78-28 35-39 88-5 73 30 48-9 61 42 15 48H103c-40-3-40-46-3-50Z"/><path d="M500 360c-8-30 30-42 48-20 22-27 55-8 53 14 34-5 38 30 10 32H503c-22-3-23-24-3-26Z"/></g>
-<path d="M-5000 710H-80L115 475 278 670 420 510 665 720 820 540 990 750H5900V1100H-5000Z" fill="#B9DAA5"/>
-<path d="M-5000 790H-30L175 650 360 780 590 625 940 815H5900V1100H-5000Z" fill="#8FBEA0"/>
-<g class="city-tower" fill="#A8D3E6"><path d="M580 365v70" fill="none"/><path d="M566 435H594L600 455 595 487 608 487 602 525 615 525 609 569 622 569 616 615 629 615 623 663 636 663 630 713 643 713V765H517V713H530L524 663H537L531 615H544L538 569H551L545 525H558L552 487H565L560 455Z"/><path d="M560 455h40m-35 32h30m-43 0h56m-50 38h44m-57 0h70m-64 44h58m-71 0h84m-78 46h72m-85 0h98m-92 48h86m-99 0h112m-106 50h100M580 449v266" fill="none" stroke-width="3"/><path d="M565 765v-30h30v30" fill="#FFFCF6"/></g><path d="M90 710V605h148v105" fill="#F2A497"/><path d="m76 607 90-55 87 55Z" fill="#F6D27A"/>
+<circle cx="690" cy="295" r="58" fill="#F6D27A"/>
+<g class="city-cloud" fill="#FFFCF6"><path d="M100 220c-15-48 54-71 78-28 35-39 88-5 73 30 48-9 61 42 15 48H103c-40-3-40-46-3-50Z"/><path d="M730 425c-8-30 30-42 48-20 22-27 55-8 53 14 34-5 38 30 10 32H733c-22-3-23-24-3-26Z"/></g>
+<path d="M-5000 660H-900Q-500 390-180 590Q20 400 190 565Q330 430 465 570Q690 390 900 580Q1150 390 1420 640H5900V1100H-5000Z" fill="#B9DAA5"/>
+<path d="M-5000 770H-1100Q-680 530-300 725Q-40 540 210 705Q450 550 690 715Q960 560 1250 740Q1460 580 1700 770H5900V1100H-5000Z" fill="#8FBEA0"/>
+<g fill="#F2DDB8" stroke-width="3">
+<path d="M-650 786V655h95v131m30 0V610h110v176m25 0V684h130v102m35 0V635h100v151m850 0V630h110v156m30 0V680h90v106m30 0V600h115v186m30 0V650h130v136"/>
+<path d="M-620 680h30m90-40h50m-50 30h50m-305 40h35m930-50h50m-50 35h50m205-50h55m-55 35h55" fill="none" stroke="#C6B79D"/>
+</g><g class="city-tower" fill="#A8D3E6"><path d="M580 365v70" fill="none"/><path d="M566 435H594L600 455 595 487 608 487 602 525 615 525 609 569 622 569 616 615 629 615 623 663 636 663 630 713 643 713V765H517V713H530L524 663H537L531 615H544L538 569H551L545 525H558L552 487H565L560 455Z"/><path d="M560 455h40m-35 32h30m-43 0h56m-50 38h44m-57 0h70m-64 44h58m-71 0h84m-78 46h72m-85 0h98m-92 48h86m-99 0h112m-106 50h100M580 449v266" fill="none" stroke-width="3"/><path d="M565 765v-30h30v30" fill="#FFFCF6"/></g><path d="M90 710V605h148v105" fill="#F2A497"/><path d="m76 607 90-55 87 55Z" fill="#F6D27A"/>
 <path d="M117 638h28v34h-28Zm68 0h28v34h-28Z" fill="#FFFCF6"/>
 <path d="M260 745V645h160v100" fill="#F6D27A"/><path d="M247 646h186l-13-27H260Z" fill="#F2A497"/>
 <path d="M280 674h34v40h-34Zm65 0h50v71h-50Z" fill="#A8D3E6"/>
-<path d="M-5000 866H-60Q265 740 940 885H5900V1100H-5000Z" fill="#F2DDB8"/>
-<path d="M-60 910Q300 795 970 926" fill="none" stroke-width="12"/>
-<path d="M-60 929Q300 814 970 945" fill="none" stroke-width="5"/>
+<path d="M-5000 866H-1300Q-600 810-60 866Q265 740 940 885Q1500 1010 2400 866H5900V1100H-5000Z" fill="#F2DDB8"/>
+<path d="M-2400 910Q-1400 1050-60 910Q300 795 970 926Q1900 1110 3300 900" fill="none" stroke-width="12"/>
+<path d="M-2400 929Q-1400 1069-60 929Q300 814 970 945Q1900 1129 3300 919" fill="none" stroke-width="5"/>
 <g class="city-tram"><path d="M315 798h210q22 0 22 22v66H293v-66q0-22 22-22Z" fill="#F2A497"/><path d="M306 814h226v40H306Z" fill="#A8D3E6"/><path d="M358 814v40m57-40v40m57-40v40" fill="none"/><path d="M293 866h254" fill="none"/><circle cx="338" cy="889" r="12" fill="#3E3A39"/><circle cx="499" cy="889" r="12" fill="#3E3A39"/><path d="M405 798v-18h40v18" fill="#F6D27A"/></g>
 <g fill="#B9DAA5"><path d="M720 765v-92" fill="none"/><path d="M720 690c-65 5-71-69-21-78 19-58 81-30 77 7 47 28 9 87-56 71Z"/><path d="M50 840v-80" fill="none"/><path d="M50 775c-57 3-69-63-22-72 13-49 70-34 69 1 46 21 14 82-47 71Z"/></g>
-</g></svg><div class="page-loader-box"><div class="page-loader-text">準備好玩的地方…</div><div class="page-loader-dots" aria-hidden="true"><span></span><span></span><span></span></div></div>
+<g fill="#8FBEA0"><path d="M-160 1020q50-100 120 0 50-140 120 0 65-75 110 0v80h-350Z"/><path d="M720 1100v-80q70-110 125 0 65-150 135 0 70-90 125 0v80Z"/></g></g></svg><div class="page-loader-box"><div class="page-loader-text">準備好玩的地方…</div><div class="page-loader-dots" aria-hidden="true"><span></span><span></span><span></span></div></div>
 </div>
 <script>
 (()=>{
@@ -71,7 +74,7 @@ html,body{background:#FFFCF6}
   const finish=(immediate=false)=>{
     if(!loader||loader.classList.contains('is-ready'))return;
     window.clearTimeout(loaderTimer);
-    const remaining=immediate?0:Math.max(0,1100-(performance.now()-loaderStarted));
+    const remaining=immediate?0:Math.max(0,2000-(performance.now()-loaderStarted));
     loaderTimer=window.setTimeout(()=>{loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>{window.removeEventListener('resize',fitScene);loader.remove()},250)},remaining);
   };
   const stylesReady=Promise.all([...document.querySelectorAll('link[data-page-style]')].map(link=>link.sheet?Promise.resolve():new Promise(resolve=>{link.addEventListener('load',resolve,{once:true});link.addEventListener('error',resolve,{once:true})})));
