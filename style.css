@@ -238,3 +238,6 @@
       .site-tab{flex-direction:row;padding:6px;font-size:12px;min-height:36px}
       .map-spot-card{max-height:calc(100svh - 90px);bottom:calc(74px + env(safe-area-inset-bottom))}
     }
+
+/* Compact the map filter chips to 75% of their original size. */
+.map-type-tags .map-type-tag{zoom:.75}
