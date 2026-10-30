@@ -13,13 +13,14 @@
   <link rel="manifest" href="./site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" />
-  <link rel="stylesheet" href="./style.css?v=route-picker-20261028" />
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" media="print" onload="this.media='all'" data-page-style />
+  <link rel="stylesheet" href="./style.css?v=route-picker-20261028" media="print" onload="this.media='all'" data-page-style />
 <style>
+html,body{background:#FFFCF6}
 .page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#FFFCF6;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
 .page-loader.is-ready{opacity:0;visibility:hidden}
-.page-loader-box{display:grid;justify-items:center;gap:16px;padding:28px 36px;color:#3E3A39;font-family:"Huninn",sans-serif}
+.page-loader-box{display:grid;justify-items:center;gap:16px;padding:28px 36px;color:#3E3A39;font-family:system-ui,sans-serif}
 .page-loader-icon{display:grid;place-items:center;width:74px;height:74px;border:3px solid #3E3A39;border-radius:24px;background:#F6D27A;font-size:36px;box-shadow:4px 4px 0 #3E3A39;animation:loader-bob 1.2s ease-in-out infinite}
 .page-loader-text{font-size:18px;letter-spacing:.05em}
 .page-loader-dots{display:flex;gap:8px}
@@ -46,7 +47,8 @@
     const remaining=immediate?0:Math.max(0,1100-(performance.now()-loaderStarted));
     loaderTimer=window.setTimeout(()=>{loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>loader.remove(),250)},remaining);
   };
-  document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>requestAnimationFrame(finish)),{once:true});
+  const stylesReady=Promise.all([...document.querySelectorAll('link[data-page-style]')].map(link=>link.sheet?Promise.resolve():new Promise(resolve=>{link.addEventListener('load',resolve,{once:true});link.addEventListener('error',resolve,{once:true})})));
+  document.addEventListener('DOMContentLoaded',()=>stylesReady.then(()=>requestAnimationFrame(()=>requestAnimationFrame(()=>finish()))),{once:true});
   window.setTimeout(finish,8000);
   window.addEventListener('pageshow',event=>{if(event.persisted)finish(true)});
 })();
