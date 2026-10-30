@@ -38,10 +38,17 @@
 <script>
 (()=>{
   const loader=document.getElementById('pageLoader');
-  const finish=()=>{if(!loader||loader.classList.contains('is-ready'))return;loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>loader.remove(),250)};
+  const loaderStarted=performance.now();
+  let loaderTimer;
+  const finish=(immediate=false)=>{
+    if(!loader||loader.classList.contains('is-ready'))return;
+    window.clearTimeout(loaderTimer);
+    const remaining=immediate?0:Math.max(0,1100-(performance.now()-loaderStarted));
+    loaderTimer=window.setTimeout(()=>{loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>loader.remove(),250)},remaining);
+  };
   document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>requestAnimationFrame(finish)),{once:true});
   window.setTimeout(finish,8000);
-  window.addEventListener('pageshow',event=>{if(event.persisted)finish()});
+  window.addEventListener('pageshow',event=>{if(event.persisted)finish(true)});
 })();
 </script>
   <main class="wrap">
