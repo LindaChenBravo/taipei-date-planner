@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="依區域與類型探索台北玩樂地點，並直接查看地圖與精選路線。" />
   <title>台北玩樂地圖</title>
-  <link rel="preload" as="image" href="./assets/taipei-loader.webp" fetchpriority="high" />
   <meta name="theme-color" content="#F6D27A" />
   <meta name="apple-mobile-web-app-title" content="台北玩樂地圖" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -19,75 +18,64 @@
   <link rel="stylesheet" href="./style.css?v=map-tags-75-20261030" media="print" onload="this.media='all'" data-page-style />
 <style>
 html,body{background:#FFFCF6}
-.page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#FFFCF6;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+.page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#FFF8E9;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
 .page-loader.is-ready{opacity:0;visibility:hidden}
-.page-loader-box{display:grid;justify-items:center;gap:16px;padding:28px 36px;color:#3E3A39;font-family:system-ui,sans-serif}
-.page-loader-icon{display:grid;place-items:center;width:74px;height:74px;border:3px solid #3E3A39;border-radius:24px;background:#F6D27A;font-size:36px;box-shadow:4px 4px 0 #3E3A39;animation:loader-bob 1.2s ease-in-out infinite}
-.page-loader-text{font-size:18px;letter-spacing:.05em}
-.page-loader-dots{display:flex;gap:8px}
-.page-loader-dots span{width:9px;height:9px;border:2px solid #3E3A39;border-radius:50%;background:#F2A497;animation:loader-dot 1s ease-in-out infinite}
-.page-loader-dots span:nth-child(2){animation-delay:.15s;background:#A8D3E6}
-.page-loader-dots span:nth-child(3){animation-delay:.3s;background:#B9DAA5}
-@keyframes loader-bob{50%{transform:translateY(-7px) rotate(-4deg)}}
-@keyframes loader-dot{50%{transform:translateY(-5px)}}
-@media(prefers-reduced-motion:reduce){.page-loader,.page-loader-icon,.page-loader-dots span{animation:none;transition:none}}
-
-/* Full-screen opening composition, scoped to the loader. */
-.page-loader{overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 45%,#FFFCF6 20%,#F9EED9 100%)}
-.page-loader::before,.page-loader::after{content:"";position:absolute;z-index:-1;width:70vmax;height:70vmax;border:3px solid #3E3A39;border-radius:42%;opacity:.65;animation:loader-drift 9s ease-in-out infinite alternate}
-.page-loader::before{background:#A8D3E6;left:-40vmax;top:-35vmax}
-.page-loader::after{background:#B9DAA5;right:-40vmax;bottom:-40vmax;animation-delay:-4s}
-.page-loader-box{box-sizing:border-box;width:100%;min-height:100svh;align-content:center;gap:28px;padding:36px 24px}
-.page-loader-icon{width:clamp(130px,34vw,230px);height:clamp(130px,34vw,230px);font-size:clamp(68px,17vw,120px);border-width:4px;border-radius:30%;box-shadow:8px 8px 0 #3E3A39;position:relative}
-.page-loader-icon::before,.page-loader-icon::after{position:absolute;font-size:clamp(30px,7vw,52px);line-height:1}
-.page-loader-icon::before{content:"☀️";left:-35%;top:-25%;transform:rotate(-12deg)}
-.page-loader-icon::after{content:"🌿";right:-34%;bottom:-20%;transform:rotate(15deg)}
-.page-loader-text{font-size:clamp(20px,5vw,30px);font-weight:700;margin-top:12px;text-align:center}
-.page-loader-dots{gap:12px}
-.page-loader-dots span{width:12px;height:12px}
-@keyframes loader-drift{to{transform:translate(5vmax,4vmax) rotate(16deg)}}
-@media(prefers-reduced-motion:reduce){.page-loader::before,.page-loader::after{animation:none}}
-
-/* One continuous illustrated city scene. */
-.page-loader{background:#FFF8E9}
-.page-loader::before,.page-loader::after{display:none}
-.loader-city{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
-.page-loader-box{min-height:100svh;align-content:start;padding-top:clamp(90px,16svh,190px);gap:14px}
-.page-loader-text{font-size:clamp(20px,4.5vw,28px);margin:0;text-shadow:0 2px #FFF8E9}
-.city-tram{animation:city-ride 3.5s ease-in-out infinite alternate;transform-origin:center}
+.loader-city{position:absolute;inset:0;width:100%;height:100%;display:block}
+.page-loader-box{position:absolute;top:max(7svh,env(safe-area-inset-top));left:16px;right:16px;display:grid;justify-items:center;gap:16px;color:#3E3A39;font-family:system-ui,sans-serif}
+.page-loader-text{font-size:clamp(20px,3vw,28px);font-weight:700;letter-spacing:.05em;text-align:center}
+.page-loader-dots{display:flex;gap:10px}
+.page-loader-dots span{width:10px;height:10px;border:2px solid #3E3A39;border-radius:50%;background:#F2A497;animation:loader-dot 1s ease-in-out infinite}
+.page-loader-dots span:nth-child(2){background:#A8D3E6;animation-delay:.15s}
+.page-loader-dots span:nth-child(3){background:#B9DAA5;animation-delay:.3s}
+.city-tram{animation:city-ride 3.5s ease-in-out infinite alternate}
 .city-cloud{animation:city-clouds 8s ease-in-out infinite alternate}
-@keyframes city-ride{from{transform:translateX(-80px)}to{transform:translateX(80px)}}
-@keyframes city-clouds{to{transform:translateX(30px)}}
-@media(min-aspect-ratio:1/1){.loader-city{object-fit:cover}.page-loader-box{padding-top:9svh}}
-@media(prefers-reduced-motion:reduce){.city-tram,.city-cloud{animation:none}}
-
-.page-loader{background:#FFFDF6}
-.loader-artwork{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;animation:loader-scene-breathe 5s ease-in-out infinite alternate}
-@media(max-aspect-ratio:3/4){.loader-artwork{object-fit:cover}}
-@keyframes loader-scene-breathe{to{transform:scale(1.015)}}
-@media(prefers-reduced-motion:reduce){.loader-artwork{animation:none}}
+@keyframes loader-dot{50%{transform:translateY(-5px)}}
+@keyframes city-ride{from{transform:translateX(-24px)}to{transform:translateX(24px)}}
+@keyframes city-clouds{to{transform:translateX(18px)}}
+@media(min-aspect-ratio:1/1){.page-loader-box{top:6svh}.loader-city{width:100%;height:100%}}
+@media(prefers-reduced-motion:reduce){.page-loader,.city-tram,.city-cloud,.page-loader-dots span{animation:none;transition:none}}
 </style>
 </head>
 <body class="view-map">
 <div class="page-loader" id="pageLoader" role="status" aria-label="網站載入中">
-  <img class="loader-artwork" src="./assets/taipei-loader.webp" alt="" fetchpriority="high" decoding="async" />
+  <svg class="loader-city" viewBox="0 0 900 1100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<rect x="-5000" width="10900" height="1100" fill="#FFF8E9"/>
+<g stroke="#3E3A39" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="690" cy="245" r="66" fill="#F6D27A"/>
+<g class="city-cloud" fill="#FFFCF6"><path d="M100 220c-15-48 54-71 78-28 35-39 88-5 73 30 48-9 61 42 15 48H103c-40-3-40-46-3-50Z"/><path d="M500 360c-8-30 30-42 48-20 22-27 55-8 53 14 34-5 38 30 10 32H503c-22-3-23-24-3-26Z"/></g>
+<path d="M-5000 710H-80L115 475 278 670 420 510 665 720 820 540 990 750H5900V1100H-5000Z" fill="#B9DAA5"/>
+<path d="M-5000 790H-30L175 650 360 780 590 625 940 815H5900V1100H-5000Z" fill="#8FBEA0"/>
+<g class="city-tower" fill="#A8D3E6"><path d="M580 365v70" fill="none"/><path d="M566 435H594L600 455 595 487 608 487 602 525 615 525 609 569 622 569 616 615 629 615 623 663 636 663 630 713 643 713V765H517V713H530L524 663H537L531 615H544L538 569H551L545 525H558L552 487H565L560 455Z"/><path d="M560 455h40m-35 32h30m-43 0h56m-50 38h44m-57 0h70m-64 44h58m-71 0h84m-78 46h72m-85 0h98m-92 48h86m-99 0h112m-106 50h100M580 449v266" fill="none" stroke-width="3"/><path d="M565 765v-30h30v30" fill="#FFFCF6"/></g><path d="M90 710V605h148v105" fill="#F2A497"/><path d="m76 607 90-55 87 55Z" fill="#F6D27A"/>
+<path d="M117 638h28v34h-28Zm68 0h28v34h-28Z" fill="#FFFCF6"/>
+<path d="M260 745V645h160v100" fill="#F6D27A"/><path d="M247 646h186l-13-27H260Z" fill="#F2A497"/>
+<path d="M280 674h34v40h-34Zm65 0h50v71h-50Z" fill="#A8D3E6"/>
+<path d="M-5000 866H-60Q265 740 940 885H5900V1100H-5000Z" fill="#F2DDB8"/>
+<path d="M-60 910Q300 795 970 926" fill="none" stroke-width="12"/>
+<path d="M-60 929Q300 814 970 945" fill="none" stroke-width="5"/>
+<g class="city-tram"><path d="M315 798h210q22 0 22 22v66H293v-66q0-22 22-22Z" fill="#F2A497"/><path d="M306 814h226v40H306Z" fill="#A8D3E6"/><path d="M358 814v40m57-40v40m57-40v40" fill="none"/><path d="M293 866h254" fill="none"/><circle cx="338" cy="889" r="12" fill="#3E3A39"/><circle cx="499" cy="889" r="12" fill="#3E3A39"/><path d="M405 798v-18h40v18" fill="#F6D27A"/></g>
+<g fill="#B9DAA5"><path d="M720 765v-92" fill="none"/><path d="M720 690c-65 5-71-69-21-78 19-58 81-30 77 7 47 28 9 87-56 71Z"/><path d="M50 840v-80" fill="none"/><path d="M50 775c-57 3-69-63-22-72 13-49 70-34 69 1 46 21 14 82-47 71Z"/></g>
+</g></svg><div class="page-loader-box"><div class="page-loader-text">準備好玩的地方…</div><div class="page-loader-dots" aria-hidden="true"><span></span><span></span><span></span></div></div>
 </div>
 <script>
 (()=>{
   const loader=document.getElementById('pageLoader');
-  let loaderStarted=performance.now();
-  const artwork=loader.querySelector('.loader-artwork');
-  const artworkReady=artwork.complete?Promise.resolve():new Promise(resolve=>{artwork.addEventListener('load',resolve,{once:true});artwork.addEventListener('error',resolve,{once:true})});
-  artworkReady.then(()=>{loaderStarted=performance.now()});
+  const scene=loader.querySelector('.loader-city');
+  const fitScene=()=>{
+    const width=Math.max(900,1100*window.innerWidth/window.innerHeight);
+    scene.setAttribute('viewBox',[(900-width)/2,0,width,1100].join(' '));
+  };
+  fitScene();
+  window.addEventListener('resize',fitScene);
+  const loaderStarted=performance.now();
   let loaderTimer;
   const finish=(immediate=false)=>{
     if(!loader||loader.classList.contains('is-ready'))return;
     window.clearTimeout(loaderTimer);
     const remaining=immediate?0:Math.max(0,1100-(performance.now()-loaderStarted));
-    loaderTimer=window.setTimeout(()=>{loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>loader.remove(),250)},remaining);
+    loaderTimer=window.setTimeout(()=>{loader.classList.add('is-ready');loader.setAttribute('aria-hidden','true');window.setTimeout(()=>{window.removeEventListener('resize',fitScene);loader.remove()},250)},remaining);
   };
   const stylesReady=Promise.all([...document.querySelectorAll('link[data-page-style]')].map(link=>link.sheet?Promise.resolve():new Promise(resolve=>{link.addEventListener('load',resolve,{once:true});link.addEventListener('error',resolve,{once:true})})));
-  document.addEventListener('DOMContentLoaded',()=>Promise.all([stylesReady,artworkReady]).then(()=>requestAnimationFrame(()=>requestAnimationFrame(()=>finish()))),{once:true});
+  document.addEventListener('DOMContentLoaded',()=>stylesReady.then(()=>requestAnimationFrame(()=>requestAnimationFrame(()=>finish()))),{once:true});
   window.setTimeout(finish,8000);
   window.addEventListener('pageshow',event=>{if(event.persisted)finish(true)});
 })();
