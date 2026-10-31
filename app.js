@@ -223,8 +223,14 @@ function drawPinImage(icon,active){
   ctx.beginPath();ctx.moveTo(x+r[0],y);ctx.arcTo(x+a,y,x+a,y+a,r[1]);ctx.arcTo(x+a,y+a,x,y+a,r[2]);ctx.arcTo(x,y+a,x,y,r[3]);ctx.arcTo(x,y,x+a,y,r[0]);ctx.closePath();
   ctx.fillStyle=active?pinColors.yellow:pinColors.coral;ctx.fill();
   ctx.lineWidth=3;ctx.strokeStyle=pinColors.ink;ctx.stroke();ctx.restore();
-  ctx.font=`${Math.round(19*s)}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-  ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=pinColors.ink;ctx.fillText(icon,w/2,cy+1);
+  // 依 emoji 實際外框置中並縮放成同樣大小（iPhone 上部分 emoji 的字寬資訊不準）
+  ctx.font='40px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+  ctx.textAlign='left';ctx.textBaseline='alphabetic';ctx.fillStyle=pinColors.ink;
+  const m=ctx.measureText(icon);
+  const left=m.actualBoundingBoxLeft||0,right=m.actualBoundingBoxRight||m.width||40;
+  const up=m.actualBoundingBoxAscent||32,down=m.actualBoundingBoxDescent||8;
+  const k=(20*s)/Math.max(left+right,up+down,1);
+  ctx.save();ctx.translate(w/2,cy);ctx.scale(k,k);ctx.fillText(icon,(left-right)/2,(up-down)/2);ctx.restore();
   return {width:canvas.width,height:canvas.height,data:ctx.getImageData(0,0,canvas.width,canvas.height).data};
 }
 
