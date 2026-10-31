@@ -244,3 +244,11 @@
 
 /* Compact the map filter chips to 75% of their original size. */
 .map-type-tags .map-type-tag{zoom:.75}
+
+/* 搜尋結果排序 */
+#listSection .section-title,#listSection .list-result-actions{flex-wrap:wrap;gap:12px}
+.sort-control{display:flex;align-items:center;gap:8px;font-size:14px;white-space:nowrap}
+.sort-control select{width:auto;min-height:44px;padding:8px 30px 8px 12px;font:inherit;background:var(--paper);border:2px solid var(--ink);border-radius:12px;color:var(--ink)}
+.sort-status{font-size:14px;margin:0 0 16px}
+.sort-status button{font:inherit;padding:6px 12px}
+@media(max-width:600px){#listSection .list-result-actions{width:100%;justify-content:space-between}.sort-control{margin-left:auto}}

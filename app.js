@@ -15,6 +15,9 @@ const els = {
 };
 
 let selectedType='all';
+let resultSort='default';
+const resultSortSelect=document.getElementById('resultSort');
+const sortStatus=document.getElementById('sortStatus');
 let currentMapSpot=null;
 let vectorMap=null;
 let routeMap=null;
@@ -330,11 +333,6 @@ function renderMapList(list){
   els.mapExternalLink.classList.add('hidden');
   rebuildSpotIndex(list);
   updateMarkerSelection();
-  if(userLocation&&vectorMap){
-    vectorMap.easeTo({center:[userLocation.lng,userLocation.lat],zoom:13,duration:scrollBehavior()==='smooth'?650:0});
-    window.setTimeout(()=>vectorMap.resize(),0);
-    return;
-  }
   if(!list.length){
     els.mapTitle.textContent='沒有可顯示的地點';
     els.mapSpotCard.classList.add('hidden');
@@ -573,7 +571,8 @@ function distanceKm(spot){
 
 function spotMeta(spot){
   const distance=userLocation?distanceKm(spot):Infinity;
-  return `${spot.area}・約 ${spot.hours} 小時${Number.isFinite(distance)?`・距離 ${distance.toFixed(1)} 公里`:''}`;
+  const label=Number.isFinite(distance)?(distance<1?`📍距離 ${Math.round(distance*1000)} 公尺`:`📍距離 ${distance.toFixed(1)} 公里`):'距離待確認';
+  return `${spot.area}・約 ${spot.hours} 小時${resultSort==='distance'&&userLocation?`・${label}`:''}`;
 }
 
 function initListFilters(){
@@ -607,7 +606,7 @@ function filtered(){
     if(!query)return true;
     return `${spot.name} ${spot.area} ${spot.type.join(' ')} ${spot.note} ${spot.address||''}`.normalize('NFKC').toLocaleLowerCase('zh-TW').includes(query);
   });
-  return matches;
+  return resultSort==='distance'&&userLocation?matches.sort((a,b)=>distanceKm(a)-distanceKm(b)):matches;
 }
 
 function setLocationStatus(message){
@@ -637,6 +636,45 @@ function selectType(type,button){
   clearHighlights(); render(filtered());
 }
 
+
+function refreshSortedCards(){
+  currentResults=filtered();
+  els.count.textContent=`${currentResults.length} 個地點`;
+  renderCards();
+}
+function requestSortLocation(){
+  const requestId=++locationRequestId;
+  sortStatus.hidden=false;
+  sortStatus.textContent='正在取得你的位置…';
+  resultSortSelect.disabled=true;
+  const fail=()=>{
+    if(requestId!==locationRequestId)return;
+    resultSortSelect.disabled=false;
+    resultSort='default';resultSortSelect.value='default';
+    sortStatus.replaceChildren(document.createTextNode('無法取得位置，請確認定位權限。 '));
+    const retry=document.createElement('button');retry.type='button';retry.textContent='重新定位';
+    retry.addEventListener('click',requestSortLocation);sortStatus.append(retry);
+    refreshSortedCards();
+  };
+  if(!navigator.geolocation){fail();return}
+  navigator.geolocation.getCurrentPosition(position=>{
+    if(requestId!==locationRequestId)return;
+    const {latitude:lat,longitude:lng}=position.coords;
+    if(!Number.isFinite(lat)||!Number.isFinite(lng)){fail();return}
+    userLocation={lat,lng};resultSort='distance';
+    resultSortSelect.value='distance';resultSortSelect.disabled=false;
+    sortStatus.textContent='依直線距離排序，不限制搜尋範圍。';
+    refreshSortedCards();
+  },fail,{enableHighAccuracy:false,timeout:10000,maximumAge:60000});
+}
+resultSortSelect.addEventListener('change',()=>{
+  locationRequestId++;
+  resultSort=resultSortSelect.value;
+  if(resultSort==='distance'){requestSortLocation();return}
+  sortStatus.hidden=true;
+  refreshSortedCards();
+});
+
 let keywordTimer;
 els.keyword.addEventListener('input',()=>{
   window.clearTimeout(keywordTimer);
@@ -656,6 +694,7 @@ els.mapTypeTags.addEventListener('click',event=>{
 els.resetBtn.addEventListener('click',()=>{
   window.clearTimeout(keywordTimer);
   clearLocation();
+  resultSort='default';resultSortSelect.value='default';sortStatus.hidden=true;
   els.area.value='all'; els.keyword.value=''; selectedType='all';
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type==='all'; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));

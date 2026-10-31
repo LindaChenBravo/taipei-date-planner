@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" media="print" onload="this.media='all'" data-page-style />
-  <link rel="stylesheet" href="./style.css?v=cluster-20261031" media="print" onload="this.media='all'" data-page-style />
+  <link rel="stylesheet" href="./style.css?v=distance-sort-20261101" media="print" onload="this.media='all'" data-page-style />
 <style>
 html,body{background:#FFFCF6}
 .page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#FFF8E9;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
@@ -277,7 +277,8 @@ html,body{background:#FFFCF6}
     </section>
 
     <section id="listSection" aria-labelledby="spotTitle">
-      <div class="section-title"><h2 id="spotTitle">搜尋結果</h2><div class="list-result-actions"><button id="resetBtn" class="reset-inline hidden" type="button">清除條件</button><span id="count" class="badge" aria-live="polite"></span></div></div>
+      <div class="section-title"><h2 id="spotTitle">搜尋結果</h2><div class="list-result-actions"><button id="resetBtn" class="reset-inline hidden" type="button">清除條件</button><span id="count" class="badge" aria-live="polite"></span><label class="sort-control" for="resultSort">排序<select id="resultSort"><option value="default">預設順序</option><option value="distance">📍 離我最近</option></select></label></div></div>
+      <p id="sortStatus" class="sort-status" role="status" aria-live="polite" hidden></p>
       <div id="cards" class="grid"></div>
     </section>
 
@@ -293,6 +294,6 @@ html,body{background:#FFFCF6}
 <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
 <script src="./data/spots.js?v=cityhall-food-20261031"></script>
 <script src="./data/routes.js?v=pinglin-order-20261028"></script>
-<script src="./app.js?v=my-location-20261101"></script>
+<script src="./app.js?v=distance-sort-20261101"></script>
 </body>
 </html>
