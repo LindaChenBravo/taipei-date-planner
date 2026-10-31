@@ -27,8 +27,11 @@ const nearbyRadiusKm=5;
 const markerByName=new Map();
 const routeMarkers=[];
 let currentResults=spots;
-let mapMarkerFrame=0;
-let mapMarkerGeneration=0;
+const clusterMarkers=new Map();
+let mapPoints=[];
+let mapSpotByName=new Map();
+let spotCluster=null;
+const clusterMaxZoom=14;
 let cardObserver=null;
 const cardBatchSize=30;
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
@@ -103,6 +106,7 @@ function initVectorMap(){
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
   vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  vectorMap.on('moveend',syncMapMarkers);
   }catch(error){
     vectorMap=null;
     showMapFallback(els.mapCanvas,'這個瀏覽器暫時無法顯示互動地圖，請改用條件搜尋或 Google Maps。',true);
@@ -170,10 +174,11 @@ function openInMap(spot,scroll=true,pan=true){
   els.mapExternalLink.href=spotMapLink(spot);
   els.mapExternalLink.classList.remove('hidden');
   updateMapSpotCard(spot);
+  syncMapMarkers();
   updateMarkerSelection();
   const position=spot.coords;
   if(vectorMap&&position&&pan){
-    vectorMap.easeTo({center:[position[1],position[0]],zoom:Math.max(vectorMap.getZoom(),14),duration:scrollBehavior()==='smooth'?650:0});
+    vectorMap.easeTo({center:[position[1],position[0]],zoom:Math.max(vectorMap.getZoom(),clusterMaxZoom+1),duration:scrollBehavior()==='smooth'?650:0});
   }
   if(scroll) els.mapSection.scrollIntoView({behavior:scrollBehavior(),block:'start'});
 }
@@ -190,35 +195,69 @@ function scrollToSpotCard(){
   window.setTimeout(()=>card.classList.remove('map-target'),1300);
 }
 
+function createSpotMarker(spot){
+  const element=document.createElement('button');
+  element.type='button';element.className='map-marker';element.title=spot.name;element.setAttribute('aria-label',spot.name);
+  element.innerHTML=`<span class="spot-pin${currentMapSpot?.name===spot.name?' is-active':''}"><span aria-hidden="true">${spotMarkerIcon(spot)}</span></span>`;
+  element.addEventListener('click',()=>openInMap(spot,false,true));
+  const marker=new maplibregl.Marker({element,anchor:'bottom'}).setLngLat([spot.coords[1],spot.coords[0]]).addTo(vectorMap);
+  markerByName.set(spot.name,{marker,element});
+}
+
+function createClusterMarker(feature){
+  const id=feature.properties.cluster_id,count=feature.properties.point_count;
+  const element=document.createElement('button');
+  element.type='button';element.className='map-cluster';
+  element.style.setProperty('--size',`${count<10?40:count<50?48:count<150?56:64}px`);
+  element.textContent=count;
+  element.setAttribute('aria-label',`這裡有 ${count} 個地點，點一下放大`);
+  element.addEventListener('click',()=>{
+    const zoom=Math.min(spotCluster.getClusterExpansionZoom(id),clusterMaxZoom+1);
+    vectorMap.easeTo({center:feature.geometry.coordinates,zoom,duration:scrollBehavior()==='smooth'?500:0});
+  });
+  const marker=new maplibregl.Marker({element,anchor:'center'}).setLngLat(feature.geometry.coordinates).addTo(vectorMap);
+  clusterMarkers.set(id,{marker,element});
+}
+
+// 只畫目前畫面範圍內需要的圖示；縮小時鄰近地點合併成數字泡泡
+function syncMapMarkers(){
+  if(!vectorMap)return;
+  let features=mapPoints;
+  if(spotCluster){
+    const bounds=vectorMap.getBounds();
+    const padLng=(bounds.getEast()-bounds.getWest())*0.25,padLat=(bounds.getNorth()-bounds.getSouth())*0.25;
+    const box=[Math.max(-180,bounds.getWest()-padLng),Math.max(-85,bounds.getSouth()-padLat),Math.min(180,bounds.getEast()+padLng),Math.min(85,bounds.getNorth()+padLat)];
+    features=spotCluster.getClusters(box,Math.floor(vectorMap.getZoom()));
+  }
+  const wantedSpots=new Set(),wantedClusters=new Set();
+  features.forEach(feature=>{
+    if(feature.properties.cluster)wantedClusters.add(feature.properties.cluster_id);
+    else wantedSpots.add(feature.properties.name);
+  });
+  if(currentMapSpot&&mapSpotByName.has(currentMapSpot.name))wantedSpots.add(currentMapSpot.name);
+  markerByName.forEach((entry,name)=>{if(!wantedSpots.has(name)){entry.marker.remove();markerByName.delete(name)}});
+  clusterMarkers.forEach((entry,id)=>{if(!wantedClusters.has(id)){entry.marker.remove();clusterMarkers.delete(id)}});
+  features.forEach(feature=>{
+    if(feature.properties.cluster){if(!clusterMarkers.has(feature.properties.cluster_id))createClusterMarker(feature)}
+    else if(!markerByName.has(feature.properties.name))createSpotMarker(mapSpotByName.get(feature.properties.name));
+  });
+  if(currentMapSpot&&!markerByName.has(currentMapSpot.name)&&mapSpotByName.has(currentMapSpot.name))createSpotMarker(mapSpotByName.get(currentMapSpot.name));
+}
+
 function renderMapList(list){
-  cancelAnimationFrame(mapMarkerFrame);
-  const generation=++mapMarkerGeneration;
   markerByName.forEach(entry=>entry.marker.remove());
   markerByName.clear();
+  clusterMarkers.forEach(entry=>entry.marker.remove());
+  clusterMarkers.clear();
   els.mapCount.textContent=`${list.filter(spot=>spot.coords).length} 個地點`;
   currentMapSpot=null;
   els.mapSpotCard.classList.add('hidden');
   els.mapTitle.textContent='選擇一個景點';
   els.mapExternalLink.classList.add('hidden');
-  if(vectorMap){
-    let next=0;
-    const addMarkerBatch=()=>{
-      if(generation!==mapMarkerGeneration)return;
-      const fragmentEnd=Math.min(next+40,list.length);
-      for(;next<fragmentEnd;next++){
-        const spot=list[next],position=spot.coords;
-        if(!position)continue;
-        const element=document.createElement('button');
-        element.type='button';element.className='map-marker';element.title=spot.name;element.setAttribute('aria-label',spot.name);
-        element.innerHTML=`<span class="spot-pin"><span aria-hidden="true">${spotMarkerIcon(spot)}</span></span>`;
-        element.addEventListener('click',()=>openInMap(spot,false,true));
-        const marker=new maplibregl.Marker({element,anchor:'bottom'}).setLngLat([position[1],position[0]]).addTo(vectorMap);
-        markerByName.set(spot.name,{marker,element});
-      }
-      if(next<list.length)mapMarkerFrame=requestAnimationFrame(addMarkerBatch);
-    };
-    mapMarkerFrame=requestAnimationFrame(addMarkerBatch);
-  }
+  mapSpotByName=new Map(list.filter(spot=>spot.coords).map(spot=>[spot.name,spot]));
+  mapPoints=[...mapSpotByName.values()].map(spot=>({type:'Feature',properties:{name:spot.name},geometry:{type:'Point',coordinates:[spot.coords[1],spot.coords[0]]}}));
+  spotCluster=window.Supercluster?new Supercluster({radius:52,maxZoom:clusterMaxZoom}).load(mapPoints):null;
+  syncMapMarkers();
   if(userLocation&&vectorMap){
     vectorMap.easeTo({center:[userLocation.lng,userLocation.lat],zoom:13,duration:scrollBehavior()==='smooth'?650:0});
     window.setTimeout(()=>vectorMap.resize(),0);
@@ -233,6 +272,10 @@ function renderMapList(list){
     if(vectorMap){
       const bounds=list.map(spot=>spot.coords).filter(Boolean);
       if(bounds.length===1)vectorMap.jumpTo({center:[bounds[0][1],bounds[0][0]],zoom:14});
+      else if(list.length===spots.length){
+        // 顯示全部地點時，預設停在台北市區，不縮到包含宜蘭、桃園的範圍
+        vectorMap.fitBounds([[121.49,24.99],[121.6,25.1]],{padding:20,duration:scrollBehavior()==='smooth'?650:0});
+      }
       else if(bounds.length>1){
         const mapBounds=bounds.reduce((acc,point)=>acc.extend([point[1],point[0]]),new maplibregl.LngLatBounds());
         vectorMap.fitBounds(mapBounds,{padding:60,maxZoom:13,duration:scrollBehavior()==='smooth'?650:0});
