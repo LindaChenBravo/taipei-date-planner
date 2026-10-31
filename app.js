@@ -28,7 +28,7 @@ const routeMarkers=[];
 let currentResults=spots;
 let mapPoints=[];
 let mapSpotByName=new Map();
-const clusterMaxZoom=14;
+const spotFocusZoom=15;
 let cardObserver=null;
 const cardBatchSize=30;
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
@@ -108,8 +108,8 @@ function initVectorMap(){
     vectorMap=new maplibregl.Map({
     container:els.mapCanvas,
     style:'https://tiles.openfreemap.org/styles/positron',
-    center:[121.545,25.052],
-    zoom:11,
+    center:[121.517,25.0478],
+    zoom:14,
     attributionControl:true,
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
@@ -184,7 +184,7 @@ function openInMap(spot,scroll=true,pan=true){
   updateMarkerSelection();
   const position=spot.coords;
   if(vectorMap&&position&&pan){
-    vectorMap.easeTo({center:[position[1],position[0]],zoom:Math.max(vectorMap.getZoom(),clusterMaxZoom+1),duration:scrollBehavior()==='smooth'?650:0});
+    vectorMap.easeTo({center:[position[1],position[0]],zoom:Math.max(vectorMap.getZoom(),spotFocusZoom),duration:scrollBehavior()==='smooth'?650:0});
   }
   if(scroll) els.mapSection.scrollIntoView({behavior:scrollBehavior(),block:'start'});
 }
@@ -203,11 +203,9 @@ function scrollToSpotCard(){
 
 // ===== 地圖上的地點圖釘與數字泡泡（直接畫在地圖上，拖曳時不會偏移） =====
 const pinColors={ink:'#3E3A39',coral:'#F2A497',yellow:'#F6D27A'};
-const clusterAnimMs=320;
-let spotIndex=null;
-let shownFeatures=[];
-let shownZoom=null;
-let clusterAnimFrame=0;
+// 最近看過的標記保留；畫面內標記不受快取上限影響。
+const retainedSpots=new Map();
+const retainedSpotLimit=400;
 let spotLayersReady=false;
 
 function pinImageId(icon,active){return `${active?'pin-on':'pin'}-${icon}`}
@@ -244,42 +242,27 @@ function addSpotLayers(map){
   const empty={type:'FeatureCollection',features:[]};
   map.addSource('spot-render',{type:'geojson',data:empty});
   map.addSource('spot-active',{type:'geojson',data:empty});
-  const isCluster=['==',['get','kind'],'cluster'];
-  map.addLayer({id:'cluster-shadow',type:'circle',source:'spot-render',filter:isCluster,
-    paint:{'circle-radius':['get','r'],'circle-color':pinColors.ink,'circle-translate':[0,3],'circle-opacity':['get','alpha']}});
-  map.addLayer({id:'cluster-halo',type:'circle',source:'spot-render',filter:isCluster,
-    paint:{'circle-radius':['+',['get','r'],5],'circle-color':'rgba(246,210,122,.45)','circle-opacity':['get','alpha']}});
-  map.addLayer({id:'cluster-main',type:'circle',source:'spot-render',filter:isCluster,
-    paint:{'circle-radius':['get','r'],'circle-color':pinColors.yellow,'circle-stroke-width':3,'circle-stroke-color':pinColors.ink,'circle-opacity':['get','alpha'],'circle-stroke-opacity':['get','alpha']}});
-  map.addLayer({id:'cluster-count',type:'symbol',source:'spot-render',filter:isCluster,
-    layout:{'text-field':['to-string',['get','count']],'text-font':['Noto Sans Bold'],'text-size':16,'text-allow-overlap':true,'text-ignore-placement':true},
-    paint:{'text-color':pinColors.ink,'text-opacity':['get','alpha']}});
   map.addLayer({id:'spot-pins',type:'symbol',source:'spot-render',filter:['==',['get','kind'],'spot'],
     layout:{'icon-image':['get','image'],'icon-anchor':'bottom','icon-allow-overlap':true,'icon-ignore-placement':true},
     paint:{'icon-opacity':['get','alpha']}});
   map.addLayer({id:'spot-active-pin',type:'symbol',source:'spot-active',
     layout:{'icon-image':['get','image'],'icon-anchor':'bottom','icon-allow-overlap':true,'icon-ignore-placement':true}});
-  const clickable=['spot-active-pin','spot-pins','cluster-main'];
+  const clickable=['spot-active-pin','spot-pins'];
   map.on('click',event=>{
     const hit=map.queryRenderedFeatures(event.point,{layers:clickable})[0];
     if(!hit)return;
     const props=hit.properties;
-    if(props.kind==='cluster'){
-      const zoom=spotIndex?Math.min(spotIndex.getClusterExpansionZoom(props.id),clusterMaxZoom+1):map.getZoom()+2;
-      map.easeTo({center:hit.geometry.coordinates,zoom,duration:scrollBehavior()==='smooth'?500:0});
-    }else{
-      const spot=mapSpotByName.get(props.name);
-      if(spot)openInMap(spot,false,true);
-    }
+    const spot=mapSpotByName.get(props.name);
+    if(spot)openInMap(spot,false,true);
   });
   clickable.forEach(layer=>{
     map.on('mouseenter',layer,()=>{map.getCanvas().style.cursor='pointer'});
     map.on('mouseleave',layer,()=>{map.getCanvas().style.cursor=''});
   });
-  // 只有縮放層級改變時才重新分群，拖曳時數字泡泡保持不動
-  map.on('zoomend',()=>refreshSpotClusters(true));
+  // moveend 同時涵蓋拖曳、縮放與程式定位，操作停下來才補標記。
+  map.on('moveend',refreshVisibleSpots);
   spotLayersReady=true;
-  refreshSpotClusters(false);
+  refreshVisibleSpots();
   updateMarkerSelection();
 }
 
@@ -287,84 +270,44 @@ function spotFeature(spot,coords,alpha=1){
   return {type:'Feature',properties:{kind:'spot',name:spot.name,image:pinImageId(spotMarkerIcon(spot),false),alpha},geometry:{type:'Point',coordinates:coords}};
 }
 
-function clustersAtZoom(zoom){
-  const raw=spotIndex?spotIndex.getClusters([-180,-85,180,85],zoom):mapPoints;
-  return raw.map(feature=>{
-    const coords=feature.geometry.coordinates;
-    if(feature.properties.cluster){
-      const count=feature.properties.point_count,id=feature.properties.cluster_id;
-      const members=spotIndex.getLeaves(id,Infinity).map(leaf=>leaf.properties.name);
-      return {key:`c:${id}`,kind:'cluster',id,count,coords,members,r:count<10?18:count<50?21:count<150?25:29};
-    }
-    const name=feature.properties.name;
-    return {key:`p:${name}`,kind:'spot',name,coords,members:[name]};
-  });
-}
-
-function toGeo(item,coords=item.coords,alpha=1){
-  if(item.kind==='spot'){const spot=mapSpotByName.get(item.name);return spot?spotFeature(spot,coords,alpha):null}
-  return {type:'Feature',properties:{kind:'cluster',id:item.id,count:item.count,r:item.r,alpha},geometry:{type:'Point',coordinates:coords}};
-}
-
-function setSpotRender(features){
-  vectorMap?.getSource('spot-render')?.setData({type:'FeatureCollection',features:features.filter(Boolean)});
-}
-
-function refreshSpotClusters(animate){
+function refreshVisibleSpots(){
   if(!vectorMap||!spotLayersReady)return;
-  const zoom=Math.min(Math.floor(vectorMap.getZoom()),clusterMaxZoom+1);
-  if(animate&&zoom===shownZoom)return;
-  cancelAnimationFrame(clusterAnimFrame);
-  const next=clustersAtZoom(zoom),prev=shownFeatures;
-  const canAnimate=animate&&prev.length&&shownZoom!==null&&scrollBehavior()==='smooth';
-  const zoomIn=shownZoom===null||zoom>shownZoom;
-  shownFeatures=next;shownZoom=zoom;
-  if(!canAnimate){setSpotRender(next.map(item=>toGeo(item)));return}
-
-  // 找出每個點在「大群」裡屬於哪一個泡泡
-  const big=zoomIn?prev:next,small=zoomIn?next:prev;
-  const ownerOf=new Map();
-  big.forEach(item=>item.members.forEach(name=>ownerOf.set(name,item)));
-  const bounds=vectorMap.getBounds();
-  const padLng=(bounds.getEast()-bounds.getWest())*0.3,padLat=(bounds.getNorth()-bounds.getSouth())*0.3;
-  const inView=c=>c[0]>bounds.getWest()-padLng&&c[0]<bounds.getEast()+padLng&&c[1]>bounds.getSouth()-padLat&&c[1]<bounds.getNorth()+padLat;
-  const moving=[],staticItems=[],usedOwners=new Set();
-  small.forEach(item=>{
-    const owner=ownerOf.get(item.members[0]);
-    const same=owner&&owner.kind===item.kind&&owner.members.length===item.members.length;
-    if(same)usedOwners.add(owner);
-    if(!owner||(!inView(item.coords)&&!inView(owner.coords))){staticItems.push(item);return}
-    moving.push({item,from:owner.coords,same});
+  const bounds=vectorMap.getBounds(),center=vectorMap.getCenter();
+  const visible=new Set();
+  mapPoints.forEach(feature=>{
+    if(!bounds.contains(feature.geometry.coordinates))return;
+    const name=feature.properties.name;
+    visible.add(name);
+    retainedSpots.set(name,feature);
   });
-  const fading=big.filter(item=>!usedOwners.has(item));
-  const finalFeatures=next.map(item=>toGeo(item));
-  const mix=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
-  const start=performance.now();
-  const frame=now=>{
-    const raw=Math.min(1,(now-start)/clusterAnimMs),t=1-Math.pow(1-raw,3);
-    if(raw>=1){setSpotRender(finalFeatures);return}
-    const features=[];
-    // 數字泡泡：放大時原地淡出、縮小時原地淡入（位置固定不滑動）
-    fading.forEach(item=>features.push(toGeo(item,item.coords,zoomIn?1-t:t)));
-    moving.forEach(({item,from,same})=>{
-      // 放大：從泡泡中心散開；縮小：往泡泡中心收回
-      const coords=zoomIn?mix(from,item.coords,t):mix(item.coords,from,t);
-      features.push(toGeo(item,coords,same?1:(zoomIn?t:1-t)));
-    });
-    if(zoomIn)staticItems.forEach(item=>features.push(toGeo(item)));
-    setSpotRender(features);
-    clusterAnimFrame=requestAnimationFrame(frame);
-  };
-  clusterAnimFrame=requestAnimationFrame(frame);
+  // 只淘汰畫面外、距離最遠的標記；縮小時仍完整顯示畫面內所有地點。
+  if(retainedSpots.size>retainedSpotLimit){
+    const outside=[...retainedSpots].filter(([name])=>!visible.has(name)&&name!==currentMapSpot?.name);
+    const distance=feature=>{
+      const [lng,lat]=feature.geometry.coordinates;
+      return ((lng-center.lng)*Math.cos(center.lat*Math.PI/180))**2+(lat-center.lat)**2;
+    };
+    outside.sort((a,b)=>distance(b[1])-distance(a[1]));
+    for(const [name] of outside){
+      if(retainedSpots.size<=retainedSpotLimit)break;
+      retainedSpots.delete(name);
+    }
+  }
+  vectorMap.getSource('spot-render')?.setData({type:'FeatureCollection',
+    features:[...retainedSpots.values()].map(feature=>{
+      const spot=mapSpotByName.get(feature.properties.name);
+      return spotFeature(spot,feature.geometry.coordinates);
+    })});
 }
 
 function rebuildSpotIndex(list){
   mapSpotByName=new Map(list.filter(spot=>spot.coords).map(spot=>[spot.name,spot]));
   mapPoints=[...mapSpotByName.values()].map(spot=>({type:'Feature',properties:{name:spot.name},geometry:{type:'Point',coordinates:[spot.coords[1],spot.coords[0]]}}));
-  spotIndex=window.Supercluster?new Supercluster({radius:68,maxZoom:clusterMaxZoom}).load(mapPoints):null;
-  shownFeatures=[];shownZoom=null;
-  cancelAnimationFrame(clusterAnimFrame);
-  refreshSpotClusters(false);
+  // 類型／關鍵字切換時，快取也必須符合新條件。
+  for(const name of retainedSpots.keys()){
+    if(!mapSpotByName.has(name))retainedSpots.delete(name);
+  }
+  refreshVisibleSpots();
 }
 
 function renderMapList(list){
@@ -384,14 +327,13 @@ function renderMapList(list){
     els.mapTitle.textContent='沒有可顯示的地點';
     els.mapSpotCard.classList.add('hidden');
     els.mapExternalLink.href='https://www.google.com/maps';
-    if(vectorMap)vectorMap.jumpTo({center:[121.545,25.052],zoom:11});
+    if(vectorMap)vectorMap.jumpTo({center:[121.517,25.0478],zoom:14});
   }else{
     if(vectorMap){
       const bounds=list.map(spot=>spot.coords).filter(Boolean);
       if(bounds.length===1)vectorMap.jumpTo({center:[bounds[0][1],bounds[0][0]],zoom:14});
       else if(list.length===spots.length){
-        // 顯示全部地點時，預設停在台北市區，不縮到包含宜蘭、桃園的範圍
-        vectorMap.fitBounds([[121.49,24.99],[121.6,25.1]],{padding:20,duration:scrollBehavior()==='smooth'?650:0});
+        // 全部類型維持目前探索位置；首次開啟由 initVectorMap 定位台北車站。
       }
       else if(bounds.length>1){
         const mapBounds=bounds.reduce((acc,point)=>acc.extend([point[1],point[0]]),new maplibregl.LngLatBounds());
