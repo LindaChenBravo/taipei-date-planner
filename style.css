@@ -252,3 +252,6 @@
 .sort-status{font-size:14px;margin:0 0 16px}
 .sort-status button{font:inherit;padding:6px 12px}
 @media(max-width:600px){#listSection .list-result-actions{width:100%;justify-content:space-between}.sort-control{margin-left:auto}}
+
+/* Match the compact map filter tags in condition search. */
+.type-tags .type-tag{zoom:.75}
