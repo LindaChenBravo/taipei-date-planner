@@ -9,7 +9,7 @@ const els = {
   routeMeta:document.getElementById('routeMeta'), routeMapCanvas:document.getElementById('routeMapCanvas'), routeStops:document.getElementById('routeStops'),
   routeDirections:document.getElementById('routeDirections'), routeNote:document.getElementById('routeNote'), mapSection:document.getElementById('mapSection'),
   mapTypeTags:document.getElementById('mapTypeTags'), mapCanvas:document.getElementById('mapCanvas'), mapSpotCard:document.getElementById('mapSpotCard'), mapTitle:document.getElementById('mapTitle'),
-  locateBtn:document.getElementById('locateBtn'), locateLabel:document.getElementById('locateLabel'), locationStatus:document.getElementById('locationStatus'),
+  locationStatus:document.getElementById('locationStatus'),
   mapExternalLink:document.getElementById('mapExternalLink'), mapCount:document.getElementById('mapCount'),
   siteTabs:[...document.querySelectorAll('.site-tab[data-view]')]
 };
@@ -23,7 +23,6 @@ let selectedRouteStop=-1;
 let userLocation=null;
 let userMarker=null;
 let locationRequestId=0;
-const nearbyRadiusKm=5;
 const routeMarkers=[];
 let currentResults=spots;
 let mapPoints=[];
@@ -107,6 +106,7 @@ function initVectorMap(){
   try{
     vectorMap=new maplibregl.Map({
     container:els.mapCanvas,
+    locale:{'GeolocateControl.FindMyLocation':'回到我的位置','GeolocateControl.LocationNotAvailable':'無法取得位置'},
     style:'https://tiles.openfreemap.org/styles/positron',
     center:[121.517,25.0478],
     zoom:14,
@@ -114,6 +114,18 @@ function initVectorMap(){
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
   vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  const geolocate=new maplibregl.GeolocateControl({
+    positionOptions:{enableHighAccuracy:true,timeout:10000,maximumAge:30000},
+    fitBoundsOptions:{maxZoom:15},
+    trackUserLocation:false,
+    showUserLocation:true,
+    showAccuracyCircle:true
+  });
+  vectorMap.addControl(geolocate,'bottom-right');
+  geolocate.on('geolocate',()=>setLocationStatus(''));
+  geolocate.on('error',error=>setLocationStatus(error.code===1
+    ?'請在瀏覽器允許此網站使用定位後再試。'
+    :'定位失敗，請確認裝置定位已開啟後重試。'));
   vectorMap.on('load',()=>{addStationLayer(vectorMap);addSpotLayers(vectorMap)});
   }catch(error){
     vectorMap=null;
@@ -595,7 +607,7 @@ function filtered(){
     if(!query)return true;
     return `${spot.name} ${spot.area} ${spot.type.join(' ')} ${spot.note} ${spot.address||''}`.normalize('NFKC').toLocaleLowerCase('zh-TW').includes(query);
   });
-  return userLocation?matches.filter(spot=>distanceKm(spot)<=nearbyRadiusKm).sort((a,b)=>distanceKm(a)-distanceKm(b)):matches;
+  return matches;
 }
 
 function setLocationStatus(message){
@@ -608,17 +620,10 @@ function clearLocation(){
   userLocation=null;
   userMarker?.remove();
   userMarker=null;
-  els.locateBtn.disabled=false;
-  els.locateBtn.setAttribute('aria-pressed','false');
-  els.locateLabel.textContent='我附近的店';
   setLocationStatus('');
 }
 
-function updateNearbyStatus(){
-  if(!userLocation)return;
-  const count=filtered().length;
-  setLocationStatus(count?`已顯示 5 公里內 ${count} 個地點，按「取消定位」可回到完整地圖。`:'5 公里內沒有符合類型的地點，可以試試「全部」或取消定位。');
-}
+
 
 function clearHighlights(){els.recommendation.classList.add('hidden');els.routeSection.classList.add('hidden')}
 
@@ -629,15 +634,15 @@ function selectType(type,button){
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type===type; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
   });
-  clearHighlights(); render(filtered()); updateNearbyStatus();
+  clearHighlights(); render(filtered());
 }
 
 let keywordTimer;
 els.keyword.addEventListener('input',()=>{
   window.clearTimeout(keywordTimer);
-  keywordTimer=window.setTimeout(()=>{clearHighlights();render(filtered());updateNearbyStatus()},120);
+  keywordTimer=window.setTimeout(()=>{clearHighlights();render(filtered());},120);
 });
-els.area.addEventListener('change',()=>{clearHighlights();render(filtered());updateNearbyStatus()});
+els.area.addEventListener('change',()=>{clearHighlights();render(filtered());});
 els.typeTags.addEventListener('click',event=>{
   const button=event.target.closest('.type-tag');
   if(!button)return;
@@ -647,49 +652,6 @@ els.mapTypeTags.addEventListener('click',event=>{
   const button=event.target.closest('.map-type-tag[data-type]');
   if(!button)return;
   selectType(button.dataset.type,button);
-});
-els.locateBtn.addEventListener('click',()=>{
-  if(userLocation){
-    clearLocation();
-    render(filtered());
-    return;
-  }
-  if(!navigator.geolocation){
-    setLocationStatus('這個瀏覽器不支援定位，請使用裝置上的瀏覽器開啟網站。');
-    return;
-  }
-  const requestId=++locationRequestId;
-  els.locateBtn.disabled=true;
-  els.locateLabel.textContent='定位中…';
-  setLocationStatus('正在取得你的位置…');
-  navigator.geolocation.getCurrentPosition(position=>{
-    if(requestId!==locationRequestId)return;
-    const {latitude:lat,longitude:lng}=position.coords;
-    if(!Number.isFinite(lat)||!Number.isFinite(lng)){
-      els.locateBtn.disabled=false;
-      els.locateLabel.textContent='我附近的店';
-      setLocationStatus('無法讀取位置，請再試一次。');
-      return;
-    }
-    userLocation={lat,lng};
-    els.locateBtn.disabled=false;
-    els.locateBtn.setAttribute('aria-pressed','true');
-    els.locateLabel.textContent='取消定位';
-    if(vectorMap){
-      const dot=document.createElement('div');
-      dot.className='user-location-dot';
-      dot.title='你的位置';
-      dot.setAttribute('aria-label','你的位置');
-      userMarker=new maplibregl.Marker({element:dot,anchor:'center'}).setLngLat([lng,lat]).addTo(vectorMap);
-    }
-    render(filtered());
-    updateNearbyStatus();
-  },error=>{
-    if(requestId!==locationRequestId)return;
-    els.locateBtn.disabled=false;
-    els.locateLabel.textContent='我附近的店';
-    setLocationStatus(error.code===1?'無法取得位置，請在瀏覽器允許此網站使用定位後再試。':'定位失敗，請確認裝置定位已開啟後重試。');
-  },{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
 });
 els.resetBtn.addEventListener('click',()=>{
   window.clearTimeout(keywordTimer);
