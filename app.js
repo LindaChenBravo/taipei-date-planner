@@ -91,6 +91,17 @@ function showMapFallback(container,message,offerSearch=false){
   container.replaceChildren(box);
 }
 
+// 在底圖上顯示捷運／火車站（資料來自 OpenFreeMap，畫在地圖本身，移動時不會偏移）
+function addStationLayer(map){
+  if(!map||map.getLayer('mrt-station-dot'))return;
+  const filter=['all',['==',['get','class'],'railway'],['in',['get','subclass'],['literal',['subway','station']]]];
+  map.addLayer({id:'mrt-station-dot',type:'circle',source:'openmaptiles','source-layer':'poi',minzoom:12,filter,
+    paint:{'circle-radius':['interpolate',['linear'],['zoom'],12,3.5,15,6],'circle-color':'#FFFFFF','circle-stroke-color':'#0070BD','circle-stroke-width':['interpolate',['linear'],['zoom'],12,2,15,3]}});
+  map.addLayer({id:'mrt-station-label',type:'symbol',source:'openmaptiles','source-layer':'poi',minzoom:13.5,filter,
+    layout:{'text-field':['coalesce',['get','name:zh'],['get','name']],'text-font':['Noto Sans Regular'],'text-size':12,'text-offset':[0,0.9],'text-anchor':'top','text-optional':true},
+    paint:{'text-color':'#0070BD','text-halo-color':'#FFFFFF','text-halo-width':2}});
+}
+
 function initVectorMap(){
   if(!window.maplibregl){
     showMapFallback(els.mapCanvas,'互動地圖暫時無法載入，仍可用條件搜尋找地點並開啟 Google Maps。',true);
@@ -107,6 +118,7 @@ function initVectorMap(){
   });
   vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
   vectorMap.on('moveend',syncMapMarkers);
+  vectorMap.on('load',()=>addStationLayer(vectorMap));
   }catch(error){
     vectorMap=null;
     showMapFallback(els.mapCanvas,'這個瀏覽器暫時無法顯示互動地圖，請改用條件搜尋或 Google Maps。',true);
@@ -479,6 +491,7 @@ function ensureRouteMap(){
   });
   routeMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
   routeMap.on('load',()=>{
+    addStationLayer(routeMap);
     routeMap.addSource('route-order',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[]}}});
     routeMap.addLayer({id:'route-order-line',type:'line',source:'route-order',paint:{'line-color':'#3E3A39','line-width':3,'line-dasharray':[1.5,2.5]}});
     updateRouteMap();
