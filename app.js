@@ -118,7 +118,7 @@ function initVectorMap(){
   });
   vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
   const geolocate=new maplibregl.GeolocateControl({
-    positionOptions:{enableHighAccuracy:true,timeout:10000,maximumAge:30000},
+    positionOptions:{enableHighAccuracy:true,timeout:15000,maximumAge:0},
     fitBoundsOptions:{maxZoom:15},
     trackUserLocation:false,
     showUserLocation:true,
