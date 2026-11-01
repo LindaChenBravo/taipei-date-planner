@@ -222,6 +222,12 @@ const pinColors={ink:'#3E3A39',coral:'#F2A497',yellow:'#F6D27A'};
 const retainedSpots=new Map();
 const retainedSpotLimit=400;
 let spotLayersReady=false;
+const revealedSpots=new Set();
+let pinGrowFrame=0;
+function settleGrowingPins(){
+  cancelAnimationFrame(pinGrowFrame);pinGrowFrame=0;
+  vectorMap?.getSource('spot-growing')?.setData({type:'FeatureCollection',features:[]});
+}
 
 function pinImageId(icon,active){return `${active?'pin-on':'pin'}-${icon}`}
 
@@ -257,12 +263,21 @@ function addSpotLayers(map){
   const empty={type:'FeatureCollection',features:[]};
   map.addSource('spot-render',{type:'geojson',data:empty});
   map.addSource('spot-active',{type:'geojson',data:empty});
+  map.addSource('spot-growing',{type:'geojson',data:empty});
   map.addLayer({id:'spot-pins',type:'symbol',source:'spot-render',filter:['==',['get','kind'],'spot'],
     layout:{'icon-image':['get','image'],'icon-anchor':'bottom','icon-allow-overlap':true,'icon-ignore-placement':true},
     paint:{'icon-opacity':['get','alpha']}});
+  map.addLayer({id:'spot-growing-pins',type:'symbol',source:'spot-growing',
+    layout:{'icon-image':['get','image'],'icon-anchor':'bottom','icon-size':1,'icon-allow-overlap':true,'icon-ignore-placement':true},
+    paint:{'icon-opacity':1,'icon-opacity-transition':{duration:0}}});
+  map.on('movestart',()=>{
+    if(!pinGrowFrame)return;
+    settleGrowingPins();
+    refreshVisibleSpots();
+  });
   map.addLayer({id:'spot-active-pin',type:'symbol',source:'spot-active',
     layout:{'icon-image':['get','image'],'icon-anchor':'bottom','icon-allow-overlap':true,'icon-ignore-placement':true}});
-  const clickable=['spot-active-pin','spot-pins'];
+  const clickable=['spot-active-pin','spot-pins','spot-growing-pins'];
   map.on('click',event=>{
     const hit=map.queryRenderedFeatures(event.point,{layers:clickable})[0];
     if(!hit)return;
@@ -287,12 +302,15 @@ function spotFeature(spot,coords,alpha=1){
 
 function refreshVisibleSpots(){
   if(!vectorMap||!spotLayersReady)return;
+  settleGrowingPins();
+  const newlyRevealed=new Set();
   const bounds=vectorMap.getBounds(),center=vectorMap.getCenter();
   const visible=new Set();
   mapPoints.forEach(feature=>{
     if(!bounds.contains(feature.geometry.coordinates))return;
     const name=feature.properties.name;
     visible.add(name);
+    if(!revealedSpots.has(name)){newlyRevealed.add(name);revealedSpots.add(name)}
     retainedSpots.set(name,feature);
   });
   // 只淘汰畫面外、距離最遠的標記；縮小時仍完整顯示畫面內所有地點。
@@ -308,11 +326,39 @@ function refreshVisibleSpots(){
       retainedSpots.delete(name);
     }
   }
-  vectorMap.getSource('spot-render')?.setData({type:'FeatureCollection',
-    features:[...retainedSpots.values()].map(feature=>{
-      const spot=mapSpotByName.get(feature.properties.name);
-      return spotFeature(spot,feature.geometry.coordinates);
-    })});
+  const features=[...retainedSpots.values()].map(feature=>{
+    const spot=mapSpotByName.get(feature.properties.name);
+    return spotFeature(spot,feature.geometry.coordinates);
+  });
+  const source=vectorMap.getSource('spot-render');
+  if(!newlyRevealed.size||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    source?.setData({type:'FeatureCollection',features});return;
+  }
+  const growing=features.filter(f=>newlyRevealed.has(f.properties.name));
+  const simple=growing.length>60;
+  source?.setData({type:'FeatureCollection',features:features.filter(f=>!newlyRevealed.has(f.properties.name))});
+  vectorMap.setLayoutProperty('spot-growing-pins','icon-size',simple?1:0.35);
+  vectorMap.setPaintProperty('spot-growing-pins','icon-opacity',0);
+  vectorMap.getSource('spot-growing').setData({type:'FeatureCollection',features:growing});
+  const start=performance.now(),duration=simple?140:260;
+  let lastFrame=-Infinity;
+  const frame=now=>{
+    const t=Math.min(1,(now-start)/duration);
+    if(t>=1){
+      source?.setData({type:'FeatureCollection',features});
+      settleGrowingPins();return;
+    }
+    // 單一圖層批次動畫，約30fps；每幀不重建GeoJSON。
+    if(now-lastFrame>=32){
+      const u=t-1;
+      const scale=simple?1:1+2.2*u*u*u+1.2*u*u;
+      vectorMap.setLayoutProperty('spot-growing-pins','icon-size',scale);
+      vectorMap.setPaintProperty('spot-growing-pins','icon-opacity',Math.min(1,t*3));
+      lastFrame=now;
+    }
+    pinGrowFrame=requestAnimationFrame(frame);
+  };
+  pinGrowFrame=requestAnimationFrame(frame);
 }
 
 function rebuildSpotIndex(list){
