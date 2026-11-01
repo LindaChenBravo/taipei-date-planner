@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-intro-enabled="false">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -19,6 +19,9 @@
 <style>
 html,body{background:#FFFCF6}
 .page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#FFF8E9;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+/* Set data-intro-enabled to true to restore the opening scene. */
+html[data-intro-enabled="false"] .page-loader{display:none}
+html[data-intro-enabled="false"] .page-loader *{animation:none!important}
 .page-loader.is-ready{opacity:0;visibility:hidden}
 .loader-city{position:absolute;inset:0;width:100%;height:100%;display:block}
 .page-loader-box{position:absolute;top:max(7svh,env(safe-area-inset-top));left:16px;right:16px;display:grid;justify-items:center;gap:16px;color:#3E3A39;font-family:system-ui,sans-serif}
@@ -102,6 +105,7 @@ html,body{background:#FFFCF6}
 </div>
 <script>
 (()=>{
+  if(document.documentElement.dataset.introEnabled==='false')return;
   const loader=document.getElementById('pageLoader');
   const scene=loader.querySelector('.loader-city');
   const fitScene=()=>{
