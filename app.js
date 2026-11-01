@@ -625,9 +625,50 @@ function spotMeta(spot){
   return `${spot.area}・約 ${spot.hours} 小時${resultSort==='distance'&&userLocation?`・${label}`:''}`;
 }
 
+// 區域選單：依行政區分組（新地區會先看對照表，再從地址判斷，都沒有就放「其他地區」）
+const areaDistrictGroups=[
+  ['台北市｜中正區',['中正','南機場／中正','南機場','中正紀念堂','台北車站','華山／忠孝新生','忠孝新生','東門','古亭','善導寺','公館']],
+  ['台北市｜大同區',['大稻埕','大橋頭／大同']],
+  ['台北市｜中山區',['中山／赤峰街','中山／松江南京','中山／晴光','中山／遼寧街','中山／行天宮','中山／京站','中山國小／晴光','松江南京','行天宮','雙連','圓山','南京復興','大直／內湖']],
+  ['台北市｜松山區',['松山']],
+  ['台北市｜大安區',['東區／大安','永康街／東門','國父紀念館','台電大樓','科技大樓／大安','忠孝復興','忠孝敦化','信義安和']],
+  ['台北市｜萬華區',['萬華','西門／萬華','西門','龍山寺／萬華']],
+  ['台北市｜信義區',['信義','市政府','台北101／世貿']],
+  ['台北市｜士林區',['士林','天母']],
+  ['台北市｜北投區',['北投','北投／關渡','陽明山']],
+  ['台北市｜內湖區',['內湖','內湖／東湖']],
+  ['台北市｜南港區',['南港']],
+  ['台北市｜文山區',['文山','景美']],
+  ['新北市',['汐止','永和','三重','中和','板橋','蘆洲','鶯歌','石門','新莊','三峽','五股','東北角']],
+  ['其他地區',['基隆','桃園／平鎮','台中']]
+];
+
+function areaGroupOf(area,list){
+  const known=areaDistrictGroups.find(([,areas])=>areas.includes(area));
+  if(known)return known[0];
+  const address=list.map(spot=>spot.address||'').find(Boolean)||'';
+  const taipei=address.match(/[台臺]北市(\S{1,3}?區)/);
+  if(taipei&&areaDistrictGroups.some(([label])=>label===`台北市｜${taipei[1]}`))return `台北市｜${taipei[1]}`;
+  if(/新北市/.test(address))return '新北市';
+  return '其他地區';
+}
+
+function buildAreaOptions(){
+  const byArea=new Map();
+  spots.forEach(spot=>{if(spot.area){if(!byArea.has(spot.area))byArea.set(spot.area,[]);byArea.get(spot.area).push(spot)}});
+  const groups=new Map(areaDistrictGroups.map(([label])=>[label,[]]));
+  byArea.forEach((list,area)=>groups.get(areaGroupOf(area,list)).push([area,list.length]));
+  groups.forEach((items,label)=>{
+    if(!items.length)return;
+    const group=document.createElement('optgroup');group.label=label;
+    items.sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'zh-Hant'))
+      .forEach(([area,count])=>group.appendChild(new Option(`${area}（${count}）`,area)));
+    els.area.appendChild(group);
+  });
+}
+
 function initListFilters(){
-  const areas=[...new Set(spots.map(spot=>spot.area).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-Hant'));
-  areas.forEach(area=>els.area.add(new Option(area,area)));
+  buildAreaOptions();
   const preferred=['all','美食','咖啡','書店','戶外','早餐'];
   const tags=[...els.typeTags.querySelectorAll('.type-tag')];
   const originalOrder=new Map(tags.map((tag,index)=>[tag,index]));
