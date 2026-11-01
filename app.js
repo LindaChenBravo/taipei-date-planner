@@ -325,7 +325,7 @@ function rebuildSpotIndex(list){
   refreshVisibleSpots();
 }
 
-function renderMapList(list){
+function renderMapList(list,preserveViewport=false){
   els.mapCount.textContent=`${list.filter(spot=>spot.coords).length} 個地點`;
   currentMapSpot=null;
   els.mapSpotCard.classList.add('hidden');
@@ -333,6 +333,10 @@ function renderMapList(list){
   els.mapExternalLink.classList.add('hidden');
   rebuildSpotIndex(list);
   updateMarkerSelection();
+  if(preserveViewport){
+    if(!list.length)els.mapTitle.textContent='沒有符合此類別的地點';
+    return;
+  }
   if(!list.length){
     els.mapTitle.textContent='沒有可顯示的地點';
     els.mapSpotCard.classList.add('hidden');
@@ -354,12 +358,12 @@ function renderMapList(list){
   }
 }
 
-function render(list){
+function render(list,preserveViewport=false){
   currentResults=list;
   updateSearchSummary();
   els.count.textContent=`${list.length} 個地點`;
   if(document.body.classList.contains('view-list'))renderCards();
-  renderMapList(list);
+  renderMapList(list,preserveViewport);
 }
 
 function renderCards(){
@@ -633,7 +637,7 @@ function selectType(type,button){
   document.querySelectorAll('[data-type]').forEach(tag=>{
     const active=tag.dataset.type===type; tag.classList.toggle('active',active); tag.setAttribute('aria-pressed',String(active));
   });
-  clearHighlights(); render(filtered());
+  clearHighlights(); render(filtered(),document.body.classList.contains('view-map'));
 }
 
 
