@@ -144,7 +144,7 @@ function updateMarkerSelection(){
 }
 
 function updateMapSpotCard(spot){
-  const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
+  const chips=typeChips(spot);
   const sourceLink=spot.reviewUrl?'':spot.sourceUrl&&!spot.type.includes('美食')?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
   const officialLink=spot.type.includes('圖書館')&&spot.officialUrl?`<a class="button-link" href="${spot.officialUrl}" target="_blank" rel="noopener noreferrer">官網 ↗</a>`:'';
   els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">營業時間・導航 ↗</a>${officialLink}${sourceLink}</div></div>`;
@@ -426,7 +426,7 @@ function renderCards(){
       const spot=list[next];
     const card=document.createElement('article'); card.className='card';
     card.id=`spot-card-${spots.indexOf(spot)}`; card.tabIndex=-1;
-    const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
+    const chips=typeChips(spot);
     card.innerHTML=`<div class="card-head"><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div></div></div><p class="note">${spot.note}</p><div>${chips}</div>`;
     const actions=document.createElement('div'); actions.className='card-actions';
     const preview=document.createElement('button'); preview.type='button'; preview.textContent='地圖預覽';
@@ -716,6 +716,24 @@ function clearLocation(){
 
 
 function clearHighlights(){els.recommendation.classList.add('hidden');els.routeSection.classList.add('hidden')}
+
+// 卡片上的類型標籤：加上 emoji、可點選篩選；上方篩選列沒有的類型（如拍照、夜市）不顯示
+function typeChips(spot){
+  const available=new Set([...els.typeTags.querySelectorAll('[data-type]')].map(tag=>tag.dataset.type));
+  return spot.type.filter(tag=>available.has(tag)).map(tag=>`<button type="button" class="chip chip-filter" data-chip-type="${tag}" aria-label="只看${tag}"><span aria-hidden="true">${typeIcons[tag]||''}</span>${tag}</button>`).join('');
+}
+
+document.addEventListener('click',event=>{
+  const chip=event.target.closest('.chip-filter');
+  if(!chip)return;
+  const type=chip.dataset.chipType;
+  const isMap=document.body.classList.contains('view-map');
+  const button=(isMap?document.querySelector(`.map-type-tag[data-type="${type}"]`):null)||els.typeTags.querySelector(`[data-type="${type}"]`);
+  if(!button)return;
+  selectType(type,button);
+  button.scrollIntoView({behavior:scrollBehavior(),block:'nearest',inline:'center'});
+  if(!isMap)document.getElementById('listSection')?.scrollIntoView({behavior:scrollBehavior(),block:'start'});
+});
 
 function selectType(type,button){
   selectedType=type;
