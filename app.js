@@ -147,7 +147,7 @@ function updateMapSpotCard(spot){
   const chips=spot.type.map(tag=>`<span class="chip">${tag}</span>`).join('');
   const sourceLink=spot.guideUrl?`<a class="button-link" href="${spot.guideUrl}" target="_blank" rel="noopener noreferrer">Good Eye 介紹 ↗</a>`:spot.reviewUrl?'':spot.sourceUrl&&!spot.type.includes('美食')?`<a class="button-link" href="${spot.sourceUrl}" target="_blank" rel="noopener noreferrer">推薦貼文 ↗</a>`:'';
   const officialLink=spot.type.includes('圖書館')&&spot.officialUrl?`<a class="button-link" href="${spot.officialUrl}" target="_blank" rel="noopener noreferrer">官網 ↗</a>`:'';
-  els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟 ↗</a>${officialLink}${sourceLink}</div></div>`;
+  els.mapSpotCard.innerHTML=`<button type="button" class="map-card-close" aria-label="關閉地點圖卡">×</button><div class="spot-illustration">${spotIllustration(spot)}</div><div><h3>${spot.name}</h3><div class="meta">${spotMeta(spot)}</div><div class="spot-tags">${chips}</div><p>${spot.note}</p><div class="map-spot-actions"><a class="button-link" href="${spotMapLink(spot)}" target="_blank" rel="noopener noreferrer">營業時間・導航 ↗</a>${officialLink}${sourceLink}</div></div>`;
   els.mapSpotCard.classList.remove('hidden');
 }
 
@@ -431,7 +431,7 @@ function renderCards(){
     const actions=document.createElement('div'); actions.className='card-actions';
     const preview=document.createElement('button'); preview.type='button'; preview.textContent='地圖預覽';
     preview.addEventListener('click',()=>openInMap(spot));
-    const external=document.createElement('a'); external.className='button-link'; external.textContent='Google Maps ↗';
+    const external=document.createElement('a'); external.className='button-link'; external.textContent='營業時間・導航 ↗';
     external.href=spotMapLink(spot); external.target='_blank'; external.rel='noopener noreferrer';
     if(spot.coords)actions.append(preview);
     else {const pending=document.createElement('span');pending.className='note';pending.textContent='地圖圖釘位置待確認';actions.append(pending);}
@@ -622,7 +622,7 @@ function distanceKm(spot){
 function spotMeta(spot){
   const distance=userLocation?distanceKm(spot):Infinity;
   const label=Number.isFinite(distance)?(distance<1?`📍距離 ${Math.round(distance*1000)} 公尺`:`📍距離 ${distance.toFixed(1)} 公里`):'距離待確認';
-  return `${spot.area}・約 ${spot.hours} 小時${resultSort==='distance'&&userLocation?`・${label}`:''}`;
+  return `${spot.area}${resultSort==='distance'&&userLocation?`・${label}`:''}`;
 }
 
 // 區域選單：依行政區分組（新地區會先看對照表，再從地址判斷，都沒有就放「其他地區」）
