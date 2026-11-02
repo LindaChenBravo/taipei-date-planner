@@ -241,7 +241,7 @@ function drawPinImage(icon,active){
   const x=-a/2,y=-a/2,r=[a/2,a/2,a/2,rr];
   ctx.beginPath();ctx.moveTo(x+r[0],y);ctx.arcTo(x+a,y,x+a,y+a,r[1]);ctx.arcTo(x+a,y+a,x,y+a,r[2]);ctx.arcTo(x,y+a,x,y,r[3]);ctx.arcTo(x,y,x+a,y,r[0]);ctx.closePath();
   ctx.fillStyle=active?pinColors.yellow:pinColors.coral;ctx.fill();
-  ctx.lineWidth=3;ctx.strokeStyle=pinColors.ink;ctx.stroke();ctx.restore();
+  ctx.lineWidth=2;ctx.strokeStyle=pinColors.ink;ctx.stroke();ctx.restore();
   // 依 emoji 實際外框置中並縮放成同樣大小（iPhone 上部分 emoji 的字寬資訊不準）
   ctx.font='40px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
   ctx.textAlign='left';ctx.textBaseline='alphabetic';ctx.fillStyle=pinColors.ink;
