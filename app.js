@@ -804,8 +804,13 @@ els.typeTags.addEventListener('click',event=>{
   selectType(button.dataset.type,button);
 });
 els.mapTypeTags.addEventListener('click',event=>{
-  const button=event.target.closest('.map-type-tag[data-type]');
+  let button=event.target.closest('.map-type-tag[data-type]');
   if(!button)return;
+  // 再按一次已選的類別 → 取消選擇，回到全部
+  if(button.dataset.type!=='all'&&button.dataset.type===selectedType){
+    button=els.mapTypeTags.querySelector('[data-type="all"]');
+    button.scrollIntoView({behavior:scrollBehavior(),block:'nearest',inline:'nearest'});
+  }
   selectType(button.dataset.type,button);
 });
 els.resetBtn.addEventListener('click',()=>{
