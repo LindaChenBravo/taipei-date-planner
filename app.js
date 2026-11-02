@@ -549,7 +549,7 @@ function renderRoute(index){
   updateRouteMap();
 }
 
-function focusRouteStop(index){
+function focusRouteStop(index,origin='list'){
   selectedRouteStop=index;
   els.routeStops.querySelectorAll('.route-step').forEach((button,buttonIndex)=>{
     const active=buttonIndex===index;
@@ -559,6 +559,14 @@ function focusRouteStop(index){
   routeMarkers.forEach((entry,markerIndex)=>entry.element.classList.toggle('is-active',markerIndex===index));
   const position=routeLocations[routes[selectedRouteIndex].stops[index]];
   if(routeMap&&position)routeMap.easeTo({center:[position[1],position[0]],duration:scrollBehavior()==='smooth'?500:0});
+  if(origin==='map'){
+    const button=els.routeStops.querySelectorAll('.route-step')[index];
+    button?.scrollIntoView({behavior:scrollBehavior(),block:'center'});
+    button?.focus({preventScroll:true});
+  }else if(routeMap&&position&&routes[selectedRouteIndex].mapMode!=='links'){
+    els.routeMapCanvas.scrollIntoView({behavior:scrollBehavior(),block:'center'});
+    routeMarkers[index]?.element.focus({preventScroll:true});
+  }
 }
 
 function fitRouteMap(){
@@ -579,7 +587,7 @@ function updateRouteMap(){
     const element=document.createElement('button');element.type='button';element.className='route-pin';
     element.setAttribute('aria-label',`第 ${index+1} 站：${name}`);
     element.innerHTML=`<span aria-hidden="true">${routeStopIcon(name)}</span><span class="order" aria-hidden="true">${index+1}</span>`;
-    element.addEventListener('click',()=>focusRouteStop(index));
+    element.addEventListener('click',()=>focusRouteStop(index,'map'));
     const marker=new maplibregl.Marker({element,anchor:'center',offset:routeStopDetails[name]?.markerOffset||[0,0]}).setLngLat(coordinates[index]).addTo(routeMap);
     routeMarkers.push({marker,element});
   });
