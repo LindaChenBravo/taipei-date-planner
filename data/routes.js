@@ -1,5 +1,5 @@
 const routes = [
-  {"name":"東區周邊散步路線","area":"台北市大安區","mapMode":"places","stops":["Le Blanc","初衣食午 onefifteen","boven 雜誌圖書館","COSTUMICE CAFÉ","橋頭麻辣鍋","東區粉圓"],"note":"依使用者原圖精選6站，串連午餐、選品、閱讀、咖啡、晚餐與甜點。時間可彈性調整；兩餐也可擇一。圖中虛線為走訪順序，非實際道路。原圖含舊據點，未直接沿用全部24點。","sourceUrl":"https://www.google.com/maps/d/viewer?mid=1IuYTzfWtxaow59Bg7wk4mdZbxRc"},
+  {"name":"東區周邊散步路線","area":"台北市大安區","mapMode":"places","stops":["TUA 攤","驥園川菜餐廳","Le Blanc","The Town Crier","Nonzero 非零","Danchu Taipei","Club Designer","竇騰璜張李玉菁 MeSH 大安概念店","Jamei Chen","初衣食午 onefifteen","好樣本事 VVG Something","ARTIFACTS（原圖據點）","HOTEL V","Glasense Studio","COSTUMICE CAFÉ","橋頭麻辣鍋","Burger Ray","Botega del vin","東區粉圓","玖公豆花","boven 雜誌圖書館","啜飲室 Tasting Room","WA-SHU 和酒","誠品敦南店（已歇業原址）"],"note":"完整保留原圖24個點與原始順序；相同時間是原圖選項，可自行取捨，不必全部吃逛。原圖時間非現行營業時間。誠品敦南已歇業；部分店家現址與營業待確認，請先查地圖。虛線僅示意順序，非實際道路。","sourceUrl":"https://www.google.com/maps/d/viewer?mid=1IuYTzfWtxaow59Bg7wk4mdZbxRc"},
   // 來源：使用者提供的坪林一日遊行程圖片；略去交通與車站，依站點位置重排以減少折返。
   {"name":"坪林茶鄉一日遊","area":"新北市坪林區","mapMode":"places","mapMaxZoom":17.5,"stops":["新北市坪林茶業博物館","品誼茶果子","Hans手作","福長商號","良心饅頭","幸福小廚","滴滴香","坪林老街與水岸散步"],"note":"茶博館後從品誼、Hans沿老街依序逛福長與良心饅頭，約13:00到幸福小廚午餐，再去滴滴香與水岸。時間可彈性調整。"},
   {name:'大稻埕夕陽路線',stops:['迪化街','大稻埕碼頭','大稻埕遊船碼頭','延三夜市','寧夏夜市'],note:'適合不太炎熱、天氣晴朗的下午。'},
@@ -21,6 +21,24 @@ const routes = [
 // 坪林座標：茶博館採 OSM 建物中心；店家採 FooTinder 地點座標。
 // Hans 老街店尚無獨立座標，以品誼茶果子旁街段為參考並在畫面註明；不使用南山寺舊址。
 const routeLocations={
+"TUA 攤":[25.0356993,121.5469609],
+"驥園川菜餐廳":[25.035272,121.548434],
+"The Town Crier":[25.0343992,121.5475374],
+"Nonzero 非零":[25.038654,121.544471],
+"Danchu Taipei":[25.0359372,121.5468924],
+"Club Designer":[25.0388874,121.5461843],
+"竇騰璜張李玉菁 MeSH 大安概念店":[25.0398251,121.5457488],
+"Jamei Chen":[25.0392432,121.5462359],
+"好樣本事 VVG Something":[25.0440495,121.5498372],
+"ARTIFACTS（原圖據點）":[25.0431189,121.5505624],
+"HOTEL V":[25.0427865,121.5518137],
+"Glasense Studio":[25.043561,121.552545],
+"Burger Ray":[25.041146,121.5541617],
+"Botega del vin":[25.0399933,121.5514078],
+"玖公豆花":[25.0404628,121.5531188],
+"啜飲室 Tasting Room":[25.044171,121.545024],
+"WA-SHU 和酒":[25.04319,121.548213],
+"誠品敦南店（已歇業原址）":[25.0392119,121.5495829],
 "Le Blanc":[25.036153,121.546166],
 "初衣食午 onefifteen":[25.0407298,121.5459751],
 "boven 雜誌圖書館":[25.044161,121.5452249],
@@ -105,3 +123,7 @@ const routeStopDetails={
 
 // 原始Google My Maps的24個參考點（含舊據點，不作為現行導航站點）。
 const eastSideOriginalStops=[{"label":"12:30 TUA攤","coords":[25.0356993,121.5469609]},{"label":"12:30 Seasons Garden Restaurant\n驥園川菜餐廳","coords":[25.035272,121.548434]},{"label":"12:30 Le Blanc","coords":[25.036153,121.546166]},{"label":"14:00 The Town Crier","coords":[25.0343992,121.5475374]},{"label":"14:00 Nonzero 非零","coords":[25.038654,121.544471]},{"label":"14:00 Danchu Taipei","coords":[25.0359372,121.5468924]},{"label":"15:30 Club Designer","coords":[25.0388874,121.5461843]},{"label":"15:30 Stephane Dou and\nChanglee Yugin\n竇騰璜張李玉菁-MeSH大安概念店","coords":[25.0398251,121.5457488]},{"label":"15:30 Jamei Chen","coords":[25.0392432,121.5462359]},{"label":"15:30 One Fifteen 初衣 食午","coords":[25.0407298,121.5459751]},{"label":"17:00  VVG Something bookstore \n好樣本事","coords":[25.0440495,121.5498372]},{"label":"17:00 ARTIFACTS","coords":[25.0431189,121.5505624]},{"label":"17:00 HOTEL V","coords":[25.0427865,121.5518137]},{"label":"17:00 Glasense Studio","coords":[25.043561,121.552545]},{"label":"17:00 COSTUMICE CAFÉ","coords":[25.0437635,121.5525118]},{"label":"19:00  Fondue Restaurant\n橋頭麻辣鍋","coords":[25.043672,121.549295]},{"label":"19:00 Burger Ray","coords":[25.041146,121.5541617]},{"label":"19:00 Botega del vin","coords":[25.0399933,121.5514078]},{"label":"20:00 Eastern District Tapioca\n東區粉圓","coords":[25.0395148,121.5528498]},{"label":"20:00 Jiu Gong Dou Hua 玖公豆花","coords":[25.0404628,121.5531188]},{"label":"21:00 Boven 雜誌圖書館","coords":[25.044161,121.5452249]},{"label":"22:30 Tasting Room 啜飲室","coords":[25.044171,121.545024]},{"label":"22:30 WA-SHU 和酒","coords":[25.04319,121.548213]},{"label":"24:00 Eslite Dunnan Store \n誠品敦南店","coords":[25.0392119,121.5495829]}];
+
+// 完整還原使用者原始東區地圖，不刪除備選點；保留原圖位置與必要提醒。
+Object.assign(routeLocations,{"TUA 攤":[25.0356993,121.5469609],"驥園川菜餐廳":[25.035272,121.548434],"Le Blanc":[25.036153,121.546166],"The Town Crier":[25.0343992,121.5475374],"Nonzero 非零":[25.038654,121.544471],"Danchu Taipei":[25.0359372,121.5468924],"Club Designer":[25.0388874,121.5461843],"竇騰璜張李玉菁 MeSH 大安概念店":[25.0398251,121.5457488],"Jamei Chen":[25.0392432,121.5462359],"初衣食午 onefifteen":[25.0407298,121.5459751],"好樣本事 VVG Something":[25.0440495,121.5498372],"ARTIFACTS（原圖據點）":[25.0431189,121.5505624],"HOTEL V":[25.0427865,121.5518137],"Glasense Studio":[25.043561,121.552545],"COSTUMICE CAFÉ":[25.0437635,121.5525118],"橋頭麻辣鍋":[25.043672,121.549295],"Burger Ray":[25.041146,121.5541617],"Botega del vin":[25.0399933,121.5514078],"東區粉圓":[25.0395148,121.5528498],"玖公豆花":[25.0404628,121.5531188],"boven 雜誌圖書館":[25.044161,121.5452249],"啜飲室 Tasting Room":[25.044171,121.545024],"WA-SHU 和酒":[25.04319,121.548213],"誠品敦南店（已歇業原址）":[25.0392119,121.5495829]});
+Object.assign(routeStopDetails,{"TUA 攤":{"query":"TUA 攤 台北","hint":"原圖 12:30｜原圖位置，現址與營業請先確認","approximate":true},"驥園川菜餐廳":{"query":"驥園川菜餐廳 台北","hint":"原圖 12:30｜原圖位置，現址與營業請先確認","approximate":true},"Le Blanc":{"query":"Le Blanc 台北市大安區大安路一段183號","hint":"原圖 12:30｜午餐，建議先訂位"},"The Town Crier":{"query":"The Town Crier 台北","hint":"原圖 14:00｜原圖位置，現址與營業請先確認","approximate":true},"Nonzero 非零":{"query":"Nonzero 非零 台北","hint":"原圖 14:00｜原圖位置，現址與營業請先確認","approximate":true},"Danchu Taipei":{"query":"Danchu Taipei 台北","hint":"原圖 14:00｜原圖位置，現址與營業請先確認","approximate":true},"Club Designer":{"query":"Club Designer 台北","hint":"原圖 15:30｜原圖位置，現址與營業請先確認","approximate":true},"竇騰璜張李玉菁 MeSH 大安概念店":{"query":"竇騰璜張李玉菁 MeSH 大安概念店 台北","hint":"原圖 15:30｜原圖位置，現址與營業請先確認","approximate":true},"Jamei Chen":{"query":"Jamei Chen 台北","hint":"原圖 15:30｜原圖位置，現址與營業請先確認","approximate":true},"初衣食午 onefifteen":{"query":"初衣食午 onefifteen 台北市大安區大安路一段92號","hint":"原圖 15:30｜選品與老洋房空間"},"好樣本事 VVG Something":{"query":"好樣本事 VVG Something 台北","hint":"原圖 17:00｜原圖位置，現址與營業請先確認","approximate":true},"ARTIFACTS（原圖據點）":{"query":"ARTIFACTS 台北","hint":"原圖 17:00｜原圖位置，現址與營業請先確認","approximate":true},"HOTEL V":{"query":"HOTEL V 台北","hint":"原圖 17:00｜原圖位置，現址與營業請先確認","approximate":true},"Glasense Studio":{"query":"Glasense Studio 台北","hint":"原圖 17:00｜原圖位置，現址與營業請先確認","approximate":true},"COSTUMICE CAFÉ":{"query":"COSTUMICE CAFÉ 台北市大安區忠孝東路四段223巷71弄6號","hint":"原圖 17:00｜咖啡休息"},"橋頭麻辣鍋":{"query":"橋頭麻辣鍋 台北市大安區敦化南路一段157號2樓","hint":"原圖 19:00｜晚餐，建議預約"},"Burger Ray":{"query":"Burger Ray 台北","hint":"原圖 19:00｜原圖位置，現址與營業請先確認","approximate":true},"Botega del vin":{"query":"Botega del vin 台北","hint":"原圖 19:00｜原圖位置，現址與營業請先確認","approximate":true},"東區粉圓":{"query":"東區粉圓 台北市大安區忠孝東路四段216巷38號","hint":"原圖 20:00｜飯後甜湯或粉圓冰"},"玖公豆花":{"query":"玖公豆花 台北","hint":"原圖 20:00｜原圖位置，現址與營業請先確認","approximate":true},"boven 雜誌圖書館":{"query":"boven 雜誌圖書館 台北市大安區復興南路一段107巷5弄18號B1","hint":"原圖 21:00｜閱讀停留；票價與開放時間依官方公告"},"啜飲室 Tasting Room":{"query":"啜飲室 Tasting Room 台北","hint":"原圖 22:30｜原圖位置，現址與營業請先確認","approximate":true},"WA-SHU 和酒":{"query":"WA-SHU 和酒 台北","hint":"原圖 22:30｜原圖位置，現址與營業請先確認","approximate":true},"誠品敦南店（已歇業原址）":{"query":"誠品敦南店 台北","hint":"已歇業｜僅保留原址供對照，不是可入內參觀的書店","approximate":true}});
