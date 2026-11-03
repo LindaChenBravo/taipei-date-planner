@@ -120,7 +120,7 @@ function initVectorMap(){
   const geolocate=new maplibregl.GeolocateControl({
     positionOptions:{enableHighAccuracy:true,timeout:15000,maximumAge:0},
     fitBoundsOptions:{maxZoom:15},
-    trackUserLocation:false,
+    trackUserLocation:true,
     showUserLocation:true,
     showAccuracyCircle:true
   });
