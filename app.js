@@ -94,7 +94,7 @@ function showMapFallback(container,message,offerSearch=false){
 // 捷運（官方配色）＋台鐵北北基桃路線：資料來自 OpenStreetMap，畫在街道文字下方、車站與景點圖標之下
 function addMetroLines(map){
   if(map.getSource('mrt-lines'))return;
-  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=tra-20261106'});
+  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=dedupe-20261106'});
   const beforeId=(map.getStyle().layers.find(layer=>layer.type==='symbol')||{}).id;
   const isTra=['==',['get','kind'],'tra'], isMrt=['!=',['get','kind'],'tra'];
   const round={'line-join':'round','line-cap':'round'};
@@ -112,12 +112,16 @@ function addMetroLines(map){
 function addStationLayer(map){
   if(!map||map.getLayer('mrt-station-dot'))return;
   addMetroLines(map);
-  const filter=['all',['==',['get','class'],'railway'],['in',['get','subclass'],['literal',['subway','station']]]];
-  map.addLayer({id:'mrt-station-dot',type:'circle',source:'openmaptiles','source-layer':'poi',minzoom:12,filter,
-    paint:{'circle-radius':['interpolate',['linear'],['zoom'],12,3.5,15,6],'circle-color':'#FFFFFF','circle-stroke-color':'#0070BD','circle-stroke-width':['interpolate',['linear'],['zoom'],12,2,15,3]}});
-  map.addLayer({id:'mrt-station-label',type:'symbol',source:'openmaptiles','source-layer':'poi',minzoom:13.5,filter,
-    layout:{'text-field':['coalesce',['get','name:zh'],['get','name']],'text-font':['Noto Sans Regular'],'text-size':12,'text-offset':[0,0.9],'text-anchor':'top','text-optional':true},
-    paint:{'text-color':'#0070BD','text-halo-color':'#FFFFFF','text-halo-width':2}});
+  // 車站點位自備（跟路線同色）；轉乘站（多條線）用深灰色外框並放大
+  map.addSource('rail-stations',{type:'geojson',data:'./data/rail-stations.json?v=station-20261106'});
+  const single=['!',['get','multi']], multi=['get','multi'];
+  map.addLayer({id:'mrt-station-dot',type:'circle',source:'rail-stations',minzoom:11,filter:single,
+    paint:{'circle-radius':['interpolate',['linear'],['zoom'],11,2.5,13,4,15,6.5],'circle-color':'#FFFFFF','circle-stroke-color':['get','color'],'circle-stroke-width':['interpolate',['linear'],['zoom'],11,1.5,15,3]}});
+  map.addLayer({id:'mrt-station-dot-multi',type:'circle',source:'rail-stations',minzoom:10,filter:multi,
+    paint:{'circle-radius':['interpolate',['linear'],['zoom'],10,3,13,5.5,15,8],'circle-color':'#FFFFFF','circle-stroke-color':['get','color'],'circle-stroke-width':['interpolate',['linear'],['zoom'],10,1.8,15,3.2]}});
+  map.addLayer({id:'mrt-station-label',type:'symbol',source:'rail-stations',minzoom:13.5,
+    layout:{'text-field':['get','name'],'text-font':['Noto Sans Regular'],'text-size':12,'text-offset':[0,0.9],'text-anchor':'top','text-optional':true},
+    paint:{'text-color':'#3E3A39','text-halo-color':'#FFFFFF','text-halo-width':2}});
 }
 
 function addNorthControl(map){
