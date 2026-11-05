@@ -91,16 +91,22 @@ function showMapFallback(container,message,offerSearch=false){
 }
 
 // 在底圖上顯示捷運／火車站（資料來自 OpenFreeMap，畫在地圖本身，移動時不會偏移）
-// 捷運路線（官方配色）：資料來自 OpenStreetMap，畫在街道文字下方、車站與景點圖標之下
+// 捷運（官方配色）＋台鐵北北基桃路線：資料來自 OpenStreetMap，畫在街道文字下方、車站與景點圖標之下
 function addMetroLines(map){
   if(map.getSource('mrt-lines'))return;
-  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=20261105'});
+  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=tra-20261106'});
   const beforeId=(map.getStyle().layers.find(layer=>layer.type==='symbol')||{}).id;
-  const width=['interpolate',['linear'],['zoom'],10,1.5,13,3,16,5];
-  map.addLayer({id:'mrt-line-casing',type:'line',source:'mrt-lines',layout:{'line-join':'round','line-cap':'round'},
+  const isTra=['==',['get','kind'],'tra'], isMrt=['!=',['get','kind'],'tra'];
+  const round={'line-join':'round','line-cap':'round'};
+  // 台鐵：深灰線＋白色虛線（傳統鐵路畫法），放在捷運下面
+  map.addLayer({id:'tra-line',type:'line',source:'mrt-lines',filter:isTra,layout:round,
+    paint:{'line-color':['get','color'],'line-width':['interpolate',['linear'],['zoom'],9,2,13,4.5,16,7],'line-opacity':.85}},beforeId);
+  map.addLayer({id:'tra-line-dash',type:'line',source:'mrt-lines',filter:isTra,layout:{'line-join':'round'},
+    paint:{'line-color':'#FFFFFF','line-width':['interpolate',['linear'],['zoom'],9,.8,13,2,16,3],'line-dasharray':[3,3]}},beforeId);
+  map.addLayer({id:'mrt-line-casing',type:'line',source:'mrt-lines',filter:isMrt,layout:round,
     paint:{'line-color':'#FFFFFF','line-width':['interpolate',['linear'],['zoom'],10,2.5,13,5,16,8],'line-opacity':.9}},beforeId);
-  map.addLayer({id:'mrt-line',type:'line',source:'mrt-lines',layout:{'line-join':'round','line-cap':'round'},
-    paint:{'line-color':['get','color'],'line-width':width,'line-opacity':.9}},beforeId);
+  map.addLayer({id:'mrt-line',type:'line',source:'mrt-lines',filter:isMrt,layout:round,
+    paint:{'line-color':['get','color'],'line-width':['interpolate',['linear'],['zoom'],10,1.5,13,3,16,5],'line-opacity':.9}},beforeId);
 }
 
 function addStationLayer(map){
