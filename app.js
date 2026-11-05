@@ -94,7 +94,7 @@ function showMapFallback(container,message,offerSearch=false){
 // 捷運（官方配色）＋台鐵北北基桃路線：資料來自 OpenStreetMap，畫在街道文字下方、車站與景點圖標之下
 function addMetroLines(map){
   if(map.getSource('mrt-lines'))return;
-  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=dedupe-20261106'});
+  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=path-20261106'});
   const beforeId=(map.getStyle().layers.find(layer=>layer.type==='symbol')||{}).id;
   const isTra=['==',['get','kind'],'tra'], isMrt=['!=',['get','kind'],'tra'];
   const round={'line-join':'round','line-cap':'round'};
@@ -397,7 +397,7 @@ function refreshVisibleSpots(){
   const start=performance.now(),duration=simple?140:260;
   let lastFrame=-Infinity;
   const frame=now=>{
-    const t=Math.min(1,(now-start)/duration);
+    const t=Math.max(0,Math.min(1,(now-start)/duration)); // 影格時間可能略早於起點，避免出現負值
     if(t>=1){
       source?.setData({type:'FeatureCollection',features});
       settleGrowingPins();return;
@@ -405,7 +405,7 @@ function refreshVisibleSpots(){
     // 單一圖層批次動畫，約30fps；每幀不重建GeoJSON。
     if(now-lastFrame>=32){
       const u=t-1;
-      const scale=simple?1:1+2.2*u*u*u+1.2*u*u;
+      const scale=simple?1:Math.max(0,1+2.2*u*u*u+1.2*u*u);
       vectorMap.setLayoutProperty('spot-growing-pins','icon-size',scale);
       vectorMap.setPaintProperty('spot-growing-pins','icon-opacity',Math.min(1,t*3));
       lastFrame=now;
