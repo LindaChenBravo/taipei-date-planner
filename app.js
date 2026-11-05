@@ -114,10 +114,9 @@ function addNorthControl(map){
       const arrow=document.createElement('span');
       arrow.className='north-control-arrow';
       arrow.setAttribute('aria-hidden','true');
-      arrow.textContent='↑';
-      const label=document.createElement('span');
-      label.textContent='正北';
-      button.append(arrow,label);
+      // 羅盤指針：上半珊瑚色指向北方，跟著地圖旋轉
+      arrow.innerHTML='<svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2.5 16.5 12h-9z" fill="var(--coral)"/><path d="M12 21.5 7.5 12h9z" fill="var(--paper)"/><path d="M12 2.5 16.5 12 12 21.5 7.5 12z" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.6" fill="var(--ink)"/></svg>';
+      button.append(arrow);
       button.addEventListener('click',()=>controlMap.easeTo({bearing:0,duration:scrollBehavior()==='smooth'?500:0}));
       this.update=()=>{arrow.style.transform=`rotate(${-controlMap.getBearing()}deg)`};
       controlMap.on('rotate',this.update);
