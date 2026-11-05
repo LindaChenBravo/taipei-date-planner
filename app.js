@@ -91,8 +91,21 @@ function showMapFallback(container,message,offerSearch=false){
 }
 
 // 在底圖上顯示捷運／火車站（資料來自 OpenFreeMap，畫在地圖本身，移動時不會偏移）
+// 捷運路線（官方配色）：資料來自 OpenStreetMap，畫在街道文字下方、車站與景點圖標之下
+function addMetroLines(map){
+  if(map.getSource('mrt-lines'))return;
+  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=20261105'});
+  const beforeId=(map.getStyle().layers.find(layer=>layer.type==='symbol')||{}).id;
+  const width=['interpolate',['linear'],['zoom'],10,1.5,13,3,16,5];
+  map.addLayer({id:'mrt-line-casing',type:'line',source:'mrt-lines',layout:{'line-join':'round','line-cap':'round'},
+    paint:{'line-color':'#FFFFFF','line-width':['interpolate',['linear'],['zoom'],10,2.5,13,5,16,8],'line-opacity':.9}},beforeId);
+  map.addLayer({id:'mrt-line',type:'line',source:'mrt-lines',layout:{'line-join':'round','line-cap':'round'},
+    paint:{'line-color':['get','color'],'line-width':width,'line-opacity':.9}},beforeId);
+}
+
 function addStationLayer(map){
   if(!map||map.getLayer('mrt-station-dot'))return;
+  addMetroLines(map);
   const filter=['all',['==',['get','class'],'railway'],['in',['get','subclass'],['literal',['subway','station']]]];
   map.addLayer({id:'mrt-station-dot',type:'circle',source:'openmaptiles','source-layer':'poi',minzoom:12,filter,
     paint:{'circle-radius':['interpolate',['linear'],['zoom'],12,3.5,15,6],'circle-color':'#FFFFFF','circle-stroke-color':'#0070BD','circle-stroke-width':['interpolate',['linear'],['zoom'],12,2,15,3]}});
