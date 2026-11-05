@@ -106,6 +106,9 @@
     .maplibregl-canvas:active{cursor:grabbing}
     .maplibregl-ctrl-group{border:2px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:none}
     .maplibregl-ctrl-group button{background-color:var(--paper);border:0;border-radius:0;padding:0;transform:none}
+    .maplibregl-ctrl-group.north-control button{display:flex;align-items:center;justify-content:center;gap:4px;width:65px;height:34px;color:var(--ink);font-size:13px;font-weight:800}
+    .north-control-arrow{display:inline-block;font-size:19px;line-height:1;transition:transform .25s ease}
+    .north-control button:focus-visible{outline:4px solid var(--blue);outline-offset:3px}
     .maplibregl-ctrl-attrib{font-family:"Huninn","Noto Sans TC",sans-serif}
     .map-marker{width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;overflow:visible}
     .spot-pin{display:grid;place-items:center;width:38px;height:38px;border:3px solid var(--ink);border-radius:50% 50% 50% 12px;background:var(--coral);color:var(--ink);transform:rotate(-45deg);transition:transform .18s ease,background .18s ease;pointer-events:auto;cursor:pointer}

@@ -101,6 +101,37 @@ function addStationLayer(map){
     paint:{'text-color':'#0070BD','text-halo-color':'#FFFFFF','text-halo-width':2}});
 }
 
+function addNorthControl(map){
+  map.addControl({
+    onAdd(controlMap){
+      this.map=controlMap;
+      this.container=document.createElement('div');
+      this.container.className='maplibregl-ctrl maplibregl-ctrl-group north-control';
+      const button=document.createElement('button');
+      button.type='button';
+      button.title='回到正北';
+      button.setAttribute('aria-label','回到正北');
+      const arrow=document.createElement('span');
+      arrow.className='north-control-arrow';
+      arrow.setAttribute('aria-hidden','true');
+      arrow.textContent='↑';
+      const label=document.createElement('span');
+      label.textContent='正北';
+      button.append(arrow,label);
+      button.addEventListener('click',()=>controlMap.easeTo({bearing:0,duration:scrollBehavior()==='smooth'?500:0}));
+      this.update=()=>{arrow.style.transform=`rotate(${-controlMap.getBearing()}deg)`};
+      controlMap.on('rotate',this.update);
+      this.update();
+      this.container.append(button);
+      return this.container;
+    },
+    onRemove(){
+      this.map.off('rotate',this.update);
+      this.container.remove();
+    }
+  },'bottom-right');
+}
+
 function initVectorMap(){
   if(!window.maplibregl){
     showMapFallback(els.mapCanvas,'互動地圖暫時無法載入，仍可用條件搜尋找地點並開啟 Google Maps。',true);
@@ -117,6 +148,7 @@ function initVectorMap(){
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
   vectorMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  addNorthControl(vectorMap);
   const geolocate=new maplibregl.GeolocateControl({
     positionOptions:{enableHighAccuracy:true,timeout:15000,maximumAge:0},
     fitBoundsOptions:{maxZoom:15},
@@ -605,6 +637,7 @@ function ensureRouteMap(){
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
   routeMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+  addNorthControl(routeMap);
   routeMap.on('load',()=>{
     addStationLayer(routeMap);
     routeMap.addSource('route-order',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[]}}});
