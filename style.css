@@ -262,3 +262,12 @@
 
 /* Match the compact map filter tags in condition search. */
 .type-tags .type-tag{zoom:.75}
+    .map-search{display:flex;align-items:center;gap:8px;height:46px;margin:0 5px 6px;padding:0 8px 0 14px;max-width:520px;background:#fff;border:2px solid var(--ink);border-radius:999px;box-shadow:0 4px 14px rgba(62,58,57,.16)}
+    .map-search:focus-within{box-shadow:0 0 0 3px var(--yellow),0 4px 14px rgba(62,58,57,.16)}
+    .map-search-icon{font-size:21px;line-height:1;color:var(--ink)}
+    .map-search input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;-webkit-appearance:none;appearance:none}
+    .map-search input::placeholder{color:#A39E98}
+    .map-search input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+    .map-search-count{font-size:13px;color:var(--muted);white-space:nowrap}
+    .map-search-clear{flex:none;width:28px;height:28px;border:0;border-radius:50%;background:#EEE9E1;color:var(--ink);font-size:13px;line-height:1;cursor:pointer}
+    .map-search-count[hidden],.map-search-clear[hidden]{display:none}
