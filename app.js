@@ -94,7 +94,7 @@ function showMapFallback(container,message,offerSearch=false){
 // 捷運（官方配色）＋台鐵北北基桃路線：資料來自 OpenStreetMap，畫在街道文字下方、車站與景點圖標之下
 function addMetroLines(map){
   if(map.getSource('mrt-lines'))return;
-  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=fengtian-20261106'});
+  map.addSource('mrt-lines',{type:'geojson',data:'./data/mrt-lines.json?v=red-line-20261106'});
   const beforeId=(map.getStyle().layers.find(layer=>layer.type==='symbol')||{}).id;
   const isTra=['==',['get','kind'],'tra'], isMrt=['!=',['get','kind'],'tra'];
   const round={'line-join':'round','line-cap':'round'};
