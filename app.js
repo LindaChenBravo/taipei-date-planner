@@ -516,6 +516,7 @@ function renderCards(){
 function renderRoutes(){
   els.routeCount.textContent=`${routes.length} 條`;
   const routeEmojis={
+    '東區周邊散步路線':'🏙️','台北大安文青歷史一日遊':'🏡',
     '坪林茶鄉一日遊':'🍵','大稻埕夕陽路線':'🌇','圓山文藝路線':'🎨',
     '大安療癒路線':'🌷','中山懶人路線':'☕','基隆河右岸跑步路線':'🏃',
     '四獸山縱走路線':'🐾','富陽生態公園－福州山':'🌳','北投文化路徑':'♨️',
@@ -527,6 +528,8 @@ function renderRoutes(){
 }
 
 function routeStopIcon(name){
+  const custom=routeStopDetails[name]?.icon;
+  if(custom)return custom;
   if(/書店/.test(name))return '📖';
   if(/碼頭/.test(name))return '⛵';
   if(/夜市/.test(name))return '🏮';
