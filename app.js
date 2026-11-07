@@ -522,7 +522,7 @@ function renderRoutes(){
     '四獸山縱走路線':'🐾','富陽生態公園－福州山':'🌳','北投文化路徑':'♨️',
     '士林文化路徑':'🎭','大同文化路徑':'🧱','中正文化路徑':'🏛️','萬華文化路徑':'🏮'
   };
-  routes.forEach((route,index)=>els.routeSelect.add(new Option(`${routeEmojis[route.name]||'🚶'} ${route.name}`,String(index))));
+  routes.forEach((route,index)=>els.routeSelect.add(new Option(`${route.emoji||routeEmojis[route.name]||'🚶'} ${route.name}`,String(index))));
   els.routeSelect.addEventListener('change',()=>renderRoute(Number(els.routeSelect.value)));
   renderRoute(0);
 }
