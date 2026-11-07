@@ -591,7 +591,7 @@ function renderRoute(index){
     button.setAttribute('aria-label',`在地圖定位第 ${stopIndex+1} 站：${name}`);
     const number=document.createElement('span');number.className='order';number.textContent=stopIndex+1;
     const label=document.createElement('span');label.className='name';label.textContent=name;
-    const hint=routeStopDetails[name]?.hint;
+    const hint=route.hints?.[name]||routeStopDetails[name]?.hint;
     if(hint){const small=document.createElement('small');small.className='hint';small.textContent=hint;label.appendChild(small)}
     button.append(number,label);button.addEventListener('click',()=>focusRouteStop(stopIndex));
     const link=document.createElement('a');link.className='route-step-link';link.textContent='↗';
