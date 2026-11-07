@@ -113,7 +113,7 @@ function addStationLayer(map){
   if(!map||map.getLayer('mrt-station-dot'))return;
   addMetroLines(map);
   // 車站點位自備（跟路線同色）；轉乘站（多條線）用深灰色外框並放大
-  map.addSource('rail-stations',{type:'geojson',data:'./data/rail-stations.json?v=station-20261106'});
+  map.addSource('rail-stations',{type:'geojson',data:'./data/rail-stations.json?v=snap-20261107'});
   const single=['!',['get','multi']], multi=['get','multi'];
   map.addLayer({id:'mrt-station-dot',type:'circle',source:'rail-stations',minzoom:11,filter:single,
     paint:{'circle-radius':['interpolate',['linear'],['zoom'],11,2.5,13,4,15,6.5],'circle-color':'#FFFFFF','circle-stroke-color':['get','color'],'circle-stroke-width':['interpolate',['linear'],['zoom'],11,1.5,15,3]}});
