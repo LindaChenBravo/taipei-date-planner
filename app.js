@@ -534,15 +534,10 @@ function routeDistrictMap(){
   return map;
 }
 function routeDuration(route){return /半日/.test(route.name)?'半日':/一日/.test(route.name)?'一日':'散步'}
-function topRouteDistrict(){
-  let best='',bestCount=0;
-  routeDistrictMap().forEach((list,district)=>{if(routeBubblePos[district]&&list.length>bestCount){best=district;bestCount=list.length}});
-  return best;
-}
 function renderRouteBrowse(){
   const byDistrict=routeDistrictMap();
   const focusKey=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.focusKey:'';
-  if(!browseDistrict||!byDistrict.has(browseDistrict))browseDistrict=topRouteDistrict();
+  if(browseDistrict&&!byDistrict.has(browseDistrict))browseDistrict='';
   const holder=document.getElementById('routeBubbles');holder.replaceChildren();
   Object.entries(routeBubblePos).forEach(([district,[x,y]])=>{
     const list=byDistrict.get(district);if(!list)return;
@@ -555,11 +550,13 @@ function renderRouteBrowse(){
     const count=document.createElement('span');count.className='rb-count';count.textContent=String(n);
     const name=document.createElement('span');name.className='rb-name';name.textContent=district;
     button.append(count,name);
-    button.addEventListener('click',()=>{browseDistrict=district;renderRouteBrowse()});
+    button.addEventListener('click',()=>{browseDistrict=district===browseDistrict?'':district;renderRouteBrowse()});
     holder.appendChild(button);
   });
-  const list=byDistrict.get(browseDistrict)||[];
-  document.getElementById('routeSheetTitle').textContent=`${browseDistrict}區 · ${list.length} 條路線`;
+  // 沒選區域＝顯示全部路線；選了區域才篩選（再點一次同一區可取消）
+  const list=browseDistrict?(byDistrict.get(browseDistrict)||[]):routes.map((_,index)=>index);
+  document.getElementById('routeSheetTitle').textContent=browseDistrict?`${browseDistrict}區 · ${list.length} 條路線`:`全部路線 · ${list.length} 條`;
+  document.getElementById('routeShowAll').classList.toggle('hidden',!browseDistrict);
   const row=document.getElementById('routeCards');row.replaceChildren();
   list.forEach(index=>{
     const route=routes[index];
@@ -596,7 +593,7 @@ function renderRoutes(){
   document.getElementById('routeBack').addEventListener('click',backToBrowse);
   document.getElementById('routeBackBottom').addEventListener('click',backToBrowse);
   renderRoute(0);
-  browseDistrict=topRouteDistrict();
+  document.getElementById('routeShowAll').addEventListener('click',()=>{browseDistrict='';renderRouteBrowse()});
   renderRouteBrowse();
 }
 

@@ -323,3 +323,7 @@
 .route-item-emoji{flex:none;width:30px;font-size:24px;line-height:1;text-align:center}
 .route-item-name{flex:1;min-width:0;font-size:16px;font-weight:700;line-height:1.35}
 .route-item-chevron{flex:none;color:var(--muted);font-size:24px;line-height:1}
+.route-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 4px}
+.route-sheet-head h3{margin:0}
+.route-showall{min-height:44px;padding:0 4px;border:0;background:none;color:var(--muted);font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;box-shadow:none}
+.route-showall:hover,.route-showall:active{transform:none}
