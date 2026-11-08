@@ -126,7 +126,7 @@ function addStationLayer(map){
     paint:{'text-color':'#3E3A39','text-halo-color':'#FFFFFF','text-halo-width':2}});
 }
 
-function addNorthControl(map){
+function addNorthControl(map,position='bottom-right'){
   map.addControl({
     onAdd(controlMap){
       this.map=controlMap;
@@ -153,7 +153,7 @@ function addNorthControl(map){
       this.map.off('rotate',this.update);
       this.container.remove();
     }
-  },'bottom-right');
+  },position);
 }
 
 function initVectorMap(){
@@ -739,8 +739,8 @@ function ensureRouteMap(){
     center:[121.52,25.05],zoom:12,attributionControl:true,
     localIdeographFontFamily:'"Huninn","Noto Sans TC",sans-serif'
   });
-  routeMap.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
-  addNorthControl(routeMap);
+  // 路線地圖：不放縮放按鈕（手機用雙指縮放），正北羅盤放在右上角
+  addNorthControl(routeMap,'top-right');
   routeMap.on('load',()=>{
     addStationLayer(routeMap);
     routeMap.addSource('route-order',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[]}}});
