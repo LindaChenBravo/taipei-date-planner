@@ -521,48 +521,35 @@ const routeEmojiMap={
 };
 function routeEmojiFor(route){return route.emoji||routeEmojiMap[route.name]||'🚶'}
 
-// 路線首頁：區域氣泡地圖（位置為示意的相對方位，單位是容器寬高的百分比）
-const taipeiDistricts=['北投','士林','內湖','大同','中山','松山','南港','萬華','中正','大安','信義','文山'];
+// 路線首頁：區域氣泡地圖（台北＋新北放在同一張；位置是示意的相對方位，單位是容器寬高的百分比）
 const routeBubblePos={
-  '台北市':{北投:[36,24],士林:[52,36],內湖:[80,38],大同:[33,53],中山:[54,53],松山:[74,54],南港:[91,60],萬華:[22,71],中正:[41,66],大安:[58,70],信義:[80,74],文山:[68,87]},
-  '新北市':{淡水:[30,16],瑞芳:[80,26],貢寮:[90,48],板橋:[40,50],鶯歌:[14,64],三峽:[28,78],坪林:[74,76]}
+  淡水:[13,14],北投:[36,22],士林:[50,30],內湖:[72,36],大同:[31,45],中山:[46,52],松山:[66,52],南港:[82,56],
+  萬華:[26,64],中正:[39,64],大安:[59,70],信義:[74,71],文山:[62,89],
+  板橋:[11,60],鶯歌:[8,84],三峽:[24,88],瑞芳:[88,16],貢寮:[92,34],坪林:[86,82]
 };
-let browseCity='台北市',browseDistrict='';
-function routeCityOf(district){return taipeiDistricts.includes(district)?'台北市':'新北市'}
+let browseDistrict='';
 function routeDistrictMap(){
   const map=new Map();
   routes.forEach((route,index)=>(route.districts||[]).forEach(d=>{if(!map.has(d))map.set(d,[]);map.get(d).push(index)}));
   return map;
 }
 function routeDuration(route){return /半日/.test(route.name)?'半日':/一日/.test(route.name)?'一日':'散步'}
-function topRouteDistrict(city){
+function topRouteDistrict(){
   let best='',bestCount=0;
-  routeDistrictMap().forEach((list,district)=>{if(routeCityOf(district)===city&&list.length>bestCount){best=district;bestCount=list.length}});
+  routeDistrictMap().forEach((list,district)=>{if(routeBubblePos[district]&&list.length>bestCount){best=district;bestCount=list.length}});
   return best;
 }
 function renderRouteBrowse(){
   const byDistrict=routeDistrictMap();
   const focusKey=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.focusKey:'';
-  const cities=['台北市','新北市'];
-  const tabs=document.getElementById('routeCityTabs');tabs.replaceChildren();
-  cities.forEach(city=>{
-    const count=routes.filter(route=>(route.districts||[]).some(d=>routeCityOf(d)===city)).length;
-    const button=document.createElement('button');button.type='button';button.className='route-city-tab';
-    button.textContent=`${city} · ${count} 條`;button.dataset.focusKey=`city:${city}`;
-    button.setAttribute('aria-pressed',String(city===browseCity));
-    button.addEventListener('click',()=>{browseCity=city;browseDistrict=topRouteDistrict(city);renderRouteBrowse()});
-    tabs.appendChild(button);
-  });
-  if(!browseDistrict||routeCityOf(browseDistrict)!==browseCity)browseDistrict=topRouteDistrict(browseCity);
-  document.getElementById('routeBubbleMap').classList.toggle('is-ntpc',browseCity!=='台北市');
+  if(!browseDistrict||!byDistrict.has(browseDistrict))browseDistrict=topRouteDistrict();
   const holder=document.getElementById('routeBubbles');holder.replaceChildren();
-  Object.entries(routeBubblePos[browseCity]).forEach(([district,[x,y]])=>{
+  Object.entries(routeBubblePos).forEach(([district,[x,y]])=>{
     const list=byDistrict.get(district);if(!list)return;
     const n=list.length;
     const button=document.createElement('button');button.type='button';button.className='route-bubble';button.dataset.focusKey=`bubble:${district}`;
     button.style.left=`${x}%`;button.style.top=`${y}%`;
-    button.style.setProperty('--size',`${Math.min(66,44+(n-1)*3)}px`);
-    button.style.setProperty('--bubble',n>=4?'#F2A497':n>=2?'#F6D27A':'#FFF1C9');
+    button.style.setProperty('--size',`${Math.round(Math.min(56,40+(n-1)*2.4))}px`);
     button.setAttribute('aria-pressed',String(district===browseDistrict));
     button.setAttribute('aria-label',`${district}區，${n} 條路線`);
     const count=document.createElement('span');count.className='rb-count';count.textContent=String(n);
@@ -610,7 +597,7 @@ function renderRoutes(){
   els.routeSelect.addEventListener('change',()=>renderRoute(Number(els.routeSelect.value)));
   document.getElementById('routeBack').addEventListener('click',showRouteBrowse);
   renderRoute(0);
-  browseDistrict=topRouteDistrict(browseCity);
+  browseDistrict=topRouteDistrict();
   renderRouteBrowse();
 }
 

@@ -274,24 +274,20 @@
 
 
 /* ===== 精選路線首頁：區域氣泡地圖＋底部卡片 ===== */
-.route-city-tabs{display:flex;gap:8px;margin:14px 0 12px}
-.route-city-tab{flex:1;min-height:44px;border:var(--line);border-radius:22px;background:var(--white);color:var(--ink);font:inherit;font-size:15px;font-weight:700;cursor:pointer}
-.route-city-tab[aria-pressed="true"]{background:var(--yellow);box-shadow:2px 3px 0 rgba(62,58,57,.18)}
-.route-bubble-map{position:relative;height:480px;border:var(--line);border-radius:24px;background:#F1EEE8;overflow:hidden}
+.route-bubble-map{position:relative;margin-top:14px;height:380px;border:var(--line);border-radius:24px;background:#F1EEE8;overflow:hidden}
 .rb-decor{position:absolute;display:block;pointer-events:none}
-.rb-river-1{left:-9%;top:32%;width:31%;height:66%;border-radius:999px;background:var(--blue);transform:rotate(18deg);opacity:.9}
-.rb-river-2{left:38%;top:10%;width:66%;height:8%;border-radius:999px;background:var(--blue);transform:rotate(-8deg);opacity:.9}
-.rb-park-1{left:24%;top:16%;width:23%;height:17%;border-radius:999px;background:var(--green);opacity:.7}
-.rb-park-2{left:55%;top:68%;width:23%;height:15%;border-radius:999px;background:var(--green);opacity:.7}
-.rb-park-3{left:73%;top:42%;width:21%;height:13%;border-radius:999px;background:var(--green);opacity:.7}
-.route-bubble-map.is-ntpc .rb-decor{display:none}
+.rb-river-1{left:17%;top:12%;width:9%;height:80%;border-radius:999px;background:var(--blue);transform:rotate(-8deg);opacity:.9}
+.rb-river-2{left:38%;top:37%;width:46%;height:5%;border-radius:999px;background:var(--blue);transform:rotate(-12deg);opacity:.9}
+.rb-park-1{left:26%;top:12%;width:20%;height:14%;border-radius:999px;background:var(--green);opacity:.6}
+.rb-park-2{left:46%;top:60%;width:20%;height:16%;border-radius:999px;background:var(--green);opacity:.6}
+.rb-park-3{left:66%;top:38%;width:19%;height:12%;border-radius:999px;background:var(--green);opacity:.6}
 .route-bubble{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px;padding:0;border:0;background:transparent;color:var(--ink);font:inherit;cursor:pointer}
 .route-bubble:hover,.route-bubble:active,.route-bubble:focus,.route-bubble:focus-visible{transform:translate(-50%,-50%)}
-.route-bubble .rb-count{display:grid;place-items:center;width:var(--size);height:var(--size);border:var(--line);border-radius:50%;background:var(--bubble);font-size:18px;font-weight:700}
+.route-bubble .rb-count{display:grid;place-items:center;width:var(--size);height:var(--size);border:var(--line);border-radius:50%;background:var(--yellow);font-size:16px;font-weight:700}
 .route-bubble .rb-name{padding:0 6px;border:2px solid transparent;border-radius:6px;background:rgba(255,252,246,.92);font-size:12px;font-weight:700}
-.route-bubble[aria-pressed="true"] .rb-count{box-shadow:3px 4px 0 var(--ink)}
+.route-bubble[aria-pressed="true"] .rb-count{background:var(--coral);box-shadow:3px 4px 0 var(--ink)}
 .route-bubble[aria-pressed="true"] .rb-name{border-color:var(--ink);background:var(--paper)}
-.route-sheet{margin-top:16px}
+.route-sheet{margin-top:14px}
 .route-sheet h3{margin:0 4px;font-size:18px}
 .route-card-row{display:flex;gap:12px;margin:0 -16px;padding:12px 16px 12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:16px;-webkit-overflow-scrolling:touch}
 .route-card{flex:none;width:240px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;box-sizing:border-box;padding:12px 14px;border:var(--line);border-radius:18px;background:var(--white);color:var(--ink);font:inherit;text-align:left;cursor:pointer;scroll-snap-align:start;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
@@ -305,5 +301,5 @@
 
 /* ===== 路線頁：地圖釘在上方，下方站點清單自己捲動 ===== */
 .route-map-pin{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;padding:8px 0 12px;background:var(--paper);box-shadow:0 8px 8px -8px rgba(62,58,57,.28)}
-.route-map-pin .route-map{height:clamp(220px,36svh,360px)}
+.route-map-pin .route-map{height:clamp(280px,46svh,460px)}
 .route-step-row,.route-step{scroll-margin-top:calc(var(--route-pin-h,300px) + 12px)}
