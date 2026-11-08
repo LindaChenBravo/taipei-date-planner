@@ -302,5 +302,5 @@
 
 /* ===== 路線頁：地圖釘在上方，下方站點清單自己捲動 ===== */
 .route-map-pin{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;padding:8px 0 12px;background:var(--paper);box-shadow:0 8px 8px -8px rgba(62,58,57,.28)}
-.route-map-pin .route-map{height:clamp(280px,46svh,460px)}
+.route-map-pin .route-map{height:min(480px,calc(100svh - 300px))}
 .route-step-row,.route-step{scroll-margin-top:calc(var(--route-pin-h,300px) + 12px)}
