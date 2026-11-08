@@ -118,7 +118,7 @@
     .map-cluster:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
     .spot-pin.is-active{background:var(--yellow);transform:rotate(-45deg) scale(1.18)}
     .user-location-dot{width:20px;height:20px;border:4px solid white;border-radius:50%;background:#327ac2;box-shadow:0 0 0 3px var(--ink),0 2px 8px rgba(62,58,57,.3)}
-    .map-spot-card{position:absolute;left:14px;bottom:calc(92px + env(safe-area-inset-bottom));z-index:500;width:min(430px,calc(100% - 28px));max-height:calc(100svh - 180px - env(safe-area-inset-bottom) - env(safe-area-inset-top));overflow-y:auto;background:var(--paper);border:var(--line);border-radius:24px;padding:16px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:13px;align-items:start;box-shadow:5px 6px 0 rgba(62,58,57,.16)}
+    .map-spot-card{position:absolute;left:14px;bottom:calc(66px + env(safe-area-inset-bottom));z-index:500;width:min(430px,calc(100% - 28px));max-height:calc(100svh - 180px - env(safe-area-inset-bottom) - env(safe-area-inset-top));overflow-y:auto;background:var(--paper);border:var(--line);border-radius:24px;padding:16px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:13px;align-items:start;box-shadow:5px 6px 0 rgba(62,58,57,.16)}
     .map-card-close{position:absolute;top:11px;right:11px;width:44px;height:44px;padding:0;border:2px solid var(--ink);border-radius:50%;background:var(--white);font-size:22px;line-height:1}
     .map-spot-card .spot-illustration{width:70px;height:70px}
     .map-spot-card .spot-illustration svg{width:68px;height:68px}
@@ -213,7 +213,7 @@
     .keyword-field input{min-height:48px}
     .grid{gap:20px}
     .card{padding:22px}
-    .maplibregl-ctrl-bottom-right{bottom:calc(88px + env(safe-area-inset-bottom));right:10px}
+    .maplibregl-ctrl-bottom-right{bottom:calc(62px + env(safe-area-inset-bottom));right:10px}
     .route-map .maplibregl-ctrl-bottom-right{bottom:0;right:0}
     .maplibregl-ctrl-group button{width:44px;height:44px}
     .map-fallback{max-width:420px;margin:auto;padding:24px;text-align:center;border:var(--line);border-radius:24px;background:var(--paper)}
@@ -246,7 +246,7 @@
     }
     @media(max-height:500px) and (orientation:landscape){
       .site-tab{flex-direction:row;padding:6px;font-size:12px;min-height:36px}
-      .map-spot-card{max-height:calc(100svh - 90px);bottom:calc(74px + env(safe-area-inset-bottom))}
+      .map-spot-card{max-height:calc(100svh - 70px);bottom:calc(56px + env(safe-area-inset-bottom))}
     }
 
 /* Compact the map filter chips to 75% of their original size. */
@@ -327,3 +327,13 @@
 .route-sheet-head h3{margin:0}
 .route-showall{min-height:44px;padding:0 4px;border:0;background:none;color:var(--muted);font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;box-shadow:none}
 .route-showall:hover,.route-showall:active{transform:none}
+
+/* ===== 底部切換列：貼齊畫面最底部的分段式（高 52px），選到的那格整格變黃、沒有粗黑線 ===== */
+:root{--nav-clearance:64px}
+.site-tabs{left:0;right:0;bottom:0;transform:none;width:100%;max-width:none;padding:0 0 env(safe-area-inset-bottom);gap:0;border:0;border-top:var(--line);border-radius:0;background:var(--paper);box-shadow:none;backdrop-filter:none}
+.site-tabs .site-tab{flex-direction:column;justify-content:center;gap:0;min-height:52px;padding:4px 2px;border-radius:0;border-left:1px solid #ded9cf;font-size:11px;font-weight:700;line-height:1.3;white-space:nowrap;text-align:center}
+.site-tabs .site-tab:first-child{border-left:0}
+.site-tabs .site-tab>span[aria-hidden]{font-size:19px;line-height:1.1}
+.site-tabs .site-tab.active{background:var(--yellow);box-shadow:none}
+.site-tabs .site-tab:hover,.site-tabs .site-tab:active{transform:none}
+@media(max-height:500px) and (orientation:landscape){.site-tabs .site-tab{flex-direction:row;gap:6px;min-height:40px}}
