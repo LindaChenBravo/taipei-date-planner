@@ -318,3 +318,5 @@
   body.view-list .hero-art{grid-area:art;display:block;flex:none;width:100%;min-height:0;margin:0 0 -3px;align-self:end}
   body.view-list .hero-art svg{display:block;width:100%;height:auto}
 }
+
+.route-back-bottom{display:block;width:100%;margin:8px 0 0}

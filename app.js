@@ -595,7 +595,9 @@ function renderRoutes(){
   els.routeCount.textContent=`${routes.length} 條`;
   routes.forEach((route,index)=>els.routeSelect.add(new Option(`${routeEmojiFor(route)} ${route.name}`,String(index))));
   els.routeSelect.addEventListener('change',()=>renderRoute(Number(els.routeSelect.value)));
-  document.getElementById('routeBack').addEventListener('click',showRouteBrowse);
+  const backToBrowse=()=>{showRouteBrowse();window.scrollTo({top:0,behavior:scrollBehavior()})};
+  document.getElementById('routeBack').addEventListener('click',backToBrowse);
+  document.getElementById('routeBackBottom').addEventListener('click',backToBrowse);
   renderRoute(0);
   browseDistrict=topRouteDistrict();
   renderRouteBrowse();
