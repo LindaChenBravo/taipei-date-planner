@@ -34,7 +34,7 @@ const spotFocusZoom=15;
 let cardObserver=null;
 const cardBatchSize=30;
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
-const typeIcons={宵夜:'🌙',all:'✦',台派:'💚',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',市集:'🧺',拍照:'📷',泡湯:'♨️',按摩:'💆',書店:'📖',圖書館:'📚','Good Eye':'👁️',音樂:'♫',自然:'🌿'};
+const typeIcons={宵夜:'🌙',all:'✦',台派:'💚',文創:'✂️',咖啡:'☕',飲品:'🧋',展覽:'🖼️',古蹟:'🏛️',戶外:'☀️',手作:'🧵',美食:'🍽️',早餐:'🍽️',甜點:'🍰',夜市:'🏮',市集:'🧺',拍照:'📷',泡湯:'♨️',按摩:'💆',書店:'📖',圖書館:'📚','Good Eye':'👁️',音樂:'♫',自然:'🌿'};
 
 document.querySelectorAll('button[data-type]').forEach(button=>{
   if(button.querySelector('.tag-icon'))return;
@@ -57,7 +57,7 @@ function spotVisualType(spot){
   if(spot.type.includes('夜市')&&/夜市|市場|市集/.test(spot.name))return '夜市';
   if(spot.type.includes('市集'))return '市集';
   if(foodTypes.some(type=>spot.type.includes(type)))return '美食';
-  return ['咖啡','音樂','自然','戶外','拍照','展覽','手作','文創','夜市'].find(type=>spot.type.includes(type))||'文創';
+  return ['咖啡','音樂','自然','戶外','拍照','展覽','手作','文創','夜市','古蹟'].find(type=>spot.type.includes(type))||'文創';
 }
 
 function spotIllustration(spot){
