@@ -302,3 +302,8 @@
 .route-back{min-height:44px;padding:0 16px;border:var(--line);border-radius:22px;background:var(--white);color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
 .route-detail-title{margin:4px 0 10px;font-size:22px;line-height:1.3}
 @media (prefers-reduced-motion:no-preference){.route-bubble .rb-count{transition:box-shadow .15s ease}}
+
+/* ===== 路線頁：地圖釘在上方，下方站點清單自己捲動 ===== */
+.route-map-pin{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;padding:8px 0 12px;background:var(--paper);box-shadow:0 8px 8px -8px rgba(62,58,57,.28)}
+.route-map-pin .route-map{height:clamp(220px,36svh,360px)}
+.route-step-row,.route-step{scroll-margin-top:calc(var(--route-pin-h,300px) + 12px)}

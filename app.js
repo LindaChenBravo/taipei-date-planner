@@ -600,7 +600,7 @@ function openRouteDetail(index){
   renderRoute(index);
   ensureRouteMap();
   window.scrollTo({top:0,behavior:scrollBehavior()});
-  window.setTimeout(()=>{if(routeMap){routeMap.resize();fitRouteMap()}},0);
+  window.setTimeout(()=>{updateRoutePinHeight();if(routeMap){routeMap.resize();fitRouteMap()}},0);
   document.getElementById('routeBack').focus({preventScroll:true});
 }
 
@@ -667,7 +667,7 @@ function renderRoute(index){
   const route=routes[index];
   els.routeSelect.value=String(index);
   document.getElementById('routeDetailTitle').textContent=`${routeEmojiFor(route)} ${route.name}`;
-  els.routeMapCanvas.closest('.route-map-wrap').classList.toggle('hidden',route.mapMode==='links');
+  els.routeMapCanvas.closest('.route-map-pin').classList.toggle('hidden',route.mapMode==='links');
   document.querySelector('.route-steps-heading span').textContent=route.mapMode==='links'?'點 ↗ 開啟店家地圖':'點站點可在地圖定位';
   const kind=/跑步|縱走|福州山/.test(route.name)?'🌿 戶外路線':/文化路徑/.test(route.name)?'🏛️ 文化散步':'🚶 散步路線';
   els.routeMeta.innerHTML=`<span>📍 ${route.stops.length} 站</span><span>${kind}</span>`;
@@ -704,15 +704,18 @@ function focusRouteStop(index,origin='list'){
   routeMarkers.forEach((entry,markerIndex)=>entry.element.classList.toggle('is-active',markerIndex===index));
   const position=routeLocations[routes[selectedRouteIndex].stops[index]];
   if(routeMap&&position)routeMap.easeTo({center:[position[1],position[0]],duration:scrollBehavior()==='smooth'?500:0});
+  // 地圖釘在畫面上方：點清單不用再捲回地圖；點地圖上的圖釘時，把對應的清單項目捲到地圖下方
   if(origin==='map'){
     const button=els.routeStops.querySelectorAll('.route-step')[index];
-    button?.scrollIntoView({behavior:scrollBehavior(),block:'center'});
+    button?.scrollIntoView({behavior:scrollBehavior(),block:'start'});
     button?.focus({preventScroll:true});
-  }else if(routeMap&&position&&routes[selectedRouteIndex].mapMode!=='links'){
-    els.routeMapCanvas.scrollIntoView({behavior:scrollBehavior(),block:'center'});
-    routeMarkers[index]?.element.focus({preventScroll:true});
   }
 }
+function updateRoutePinHeight(){
+  const pin=document.getElementById('routeMapPin');
+  if(pin&&!pin.classList.contains('hidden'))document.documentElement.style.setProperty('--route-pin-h',`${pin.offsetHeight}px`);
+}
+window.addEventListener('resize',updateRoutePinHeight);
 
 function fitRouteMap(){
   if(!routeMap||routes[selectedRouteIndex].mapMode==='links')return;
