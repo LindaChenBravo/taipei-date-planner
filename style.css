@@ -214,7 +214,7 @@
     .grid{gap:20px}
     .card{padding:22px}
     .maplibregl-ctrl-bottom-right{bottom:calc(88px + env(safe-area-inset-bottom));right:10px}
-    .route-map .maplibregl-ctrl-bottom-right{bottom:44px;right:0}
+    .route-map .maplibregl-ctrl-bottom-right{bottom:0;right:0}
     .maplibregl-ctrl-group button{width:44px;height:44px}
     .map-fallback{max-width:420px;margin:auto;padding:24px;text-align:center;border:var(--line);border-radius:24px;background:var(--paper)}
     .map-fallback p{margin:0 0 16px;line-height:1.75}
@@ -294,7 +294,8 @@
 .route-card-tag{padding:1px 10px;border:2px solid var(--ink);border-radius:12px;background:var(--yellow);font-size:12px;font-weight:700}
 .route-card-name{font-size:16px;font-weight:700;line-height:1.35}
 .route-card-meta{color:var(--muted);font-size:12px}
-.route-detail-head{margin:14px 0 8px}
+.route-detail-head{display:flex;align-items:center;gap:10px;margin:14px 0 8px}
+.route-order-note{flex:1;min-width:0;color:var(--muted);font-size:12px;line-height:1.4}
 .route-back{min-height:44px;padding:0 16px;border:var(--line);border-radius:22px;background:var(--white);color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
 .route-detail-title{margin:4px 0 10px;font-size:22px;line-height:1.3}
 @media (prefers-reduced-motion:no-preference){.route-bubble .rb-count{transition:box-shadow .15s ease}}

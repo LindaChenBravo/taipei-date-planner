@@ -655,6 +655,7 @@ function renderRoute(index){
   els.routeSelect.value=String(index);
   document.getElementById('routeDetailTitle').textContent=`${routeEmojiFor(route)} ${route.name}`;
   els.routeMapCanvas.closest('.route-map-pin').classList.toggle('hidden',route.mapMode==='links');
+  document.getElementById('routeOrderNote').classList.toggle('hidden',route.mapMode==='links');
   document.querySelector('.route-steps-heading span').textContent=route.mapMode==='links'?'點 ↗ 開啟店家地圖':'點站點可在地圖定位';
   const kind=/跑步|縱走|福州山/.test(route.name)?'🌿 戶外路線':/文化路徑/.test(route.name)?'🏛️ 文化散步':'🚶 散步路線';
   els.routeMeta.innerHTML=`<span>📍 ${route.stops.length} 站</span><span>${kind}</span>`;
