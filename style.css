@@ -307,3 +307,14 @@
 .rb-mt{fill:var(--green);opacity:.6}
 .rb-park{fill:var(--green);opacity:.75}
 .rb-river{fill:none;stroke:var(--blue);stroke-linecap:round;stroke-linejoin:round;opacity:.95;vector-effect:non-scaling-stroke}
+
+/* ===== 條件搜尋頁頂部卡片（手機）：標題在上，說明在左下，插圖放大貼齊卡片底部 ===== */
+@media(max-width:719px){
+  body.view-list .hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(150px,58%,190px);grid-template-areas:"title title" "copy art";column-gap:6px;row-gap:4px;align-items:end;min-height:0;padding:18px 14px 0 18px}
+  body.view-list .hero-copy{display:contents}
+  body.view-list .hero h1{grid-area:title;margin:0;font-size:30px;line-height:1.2}
+  body.view-list .hero h1 br{display:none}
+  body.view-list .hero .sub{grid-area:copy;align-self:center;max-width:none;padding-bottom:16px;font-size:14px;line-height:1.6}
+  body.view-list .hero-art{grid-area:art;display:block;flex:none;width:100%;min-height:0;margin:0 0 -3px;align-self:end}
+  body.view-list .hero-art svg{display:block;width:100%;height:auto}
+}
