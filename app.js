@@ -77,6 +77,8 @@ function spotIllustration(spot){
 }
 
 function spotMarkerIcon(spot){
+  // 有「古蹟」標籤的地點，地圖圖釘一律優先用 🏛️（卡片插圖不受影響）
+  if(spot.type.includes('古蹟'))return typeIcons['古蹟'];
   return typeIcons[spotVisualType(spot)]||'📍';
 }
 
