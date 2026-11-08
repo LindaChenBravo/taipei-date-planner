@@ -275,12 +275,6 @@
 
 /* ===== 精選路線首頁：區域氣泡地圖＋底部卡片 ===== */
 .route-bubble-map{position:relative;margin-top:14px;height:380px;border:var(--line);border-radius:24px;background:#F1EEE8;overflow:hidden}
-.rb-decor{position:absolute;display:block;pointer-events:none}
-.rb-river-1{left:17%;top:12%;width:9%;height:80%;border-radius:999px;background:var(--blue);transform:rotate(-8deg);opacity:.9}
-.rb-river-2{left:38%;top:37%;width:46%;height:5%;border-radius:999px;background:var(--blue);transform:rotate(-12deg);opacity:.9}
-.rb-park-1{left:26%;top:12%;width:20%;height:14%;border-radius:999px;background:var(--green);opacity:.6}
-.rb-park-2{left:46%;top:60%;width:20%;height:16%;border-radius:999px;background:var(--green);opacity:.6}
-.rb-park-3{left:66%;top:38%;width:19%;height:12%;border-radius:999px;background:var(--green);opacity:.6}
 .route-bubble{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px;padding:0;border:0;background:transparent;color:var(--ink);font:inherit;cursor:pointer}
 .route-bubble:hover,.route-bubble:active,.route-bubble:focus,.route-bubble:focus-visible{transform:translate(-50%,-50%)}
 .route-bubble .rb-count{display:grid;place-items:center;width:var(--size);height:var(--size);border:var(--line);border-radius:50%;background:var(--yellow);font-size:16px;font-weight:700}
@@ -307,3 +301,9 @@
 
 /* 精選路線首頁：頂端留白與條件搜尋一致 */
 #routeBrowse .section-title{margin-top:13px}
+
+/* 路線首頁氣泡地圖背景：河流（藍）與山林公園（綠）示意圖，隨容器等比拉伸 */
+.rb-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.rb-mt{fill:var(--green);opacity:.6}
+.rb-park{fill:var(--green);opacity:.75}
+.rb-river{fill:none;stroke:var(--blue);stroke-linecap:round;stroke-linejoin:round;opacity:.95;vector-effect:non-scaling-stroke}
