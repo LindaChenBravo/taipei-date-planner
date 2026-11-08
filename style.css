@@ -286,14 +286,14 @@
 .rb-park-3{left:73%;top:42%;width:21%;height:13%;border-radius:999px;background:var(--green);opacity:.7}
 .route-bubble-map.is-ntpc .rb-decor{display:none}
 .route-bubble{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px;padding:0;border:0;background:transparent;color:var(--ink);font:inherit;cursor:pointer}
+.route-bubble:hover,.route-bubble:active,.route-bubble:focus,.route-bubble:focus-visible{transform:translate(-50%,-50%)}
 .route-bubble .rb-count{display:grid;place-items:center;width:var(--size);height:var(--size);border:var(--line);border-radius:50%;background:var(--bubble);font-size:18px;font-weight:700}
 .route-bubble .rb-name{padding:0 6px;border:2px solid transparent;border-radius:6px;background:rgba(255,252,246,.92);font-size:12px;font-weight:700}
 .route-bubble[aria-pressed="true"] .rb-count{box-shadow:3px 4px 0 var(--ink)}
 .route-bubble[aria-pressed="true"] .rb-name{border-color:var(--ink);background:var(--paper)}
-.route-sheet{position:relative;margin-top:-14px;padding:10px 0 4px;border:var(--line);border-radius:26px 26px 0 0;background:var(--paper);box-shadow:0 -3px 0 rgba(62,58,57,.12)}
-.route-sheet-handle{width:44px;height:5px;margin:0 auto;border-radius:3px;background:var(--ink);opacity:.35}
-.route-sheet h3{margin:12px 16px 0;font-size:18px}
-.route-card-row{display:flex;gap:12px;padding:12px 16px 12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.route-sheet{margin-top:16px}
+.route-sheet h3{margin:0 4px;font-size:18px}
+.route-card-row{display:flex;gap:12px;margin:0 -16px;padding:12px 16px 12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:16px;-webkit-overflow-scrolling:touch}
 .route-card{flex:none;width:240px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;box-sizing:border-box;padding:12px 14px;border:var(--line);border-radius:18px;background:var(--white);color:var(--ink);font:inherit;text-align:left;cursor:pointer;scroll-snap-align:start;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
 .route-card-tag{padding:1px 10px;border:2px solid var(--ink);border-radius:12px;background:var(--yellow);font-size:12px;font-weight:700}
 .route-card-name{font-size:16px;font-weight:700;line-height:1.35}
