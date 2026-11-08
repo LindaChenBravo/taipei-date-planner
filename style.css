@@ -283,7 +283,7 @@
 .route-bubble[aria-pressed="true"] .rb-name{border-color:var(--ink);background:var(--paper)}
 .route-sheet{margin-top:14px}
 .route-sheet h3{margin:0 4px;font-size:18px}
-.route-detail-head{display:flex;align-items:center;gap:10px;margin:14px 0 8px}
+.route-detail-head{display:flex;align-items:center;gap:10px;margin:0 0 8px}
 .route-order-note{flex:1;min-width:0;color:var(--muted);font-size:12px;line-height:1.4}
 .route-back{min-height:44px;padding:0 16px;border:var(--line);border-radius:22px;background:var(--white);color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
 .route-detail-title{margin:4px 0 10px;font-size:22px;line-height:1.3}
@@ -295,7 +295,7 @@
 .route-step-row,.route-step{scroll-margin-top:calc(var(--route-pin-h,300px) + 12px)}
 
 /* 精選路線首頁：頂端留白與條件搜尋一致 */
-#routeBrowse .section-title{margin-top:13px}
+#routeBrowse .section-title{margin-top:0}
 
 /* 路線首頁氣泡地圖背景：河流（藍）與山林公園（綠）示意圖，隨容器等比拉伸 */
 .rb-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -337,3 +337,6 @@
 .site-tabs .site-tab.active{background:var(--yellow);box-shadow:none}
 .site-tabs .site-tab:hover,.site-tabs .site-tab:active{transform:none}
 @media(max-height:500px) and (orientation:landscape){.site-tabs .site-tab{flex-direction:row;gap:6px;min-height:40px}}
+
+/* 精選路線頂端高度與條件搜尋一致（頁面內距 20px，不再多加 8px） */
+body.view-routes #routeSection{margin-top:0}
