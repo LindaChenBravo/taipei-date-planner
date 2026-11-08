@@ -563,17 +563,14 @@ function renderRouteBrowse(){
   const row=document.getElementById('routeCards');row.replaceChildren();
   list.forEach(index=>{
     const route=routes[index];
-    const card=document.createElement('button');card.type='button';card.className='route-card';
-    const tag=document.createElement('span');tag.className='route-card-tag';tag.textContent=`${routeEmojiFor(route)} ${routeDuration(route)}`;
-    const title=document.createElement('span');title.className='route-card-name';title.textContent=route.name;
-    const others=(route.districts||[]).filter(d=>d!==browseDistrict);
-    const meta=document.createElement('span');meta.className='route-card-meta';
-    meta.textContent=`${route.stops.length} 站${others.length?` · 也經過${others.join('、')}區`:''}`;
-    card.append(tag,title,meta);
-    card.addEventListener('click',()=>openRouteDetail(index));
-    row.appendChild(card);
+    const item=document.createElement('button');item.type='button';item.className='route-item';
+    const emoji=document.createElement('span');emoji.className='route-item-emoji';emoji.setAttribute('aria-hidden','true');emoji.textContent=routeEmojiFor(route);
+    const title=document.createElement('span');title.className='route-item-name';title.textContent=route.name;
+    const chevron=document.createElement('span');chevron.className='route-item-chevron';chevron.setAttribute('aria-hidden','true');chevron.textContent='›';
+    item.append(emoji,title,chevron);
+    item.addEventListener('click',()=>openRouteDetail(index));
+    row.appendChild(item);
   });
-  row.scrollLeft=0;
   if(focusKey){const again=document.getElementById('routeBrowse').querySelector(`[data-focus-key="${focusKey}"]`);if(again)again.focus({preventScroll:true})}
 }
 function showRouteBrowse(){
