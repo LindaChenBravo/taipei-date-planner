@@ -304,3 +304,6 @@
 .route-map-pin{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;padding:8px 0 12px;background:var(--paper);box-shadow:0 8px 8px -8px rgba(62,58,57,.28)}
 .route-map-pin .route-map{height:min(460px,calc(100svh - 300px))}
 .route-step-row,.route-step{scroll-margin-top:calc(var(--route-pin-h,300px) + 12px)}
+
+/* 精選路線首頁：頂端留白與條件搜尋一致 */
+#routeBrowse .section-title{margin-top:13px}
