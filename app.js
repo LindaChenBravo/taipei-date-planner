@@ -239,10 +239,7 @@ function setView(view){
   window.scrollTo({top:0,behavior:scrollBehavior()});
   if(isMap&&vectorMap)window.setTimeout(()=>vectorMap.resize(),0);
   if(isList)renderCards();
-  if(isRoutes){
-    ensureRouteMap();
-    window.setTimeout(()=>{if(routeMap){routeMap.resize();fitRouteMap()}},0);
-  }
+  if(isRoutes)showRouteBrowse();
 }
 
 function openInMap(spot,scroll=true,pan=true){
@@ -515,18 +512,106 @@ function renderCards(){
   }
 }
 
+const routeEmojiMap={
+  '東區周邊散步路線':'🏙️','台北大安文青歷史一日遊':'🏡',
+  '坪林茶鄉一日遊':'🍵','大稻埕夕陽路線':'🌇','圓山文藝路線':'🎨',
+  '大安療癒路線':'🌷','中山懶人路線':'☕','基隆河右岸跑步路線':'🏃',
+  '四獸山縱走路線':'🐾','富陽生態公園－福州山':'🌳','北投文化路徑':'♨️',
+  '士林文化路徑':'🎭','大同文化路徑':'🧱','中正文化路徑':'🏛️','萬華文化路徑':'🏮'
+};
+function routeEmojiFor(route){return route.emoji||routeEmojiMap[route.name]||'🚶'}
+
+// 路線首頁：區域氣泡地圖（位置為示意的相對方位，單位是容器寬高的百分比）
+const taipeiDistricts=['北投','士林','內湖','大同','中山','松山','南港','萬華','中正','大安','信義','文山'];
+const routeBubblePos={
+  '台北市':{北投:[36,24],士林:[52,36],內湖:[80,38],大同:[33,53],中山:[54,53],松山:[74,54],南港:[91,60],萬華:[22,71],中正:[41,66],大安:[58,70],信義:[80,74],文山:[68,87]},
+  '新北市':{淡水:[30,16],瑞芳:[80,26],貢寮:[90,48],板橋:[40,50],鶯歌:[14,64],三峽:[28,78],坪林:[74,76]}
+};
+let browseCity='台北市',browseDistrict='';
+function routeCityOf(district){return taipeiDistricts.includes(district)?'台北市':'新北市'}
+function routeDistrictMap(){
+  const map=new Map();
+  routes.forEach((route,index)=>(route.districts||[]).forEach(d=>{if(!map.has(d))map.set(d,[]);map.get(d).push(index)}));
+  return map;
+}
+function routeDuration(route){return /半日/.test(route.name)?'半日':/一日/.test(route.name)?'一日':'散步'}
+function topRouteDistrict(city){
+  let best='',bestCount=0;
+  routeDistrictMap().forEach((list,district)=>{if(routeCityOf(district)===city&&list.length>bestCount){best=district;bestCount=list.length}});
+  return best;
+}
+function renderRouteBrowse(){
+  const byDistrict=routeDistrictMap();
+  const focusKey=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.focusKey:'';
+  const cities=['台北市','新北市'];
+  const tabs=document.getElementById('routeCityTabs');tabs.replaceChildren();
+  cities.forEach(city=>{
+    const count=routes.filter(route=>(route.districts||[]).some(d=>routeCityOf(d)===city)).length;
+    const button=document.createElement('button');button.type='button';button.className='route-city-tab';
+    button.textContent=`${city} · ${count} 條`;button.dataset.focusKey=`city:${city}`;
+    button.setAttribute('aria-pressed',String(city===browseCity));
+    button.addEventListener('click',()=>{browseCity=city;browseDistrict=topRouteDistrict(city);renderRouteBrowse()});
+    tabs.appendChild(button);
+  });
+  if(!browseDistrict||routeCityOf(browseDistrict)!==browseCity)browseDistrict=topRouteDistrict(browseCity);
+  document.getElementById('routeBubbleMap').classList.toggle('is-ntpc',browseCity!=='台北市');
+  const holder=document.getElementById('routeBubbles');holder.replaceChildren();
+  Object.entries(routeBubblePos[browseCity]).forEach(([district,[x,y]])=>{
+    const list=byDistrict.get(district);if(!list)return;
+    const n=list.length;
+    const button=document.createElement('button');button.type='button';button.className='route-bubble';button.dataset.focusKey=`bubble:${district}`;
+    button.style.left=`${x}%`;button.style.top=`${y}%`;
+    button.style.setProperty('--size',`${Math.min(66,44+(n-1)*3)}px`);
+    button.style.setProperty('--bubble',n>=4?'#F2A497':n>=2?'#F6D27A':'#FFF1C9');
+    button.setAttribute('aria-pressed',String(district===browseDistrict));
+    button.setAttribute('aria-label',`${district}區，${n} 條路線`);
+    const count=document.createElement('span');count.className='rb-count';count.textContent=String(n);
+    const name=document.createElement('span');name.className='rb-name';name.textContent=district;
+    button.append(count,name);
+    button.addEventListener('click',()=>{browseDistrict=district;renderRouteBrowse()});
+    holder.appendChild(button);
+  });
+  const list=byDistrict.get(browseDistrict)||[];
+  document.getElementById('routeSheetTitle').textContent=`${browseDistrict}區 · ${list.length} 條路線`;
+  const row=document.getElementById('routeCards');row.replaceChildren();
+  list.forEach(index=>{
+    const route=routes[index];
+    const card=document.createElement('button');card.type='button';card.className='route-card';
+    const tag=document.createElement('span');tag.className='route-card-tag';tag.textContent=`${routeEmojiFor(route)} ${routeDuration(route)}`;
+    const title=document.createElement('span');title.className='route-card-name';title.textContent=route.name;
+    const others=(route.districts||[]).filter(d=>d!==browseDistrict);
+    const meta=document.createElement('span');meta.className='route-card-meta';
+    meta.textContent=`${route.stops.length} 站${others.length?` · 也經過${others.join('、')}區`:''}`;
+    card.append(tag,title,meta);
+    card.addEventListener('click',()=>openRouteDetail(index));
+    row.appendChild(card);
+  });
+  row.scrollLeft=0;
+  if(focusKey){const again=document.getElementById('routeBrowse').querySelector(`[data-focus-key="${focusKey}"]`);if(again)again.focus({preventScroll:true})}
+}
+function showRouteBrowse(){
+  document.getElementById('routeDetail').classList.add('hidden');
+  document.getElementById('routeBrowse').classList.remove('hidden');
+  renderRouteBrowse();
+}
+function openRouteDetail(index){
+  document.getElementById('routeBrowse').classList.add('hidden');
+  document.getElementById('routeDetail').classList.remove('hidden');
+  renderRoute(index);
+  ensureRouteMap();
+  window.scrollTo({top:0,behavior:scrollBehavior()});
+  window.setTimeout(()=>{if(routeMap){routeMap.resize();fitRouteMap()}},0);
+  document.getElementById('routeBack').focus({preventScroll:true});
+}
+
 function renderRoutes(){
   els.routeCount.textContent=`${routes.length} 條`;
-  const routeEmojis={
-    '東區周邊散步路線':'🏙️','台北大安文青歷史一日遊':'🏡',
-    '坪林茶鄉一日遊':'🍵','大稻埕夕陽路線':'🌇','圓山文藝路線':'🎨',
-    '大安療癒路線':'🌷','中山懶人路線':'☕','基隆河右岸跑步路線':'🏃',
-    '四獸山縱走路線':'🐾','富陽生態公園－福州山':'🌳','北投文化路徑':'♨️',
-    '士林文化路徑':'🎭','大同文化路徑':'🧱','中正文化路徑':'🏛️','萬華文化路徑':'🏮'
-  };
-  routes.forEach((route,index)=>els.routeSelect.add(new Option(`${route.emoji||routeEmojis[route.name]||'🚶'} ${route.name}`,String(index))));
+  routes.forEach((route,index)=>els.routeSelect.add(new Option(`${routeEmojiFor(route)} ${route.name}`,String(index))));
   els.routeSelect.addEventListener('change',()=>renderRoute(Number(els.routeSelect.value)));
+  document.getElementById('routeBack').addEventListener('click',showRouteBrowse);
   renderRoute(0);
+  browseDistrict=topRouteDistrict(browseCity);
+  renderRouteBrowse();
 }
 
 function routeStopIcon(name){
@@ -581,6 +666,7 @@ function renderRoute(index){
   selectedRouteStop=-1;
   const route=routes[index];
   els.routeSelect.value=String(index);
+  document.getElementById('routeDetailTitle').textContent=`${routeEmojiFor(route)} ${route.name}`;
   els.routeMapCanvas.closest('.route-map-wrap').classList.toggle('hidden',route.mapMode==='links');
   document.querySelector('.route-steps-heading span').textContent=route.mapMode==='links'?'點 ↗ 開啟店家地圖':'點站點可在地圖定位';
   const kind=/跑步|縱走|福州山/.test(route.name)?'🌿 戶外路線':/文化路徑/.test(route.name)?'🏛️ 文化散步':'🚶 散步路線';

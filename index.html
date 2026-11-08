@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" media="print" onload="this.media='all'" data-page-style />
-  <link rel="stylesheet" href="./style.css?v=map-search-20261106" data-page-style />
+  <link rel="stylesheet" href="./style.css?v=route-bubbles2-20261108" data-page-style />
 <style>
 html,body{background:#FFFCF6}
 .page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#FFF8E9;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
@@ -223,22 +223,39 @@ html[data-intro-enabled="false"] .page-loader *{animation:none!important}
     <section id="recommendation" class="callout hidden" aria-live="polite"></section>
 
     <section id="routeSection" class="hidden" aria-labelledby="routeTitle">
-      <div class="section-title">
-        <div><h2 id="routeTitle">精選玩樂路線</h2><p class="section-copy">選一條路線，看看每站的相對位置與走訪順序。</p></div>
-        <span id="routeCount" class="badge"></span>
+      <div id="routeBrowse">
+        <div class="section-title">
+          <div><h2 id="routeTitle">精選玩樂路線</h2><p class="section-copy">點一個區域，看看那一區有哪些路線可以玩。</p></div>
+          <span id="routeCount" class="badge"></span>
+        </div>
+        <div id="routeCityTabs" class="route-city-tabs" role="group" aria-label="選擇縣市"></div>
+        <div id="routeBubbleMap" class="route-bubble-map" role="group" aria-label="各區路線數量地圖，數字是該區的路線數">
+          <i class="rb-decor rb-river-1" aria-hidden="true"></i><i class="rb-decor rb-river-2" aria-hidden="true"></i>
+          <i class="rb-decor rb-park-1" aria-hidden="true"></i><i class="rb-decor rb-park-2" aria-hidden="true"></i><i class="rb-decor rb-park-3" aria-hidden="true"></i>
+          <div id="routeBubbles"></div>
+        </div>
+        <div class="route-sheet" role="region" aria-labelledby="routeSheetTitle">
+          <div class="route-sheet-handle" aria-hidden="true"></div>
+          <h3 id="routeSheetTitle"></h3>
+          <div id="routeCards" class="route-card-row"></div>
+        </div>
       </div>
-      <label class="route-picker" for="routeSelect"><span class="sr-only">選擇精選路線</span><select id="routeSelect"></select></label>
-      <div id="routeMeta" class="route-meta" aria-live="polite"></div>
-      <div class="route-map-wrap">
-        <div id="routeMapCanvas" class="route-map" aria-label="所選路線的站點位置地圖"></div>
-        <div class="route-map-note">虛線為走訪順序，非實際道路</div>
+      <div id="routeDetail" class="hidden">
+        <div class="route-detail-head"><button type="button" id="routeBack" class="route-back">← 路線總覽</button></div>
+        <h2 id="routeDetailTitle" class="route-detail-title"></h2>
+        <label class="route-picker hidden" for="routeSelect"><span class="sr-only">選擇精選路線</span><select id="routeSelect"></select></label>
+        <div id="routeMeta" class="route-meta" aria-live="polite"></div>
+        <div class="route-map-wrap">
+          <div id="routeMapCanvas" class="route-map" aria-label="所選路線的站點位置地圖"></div>
+          <div class="route-map-note">虛線為走訪順序，非實際道路</div>
+        </div>
+        <div class="route-steps">
+          <div class="route-steps-heading"><h3>依序走訪</h3><span>點站點可在地圖定位</span></div>
+          <div id="routeStops"></div>
+        </div>
+        <div id="routeDirections" class="route-directions"></div>
+        <p id="routeNote" class="note"></p>
       </div>
-      <div class="route-steps">
-        <div class="route-steps-heading"><h3>依序走訪</h3><span>點站點可在地圖定位</span></div>
-        <div id="routeStops"></div>
-      </div>
-      <div id="routeDirections" class="route-directions"></div>
-      <p id="routeNote" class="note"></p>
     </section>
 
     <section id="mapSection" aria-labelledby="mapSectionTitle">
@@ -310,7 +327,7 @@ html[data-intro-enabled="false"] .page-loader *{animation:none!important}
 
 <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
 <script src="./data/spots.js?v=parks-20261108"></script>
-<script src="./data/routes.js?v=holi-routes-20261108"></script>
-<script src="./app.js?v=heritage-pin-20261108"></script>
+<script src="./data/routes.js?v=route-districts-20261108"></script>
+<script src="./app.js?v=route-bubbles2-20261108"></script>
 </body>
 </html>
