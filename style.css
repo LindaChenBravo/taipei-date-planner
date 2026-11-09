@@ -274,20 +274,13 @@
 
 
 /* ===== 精選路線首頁：區域氣泡地圖＋底部卡片 ===== */
-.route-bubble-map{position:relative;margin-top:14px;height:380px;border:var(--line);border-radius:24px;background:#F1EEE8;overflow:hidden}
-.route-bubble{position:absolute;width:max-content;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px;padding:0;border:0;background:transparent;color:var(--ink);font:inherit;cursor:pointer}
-.route-bubble:hover,.route-bubble:active,.route-bubble:focus,.route-bubble:focus-visible{transform:translate(-50%,-50%)}
-.route-bubble .rb-count{display:grid;place-items:center;width:var(--size);height:var(--size);border:var(--line);border-radius:50%;background:var(--yellow);font-size:16px;font-weight:700}
-.route-bubble .rb-name{white-space:nowrap;padding:0 6px;border:2px solid transparent;border-radius:6px;background:rgba(255,252,246,.92);font-size:12px;font-weight:700}
-.route-bubble[aria-pressed="true"] .rb-count{background:var(--coral);box-shadow:3px 4px 0 var(--ink)}
-.route-bubble[aria-pressed="true"] .rb-name{border-color:var(--ink);background:var(--paper)}
+.route-bubble-map{position:relative;margin-top:14px;height:380px;border:var(--line);border-radius:24px;background:var(--paper);overflow:hidden}
 .route-sheet{margin-top:14px}
 .route-sheet h3{margin:0 4px;font-size:18px}
 .route-detail-head{display:flex;align-items:center;gap:10px;margin:0 0 8px}
 .route-order-note{flex:1;min-width:0;color:var(--muted);font-size:12px;line-height:1.4}
 .route-back{min-height:44px;padding:0 16px;border:var(--line);border-radius:22px;background:var(--white);color:var(--ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer;box-shadow:2px 3px 0 rgba(62,58,57,.18)}
 .route-detail-title{margin:4px 0 10px;font-size:22px;line-height:1.3}
-@media (prefers-reduced-motion:no-preference){.route-bubble .rb-count{transition:box-shadow .15s ease}}
 
 /* ===== 路線頁：地圖釘在上方，下方站點清單自己捲動 ===== */
 .route-map-pin{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;padding:8px 0 12px;background:var(--paper);box-shadow:0 8px 8px -8px rgba(62,58,57,.28)}
@@ -298,10 +291,6 @@
 #routeBrowse .section-title{margin-top:0}
 
 /* 路線首頁氣泡地圖背景：河流（藍）與山林公園（綠）示意圖，隨容器等比拉伸 */
-.rb-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.rb-mt{fill:var(--green);opacity:.6}
-.rb-park{fill:var(--green);opacity:.75}
-.rb-river{fill:none;stroke:var(--blue);stroke-linecap:round;stroke-linejoin:round;opacity:.95;vector-effect:non-scaling-stroke}
 
 /* ===== 條件搜尋頁頂部卡片（手機）：標題在上，說明在左下，插圖放大貼齊卡片底部 ===== */
 @media(max-width:719px){
@@ -340,3 +329,17 @@
 
 /* 精選路線頂端高度與條件搜尋一致（頁面內距 20px，不再多加 8px） */
 body.view-routes #routeSection{margin-top:0}
+
+/* ===== 路線首頁：行政區地圖（MapLibre）===== */
+.route-district-map{position:absolute;inset:0}
+.route-district-map .maplibregl-canvas{outline:none}
+.rd-inset{position:absolute;left:10px;top:10px;z-index:3;padding:3px;border:var(--line);border-radius:12px;background:var(--paper);pointer-events:none;line-height:0}
+.rd-all{position:absolute;right:10px;top:10px;z-index:3;min-height:44px;padding:0 16px;border:var(--line);border-radius:22px;background:var(--white);color:var(--ink);font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:none}
+.rd-all:hover,.rd-all:active{transform:none;background:#fff9e9}
+.rd-error{position:absolute;left:12px;right:12px;bottom:12px;margin:0;z-index:3;padding:8px 12px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);font-size:13px}
+.rd-label{display:flex;flex-direction:column;align-items:center;gap:0;padding:2px 4px;border:0;background:transparent;color:var(--ink);font:inherit;line-height:1.05;cursor:pointer;box-shadow:none}
+.rd-label:hover,.rd-label:active{transform:none}
+.rd-count{font-size:14px;font-weight:700}
+.rd-name{font-size:10.5px;font-weight:700}
+.route-bubble-map.rd-far .rd-name{display:none}
+.route-bubble-map.rd-far .rd-count{font-size:12px}

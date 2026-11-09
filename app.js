@@ -521,38 +521,108 @@ const routeEmojiMap={
 };
 function routeEmojiFor(route){return route.emoji||routeEmojiMap[route.name]||'🚶'}
 
-// 路線首頁：區域氣泡地圖（台北＋新北放在同一張；位置是示意的相對方位，單位是容器寬高的百分比）
-const routeBubblePos={
-  淡水:[13,14],北投:[34,22],士林:[52,27],內湖:[72,36],大同:[29,45],中山:[49,46],松山:[68,47],南港:[89,52],
-  萬華:[28,64],中正:[47,66],大安:[68,68],信義:[89,70],文山:[62,88],
-  板橋:[10,60],鶯歌:[10,84],三峽:[28,88],瑞芳:[88,15],貢寮:[90,33],坪林:[86,88]
-};
+// 路線首頁：行政區地圖（真實行政區界線，可拖曳、雙指縮放）。有路線的區是黃色，選到的區是珊瑚色
 let browseDistrict='';
+let districtMap=null,districtLoading=false,districtData=null,insetProject=null;
+const districtMarkers=new Map();
+const TAIPEI_BOUNDS=[[121.435,24.945],[121.675,25.215]];
+const ALL_BOUNDS=[[121.30,24.84],[121.97,25.30]];
 function routeDistrictMap(){
   const map=new Map();
   routes.forEach((route,index)=>(route.districts||[]).forEach(d=>{if(!map.has(d))map.set(d,[]);map.get(d).push(index)}));
   return map;
 }
 function routeDuration(route){return /半日/.test(route.name)?'半日':/一日/.test(route.name)?'一日':'散步'}
+function selectDistrict(town){browseDistrict=town===browseDistrict?'':town;renderRouteBrowse()}
+function prefersReducedMotion(){return window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches}
+function buildDistrictInset(){
+  const el=document.getElementById('routeInset');if(!el||!districtData)return;
+  const w=84,h=88,pad=3,NS='http://www.w3.org/2000/svg';
+  const [[lon0,lat0],[lon1,lat1]]=ALL_BOUNDS;const kx=Math.cos((lat0+lat1)/2*Math.PI/180);
+  const k=Math.min((w-2*pad)/((lon1-lon0)*kx),(h-2*pad)/(lat1-lat0));
+  const offx=pad+(w-2*pad-(lon1-lon0)*kx*k)/2,offy=pad+(h-2*pad-(lat1-lat0)*k)/2;
+  insetProject=(lon,lat)=>[(lon-lon0)*kx*k+offx,(lat1-lat)*k+offy];
+  const svg=document.createElementNS(NS,'svg');svg.setAttribute('width',w);svg.setAttribute('height',h);svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+  districtData.features.forEach(f=>{
+    const polys=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;
+    const d=polys.map(poly=>poly.map(ring=>'M'+ring.map(([x,y])=>insetProject(x,y).map(v=>v.toFixed(1)).join(' ')).join('L')+'Z').join('')).join('');
+    const path=document.createElementNS(NS,'path');path.setAttribute('d',d);
+    path.setAttribute('fill',f.properties.has===1?'#F6D27A':'#ECE7DD');path.setAttribute('stroke','#FFFCF6');path.setAttribute('stroke-width','.6');
+    svg.appendChild(path);
+  });
+  const rect=document.createElementNS(NS,'rect');rect.setAttribute('id','routeInsetView');rect.setAttribute('fill','none');rect.setAttribute('stroke','#3E3A39');rect.setAttribute('stroke-width','1.8');rect.setAttribute('rx','2');
+  svg.appendChild(rect);el.replaceChildren(svg);
+}
+function updateInsetViewport(){
+  const rect=document.getElementById('routeInsetView');if(!rect||!districtMap||!insetProject)return;
+  const b=districtMap.getBounds();
+  const [x0,y0]=insetProject(Math.max(b.getWest(),ALL_BOUNDS[0][0]),Math.min(b.getNorth(),ALL_BOUNDS[1][1]));
+  const [x1,y1]=insetProject(Math.min(b.getEast(),ALL_BOUNDS[1][0]),Math.max(b.getSouth(),ALL_BOUNDS[0][1]));
+  rect.setAttribute('x',x0.toFixed(1));rect.setAttribute('y',y0.toFixed(1));
+  rect.setAttribute('width',Math.max(2,x1-x0).toFixed(1));rect.setAttribute('height',Math.max(2,y1-y0).toFixed(1));
+}
+function updateDistrictSelection(){
+  if(!districtMap||!districtData||!districtMap.getSource('district-selected'))return;
+  const feature=districtData.features.find(f=>f.properties.has===1&&f.properties.town===browseDistrict);
+  districtMap.getSource('district-selected').setData({type:'FeatureCollection',features:feature?[feature]:[]});
+  districtMarkers.forEach((button,town)=>button.setAttribute('aria-pressed',String(town===browseDistrict)));
+}
+function initDistrictMap(){
+  if(districtMap||districtLoading||!window.maplibregl)return;
+  districtLoading=true;
+  fetch('./data/districts.json?v=districts-20261109').then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(data=>{
+    const byDistrict=routeDistrictMap();
+    data.features.forEach(f=>{const p=f.properties;p.has=(p.county!=='基隆市'&&byDistrict.has(p.town))?1:0});
+    districtData=data;
+    const frame=document.getElementById('routeBubbleMap');
+    districtMap=new maplibregl.Map({
+      container:'routeDistrictMap',
+      style:{version:8,sources:{},layers:[{id:'bg',type:'background',paint:{'background-color':'#FFFCF6'}}]},
+      bounds:TAIPEI_BOUNDS,fitBoundsOptions:{padding:4},
+      minZoom:8.6,maxZoom:13,maxBounds:[[121.1,24.65],[122.15,25.5]],
+      dragRotate:false,pitchWithRotate:false,attributionControl:false,renderWorldCopies:false
+    });
+    districtMap.touchZoomRotate.disableRotation();
+    const syncZoom=()=>frame.classList.toggle('rd-far',districtMap.getZoom()<9.3);
+    districtMap.on('load',()=>{
+      districtMap.addSource('districts',{type:'geojson',data});
+      districtMap.addSource('district-selected',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      districtMap.addLayer({id:'district-fill',type:'fill',source:'districts',paint:{'fill-color':['case',['==',['get','has'],1],'#F6D27A','#ECE7DD']}});
+      districtMap.addLayer({id:'district-line',type:'line',source:'districts',layout:{'line-join':'round'},paint:{'line-color':'#FFFCF6','line-width':['interpolate',['linear'],['zoom'],8,.8,12,2]}});
+      districtMap.addLayer({id:'district-sel-fill',type:'fill',source:'district-selected',paint:{'fill-color':'#F2A497'}});
+      districtMap.addLayer({id:'district-sel-line',type:'line',source:'district-selected',layout:{'line-join':'round'},paint:{'line-color':'#3E3A39','line-width':2.5}});
+      districtMap.on('click','district-fill',event=>{
+        // 點在區名標籤上時，標籤自己會處理，避免地圖再選一次造成「選了又取消」
+        const target=event.originalEvent&&event.originalEvent.target;
+        if(target&&target.closest&&target.closest('.rd-marker'))return;
+        const p=event.features&&event.features[0]&&event.features[0].properties;
+        if(p&&Number(p.has)===1)selectDistrict(p.town);
+      });
+      districtMap.on('mouseenter','district-fill',()=>{districtMap.getCanvas().style.cursor='pointer'});
+      districtMap.on('mouseleave','district-fill',()=>{districtMap.getCanvas().style.cursor=''});
+      data.features.forEach(f=>{
+        const p=f.properties;if(p.has!==1)return;
+        const n=byDistrict.get(p.town).length;
+        const wrap=document.createElement('div');wrap.className='rd-marker';
+        const button=document.createElement('button');button.type='button';button.className='rd-label';
+        button.setAttribute('aria-label',`${p.town}區，${n} 條路線`);
+        const count=document.createElement('span');count.className='rd-count';count.textContent=String(n);
+        const name=document.createElement('span');name.className='rd-name';name.textContent=p.town;
+        button.append(count,name);
+        button.addEventListener('click',()=>selectDistrict(p.town));
+        wrap.appendChild(button);
+        new maplibregl.Marker({element:wrap,anchor:'center'}).setLngLat([p.lx,p.ly]).addTo(districtMap);
+        districtMarkers.set(p.town,button);
+      });
+      buildDistrictInset();updateInsetViewport();updateDistrictSelection();syncZoom();
+    });
+    districtMap.on('move',updateInsetViewport);
+    districtMap.on('zoom',syncZoom);
+  }).catch(()=>{districtLoading=false;document.getElementById('routeMapError').classList.remove('hidden')});
+}
 function renderRouteBrowse(){
   const byDistrict=routeDistrictMap();
-  const focusKey=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.focusKey:'';
   if(browseDistrict&&!byDistrict.has(browseDistrict))browseDistrict='';
-  const holder=document.getElementById('routeBubbles');holder.replaceChildren();
-  Object.entries(routeBubblePos).forEach(([district,[x,y]])=>{
-    const list=byDistrict.get(district);if(!list)return;
-    const n=list.length;
-    const button=document.createElement('button');button.type='button';button.className='route-bubble';button.dataset.focusKey=`bubble:${district}`;
-    button.style.left=`${x}%`;button.style.top=`${y}%`;
-    button.style.setProperty('--size',`${Math.round(Math.min(56,40+(n-1)*2.4))}px`);
-    button.setAttribute('aria-pressed',String(district===browseDistrict));
-    button.setAttribute('aria-label',`${district}區，${n} 條路線`);
-    const count=document.createElement('span');count.className='rb-count';count.textContent=String(n);
-    const name=document.createElement('span');name.className='rb-name';name.textContent=district;
-    button.append(count,name);
-    button.addEventListener('click',()=>{browseDistrict=district===browseDistrict?'':district;renderRouteBrowse()});
-    holder.appendChild(button);
-  });
   // 沒選區域＝顯示全部路線；選了區域才篩選（再點一次同一區可取消）
   const list=browseDistrict?(byDistrict.get(browseDistrict)||[]):routes.map((_,index)=>index);
   document.getElementById('routeSheetTitle').textContent=browseDistrict?`${browseDistrict}區 · ${list.length} 條路線`:`全部路線 · ${list.length} 條`;
@@ -568,11 +638,13 @@ function renderRouteBrowse(){
     item.addEventListener('click',()=>openRouteDetail(index));
     row.appendChild(item);
   });
-  if(focusKey){const again=document.getElementById('routeBrowse').querySelector(`[data-focus-key="${focusKey}"]`);if(again)again.focus({preventScroll:true})}
+  updateDistrictSelection();
 }
 function showRouteBrowse(){
   document.getElementById('routeDetail').classList.add('hidden');
   document.getElementById('routeBrowse').classList.remove('hidden');
+  initDistrictMap();
+  if(districtMap)window.requestAnimationFrame(()=>{districtMap.resize();updateInsetViewport()});
   renderRouteBrowse();
 }
 function openRouteDetail(index){
@@ -594,6 +666,7 @@ function renderRoutes(){
   document.getElementById('routeBackBottom').addEventListener('click',backToBrowse);
   renderRoute(0);
   document.getElementById('routeShowAll').addEventListener('click',()=>{browseDistrict='';renderRouteBrowse()});
+  document.getElementById('routeFitAll').addEventListener('click',()=>{if(districtMap)districtMap.fitBounds(ALL_BOUNDS,{padding:6,duration:prefersReducedMotion()?0:600})});
   renderRouteBrowse();
 }
 
